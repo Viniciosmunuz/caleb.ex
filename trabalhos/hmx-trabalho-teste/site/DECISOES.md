@@ -239,3 +239,30 @@ Três tamanhos: `favicon-32.png`, `favicon-512.png` e `favicon-180.png`
 (apple-touch-icon). Fundo transparente, testado sobre claro e escuro — o
 contorno branco das penas mantém a leitura nos dois. O logo inteiro não serve
 de ícone: em 32px o texto "Hotel Calleb" vira borrão.
+
+## Botões "Reservar Agora" com ícone animado
+
+A pedido, os quatro botões "Reservar Agora" (cabeçalho, hero, menu mobile e
+acomodações) ganharam um ícone de calendário que balança no hover, no modelo de
+um componente do Uiverse.
+
+Adaptações em relação ao original:
+
+- **Cor:** `var(--color-cta)` da marca no lugar do `#FF342B` do componente.
+- **Forma:** mantido o botão do site (48px de altura, cantos totalmente
+  arredondados, caixa alta), não o retângulo de 20px do componente.
+- **Ícone:** `stroke="currentColor"` no lugar de `#fff`, para herdar a cor.
+- **`transform-origin: 50% 65%`**, para o balanço girar a partir da base do
+  calendário em vez do centro geométrico.
+- **Texto:** "Reservar Agora".
+
+### Divergência consciente de `PADROES-PROIBIDOS.md`
+
+A regra 3 proíbe `transform` no `:hover` do botão **e da seta dentro dele** —
+cita `.btn-cta:hover .arrow { transform: translateX(4px) }` como exemplo. A
+animação do ícone é da mesma família e o `verificar.mjs` deve apontar.
+
+Foi uma escolha explícita do dono do trabalho, não um tique gerado. O que a
+regra protege de fato — o alvo do clique se mexer debaixo do ponteiro — não
+acontece: o botão fica parado, só o ícone gira, e `transform` saiu da
+`transition` do botão. Sob `prefers-reduced-motion` a animação não roda.
