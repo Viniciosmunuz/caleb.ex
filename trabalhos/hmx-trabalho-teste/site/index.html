@@ -572,9 +572,9 @@
       }
 
       .stats {
-        background: var(--color-dark);
-        color: #ffffff;
+        background: var(--color-bg);
         padding: 56px 0;
+        border-bottom: 1px solid var(--color-border);
       }
 
       .stats-grid {
@@ -624,21 +624,22 @@
         padding: 8px 12px;
       }
 
+      /* monocromático: tudo no azul da marca, variando só a intensidade */
       .stat-icon {
-        color: var(--color-brand-orange);
-        margin-bottom: 6px;
+        color: rgba(0, 35, 72, 0.42);
+        margin-bottom: 8px;
       }
 
       .stat-number {
         font-family: var(--font-heading);
         font-size: clamp(1.9rem, 2.4vw, 2.6rem);
         line-height: 1;
-        color: #ffffff;
+        color: var(--color-dark);
       }
 
       .stat-label {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.88rem;
+        color: rgba(0, 35, 72, 0.6);
       }
 
       .section-pad {
@@ -1659,27 +1660,27 @@
           <div class="stat-slot">
             <div class="stat-reel" style="animation-delay: -0s;">
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 3.5h15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 4v8.5M12 4v10.5M17 4v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 17.2c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 20.5c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/></svg>
             <div class="stat-number">15+</div>
             <div class="stat-label">Cachoeiras próximas</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 10.4 12 3.6l8.5 6.8V19a1.6 1.6 0 0 1-1.6 1.6H5.1A1.6 1.6 0 0 1 3.5 19v-8.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 17.4c1.9-1.4 2.9-2.6 2.9-3.9a1.8 1.8 0 0 0-3-1.3 1.8 1.8 0 0 0-2.9 1.3c0 1.3 1 2.5 2.9 3.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             <div class="stat-number">100%</div>
             <div class="stat-label">Hospitalidade regional</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 6V11C19 15.4 16 19 12 21C8 19 5 15.4 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2 19.2 6.2v5.4c0 4.2-3 7.8-7.2 8.8-4.2-1-7.2-4.6-7.2-8.8V6.2L12 3.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.9 2.3 2.3 4.1-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div class="stat-number">Premium</div>
             <div class="stat-label">Segurança e conforto</div>
           </article>
               <article class="stat-card" aria-hidden="true">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
@@ -1688,27 +1689,27 @@
           <div class="stat-slot" aria-hidden="true">
             <div class="stat-reel" style="animation-delay: -3s;">
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 3.5h15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 4v8.5M12 4v10.5M17 4v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 17.2c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 20.5c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/></svg>
             <div class="stat-number">15+</div>
             <div class="stat-label">Cachoeiras próximas</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 10.4 12 3.6l8.5 6.8V19a1.6 1.6 0 0 1-1.6 1.6H5.1A1.6 1.6 0 0 1 3.5 19v-8.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 17.4c1.9-1.4 2.9-2.6 2.9-3.9a1.8 1.8 0 0 0-3-1.3 1.8 1.8 0 0 0-2.9 1.3c0 1.3 1 2.5 2.9 3.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             <div class="stat-number">100%</div>
             <div class="stat-label">Hospitalidade regional</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 6V11C19 15.4 16 19 12 21C8 19 5 15.4 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2 19.2 6.2v5.4c0 4.2-3 7.8-7.2 8.8-4.2-1-7.2-4.6-7.2-8.8V6.2L12 3.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.9 2.3 2.3 4.1-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div class="stat-number">Premium</div>
             <div class="stat-label">Segurança e conforto</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
@@ -1717,27 +1718,27 @@
           <div class="stat-slot" aria-hidden="true">
             <div class="stat-reel" style="animation-delay: -6s;">
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 3.5h15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 4v8.5M12 4v10.5M17 4v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 17.2c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 20.5c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/></svg>
             <div class="stat-number">15+</div>
             <div class="stat-label">Cachoeiras próximas</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 10.4 12 3.6l8.5 6.8V19a1.6 1.6 0 0 1-1.6 1.6H5.1A1.6 1.6 0 0 1 3.5 19v-8.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 17.4c1.9-1.4 2.9-2.6 2.9-3.9a1.8 1.8 0 0 0-3-1.3 1.8 1.8 0 0 0-2.9 1.3c0 1.3 1 2.5 2.9 3.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             <div class="stat-number">100%</div>
             <div class="stat-label">Hospitalidade regional</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 6V11C19 15.4 16 19 12 21C8 19 5 15.4 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2 19.2 6.2v5.4c0 4.2-3 7.8-7.2 8.8-4.2-1-7.2-4.6-7.2-8.8V6.2L12 3.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.9 2.3 2.3 4.1-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div class="stat-number">Premium</div>
             <div class="stat-label">Segurança e conforto</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
@@ -1746,27 +1747,27 @@
           <div class="stat-slot" aria-hidden="true">
             <div class="stat-reel" style="animation-delay: -9s;">
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 3.5h15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 4v8.5M12 4v10.5M17 4v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 17.2c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 20.5c1.6 0 1.6 1.5 3.2 1.5s1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/></svg>
             <div class="stat-number">15+</div>
             <div class="stat-label">Cachoeiras próximas</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 10.4 12 3.6l8.5 6.8V19a1.6 1.6 0 0 1-1.6 1.6H5.1A1.6 1.6 0 0 1 3.5 19v-8.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 17.4c1.9-1.4 2.9-2.6 2.9-3.9a1.8 1.8 0 0 0-3-1.3 1.8 1.8 0 0 0-2.9 1.3c0 1.3 1 2.5 2.9 3.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             <div class="stat-number">100%</div>
             <div class="stat-label">Hospitalidade regional</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 6V11C19 15.4 16 19 12 21C8 19 5 15.4 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2 19.2 6.2v5.4c0 4.2-3 7.8-7.2 8.8-4.2-1-7.2-4.6-7.2-8.8V6.2L12 3.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.9 2.3 2.3 4.1-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div class="stat-number">Premium</div>
             <div class="stat-label">Segurança e conforto</div>
           </article>
               <article class="stat-card">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 11.2a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Z" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 11.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.2 19.5c0-2.9 2.8-5.1 6.3-5.1s6.3 2.2 6.3 5.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.4 14.5c2.2.5 3.7 2.1 3.7 4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
             <div class="stat-label">Hóspedes felizes</div>
           </article>
@@ -2143,7 +2144,7 @@
               Reservar Agora
             </a>
             <a class="footer-icon-link" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-10.1a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10.7" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
               Presidente Figueiredo · Amazônia
             </a>
           </div>

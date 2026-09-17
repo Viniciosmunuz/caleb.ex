@@ -542,3 +542,38 @@ começar já adiantada, então as quatro rodam o mesmo ciclo em pontos distintos
 **Acessibilidade:** três das quatro colunas repetem o mesmo conteúdo, então vão
 com `aria-hidden`. Na coluna que fica legível, o quinto item — a repetição do
 primeiro — também. O leitor de tela anuncia os quatro números uma vez cada.
+
+### Faixa em branco e monocromática
+
+O bloco escuro saiu: a faixa agora tem fundo branco, separada da seção seguinte
+por uma linha fina em vez de um retângulo de cor.
+
+**Monocromático** — tudo no mesmo azul `rgb(0, 35, 72)`, variando só a
+intensidade. É o que dá unidade sem precisar de cor de destaque:
+
+| Elemento | Intensidade |
+|---|---|
+| Número | 100% |
+| Rótulo | 60% |
+| Ícone | 42% |
+
+O ícone mais apagado que o texto é proposital: ele apoia a leitura do número,
+não disputa com ele.
+
+### Ícones redesenhados
+
+Os quatro eram genéricos — uma pessoa, duas ondas, um coração solto e um escudo
+vazio. Não diziam nada do que estava escrito embaixo:
+
+| Rótulo | Antes | Agora |
+|---|---|---|
+| Hóspedes felizes | uma silhueta | duas pessoas, um casal |
+| Cachoeiras próximas | duas ondas | queda d'água sobre um poço, com a onda de baixo mais fraca |
+| Hospitalidade regional | coração solto | casa com um coração dentro |
+| Segurança e conforto | escudo vazio | escudo com confirmação |
+
+**Erro no caminho:** a substituição do coração rodou com `/g` e trocou também o
+ícone do link de localização no rodapé, que usava o mesmo desenho. Ao restaurar,
+a linha do texto ficou duplicada e o `<svg>` se perdeu. Ambos corrigidos — e o
+rodapé ficou com um alfinete de mapa, que é o ícone certo para um link do Google
+Maps; o coração ali nunca fez sentido.
