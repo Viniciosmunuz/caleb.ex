@@ -762,3 +762,19 @@ cabeçalho.
 Cada um leva ao WhatsApp **com o nome do quarto já na mensagem** — quem clica no
 Solteiro abre a conversa dizendo que quer o Solteiro. "Detalhes" antes levava
 para a âncora de contato, sem dizer o que a pessoa estava vendo.
+
+### Amenidades no rodapé do cartão
+
+Cada quarto mostra o que oferece, como no site do cliente: **café da manhã,
+televisão, wi-fi e ar-condicionado**, à esquerda, com o botão à direita,
+separados do texto por um filete.
+
+Só o ícone aparece. O nome de cada amenidade está no HTML, escondido
+visualmente por `clip-path` — assim o leitor de tela anuncia "Café da manhã,
+Televisão, Wi-fi, Ar-condicionado" em vez de quatro imagens sem rótulo, e o
+visual continua limpo. Verificado: os quatro nomes são lidos, e o `<span>` fica
+fora da tela sem sumir da árvore de acessibilidade.
+
+No site do cliente esses ícones são coloridos, um laranja e três azuis. Aqui
+ficaram todos no mesmo azul a 50% — a cor não distingue nada entre eles, e
+quatro cores diferentes numa linha de 17px viram ruído.

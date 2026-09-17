@@ -1055,12 +1055,50 @@
         color: rgba(0, 35, 72, 0.45);
       }
 
+      /* rodapé: o que o quarto tem, à esquerda; a ação, à direita */
+      .room-rodape {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 14px;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .room-amenidades {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+      }
+
+      /* só o ícone aparece; o texto fica para o leitor de tela e para o
+         balão de dica do navegador */
+      .room-amenidades li {
+        display: inline-flex;
+        color: rgba(0, 35, 72, 0.5);
+      }
+
+      .room-amenidades svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .room-amenidades span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
       /* Botão minimalista: texto e uma linha que cresce no hover. Quatro
          botões sólidos lado a lado brigariam entre si e com o cabeçalho. */
       .room-cta {
-        align-self: flex-start;
-        margin-top: auto;
-        padding-top: 4px;
+        flex-shrink: 0;
         position: relative;
         font-size: 0.88rem;
         font-weight: 500;
@@ -2073,7 +2111,15 @@
                   <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
                 </ul>
                 <p>Quarto com capacidade para até 4 pessoas, com café da manhã.</p>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                <div class="room-rodape">
+                  <ul class="room-amenidades">
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
+                  </ul>
+                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                </div>
               </div>
             </article>
 
@@ -2090,7 +2136,15 @@
                   <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
                 </ul>
                 <p>Quarto com capacidade para até 3 pessoas, com café da manhã.</p>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                <div class="room-rodape">
+                  <ul class="room-amenidades">
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
+                  </ul>
+                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                </div>
               </div>
             </article>
 
@@ -2107,7 +2161,15 @@
                   <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
                 </ul>
                 <p>Quarto com capacidade para até duas pessoas, com café da manhã.</p>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                <div class="room-rodape">
+                  <ul class="room-amenidades">
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
+                  </ul>
+                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                </div>
               </div>
             </article>
 
@@ -2124,7 +2186,15 @@
                   <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
                 </ul>
                 <p>Quarto individual para apenas um hóspede, com café da manhã.</p>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                <div class="room-rodape">
+                  <ul class="room-amenidades">
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
+                  </ul>
+                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                </div>
               </div>
             </article>
           </div>
