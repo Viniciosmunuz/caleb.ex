@@ -517,25 +517,28 @@ O contorno enquanto o cabeçalho está transparente resolve de quebra a
 legibilidade: laranja sólido sobre foto clara fica pesado, e o contorno branco
 acompanha o resto do menu, que já é branco ali.
 
-## Animação dos números
+## Números em rodízio vertical
 
-Os quatro números continuam **centralizados no grid**, como estavam. A animação
-acontece dentro de cada um, não deslocando a linha.
+Os quatro ficam **centralizados no grid**, nas mesmas quatro posições de antes.
+Quem se move é a coluna dentro de cada posição: o número sobe, sai por cima, e
+o seguinte entra por baixo — sem parar.
 
-Primeira tentativa foi um marquee de rolagem contínua, e estava errada: no
-`LogosCarousel`, `count={4}` significa **quatro posições fixas** por onde os
-dezesseis logos passam — os slots não andam, o conteúdo dentro deles é que
-troca. Por isso a linha não devia sair do lugar.
+**Como o laço fecha sem corte:** cada coluna tem os quatro números mais uma
+repetição do primeiro, e anda de `translateY(0)` a `-80%`. Com cinco itens,
+-80% é exatamente o quinto — que é cópia do primeiro. O reinício cai em cima de
+um quadro idêntico e não se vê emenda. Medido: janela de 132px, coluna de 660px
+(5 × 132), paradas em 0 / -132 / -264 / -396.
 
-O que ficou: entrada escalonada. Quando a seção entra na tela, os quatro
-aparecem em sequência, subindo 16px e ganhando opacidade, com 100ms de
-intervalo entre eles (60 / 160 / 260 / 360ms), em
-`cubic-bezier(0.22, 1, 0.36, 1)` — uma curva que desacelera no fim, então o
-número assenta em vez de parar seco.
+**O intervalo:** ciclo de 12s dividido em quatro. Os keyframes têm platôs
+(`0%, 20%` / `25%, 45%` / …), então cada número fica **2,4s parado** e sobe em
+**0,6s**. É a pausa que torna o número legível; sem os platôs seria uma esteira
+contínua e ninguém leria nada. Amostragem de 14 leituras pegou 13 em posição
+exata e só uma em transição.
 
-`animation-fill-mode: backwards` mantém cada cartão invisível durante o próprio
-atraso; sem isso os quatro apareceriam juntos e só depois recuariam para animar.
+**Os quatro mostram números diferentes ao mesmo tempo** porque cada coluna tem
+`animation-delay` negativo — 0, -3s, -6s, -9s. Delay negativo faz a animação
+começar já adiantada, então as quatro rodam o mesmo ciclo em pontos distintos.
 
-Sob `prefers-reduced-motion` a regra global do site já zera a duração, e como
-aqui não há deslocamento contínuo, o resultado é simplesmente os quatro números
-no lugar — que é o comportamento correto.
+**Acessibilidade:** três das quatro colunas repetem o mesmo conteúdo, então vão
+com `aria-hidden`. Na coluna que fica legível, o quinto item — a repetição do
+primeiro — também. O leitor de tela anuncia os quatro números uma vez cada.
