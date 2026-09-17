@@ -212,3 +212,30 @@ git (são insumo, não entrega).
 A foto do hero tem **um hóspede identificável** sentado à mesa. Para uso
 comercial convém confirmar autorização de imagem com o hotel, ou trocar por um
 enquadramento sem pessoas.
+
+## Ajustes de 17/09/2026 (2ª rodada)
+
+### Hero: a fachada de dia
+
+Trocado para `home-01` em alta (3072×4096 no original, contra 1100×1467 que o
+site do hotel servia). Gera até **1920×1080 sem upscale**, e o `srcset` entrega
+800 / 1200 / 1920 conforme a tela. Enquadramento em 32% da altura: pega o
+letreiro e as mesas da área externa, corta o excesso de chão.
+
+O celular continua recebendo recorte retrato da mesma foto.
+
+### Botões flutuantes: só WhatsApp
+
+O botão de telefone saiu, junto com o CSS dele. **O cartão "Ligar para o hotel"
+na seção de contato foi mantido** — é informação, não botão flutuante.
+
+### Favicon: a coroa de penas do logo
+
+No lugar do "C" desenhado à mão, agora é um recorte do próprio logo — a coroa
+de penas azul com o detalhe laranja, enquadrada a partir de
+`calleb.ex/logohigh.png` (região 30,95 + 380×380).
+
+Três tamanhos: `favicon-32.png`, `favicon-512.png` e `favicon-180.png`
+(apple-touch-icon). Fundo transparente, testado sobre claro e escuro — o
+contorno branco das penas mantém a leitura nos dois. O logo inteiro não serve
+de ícone: em 32px o texto "Hotel Calleb" vira borrão.
