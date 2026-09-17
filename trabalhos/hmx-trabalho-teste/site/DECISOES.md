@@ -357,3 +357,34 @@ desliza é o ícone dentro dele.
 
 O calendário entrou no "Verificar Disponibilidade" por ser o botão mais ligado
 a datas do site — é o que submete check-in e check-out.
+
+## Escala tipográfica reduzida
+
+Os títulos estavam grandes demais. Duas causas, não uma:
+
+**1. O piso do `clamp`.** O `h1` era `clamp(3.2rem, 5vw, 6.4rem)`: em qualquer
+tela abaixo de ~1024px ele travava em **51,2px** e não descia mais. No celular
+isso comia o hero inteiro.
+
+**2. Peso 600 em Georgia.** Georgia é fonte de sistema e só tem 400 e 700 reais
+— o 600 virava **bold sintético**, que o navegador engrossa artificialmente.
+Além de pesado, destoa da receita, que mede peso 300 (leve) nos títulos. Como
+300 não existe em Georgia, 400 é o mais próximo e é o que o site de referência
+de fato renderizava.
+
+| Elemento | Antes | Depois |
+|---|---|---|
+| `h1` | `clamp(3.2rem, 5vw, 6.4rem)` peso 600 | `clamp(2.2rem, 4.2vw, 4.5rem)` peso 400 |
+| `h2` | `clamp(2.5rem, 3vw, 4rem)` peso 600 | `clamp(1.75rem, 2.5vw, 2.75rem)` peso 400 |
+| `.stat-number` | `clamp(2.5rem, 3vw, 3.5rem)` | `clamp(1.9rem, 2.4vw, 2.6rem)` |
+| `.story-copy h2` | `clamp(2.4rem, 3vw, 3.25rem)` | `clamp(1.7rem, 2.4vw, 2.35rem)` |
+| `.premium-panel h3` | `clamp(2rem, 2.7vw, 3rem)` | `clamp(1.5rem, 2.1vw, 2.1rem)` |
+| `.booking-form h3` | `2rem` | `1.6rem` |
+| `.location-card h3` | `1.7rem` | `1.45rem` |
+| parágrafo do hero | `1.125rem` fixo | `clamp(1rem, 0.94rem + 0.28vw, 1.125rem)` |
+
+Medido depois: `h1` em **35,2px** no celular (era 51,2) e **43px** em 1024px
+(era 51,2). Sem vazamento horizontal em 375px.
+
+O `letter-spacing` negativo também foi afrouxado de `-0.06em` para `-0.04em` no
+`h1`: aperto de letra que funciona em 96px sufoca o texto em 43px.
