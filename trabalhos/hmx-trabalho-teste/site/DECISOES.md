@@ -615,15 +615,24 @@ pela captura do site que o dono do trabalho enviou:
 - Conexão wi-fi de alta velocidade em todas as áreas
 - Quartos equipados com o que há de mais moderno
 
-A marca de confirmação é desenhada em CSS (`::before` faz o círculo, `::after`
-faz o traço), em vez de repetir o mesmo SVG quatro vezes no HTML.
+Cada item tem o ícone do que ele diz, em vez de quatro marcas de confirmação
+iguais:
 
-### Botão de contorno
+| Item | Ícone |
+|---|---|
+| Localização estratégica | alfinete de mapa |
+| Atendimento personalizado | pessoa |
+| Conexão wi-fi | ondas de wi-fi |
+| Quartos equipados | cama |
 
-`Conheça nossa história` deixou de ser laranja sólido e virou contorno azul.
-Havia dois botões laranja idênticos competindo na mesma tela — um para reservar,
-outro para ler a história, que não têm o mesmo peso. O contorno diz "secundário"
-sem precisar de mais nada.
+Quatro checks idênticos não acrescentam informação — só confirmam que a lista é
+uma lista. Ícone específico dá para ler a linha antes mesmo do texto.
+
+### Sem botão
+
+`Conheça nossa história` saiu a pedido. A seção fecha na lista de diferenciais;
+quem quiser reservar tem o botão do cabeçalho, o WhatsApp flutuante e os CTAs
+das seções seguintes.
 
 ### Hero sem botão de reserva
 
