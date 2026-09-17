@@ -104,3 +104,78 @@ Se Inter for inegociável, o caminho é hospedá-la localmente em `site/fonts/`.
 - Os PNGs do logo saíram do redimensionador do Windows, sem otimização de
   paleta. Um passo por `oxipng`/`pngquant` derrubaria os 145 KB para algo
   perto de 30 KB.
+
+## Fotos reais — 17/09/2026
+
+### De onde vieram
+
+As `home-*.jpg` do pacote já eram fotos reais do hotel, extraídas do site
+atual dele (`copies/hmx-copy-hotelcalleb.com.br/assets/`). Somei a elas três
+fotos do perfil do Google Business (salvas em `trabalhos/.../fotos-reais/`).
+
+O Instagram `@hotelcalleb` foi verificado: sem login o perfil só entrega
+miniaturas de **512×640**, e a maioria dos posts é Reels. Resolução
+insuficiente — nada de lá foi usado.
+
+### O problema de resolução
+
+Do acervo inteiro (23 fotos), **só 4 são paisagem**, e o hero precisa de
+paisagem. O `hero-1600.jpg` anterior era 1600×900 com apenas 182 KB: um
+upscale, já borrado na origem.
+
+**Escolha para o hero: a fachada do hotel**, em duas versões, para que
+nenhuma tela receba imagem esticada:
+
+| Tela | Arquivo | Origem | Resolução |
+|---|---|---|---|
+| Desktop | `hero-desk-1200.jpg` | Google Business | 1200×675 |
+| Celular | `hero-mob-1100.jpg` | site do hotel | 1100×1467 |
+
+O `<picture>` troca por `media`, não por largura: o celular recebe retrato
+nativo, o desktop recebe paisagem nativa.
+
+A fachada foi escolhida porque o prédio é laranja — a cor da marca — com o
+letreiro visível. É o que o hóspede reconhece ao chegar.
+
+### Demais seções
+
+| Seção | Arquivo | Origem | Upscale |
+|---|---|---|---|
+| Sobre | `sobre-recepcao.jpg` 1200×900 | home-18 (1280×960) | nenhum |
+| Quartos | `quarto-familia.jpg` 1200×900 | Google (1920×1080) | nenhum |
+| Quartos | `quarto-triplo.jpg` 1200×900 | home-19 (1280×960) | nenhum |
+| Quartos | `quarto-casal.jpg` 1200×900 | Google (1200×1600) | nenhum |
+| Destino | `destino-cachoeira.jpg` 640×480 | home-09 (700×400) | **20%** |
+| Galeria | 6 × `gal-*.jpg` 900×1200 | home-06/07/15/16/17/20 | nenhum |
+
+**A cachoeira é o ponto fraco do acervo.** É a única foto de natureza que
+existe, e tem só 700×400 — daí ficar em 640×480, num card pequeno. A copy
+promete "Coração da Amazônia" e "cachoeiras"; uma foto boa de cachoeira é o
+que mais falta para o site sustentar a própria promessa.
+
+### Dimensões que estavam mentindo
+
+Os cards de quarto e os slides da galeria declaravam `width="1200"
+height="900"` enquanto os arquivos eram 960×1280 — retrato declarado como
+paisagem. Todas as declarações agora conferem com o arquivo real.
+
+### Carrossel refeito
+
+Era `transform` com um slide por vez e sem toque. Agora usa `scroll-snap`
+nativo:
+
+- **Desktop:** três fotos por vez; **tablet:** duas; **celular:** uma, com a
+  seguinte espiando na borda.
+- **Arrastar com o dedo** funciona nativamente — não havia antes.
+- Setas sobre a imagem, pontos indicadores, navegação por seta do teclado.
+- Circula nos dois sentidos; o automático pausa no toque, no hover, no foco,
+  com a aba oculta e sob `prefers-reduced-motion`.
+- `home-04`, de 253×337, saiu da galeria: pixelava.
+
+## Pendências novas
+
+- **A nota do Google é 4,7**, e a página exibe 4,9. Corrigir ou confirmar a
+  origem do número com o cliente.
+- **Fotos que faltam ao acervo:** uma cachoeira em alta resolução, uma
+  externa do hotel em paisagem e uma da fachada sem as lojas vizinhas no
+  enquadramento. Vale pedir ao cliente — ou uma visita com celular bom.

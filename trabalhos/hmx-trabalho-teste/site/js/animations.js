@@ -50,60 +50,93 @@ if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
 }
 
 /* ---------- Galeria ---------- */
-const galleryTrack = document.querySelector('#galleryTrack');
-const galleryButtons = document.querySelectorAll('.gallery-btn');
+const galleryTrack = document.querySelector("#galleryTrack");
+const galleryDots = document.querySelector("#galleryDots");
+const galleryPrev = document.querySelector(".gallery-btn--prev");
+const galleryNext = document.querySelector(".gallery-btn--next");
 
 if (galleryTrack) {
   const slides = Array.from(galleryTrack.children);
-  let index = 0;
   let timer = null;
 
-  const updateGallery = () => {
-    galleryTrack.style.transform = `translateX(-${index * 100}%)`;
+  const passo = () => {
+    const s = slides[0];
+    if (!s) return galleryTrack.clientWidth;
+    const gap = parseFloat(getComputedStyle(galleryTrack).columnGap) || 0;
+    return s.getBoundingClientRect().width + gap;
   };
 
-  const stopAuto = () => {
-    if (timer) {
-      clearInterval(timer);
-      timer = null;
+  const indiceAtual = () => Math.round(galleryTrack.scrollLeft / passo());
+  const fimDaLista = () => galleryTrack.scrollLeft >= galleryTrack.scrollWidth - galleryTrack.clientWidth - 2;
+
+  // um ponto por foto; marca a que esta em foco
+  slides.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.className = "gallery-dot";
+    b.type = "button";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", `Foto ${i + 1} de ${slides.length}`);
+    b.addEventListener("click", () => { irPara(i); reiniciarAuto(); });
+    galleryDots && galleryDots.appendChild(b);
+  });
+
+  const sincronizar = () => {
+    const i = indiceAtual();
+    if (galleryDots) {
+      Array.from(galleryDots.children).forEach((d, n) =>
+        d.setAttribute("aria-selected", String(n === i)));
     }
   };
 
-  // autoplay só quando o visitante não pediu menos movimento e a aba está visível
-  const startAuto = () => {
-    stopAuto();
-    if (prefersReducedMotion.matches || document.hidden) return;
-    timer = setInterval(() => {
-      index = (index + 1) % slides.length;
-      updateGallery();
-    }, 5000);
+  const irPara = (i) => {
+    galleryTrack.scrollTo({ left: i * passo(), behavior: "smooth" });
   };
 
-  galleryButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const direction = button.dataset.direction === 'next' ? 1 : -1;
-      index = (index + direction + slides.length) % slides.length;
-      updateGallery();
-      startAuto(); // reinicia a contagem depois de uma ação do visitante
+  const mover = (dir) => {
+    if (dir > 0 && fimDaLista()) irPara(0);            // volta ao inicio no fim
+    else if (dir < 0 && galleryTrack.scrollLeft <= 2) irPara(slides.length - 1);
+    else galleryTrack.scrollBy({ left: dir * passo(), behavior: "smooth" });
+  };
+
+  [galleryPrev, galleryNext].forEach((b) => {
+    if (!b) return;
+    b.addEventListener("click", () => {
+      mover(b.dataset.direction === "next" ? 1 : -1);
+      reiniciarAuto();
     });
   });
 
-  const gallery = galleryTrack.closest('.gallery-carrossel') || galleryTrack.parentElement;
-  if (gallery) {
-    gallery.addEventListener('mouseenter', stopAuto);
-    gallery.addEventListener('mouseleave', startAuto);
-    gallery.addEventListener('focusin', stopAuto);
-    gallery.addEventListener('focusout', startAuto);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stopAuto();
-    else startAuto();
+  // teclado: setas navegam quando a faixa esta em foco
+  galleryTrack.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); mover(1); reiniciarAuto(); }
+    if (e.key === "ArrowLeft")  { e.preventDefault(); mover(-1); reiniciarAuto(); }
   });
 
-  prefersReducedMotion.addEventListener('change', startAuto);
+  galleryTrack.addEventListener("scroll", () => {
+    clearTimeout(galleryTrack._t);
+    galleryTrack._t = setTimeout(sincronizar, 90);
+  }, { passive: true });
 
-  startAuto();
+  const pararAuto = () => { if (timer) { clearInterval(timer); timer = null; } };
+  const reiniciarAuto = () => {
+    pararAuto();
+    if (prefersReducedMotion.matches || document.hidden) return;
+    timer = setInterval(() => mover(1), 5000);
+  };
+
+  ["mouseenter", "focusin", "pointerdown"].forEach((ev) =>
+    galleryTrack.addEventListener(ev, pararAuto));
+  ["mouseleave", "focusout"].forEach((ev) =>
+    galleryTrack.addEventListener(ev, reiniciarAuto));
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) pararAuto(); else reiniciarAuto();
+  });
+  prefersReducedMotion.addEventListener("change", reiniciarAuto);
+  window.addEventListener("resize", sincronizar);
+
+  sincronizar();
+  reiniciarAuto();
 }
 
 /* ---------- Formulário de reserva: abre o WhatsApp do hotel ---------- */
