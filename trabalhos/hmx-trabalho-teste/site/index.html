@@ -144,78 +144,56 @@
         margin: 0;
       }
 
-      /* Botão terciário: sublinhado que cresce da esquerda e seta que avança.
-         Equivalente em CSS puro do componente Tailwind, com as cores da marca. */
-      .btn-arrow {
+      /* ---- Botoes do hero ----
+         Pilula de contorno sobre a foto: sem preenchimento solido, sem icone,
+         so o traco e o texto. A seta saiu a pedido; sem ela o sublinhado que
+         so aparecia no hover deixava os dois com cara de texto comum, entao o
+         contorno passou a ser a forma do botao.
+         Os dois no mesmo peso: a hierarquia da reserva ja esta no botao
+         laranja do cabecalho, que fica sempre a vista. */
+      .hero-btn {
         display: inline-flex;
         align-items: center;
-        gap: 2px;
-        background: transparent;
-        border: none;
-        padding: 6px 0;
-        cursor: pointer;
+        justify-content: center;
+        min-height: 42px;
+        padding: 11px 24px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        /* mesmo vidro da barra de navegacao: o degrade azul e o desfoque sao
+           os mesmos valores, para o hero e o cabecalho parecerem do mesmo
+           material em vez de dois efeitos parecidos */
+        background: linear-gradient(
+          180deg,
+          rgba(214, 235, 255, 0.14) 0%,
+          rgba(0, 32, 70, 0.24) 100%
+        );
+        -webkit-backdrop-filter: blur(30px) saturate(140%);
+        backdrop-filter: blur(30px) saturate(140%);
+        color: #ffffff;
         font-family: inherit;
-        font-size: 0.9rem;
+        font-size: 0.92rem;
         font-weight: 500;
         letter-spacing: 0.01em;
-        color: var(--color-heading);
+        line-height: 1;
+        cursor: pointer;
+        transition: background-color 0.16s ease-out;
       }
 
-      .btn-arrow .lable {
-        position: relative;
-        padding-right: 6px;
-        padding-bottom: 5px;
+      /* uma mudanca so no hover: o veu branco engrossa */
+      .hero-btn:hover,
+      .hero-btn:focus-visible {
+        background: rgba(255, 255, 255, 0.26);
       }
 
-      .btn-arrow .lable::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: var(--color-accent);
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .hero-btn {
+          background: rgba(0, 28, 60, 0.45);
+        }
       }
 
-      .btn-arrow:hover .lable::after,
-      .btn-arrow:focus-visible .lable::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-
-      .btn-arrow .arrow-icon {
-        flex-shrink: 0;
-        transform: translateX(-8px);
-        fill: var(--color-text);
-        transition: transform 300ms ease-out, fill 300ms ease-out;
-      }
-
-      .btn-arrow:hover .arrow-icon,
-      .btn-arrow:focus-visible .arrow-icon {
-        transform: translateX(4px);
-        fill: var(--color-accent);
-      }
-
-      /* variante para uso sobre a foto do hero */
-      .btn-arrow--claro {
-        color: #ffffff;
-      }
-
-      .btn-arrow--claro .lable::after {
-        background: var(--color-brand-orange);
-      }
-
-      .btn-arrow--claro .arrow-icon {
-        fill: rgba(255, 255, 255, 0.85);
-      }
-
-      .btn-arrow--claro:hover .arrow-icon,
-      .btn-arrow--claro:focus-visible .arrow-icon {
-        fill: var(--color-brand-orange);
+      .hero-btn:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
       }
 
       .btn-cta {
@@ -639,8 +617,8 @@
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px 30px;
-        margin-top: 28px;
+        gap: 14px;
+        margin-top: 32px;
       }
 
       .hero-meta {
@@ -1516,11 +1494,31 @@
         display: block;
       }
 
+      /* Areas nomeadas em vez de ordem do HTML: no desktop o formulario
+         ocupa a coluna da direita inteira, como antes. No celular a ordem
+         vira texto -> formulario -> WhatsApp, que e a que o cliente pediu:
+         quem quer reservar ve o formulario antes da alternativa. */
       .contact-wrap {
         display: grid;
         grid-template-columns: 1.05fr 0.95fr;
-        gap: 64px;
+        grid-template-areas:
+          "detalhes formulario"
+          "direto formulario";
+        column-gap: 64px;
+        row-gap: 0;
         align-items: center;
+      }
+
+      .contact-details {
+        grid-area: detalhes;
+      }
+
+      .contact-direct {
+        grid-area: direto;
+      }
+
+      .booking-form {
+        grid-area: formulario;
       }
 
       .contact-details {
@@ -1765,11 +1763,6 @@
 
       .contact-card--whatsapp svg {
         color: var(--color-whatsapp);
-        flex-shrink: 0;
-      }
-
-      .contact-card--phone svg {
-        color: var(--color-accent);
         flex-shrink: 0;
       }
 
@@ -2041,6 +2034,25 @@
         }
       }
 
+      /* ---- Contato em uma coluna ----
+         Ordem no celular: texto, formulario, WhatsApp. Redeclarar as areas
+         e obrigatorio — so trocar as colunas para 1fr deixaria as areas
+         pedindo duas, e o navegador inventaria uma coluna implicita. */
+      @media (max-width: 768px) {
+        .contact-wrap {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "detalhes"
+            "formulario"
+            "direto";
+          row-gap: 28px;
+        }
+
+        .contact-direct {
+          margin-top: 0;
+        }
+      }
+
       /* Até 979px a navegação é o botão de menu mais a gaveta; acima disso são
          os links na barra, e nem o botão nem a gaveta existem. O corte subiu de
          768 para 980: com o menu maior os seis links deixaram de caber na
@@ -2174,8 +2186,7 @@
               e localização privilegiada no centro da cidade.
             </p>
             <div class="hero-actions">
-              <a class="btn-arrow btn-arrow--claro" href="#sobre"><span class="lable">Conheça Nossa História</span><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="9" viewBox="0 0 46 16" aria-hidden="true"><path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path></svg></a>
-              <a class="btn-arrow btn-arrow--claro" href="#contato"><span class="lable">Reservar Agora</span><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="9" viewBox="0 0 46 16" aria-hidden="true"><path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path></svg></a>
+              <a class="hero-btn" href="#contato">Reservar Agora</a>
             </div>
             <div class="hero-meta">
               <span>4.9/5</span>
@@ -2716,6 +2727,8 @@
               <div class="contact-item"><span class="dot"></span><div>Cancelamento grátis até 24h antes</div></div>
             </div>
 
+          </div>
+
             <div class="contact-direct">
               <a class="contact-card contact-card--whatsapp" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Hotel%20Calleb." target="_blank" rel="noopener">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
@@ -2724,15 +2737,7 @@
                   <small>Resposta rápida, sem formulário</small>
                 </span>
               </a>
-              <a class="contact-card contact-card--phone" href="tel:+559285372368">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3h2.2l1.5 3.8-1.8 1.2a12 12 0 0 0 5.5 5.5l1.2-1.8L19 13.2v2.2a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-                <span>
-                  <strong>Ligar para o hotel</strong>
-                  <small>(92) 8537-2368</small>
-                </span>
-              </a>
             </div>
-          </div>
 
           <div class="booking-form" aria-label="Formulário de reserva">
             <h3>Reserva Inteligente</h3>

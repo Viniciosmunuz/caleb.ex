@@ -1065,3 +1065,65 @@ sem ele ter pedido.
 
 A folga entre os dois é de 30px, não 16px: com a seta avançando no hover, 16px
 faziam a seta de um quase encostar no texto do outro.
+
+---
+
+## Botão do hero e reordenação do contato
+
+### Do botão de seta ao botão de vidro
+
+O botão de seta saiu a pedido. Tirar só a seta não bastava: o sublinhado dele
+**só aparecia no hover**, então sem a seta o botão ficava com cara de texto
+comum em repouso — no celular, onde não existe hover, ele nunca teria indicação
+de que era clicável.
+
+Então o contorno virou a forma do botão: pílula com o **mesmo vidro da barra de
+navegação** — o mesmo degradê azul, o mesmo `blur(30px) saturate(140%)`. Os
+valores são os mesmos de propósito: hero e cabeçalho passam a parecer o mesmo
+material, em vez de dois efeitos parecidos.
+
+| | Primeira versão | Agora |
+|---|---|---|
+| Altura | 52px | 42px |
+| Respiro | 14/30px | 11/24px |
+| Texto | 16px | 14,7px |
+| Borda | branca 55% | transparente |
+| Fundo | branco 10% | degradê azul + desfoque |
+
+A borda branca saiu pelo mesmo motivo da barra: ela desenha a forma em vez de
+deixar o vidro se dissolver no fundo.
+
+A classe passou a se chamar `.hero-btn`. `.btn-arrow` era usada só aqui, então
+o bloco inteiro foi substituído em vez de acumular regras mortas — sobraram
+zero referências a `btn-arrow` e `arrow-icon` no arquivo.
+
+**"Conheça Nossa História" foi removido** a pedido; o hero ficou com um botão
+só. A seção continua acessível pelo menu, então nada ficou sem caminho.
+
+### Contato: formulário antes da alternativa
+
+No celular a ordem era: texto → cartões de contato → formulário. Quem quisesse
+reservar via formulário tinha de passar por cima da alternativa primeiro. Agora
+é **texto → formulário → WhatsApp**.
+
+Isso não deu para resolver com `order`: o bloco de contato direto estava
+*dentro* de `.contact-details`, e `order` só reordena irmãos. Ele saiu para ser
+irmão do formulário, e a grade passou a usar **áreas nomeadas**:
+
+```css
+grid-template-areas:
+  "detalhes formulario"
+  "direto   formulario";
+```
+
+No desktop nada mudou de lugar — o formulário ocupa a coluna da direita
+inteira, como antes. No celular as áreas viram uma coluna só, na ordem pedida.
+
+**Redeclarar as áreas no celular é obrigatório**, não zelo: com as áreas
+pedindo duas colunas e `grid-template-columns: 1fr`, o navegador cria uma
+segunda coluna implícita e a grade quebra.
+
+**"Ligar para o hotel" foi removido** a pedido. Isso resolve de lado uma dúvida
+que estava em aberto desde a primeira rodada: não havia confirmação de que o
+`+55 92 8537-2368` atende ligação — ele aparecia no site do cliente como
+contato de WhatsApp. O CSS órfão do cartão saiu junto.
