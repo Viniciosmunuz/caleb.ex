@@ -1127,3 +1127,32 @@ segunda coluna implícita e a grade quebra.
 que estava em aberto desde a primeira rodada: não havia confirmação de que o
 `+55 92 8537-2368` atende ligação — ele aparecia no site do cliente como
 contato de WhatsApp. O CSS órfão do cartão saiu junto.
+
+### Cartão de quarto no celular, segunda tentativa
+
+A primeira versão de duas colunas cabia, mas ficou feia: em 165px o cartão
+virava **seis faixas empilhadas** — foto, nome, specs, divisor, texto, divisor,
+ícones, botão — com a foto reduzida a uma tira de 122px no fim de um cartão de
+390px. Um cartão de quarto em que a foto ocupa 24% da altura não é um cartão de
+quarto, é uma lista com miniatura.
+
+Três mudanças, todas só no celular:
+
+| | Antes | Agora |
+|---|---|---|
+| Proporção da foto | 4:3 (122px) | **4:5 (203px)** |
+| Foto sobre o cartão | 24% | **47%** |
+| Divisores | 2 | **1** |
+| Linhas das specs | 2 | **1** |
+| Véu sobre a foto | 42% | 34% |
+
+O wi-fi estava **repetido** dentro do mesmo cartão: uma vez nas specs, outra no
+ícone do rodapé. Em 165px essa repetição jogava as specs para duas linhas, com
+"Wi-fi" sozinho na segunda — parecia defeito. Some das specs, fica no rodapé.
+Não é conteúdo perdido: o leitor de tela continua anunciando "Wi-fi" pelo rótulo
+escondido do ícone, e no desktop, onde cabe, as três specs continuam.
+
+O segundo divisor saiu pelo mesmo motivo: dois filetes horizontais em 165px
+picam o cartão em fatias. Sobrou o do rodapé, que separa a ação do conteúdo.
+
+No desktop nada mudou — foto 3:2, três specs, os dois divisores.

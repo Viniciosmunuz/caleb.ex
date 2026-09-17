@@ -1815,10 +1815,14 @@
       }
 
       /* ---- Cartoes de quarto no celular ----
-         Dois por linha em vez de um: assim se ve mais de um quarto sem rolar,
-         que e como se compara preco. Em ~165px de largura nada do cartao cabe
-         no tamanho de desktop, entao tudo encolhe junto e o rodape empilha:
-         os icones do que o quarto tem em cima, o botao embaixo. */
+         Dois por linha: assim se ve mais de um quarto sem rolar, que e como
+         se compara preco.
+
+         A primeira versao empilhava seis faixas em 165px — foto, nome, specs,
+         divisor, texto, divisor, icones, botao — e o cartao virava uma pilha
+         de fatias com a foto reduzida a uma tira de 122px. Aqui a foto manda:
+         sobe para 4:5 e ocupa metade do cartao, os dois divisores viram um so,
+         e o wi-fi some das specs porque ja esta nos icones logo abaixo. */
       @media (max-width: 560px) {
         .card-grid.quatro {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1826,7 +1830,12 @@
         }
 
         .card-image {
-          aspect-ratio: 4 / 3;
+          aspect-ratio: 4 / 5;
+        }
+
+        /* veu menor: a foto e alta agora, nao precisa de tanto escurecimento */
+        .card-image::after {
+          height: 34%;
         }
 
         .card-body {
@@ -1854,10 +1863,20 @@
           font-size: 1.2rem;
         }
 
+        /* sem borda: o cartao ja tem um divisor, no rodape. Dois em 165px
+           picam o cartao em fatias. */
         .room-specs {
           gap: 5px 10px;
           margin-bottom: 0;
-          padding-bottom: 10px;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+
+        /* o wi-fi esta repetido: aqui e no icone do rodape. Em 165px a
+           repeticao joga as specs para duas linhas, com "Wi-fi" sozinho
+           na segunda — parece defeito. Fica so o do rodape. */
+        .room-specs li:nth-child(3) {
+          display: none;
         }
 
         .room-specs li {
