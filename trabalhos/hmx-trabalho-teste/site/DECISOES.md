@@ -516,3 +516,32 @@ a pessoa acabou de ler o argumento, e aí sim têm de puxar o olho.
 O contorno enquanto o cabeçalho está transparente resolve de quebra a
 legibilidade: laranja sólido sobre foto clara fica pesado, e o contorno branco
 acompanha o resto do menu, que já é branco ali.
+
+## Números em rolagem contínua
+
+A faixa de estatísticas virou um marquee, no modelo do `LogosCarousel` —
+convertido de React + Tailwind para CSS puro, já que a entrega é HTML único.
+
+**Como o laço fica sem emenda:** os quatro cartões são duplicados no HTML e a
+faixa anda de `translateX(0)` a `translateX(-50%)` em 38s, linear. Em -50% a
+cópia está exatamente onde a original começou, então o reinício não aparece.
+Medido: faixa de 2000px, deslocamento de 1000px, que é a largura dos quatro
+cartões originais.
+
+**Pontas esmaecidas** com `mask-image`, em vez de cortar os cartões a seco na
+borda do bloco.
+
+**Acessibilidade:**
+
+- A cópia leva `aria-hidden="true"` — sem isso o leitor de tela anuncia os
+  quatro números duas vezes.
+- Pausa no `:hover` e no `:focus-within`, via `animation-play-state`.
+- Sob `prefers-reduced-motion` não há movimento nenhum: a regra global do site
+  zeraria a duração e a faixa saltaria direto para o fim, então há uma regra
+  própria que desliga a animação, esconde a cópia e devolve os quatro cartões
+  centralizados e estáticos.
+
+**Observação:** com apenas quatro itens, em tela larga todos cabem de uma vez —
+ali o movimento é decorativo, não funcional. O carrossel de logos original
+existe porque há dezesseis logos e eles não cabem. Se incomodar no desktop, dá
+para rodar só abaixo de 768px, onde os quatro realmente não cabem lado a lado.
