@@ -306,9 +306,15 @@
         align-items: center;
       }
 
+      /* Duas camadas de movimento, separadas de proposito:
+         o contentor faz o parallax (JS escreve --parallax) e a imagem faz o
+         zoom lento. Se fossem o mesmo elemento, um transform sobrescreveria o outro. */
       .hero-media {
         position: absolute;
         inset: 0;
+        overflow: hidden;
+        transform: translate3d(0, var(--parallax, 0px), 0);
+        will-change: transform;
       }
 
       .hero-media img {
@@ -316,6 +322,16 @@
         height: 100%;
         object-fit: cover;
         filter: brightness(0.68) saturate(0.85) contrast(1.08);
+        /* comeca ja com folga de escala: o deslocamento nunca revela borda */
+        transform: scale(1.06);
+        transform-origin: 58% 45%;
+        animation: hero-zoom 28s ease-in-out infinite alternate;
+        will-change: transform;
+      }
+
+      @keyframes hero-zoom {
+        from { transform: scale(1.06) translate3d(0, 0, 0); }
+        to   { transform: scale(1.15) translate3d(-1.4%, -1.2%, 0); }
       }
 
       .hero::after {

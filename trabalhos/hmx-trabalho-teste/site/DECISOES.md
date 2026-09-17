@@ -266,3 +266,40 @@ Foi uma escolha explícita do dono do trabalho, não um tique gerado. O que a
 regra protege de fato — o alvo do clique se mexer debaixo do ponteiro — não
 acontece: o botão fica parado, só o ícone gira, e `transform` saiu da
 `transition` do botão. Sob `prefers-reduced-motion` a animação não roda.
+
+## Movimento no hero
+
+A foto deixou de ser estática. São **duas camadas separadas**, de propósito —
+se estivessem no mesmo elemento, um `transform` sobrescreveria o outro:
+
+| Camada | Elemento | O que faz |
+|---|---|---|
+| Zoom | `.hero-media img` | `scale` de 1.06 a 1.15 em 28s, `ease-in-out`, `alternate` |
+| Parallax | `.hero-media` | sobe a 28% da velocidade do scroll |
+
+O JS escreve `--parallax` na custom property e o CSS consome. O zoom é CSS puro,
+sem JS nenhum.
+
+**Por que não revela borda:** com fator positivo, a faixa descoberta no topo
+fica sempre acima da janela. No scroll `y`, a borda superior da foto está em
+`-0,72y` na tela e a do hero em `-y`; a diferença é sempre negativa, ou seja,
+fora de vista.
+
+**Detalhes de implementação:**
+
+- A imagem já parte de `scale(1.06)`, para o deslocamento do zoom nunca puxar
+  borda para dentro do quadro.
+- `transform-origin: 58% 45%` centra o zoom no letreiro do hotel, não no meio
+  geométrico da foto.
+- O scroll usa `requestAnimationFrame` com trava, e só escreve no DOM quando o
+  valor arredondado muda — sem escrita por evento de scroll.
+- Sob `prefers-reduced-motion` nada roda: o zoom é desligado pelo bloqueio
+  global de animação e o parallax nem chega a registrar o listener. Se o
+  visitante mudar a preferência com a página aberta, o listener é removido e a
+  foto volta ao lugar.
+
+**O que não foi verificado aqui:** o movimento em si. O Chrome pausa animação e
+`requestAnimationFrame` em aba oculta, e a janela de teste estava atrás. Foi
+confirmado que a custom property move o contentor, que as duas camadas não se
+sobrescrevem e que o cálculo do deslocamento está certo — mas ver a foto se
+mexendo depende de abrir na tela.

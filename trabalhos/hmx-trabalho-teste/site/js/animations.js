@@ -13,6 +13,48 @@ if (siteHeader) {
   window.addEventListener('scroll', syncHeader, { passive: true });
 }
 
+/* ---------- Parallax do hero ----------
+   A foto sobe mais devagar que o texto enquanto a pagina rola.
+   Escreve numa custom property para nao brigar com o zoom, que e outra camada. */
+const heroMedia = document.querySelector(".hero-media");
+const heroSection = document.querySelector(".hero");
+
+if (heroMedia && heroSection && !prefersReducedMotion.matches) {
+  const FATOR = 0.28;          // quanto a foto fica para tras do scroll
+  let ticking = false;
+  let ultimoValor = -1;
+
+  const aplicar = () => {
+    ticking = false;
+    const y = window.scrollY;
+    const altura = heroSection.offsetHeight;
+    if (y > altura) return;                       // hero ja saiu da tela
+    const deslocamento = Math.round(y * FATOR);
+    if (deslocamento === ultimoValor) return;     // nada mudou, nao escreve
+    ultimoValor = deslocamento;
+    heroMedia.style.setProperty("--parallax", deslocamento + "px");
+  };
+
+  const aoRolar = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(aplicar);
+    }
+  };
+
+  window.addEventListener("scroll", aoRolar, { passive: true });
+  window.addEventListener("resize", aoRolar, { passive: true });
+  aplicar();
+
+  // se o visitante passar a pedir menos movimento, devolve tudo ao lugar
+  prefersReducedMotion.addEventListener("change", (e) => {
+    if (e.matches) {
+      window.removeEventListener("scroll", aoRolar);
+      heroMedia.style.setProperty("--parallax", "0px");
+    }
+  });
+}
+
 /* ---------- Menu mobile ---------- */
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
