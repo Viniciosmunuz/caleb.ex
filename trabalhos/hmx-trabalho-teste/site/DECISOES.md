@@ -496,3 +496,23 @@ Nenhum dos dois estica: o retrato sai de uma faixa vertical do original
 Vale um recorte por orientação em vez de deixar o `object-fit: cover` resolver:
 no celular, o `cover` sobre a versão paisagem mostraria só 26% da largura da
 foto e ainda baixaria a imagem inteira.
+
+## Dois papéis de botão "Reservar Agora"
+
+O botão do cabeçalho e os do corpo tinham exatamente a mesma aparência, e isso
+fazia dois deles aparecerem laranja sólido na mesma tela, competindo entre si.
+
+| | Cabeçalho | Corpo (hero, acomodações, formulário) |
+|---|---|---|
+| Altura | 38px | 44px |
+| Ícone | nenhum | calendário que balança no hover |
+| Sobre a foto | contorno branco, fundo transparente | laranja sólido |
+| Após rolar | laranja sólido | laranja sólido |
+
+O raciocínio: o do cabeçalho **fica sempre à vista**, então não precisa gritar
+— basta estar disponível. Os do corpo aparecem uma vez cada, no momento em que
+a pessoa acabou de ler o argumento, e aí sim têm de puxar o olho.
+
+O contorno enquanto o cabeçalho está transparente resolve de quebra a
+legibilidade: laranja sólido sobre foto clara fica pesado, e o contorno branco
+acompanha o resto do menu, que já é branco ali.
