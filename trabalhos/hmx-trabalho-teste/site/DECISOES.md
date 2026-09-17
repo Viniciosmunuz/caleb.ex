@@ -802,3 +802,155 @@ fica pesado.
 coluna, e o flex **encolhia a imagem** para igualar as alturas — `aspect-ratio`
 perde para `flex-shrink`. Resolvido com `flex-shrink: 0` na foto. Medido depois:
 proporção 1,50, altura 314px, e os quatro cartões continuam da mesma altura.
+
+---
+
+## Refinamento de design, galeria das cachoeiras e revisão de SEO/acessibilidade
+
+Rodada pedida com uma regra explícita: **melhorar o design, não mudar a
+comunicação do proprietário**. Nada de hero trocado, nada de seção fora de
+lugar, nada de conteúdo apagado. Tudo abaixo respeita isso — o único texto novo
+é a linha de créditos das fotos, que é obrigação de licença, não marketing.
+
+### Barra de navegação: o bug e o vidro
+
+A barra tinha `rgba(255,255,255,.45)` com `blur(26px) saturate(180%)`. Isso não
+é vidro fosco: com 45% de véu e saturação em 180%, a barra **repetia as cores da
+foto em borrão** em vez de filtrar. E o texto do menu, no azul `#003c96`, ficava
+ilegível sobre as partes claras da imagem — tanto que havia um
+`text-shadow: 0 1px 2px rgba(255,255,255,.75)` ali só para tentar salvar a
+leitura. Sombra branca em texto escuro é muleta de contraste ruim, não acabamento.
+
+Medido antes: o menu sobre a parte laranja da foto dava **menos de 3:1**.
+
+A solução não foi engrossar o véu — foi **fazer a cor do texto seguir o que está
+atrás**. O `animations.js` já sabia quando a barra tinha rolado; passou a saber
+também quando ela ainda está por cima do hero:
+
+```js
+const limite = hero.offsetHeight - siteHeader.offsetHeight - 20;
+siteHeader.classList.toggle('esta-no-hero', y < limite);
+```
+
+Com isso dá para deixar o vidro muito mais fino do que seria possível com uma
+cor fixa:
+
+| | Sobre o hero (foto escura) | Sobre o corpo (seções claras) |
+|---|---|---|
+| Véu branco | **14%** | 40% |
+| Texto do menu | branco | `--color-dark` |
+| Desfoque | 28px | 28px |
+| Saturação | 110% | 110% |
+| Contraste medido (pior caso) | **4,60:1** | **6,15:1** |
+
+O pior caso sobre o hero é o menu em cima da parte mais clara do céu; sobre o
+corpo é a barra passando por cima de uma foto de quarto. Nas seções brancas e
+creme, que são a maioria, dá 15:1.
+
+O `saturate` caiu de 180% para 110% porque era ele que fazia a barra virar
+mancha colorida: 180% amplifica a cor da foto atrás em vez de neutralizá-la.
+Quem faz o efeito de vidro é o desfoque, não a tinta.
+
+Sem suporte a `backdrop-filter` os dois estados caem para branco a 96% e o texto
+volta ao escuro — senão o menu branco ficaria sobre fundo branco.
+
+### Menu e logo maiores
+
+A pedido: logo de 36px para **44px**, menu de 14,4px para **16px** peso 600, e o
+botão do cabeçalho de 13,6px para 14,7px. A barra cresceu junto (70→82px no
+topo, 58→66px na pílula) para a logo não encostar nas bordas.
+
+**Isso quebrou a faixa de 769–979px:** com os links em 16px, os seis não cabiam
+mais na barra — a logo era cortada e "Reservar Agora" quebrava em duas linhas.
+O corte do menu mobile subiu de 768 para **980px**: nessa faixa a navegação
+passa a ser o botão de menu e a gaveta, que é o comportamento certo em tablet
+de qualquer forma.
+
+### Galeria das cachoeiras
+
+A seção Destino listava três atrações com **ícone genérico e nenhuma foto** —
+o nome da cachoeira sem a cachoeira. Agora cada uma é um cartão-foto com o nome
+e o endereço escritos por cima da imagem, e a descrição do cliente logo abaixo,
+no branco, onde se lê sem disputar com a foto.
+
+| Atração | Localização | Foto |
+|---|---|---|
+| Cachoeira do Santuário | Rodovia AM-240 (estrada de Balbina), km 12 | MTur Destinos — domínio público |
+| Cachoeira da Iracema | Rodovia BR-174, km 998 · a 8 km do centro | MTur Destinos — domínio público |
+| Caverna Refúgio do Maruaga | Rodovia AM-240 (estrada de Balbina), km 6 | Fabricio Ferreira Silva — CC BY-SA 3.0 |
+
+As fotos vieram do Wikimedia Commons, recortadas em 4:3 e servidas em 480w e
+900w. Duas são de domínio público (Ministério do Turismo); a terceira é CC BY-SA
+e por isso há uma linha de crédito discreta no fim da galeria. **É crédito de
+licença, não enfeite: sem ele o uso comercial da foto fica irregular.**
+
+A galeria é separada da galeria do hotel, que continua na seção seguinte com o
+carrossel das fotos do estabelecimento.
+
+O véu sobre a foto é `rgba(0,20,43,.74)` só na base. No pior caso — nome branco
+sobre a parte mais clara de uma cachoeira — dá **7,4:1**.
+
+**Texto do cliente que estava perdido:** o site dele tem a chamada
+*"Descubra a Terra das Cachoeiras."* como título da seção, e aqui o H2 era
+"Explore o Destino", que só repetia o eyebrow. O título do cliente voltou como
+H2 e "Explore o Destino" virou o eyebrow — as duas frases dele continuam na
+página, e o H2 passou a ter as palavras que alguém buscaria.
+
+### Contraste do laranja
+
+`#e5670a` com texto branco dá **3,35:1** — abaixo do mínimo de 4,5:1. Isso valia
+para *todos* os botões principais: "Reservar Agora", "Verificar Disponibilidade",
+"Abrir no Google Maps", "Solicitar reserva".
+
+`--color-cta` foi para **`#c25400`** (4,60:1) e o hover para `#9c4300`. Continua
+o laranja da marca, um degrau mais fundo — e um laranja mais fechado lê como
+mais caro, não menos. Como o mesmo token pinta o texto dos botões minimalistas
+(`Reservar agora` nos cartões de quarto), uma troca resolveu os dois casos.
+
+### Bugs encontrados na revisão
+
+**O formulário oferecia quartos que não existem mais.** O `<select>` de tipo de
+quarto ainda dizia *Standard*, *Triple Room* e *Casal* — os nomes antigos, em
+inglês — e não tinha o Solteiro. Quem preenchesse mandava para o WhatsApp um
+quarto que a seção de acomodações não mostra. Agora são os quatro nomes reais.
+
+**O selo "10+ anos de experiência" estava escondido do leitor de tela.** Tinha
+`aria-hidden="true"`, como se fosse enfeite, mas é informação do cliente —
+está na lista de números do site dele. E o rótulo em `0.6rem` dava **9,6px**,
+pequeno demais para qualquer leitura. Passou para 0,72rem, com o círculo de
+104 para 118px para caber.
+
+**A faixa de números ficava em quatro colunas no celular.** Havia regra de duas
+colunas entre 450 e 768px, mas nada abaixo de 450 — então em tela de 375px
+valiam as quatro colunas do desktop, com 78px cada: "2.500+" aparecia como
+".500" e "Premium" como "emiu". Agora são duas colunas abaixo de 450px.
+
+**Espaço duplo no bloco de título.** `.head-block` é flex com `gap: 16px` e o
+`.eyebrow` tinha `margin-bottom: 12px` — as duas distâncias somavam. A margem
+foi zerada dentro dos blocos que usam gap, e a distância do título para o
+conteúdo subiu de 36 para 48px, que é a proporção certa contra os ~96px de
+respiro da seção.
+
+**Respiro fixo em 96px sufocava o celular.** Virou `clamp(64px, 7.5vw, 104px)`:
+64px em tela pequena, 104px em tela larga.
+
+**O link da logo não dizia para onde vai.** O único conteúdo era a imagem com
+`alt="Hotel Calleb"`, o que não informa o destino. Agora o link tem
+`aria-label="Hotel Calleb — ir para o início da página"` e o `alt` da imagem
+ficou vazio, para o nome não ser anunciado duas vezes. De quebra, o `sizes` da
+logo estava em `220px` enquanto ela renderiza com 80px de largura.
+
+### Verificação
+
+Varredura na página inteira depois das mudanças:
+
+- contraste abaixo do mínimo: **0 ocorrências**
+- texto abaixo de 11,5px: **0 ocorrências**
+- imagem sem `alt`: **0**
+- imagem quebrada: **0**
+- rolagem horizontal em 375px, 790px e 1280px: **0**
+- hierarquia de títulos: um H1, H2 por seção, H3 dentro — sem degrau pulado
+- cartões de quarto e de cachoeira: alturas iguais dentro de cada grade
+
+Conferido no desktop (1280px), no tablet (790px) e no celular (375px), com a
+gaveta de menu aberta e fechada.

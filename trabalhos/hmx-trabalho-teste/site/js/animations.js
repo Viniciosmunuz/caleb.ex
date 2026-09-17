@@ -6,11 +6,22 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 const siteHeader = document.querySelector('.site-header');
 
 if (siteHeader) {
+  const hero = document.querySelector('.hero');
+
+  /* Duas coisas de uma vez:
+     - is-scrolled: a barra vira pilula de vidro depois dos primeiros 40px;
+     - esta-no-hero: enquanto a pilula estiver por cima da foto do hero, o
+       menu fica branco e o vidro fica quase invisivel. Sem isto a pelicula
+       teria de ser opaca para o texto escuro ler sobre a foto. */
   const syncHeader = () => {
-    siteHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+    const y = window.scrollY;
+    siteHeader.classList.toggle('is-scrolled', y > 40);
+    const limite = hero ? hero.offsetHeight - siteHeader.offsetHeight - 20 : 0;
+    siteHeader.classList.toggle('esta-no-hero', y < limite);
   };
   syncHeader();
   window.addEventListener('scroll', syncHeader, { passive: true });
+  window.addEventListener('resize', syncHeader, { passive: true });
 }
 
 /* ---------- Parallax do hero ----------

@@ -36,8 +36,8 @@
         --color-primary: var(--color-brand-blue);
         --color-primary-hover: var(--color-brand-blue-deep);
         --color-amber: var(--color-brand-orange);
-        --color-cta: #e5670a;
-        --color-cta-hover: #b85200;
+        --color-cta: #c25400;
+        --color-cta-hover: #9c4300;
         /* laranja escurecido para texto pequeno sobre fundo claro (contraste AA) */
         --color-orange-ink: #b34700;
         --color-icon-bg: #ffe8d1;
@@ -75,7 +75,7 @@
       }
 
       section[id] {
-        scroll-margin-top: 84px;
+        scroll-margin-top: 96px;
       }
 
       body {
@@ -266,9 +266,10 @@
          precisa gritar. Menor, sem ícone, e contornado enquanto está sobre a
          foto — só vira laranja sólido depois que a página rola e ganha fundo. */
       .header-cta {
-        min-height: 40px;
-        padding: 8px 18px;
-        font-size: 0.85rem;
+        min-height: 44px;
+        padding: 9px 20px;
+        font-size: 0.92rem;
+        white-space: nowrap;
         border-radius: 999px;
         border: none;
         gap: 7px;
@@ -318,9 +319,9 @@
         gap: 2px;
         padding: 12px;
         border-radius: 20px;
-        background: rgba(255, 255, 255, 0.86);
-        -webkit-backdrop-filter: blur(26px) saturate(180%);
-        backdrop-filter: blur(26px) saturate(180%);
+        background: rgba(255, 255, 255, 0.88);
+        -webkit-backdrop-filter: blur(18px) saturate(115%);
+        backdrop-filter: blur(18px) saturate(115%);
         border: 1px solid rgba(255, 255, 255, 0.6);
         box-shadow: 0 10px 34px rgba(0, 35, 72, 0.16);
         opacity: 0;
@@ -369,18 +370,22 @@
 
       /* sobre a pílula de vidro, texto escuro com halo para firmar a leitura */
       .is-scrolled .main-nav {
-        color: var(--color-heading);
+        color: var(--color-dark);
       }
 
       .is-scrolled .main-nav a,
       .is-scrolled .brand {
-        font-weight: 500;
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
+        font-weight: 600;
       }
 
       @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-        .is-scrolled .nav-row {
-          background: rgba(255, 255, 255, 0.94);
+        .is-scrolled .nav-row,
+        .is-scrolled.esta-no-hero .nav-row {
+          background: rgba(255, 255, 255, 0.96);
+        }
+
+        .is-scrolled.esta-no-hero .main-nav {
+          color: var(--color-dark);
         }
       }
 
@@ -388,8 +393,9 @@
       .main-nav {
         display: flex;
         align-items: center;
-        gap: 24px;
-        font-size: 0.9rem;
+        gap: 26px;
+        font-size: 1rem;
+        font-weight: 500;
       }
 
       .main-nav a {
@@ -420,7 +426,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        min-height: 70px;
+        min-height: 82px;
         padding: 0;
         border-radius: 0;
         background: transparent;
@@ -432,14 +438,34 @@
 
       /* a pílula de vidro é este estado */
       .is-scrolled .nav-row {
-        min-height: 58px;
-        padding: 0 10px 0 20px;
+        min-height: 66px;
+        padding: 0 12px 0 22px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.45);
-        -webkit-backdrop-filter: blur(26px) saturate(180%);
-        backdrop-filter: blur(26px) saturate(180%);
-        border-color: rgba(255, 255, 255, 0.55);
-        box-shadow: 0 6px 26px rgba(0, 35, 72, 0.14);
+        /* Vidro quase invisivel: quem faz o efeito e o desfoque, nao a tinta.
+           So da para deixar a pelicula tao fina porque o texto muda de cor
+           conforme o que esta atras (ver .esta-no-hero abaixo) â com uma cor
+           fixa, ou a barra fica opaca ou o menu some. */
+        background: rgba(255, 255, 255, 0.4);
+        -webkit-backdrop-filter: blur(28px) saturate(110%);
+        backdrop-filter: blur(28px) saturate(110%);
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 6px 26px rgba(0, 35, 72, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      }
+
+      /* ---- Pilula sobre a foto do hero ----
+         Fundo escuro atras: o menu vira branco e a pelicula cai para 14%,
+         quase so o desfoque. Pior caso medido (menu sobre a parte mais clara
+         do ceu) da 4.6:1, dentro do minimo de leitura. */
+      .is-scrolled.esta-no-hero .nav-row {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.34);
+        box-shadow: 0 6px 26px rgba(0, 20, 43, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      }
+
+      .is-scrolled.esta-no-hero .main-nav {
+        color: #ffffff;
       }
 
       .brand {
@@ -448,7 +474,7 @@
       }
 
       .brand img {
-        height: 36px;
+        height: 44px;
         width: auto;
       }
 
@@ -687,7 +713,7 @@
       }
 
       .section-pad {
-        padding: 96px 0;
+        padding: clamp(64px, 7.5vw, 104px) 0;
       }
 
       .feature-collection {
@@ -838,8 +864,8 @@
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        width: 104px;
-        height: 104px;
+        width: 118px;
+        height: 118px;
         border-radius: 50%;
         background: var(--color-cta);
         color: #ffffff;
@@ -860,10 +886,11 @@
       }
 
       .about-selo span {
-        font-size: 0.6rem;
-        letter-spacing: 0.06em;
+        /* 0.6rem davam 9.6px: pequeno demais para qualquer leitura */
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
-        max-width: 72px;
+        max-width: 88px;
       }
 
       /* lista de diferenciais */
@@ -1127,13 +1154,135 @@
         color: var(--color-text);
       }
 
+      /* ---- Galeria das cachoeiras ----
+         Antes esta parte eram tres cartoes de icone: o nome da cachoeira sem
+         a cachoeira. Aqui a foto e o cartao, com o nome e o endereco escritos
+         por cima, como legenda de guia de viagem. A descricao do cliente
+         continua logo abaixo, no branco, onde se le sem disputar com a foto.
+         E galeria a parte da galeria do hotel, que fica na secao seguinte. */
+      .cachoeiras-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 32px;
+      }
+
+      .cachoeira-card {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        box-shadow: var(--sh-md);
+      }
+
+      .cachoeira-foto {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        /* o cartao e flex em coluna: sem isto o flex encolhe a foto para
+           igualar as alturas e a proporcao declarada nao vale nada */
+        flex-shrink: 0;
+      }
+
+      .cachoeira-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* veu so na base: o nome precisa de fundo, a cachoeira nao */
+      .cachoeira-foto::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 62%;
+        background: linear-gradient(180deg, rgba(0, 20, 43, 0), rgba(0, 20, 43, 0.74));
+        pointer-events: none;
+      }
+
+      .cachoeira-legenda {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 18px 20px 16px;
+      }
+
+      .cachoeira-legenda h3 {
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+      }
+
+      .cachoeira-local {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 7px;
+        font-size: 0.78rem;
+        line-height: 1.45;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .cachoeira-local svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        opacity: 0.85;
+      }
+
+      .cachoeira-desc {
+        padding: 18px 20px 20px;
+        color: var(--color-text);
+        font-size: 0.95rem;
+      }
+
+      .cachoeiras-credito {
+        margin-top: 18px;
+        max-width: 680px;
+        font-size: 0.74rem;
+        line-height: 1.6;
+        color: rgba(43, 61, 85, 0.72);
+      }
+
+      .cachoeiras-credito a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      @media (max-width: 980px) {
+        .cachoeiras-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .cachoeiras-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+
 
       .head-block {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 36px;
+        gap: 14px;
+        margin-bottom: 48px;
+      }
+
+      /* dentro de um flex com gap a margem do eyebrow soma e vira espaco duplo */
+      .head-block > .eyebrow,
+      .story-copy > .eyebrow,
+      .contact-details > .eyebrow {
+        margin-bottom: 0;
       }
 
       .head-block p {
@@ -1656,6 +1805,15 @@
       }
 
       @media (max-width: 449px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 20px 12px;
+        }
+
+        .stats {
+          padding: 40px 0;
+        }
+
         .gallery-shell {
           grid-template-columns: 1fr;
         }
@@ -1691,7 +1849,7 @@
         }
 
         .nav-row {
-          min-height: 64px;
+          min-height: 72px;
         }
 
         .header-cta {
@@ -1771,9 +1929,11 @@
         }
       }
 
-      /* Até 768px a navegação é o botão de menu mais a gaveta; acima disso são
-         os links na barra, e nem o botão nem a gaveta existem. */
-      @media (max-width: 768px) {
+      /* Até 979px a navegação é o botão de menu mais a gaveta; acima disso são
+         os links na barra, e nem o botão nem a gaveta existem. O corte subiu de
+         768 para 980: com o menu maior os seis links deixaram de caber na
+         barra em tela de tablet — a logo era cortada e o botão quebrava. */
+      @media (max-width: 979px) {
         .main-nav {
           display: none;
         }
@@ -1783,7 +1943,7 @@
         }
       }
 
-      @media (min-width: 769px) {
+      @media (min-width: 980px) {
         .mobile-nav {
           display: none !important;
         }
@@ -1838,8 +1998,8 @@
   <body>
     <header class="site-header">
       <div class="container nav-row">
-        <a class="brand" href="#hero">
-          <img src="./images/logo-440.png" srcset="./images/logo-440.png 440w, ./images/logo-880.png 880w" sizes="220px" alt="Hotel Calleb" width="440" height="241" />
+        <a class="brand" href="#hero" aria-label="Hotel Calleb — ir para o início da página">
+          <img src="./images/logo-440.png" srcset="./images/logo-440.png 440w, ./images/logo-880.png 880w" sizes="80px" alt="" width="440" height="241" />
         </a>
         <nav class="main-nav" aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
@@ -2052,7 +2212,7 @@
             <figure class="mos mos-d">
               <img src="./images/sobre-salao.jpg" width="620" height="760" alt="Salão de refeições do hotel com mesas postas" loading="lazy" decoding="async" />
             </figure>
-            <div class="about-selo" aria-hidden="true">
+            <div class="about-selo">
               <strong>10+</strong>
               <span>Anos de experiência</span>
             </div>
@@ -2246,8 +2406,8 @@
       <section id="destino" data-section="destino" class="section-pad reveal" style="background: var(--color-surface);">
         <div class="container">
           <div class="head-block">
-            <div class="eyebrow">Destino</div>
-            <h2>Explore o Destino</h2>
+            <div class="eyebrow">Explore o Destino</div>
+            <h2>Descubra a Terra das Cachoeiras.</h2>
             <p>Presidente Figueiredo esconde segredos milenares. O Hotel Calleb é sua base estratégica para vivenciar o melhor do turismo amazônico.</p>
           </div>
 
@@ -2271,31 +2431,84 @@
             </div>
           </div>
 
-          <div class="card-grid three" style="margin-top: 32px;">
-            <article class="feature-card">
-              <div class="mini-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L20 8V16L12 22L4 16V8L12 2Z" stroke="currentColor" stroke-width="1.7"/></svg>
+          <div class="cachoeiras-grid">
+            <article class="cachoeira-card">
+              <div class="cachoeira-foto">
+                <img
+                  src="./images/cachoeira-santuario-900.jpg"
+                  srcset="./images/cachoeira-santuario-480.jpg 480w, ./images/cachoeira-santuario-900.jpg 900w"
+                  sizes="(max-width: 560px) 92vw, (max-width: 980px) 46vw, 400px"
+                  width="900"
+                  height="675"
+                  alt="Quedas d'água da Cachoeira do Santuário, com a imagem de Santa Clara abrigada na rocha"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cachoeira-legenda">
+                  <h3>Cachoeira do Santuário</h3>
+                  <p class="cachoeira-local">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-10.1a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10.7" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+                    Rodovia AM-240 (estrada de Balbina), km 12
+                  </p>
+                </div>
               </div>
-              <h3>Cachoeira do Santuário</h3>
-              <p>Uma das mais famosas, com infraestrutura completa e reserva ecológica.</p>
+              <p class="cachoeira-desc">Uma das mais famosas, com infraestrutura completa e reserva ecológica.</p>
             </article>
 
-            <article class="feature-card">
-              <div class="mini-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <article class="cachoeira-card">
+              <div class="cachoeira-foto">
+                <img
+                  src="./images/cachoeira-iracema-900.jpg"
+                  srcset="./images/cachoeira-iracema-480.jpg 480w, ./images/cachoeira-iracema-900.jpg 900w"
+                  sizes="(max-width: 560px) 92vw, (max-width: 980px) 46vw, 400px"
+                  width="900"
+                  height="675"
+                  alt="Queda larga da Cachoeira da Iracema sobre os paredões de arenito, vista do leito do rio"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cachoeira-legenda">
+                  <h3>Cachoeira da Iracema</h3>
+                  <p class="cachoeira-local">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-10.1a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10.7" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+                    Rodovia BR-174, km 998 · a 8 km do centro
+                  </p>
+                </div>
               </div>
-              <h3>Cachoeira da Iracema</h3>
-              <p>Cenário cinematográfico com grutas e paredões de arenito impressionantes.</p>
+              <p class="cachoeira-desc">Cenário cinematográfico com grutas e paredões de arenito impressionantes.</p>
             </article>
 
-            <article class="feature-card">
-              <div class="mini-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 18L12 4L18 18H6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <article class="cachoeira-card">
+              <div class="cachoeira-foto">
+                <img
+                  src="./images/caverna-maroaga-900.jpg"
+                  srcset="./images/caverna-maroaga-480.jpg 480w, ./images/caverna-maroaga-900.jpg 900w"
+                  sizes="(max-width: 560px) 92vw, (max-width: 980px) 46vw, 400px"
+                  width="900"
+                  height="675"
+                  alt="Vista de dentro da Caverna do Maroaga, com a floresta e a queda d'água emoldurada pela boca da gruta"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cachoeira-legenda">
+                  <h3>Caverna Refúgio do Maruaga</h3>
+                  <p class="cachoeira-local">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-10.1a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10.7" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+                    Rodovia AM-240 (estrada de Balbina), km 6
+                  </p>
+                </div>
               </div>
-              <h3>Caverna Refúgio do Maruaga</h3>
-              <p>Trilha guiada por cavernas milenares envoltas pela densa selva amazônica.</p>
+              <p class="cachoeira-desc">Trilha guiada por cavernas milenares envoltas pela densa selva amazônica.</p>
             </article>
           </div>
+
+          <p class="cachoeiras-credito">
+            Fotos: Cachoeira do Santuário e Cachoeira da Iracema por MTur Destinos (domínio público);
+            Caverna do Maroaga por Fabricio Ferreira Silva
+            (<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt_BR" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>),
+            via Wikimedia Commons.
+          </p>
+
         </div>
       </section>
 
@@ -2432,9 +2645,10 @@
                 <div class="field">
                   <label for="quarto">Tipo de quarto</label>
                   <select id="quarto" name="quarto">
-                    <option>Standard</option>
-                    <option>Triple Room</option>
+                    <option>Padrão</option>
+                    <option>Quarto triplo</option>
                     <option>Casal</option>
+                    <option>Solteiro</option>
                   </select>
                 </div>
                 <div class="field full">
