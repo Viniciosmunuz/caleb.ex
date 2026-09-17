@@ -721,3 +721,44 @@ layout, e a transição fica lisa.
 
 A gaveta acompanha o novo visual: solta 10px abaixo da barra, canto de 20px e o
 mesmo vidro.
+
+## Acomodações refeitas
+
+### Dados alinhados ao site do cliente
+
+Faltava um quarto e dois nomes estavam em inglês:
+
+| | Antes | Agora |
+|---|---|---|
+| 1º | Standard — R$ 390 | **Padrão** — R$ 390 |
+| 2º | Triple Room — R$ 320 | **Quarto triplo** — R$ 320 |
+| 3º | Casal — R$ 280 | Casal — R$ 280 |
+| 4º | *não existia* | **Solteiro** — R$ 220 |
+
+Cada um ganhou capacidade, metragem e wi-fi, como no site deles.
+
+O eyebrow do site do cliente é "Delegações", que não descreve quartos — deve
+ser resquício de outra seção. Ficou "Acomodações", que é o que a seção mostra e
+o que o menu já chama.
+
+### O que mudou nos cartões
+
+- **Preço sobre a foto**, no canto inferior, em vez de pílula bege no corpo. É
+  a informação que a pessoa procura primeiro. Um véu escuro na base da imagem
+  garante contraste do número branco em qualquer foto — sem ele o preço some
+  em foto de parede clara.
+- **Linha de especificações** com ícone: pessoas, metragem, wi-fi, separada do
+  texto por um filete.
+- **Cartões da mesma altura**, com o corpo em coluna e o botão colado embaixo —
+  antes cada um terminava numa altura, conforme o tamanho do texto.
+- Grade de quatro colunas que vira duas abaixo de 1080px e uma abaixo de 560px.
+
+### Botão minimalista
+
+`Detalhes` virou **`Reservar agora`**: texto laranja com um filete que cresce da
+esquerda no hover. Quatro botões sólidos lado a lado brigariam entre si e com o
+cabeçalho.
+
+Cada um leva ao WhatsApp **com o nome do quarto já na mensagem** — quem clica no
+Solteiro abre a conversa dizendo que quer o Solteiro. "Detalhes" antes levava
+para a âncora de contato, sem dizer o que a pessoa estava vendo.

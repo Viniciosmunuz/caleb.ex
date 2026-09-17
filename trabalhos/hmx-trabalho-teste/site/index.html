@@ -927,6 +927,25 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
+      /* quatro cartões só cabem lado a lado em tela larga; abaixo disso a
+         grade se reorganiza em vez de espremer */
+      .card-grid.quatro {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      @media (max-width: 1080px) {
+        .card-grid.quatro {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .card-grid.quatro {
+          grid-template-columns: 1fr;
+        }
+      }
+
       .room-card,
       .feature-card,
       .gallery-card {
@@ -965,6 +984,10 @@
       }
 
       .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
         padding: 20px 20px 24px;
       }
 
@@ -974,21 +997,99 @@
         color: var(--color-heading);
       }
 
-      .room-price {
+      /* ---- Cartões de acomodação ----
+         O preço sai do corpo e vai para cima da foto: é a informação que a
+         pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
+      .room-preco {
+        position: absolute;
+        left: 14px;
+        bottom: 12px;
+        z-index: 1;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 4px;
+        color: #ffffff;
+        font-size: 0.82rem;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+      }
+
+      .room-preco strong {
+        font-family: var(--font-heading);
+        font-size: 1.45rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      /* véu na base da foto, para o preço branco ter contraste em qualquer
+         imagem — sem isso ele some em foto de parede clara */
+      .card-image::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 42%;
+        background: linear-gradient(180deg, transparent, rgba(0, 20, 43, 0.62));
+        pointer-events: none;
+      }
+
+      .room-specs {
+        list-style: none;
+        margin: 0 0 4px;
+        padding: 0 0 12px;
+        border-bottom: 1px solid var(--color-border);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .room-specs li {
         display: inline-flex;
         align-items: center;
-        margin: 10px 0 14px;
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: var(--color-icon-bg);
-        font-weight: 700;
-        font-size: 0.85rem;
+        gap: 5px;
+        font-size: 0.8rem;
+        color: var(--color-text);
+      }
+
+      .room-specs svg {
+        width: 15px;
+        height: 15px;
+        color: rgba(0, 35, 72, 0.45);
+      }
+
+      /* Botão minimalista: texto e uma linha que cresce no hover. Quatro
+         botões sólidos lado a lado brigariam entre si e com o cabeçalho. */
+      .room-cta {
+        align-self: flex-start;
+        margin-top: auto;
+        padding-top: 4px;
+        position: relative;
+        font-size: 0.88rem;
+        font-weight: 500;
         color: var(--color-cta);
+      }
+
+      .room-cta::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.28s ease-out;
+      }
+
+      .room-cta:hover::after,
+      .room-cta:focus-visible::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
       }
 
       .card-body p {
         color: var(--color-text);
       }
+
 
       .head-block {
         display: flex;
@@ -1954,49 +2055,76 @@
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Acomodações</div>
-            <h2>Descanse em suítes desenhadas para seu relaxamento.</h2>
+            <h2>Descanse em suítes projetadas para seu relaxamento.</h2>
             <p>Todos os nossos quartos contam com ar-condicionado silencioso, enxoval premium e café da manhã incluso.</p>
           </div>
-          <div class="card-grid three">
+
+          <div class="card-grid quatro">
             <article class="room-card">
               <div class="card-image">
-                <picture>
-                  <img src="./images/quarto-familia.jpg" width="1200" height="900" alt="Quarto padrão com cama de casal e beliche para até quatro pessoas" loading="lazy" decoding="async" />
-                </picture>
+                <img src="./images/quarto-familia.jpg" width="1200" height="900" alt="Quarto padrão com cama de casal e beliche" loading="lazy" decoding="async" />
+                <span class="room-preco"><strong>R$ 390</strong> /noite</span>
               </div>
               <div class="card-body">
-                <div class="room-price">R$ 390/noite</div>
-                <h3>Standard</h3>
+                <h3>Padrão</h3>
+                <ul class="room-specs">
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>4 pessoas</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
+                </ul>
                 <p>Quarto com capacidade para até 4 pessoas, com café da manhã.</p>
-                <a href="#contato" class="btn-arrow"><span class="lable">Detalhes</span><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="9" viewBox="0 0 46 16" aria-hidden="true"><path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path></svg></a>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
             </article>
 
             <article class="room-card">
               <div class="card-image">
-                <picture>
-                  <img src="./images/quarto-triplo.jpg" width="1200" height="900" alt="Suíte tripla com camas de solteiro e sofá para famílias e grupos" loading="lazy" decoding="async" />
-                </picture>
+                <img src="./images/quarto-triplo.jpg" width="1200" height="900" alt="Quarto triplo com camas de solteiro e beliche" loading="lazy" decoding="async" />
+                <span class="room-preco"><strong>R$ 320</strong> /noite</span>
               </div>
               <div class="card-body">
-                <div class="room-price">R$ 320/noite</div>
-                <h3>Triple Room</h3>
+                <h3>Quarto triplo</h3>
+                <ul class="room-specs">
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 pessoas</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
+                </ul>
                 <p>Quarto com capacidade para até 3 pessoas, com café da manhã.</p>
-                <a href="#contato" class="btn-arrow"><span class="lable">Detalhes</span><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="9" viewBox="0 0 46 16" aria-hidden="true"><path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path></svg></a>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
             </article>
 
             <article class="room-card">
               <div class="card-image">
-                <picture>
-                  <img src="./images/quarto-casal.jpg" width="1200" height="900" alt="Quarto casal com ambiente aconchegante para duas pessoas" loading="lazy" decoding="async" />
-                </picture>
+                <img src="./images/quarto-casal.jpg" width="1200" height="900" alt="Quarto de casal com cama box e escrivaninha" loading="lazy" decoding="async" />
+                <span class="room-preco"><strong>R$ 280</strong> /noite</span>
               </div>
               <div class="card-body">
-                <div class="room-price">R$ 280/noite</div>
                 <h3>Casal</h3>
+                <ul class="room-specs">
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>2 pessoas</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
+                </ul>
                 <p>Quarto com capacidade para até duas pessoas, com café da manhã.</p>
-                <a href="#contato" class="btn-arrow"><span class="lable">Detalhes</span><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="9" viewBox="0 0 46 16" aria-hidden="true"><path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path></svg></a>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <div class="card-image">
+                <img src="./images/quarto-solteiro.jpg" width="960" height="720" alt="Quarto individual com cama de solteiro e frigobar" loading="lazy" decoding="async" />
+                <span class="room-preco"><strong>R$ 220</strong> /noite</span>
+              </div>
+              <div class="card-body">
+                <h3>Solteiro</h3>
+                <ul class="room-specs">
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1 pessoa</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
+                </ul>
+                <p>Quarto individual para apenas um hóspede, com café da manhã.</p>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
             </article>
           </div>
