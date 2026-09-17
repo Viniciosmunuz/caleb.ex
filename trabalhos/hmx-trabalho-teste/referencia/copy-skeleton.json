@@ -1,0 +1,443 @@
+{
+  "v": 1,
+  "capturedAt": "2026-09-16T01:16:04.301Z",
+  "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+  "title": "Hotel Calleb",
+  "totals": {
+    "sections": 7,
+    "words": 265,
+    "ctas": 2,
+    "forms": 1
+  },
+  "arc": [
+    "hero",
+    "section",
+    "about",
+    "section",
+    "section",
+    "section",
+    "contact"
+  ],
+  "sections": [
+    {
+      "index": 1,
+      "role": "hero",
+      "label": "Conforto e Hospitalidade no Coração da Amazônia.",
+      "tag": "section",
+      "captureKey": "section-hero-19upbwn",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "",
+          "dataSection": "",
+          "classTokens": [
+            "relative",
+            "h-screen",
+            "flex",
+            "items-center"
+          ],
+          "heading": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "textHash": "1rdm1n8"
+        }
+      },
+      "shape": "duo",
+      "media": 6,
+      "slots": [],
+      "cards": {
+        "count": 2,
+        "parts": [
+          {
+            "part": "ícone",
+            "words": 0
+          }
+        ]
+      },
+      "form": null
+    },
+    {
+      "index": 2,
+      "role": "section",
+      "label": "2.500+",
+      "tag": "section",
+      "captureKey": "section-section-0nzvdlu",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "",
+          "dataSection": "",
+          "classTokens": [
+            "py-20",
+            "bg-primary-dark",
+            "overflow-hidden"
+          ],
+          "heading": "2.500+",
+          "textHash": "122362g"
+        }
+      },
+      "shape": "card-grid",
+      "media": 4,
+      "slots": [],
+      "cards": {
+        "count": 4,
+        "parts": [
+          {
+            "part": "ícone",
+            "words": 0
+          },
+          {
+            "part": "título",
+            "words": 1,
+            "sample": "2.500+"
+          },
+          {
+            "part": "texto",
+            "words": 2,
+            "sample": "Hóspedes Felizes"
+          }
+        ]
+      },
+      "form": null
+    },
+    {
+      "index": 3,
+      "role": "about",
+      "label": "Sua melhor escolha",
+      "tag": "section",
+      "captureKey": "section-about-0y1yv5v",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "sobre",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-white",
+            "overflow-hidden"
+          ],
+          "heading": "Sua melhor escolha",
+          "textHash": "16g6cbd"
+        }
+      },
+      "shape": "split",
+      "media": 8,
+      "slots": [
+        {
+          "role": "body",
+          "label": "parágrafo",
+          "count": 3,
+          "min": 1,
+          "max": 42,
+          "typical": 3,
+          "samples": [
+            "10+",
+            "Anos de experiência"
+          ]
+        },
+        {
+          "role": "heading",
+          "label": "título de seção",
+          "count": 2,
+          "min": 3,
+          "max": 12,
+          "typical": 12,
+          "samples": [
+            "Sua melhor escolha",
+            "A moda do Hotel Calleb no portão de entrada para a selva."
+          ]
+        },
+        {
+          "role": "cta",
+          "label": "CTA",
+          "count": 1,
+          "min": 3,
+          "max": 3,
+          "typical": 3,
+          "samples": [
+            "CONHEÇA NOSSA HISTÓRIA"
+          ]
+        }
+      ],
+      "cards": null,
+      "form": null
+    },
+    {
+      "index": 4,
+      "role": "section",
+      "label": "delegações",
+      "tag": "section",
+      "captureKey": "section-section-0wfp63r",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "quartos",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-bg-light",
+            "overflow-hidden"
+          ],
+          "heading": "delegações",
+          "textHash": "0u58esl"
+        }
+      },
+      "shape": "card-grid",
+      "media": 28,
+      "slots": [
+        {
+          "role": "heading",
+          "label": "título de seção",
+          "count": 2,
+          "min": 1,
+          "max": 7,
+          "typical": 7,
+          "samples": [
+            "delegações",
+            "Descanse em suítes projetadas para seu relaxamento."
+          ]
+        },
+        {
+          "role": "body",
+          "label": "parágrafo",
+          "count": 1,
+          "min": 15,
+          "max": 15,
+          "typical": 15,
+          "samples": [
+            "Todos os nossos quartos contam com ar-condicionado silencios"
+          ]
+        }
+      ],
+      "cards": {
+        "count": 3,
+        "parts": [
+          {
+            "part": "mídia",
+            "words": 0
+          },
+          {
+            "part": "título",
+            "words": 1,
+            "sample": "Padrão"
+          },
+          {
+            "part": "texto (2 parágrafos)",
+            "words": 14,
+            "sample": "R$ 390 /noite"
+          },
+          {
+            "part": "link/botão",
+            "words": 1,
+            "sample": "DETALHES"
+          }
+        ]
+      },
+      "form": null
+    },
+    {
+      "index": 5,
+      "role": "section",
+      "label": "Explore o Destino",
+      "tag": "section",
+      "captureKey": "section-section-1yv9rqr",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "turismo",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-white",
+            "overflow-hidden"
+          ],
+          "heading": "Explore o Destino",
+          "textHash": "1k6hwer"
+        }
+      },
+      "shape": "card-grid",
+      "media": 9,
+      "slots": [
+        {
+          "role": "heading",
+          "label": "título de seção",
+          "count": 2,
+          "min": 3,
+          "max": 6,
+          "typical": 6,
+          "samples": [
+            "Explore o Destino",
+            "Descubra a Terra das Cachoeiras ."
+          ]
+        },
+        {
+          "role": "body",
+          "label": "parágrafo",
+          "count": 1,
+          "min": 19,
+          "max": 19,
+          "typical": 19,
+          "samples": [
+            "Presidente Figueiredo esconde segredos milenares. O Hotel Ca"
+          ]
+        }
+      ],
+      "cards": {
+        "count": 3,
+        "parts": [
+          {
+            "part": "mídia",
+            "words": 0
+          },
+          {
+            "part": "título",
+            "words": 2,
+            "sample": "Cachoeira do"
+          },
+          {
+            "part": "texto",
+            "words": 10,
+            "sample": "Uma das mais famosas, com infraestrutura completa e reserva "
+          }
+        ]
+      },
+      "form": null
+    },
+    {
+      "index": 6,
+      "role": "section",
+      "label": "Galeria de Fotos",
+      "tag": "section",
+      "captureKey": "section-section-0gzoaid",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "galeria",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-bg-light",
+            "overflow-hidden"
+          ],
+          "heading": "Galeria de Fotos",
+          "textHash": "0ykty22"
+        }
+      },
+      "shape": "card-grid",
+      "media": 16,
+      "slots": [
+        {
+          "role": "heading",
+          "label": "título de seção",
+          "count": 2,
+          "min": 3,
+          "max": 3,
+          "typical": 3,
+          "samples": [
+            "Galeria de Fotos",
+            "Cada detalhe importa"
+          ]
+        }
+      ],
+      "cards": {
+        "count": 6,
+        "parts": [
+          {
+            "part": "mídia",
+            "words": 0
+          }
+        ]
+      },
+      "form": null
+    },
+    {
+      "index": 7,
+      "role": "contact",
+      "label": "Reserve sua estadia premium hoje.",
+      "tag": "section",
+      "captureKey": "section-contact-1okicd9",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-white",
+            "relative"
+          ],
+          "heading": "Reserve sua estadia premium hoje.",
+          "textHash": "040qv7w"
+        }
+      },
+      "shape": "split",
+      "media": 3,
+      "slots": [
+        {
+          "role": "heading",
+          "label": "título de seção",
+          "count": 2,
+          "min": 2,
+          "max": 5,
+          "typical": 5,
+          "samples": [
+            "Reserve sua estadia premium hoje.",
+            "Reserva Inteligente"
+          ]
+        },
+        {
+          "role": "body",
+          "label": "parágrafo",
+          "count": 5,
+          "min": 2,
+          "max": 17,
+          "typical": 4,
+          "samples": [
+            "Preencha os dados e entraremos em contato via WhatsApp para ",
+            "Confirmação Instantânea"
+          ]
+        },
+        {
+          "role": "form-label",
+          "label": "rótulo de campo",
+          "count": 6,
+          "min": 1,
+          "max": 3,
+          "typical": 1,
+          "samples": [
+            "Check-in",
+            "Confira"
+          ]
+        },
+        {
+          "role": "cta",
+          "label": "CTA",
+          "count": 1,
+          "min": 2,
+          "max": 2,
+          "typical": 2,
+          "samples": [
+            "Verificar disponibilidade"
+          ]
+        }
+      ],
+      "cards": null,
+      "form": {
+        "fields": 6,
+        "labels": [
+          "Check-in",
+          "Confira",
+          "Hóspedes",
+          "Nome Completo",
+          "E-mail",
+          "WhatsApp para contato"
+        ]
+      }
+    }
+  ]
+}

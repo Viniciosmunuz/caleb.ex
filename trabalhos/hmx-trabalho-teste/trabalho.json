@@ -1,0 +1,387 @@
+{
+  "v": 2,
+  "folderName": "hmx-trabalho-teste",
+  "projectName": "teste",
+  "pageType": "landing",
+  "pageTypeLabel": "Landing page",
+  "target": "html-unico",
+  "targetLabel": "HTML único",
+  "styleFolders": [
+    "hmx-style-hotelcalleb.com.br"
+  ],
+  "visualRecipe": {
+    "path": "referencia/receita-visual.json",
+    "base": "hmx-style-hotelcalleb.com.br",
+    "layers": {
+      "paleta": {
+        "source": "hmx-style-hotelcalleb.com.br",
+        "mode": "single-source",
+        "decisionState": "resolved",
+        "selection": {
+          "type": "reference",
+          "source": "hmx-style-hotelcalleb.com.br"
+        },
+        "resolution": {
+          "status": "resolved",
+          "roles": {
+            "bg": "#ffffff",
+            "surface": "#f5f5f5",
+            "text": "#003c96",
+            "muted": "#f97300",
+            "border": "oklch(0.967 0.003 264.542)",
+            "textHeading": "#003c96",
+            "accent": "#0047b3",
+            "primary": "#0047b3",
+            "primaryHover": "#002894"
+          }
+        },
+        "summary": "claro · 15 cores · acento #0047b3",
+        "evidence": "referencia/design-direction.json"
+      },
+      "tipografia": {
+        "source": "hmx-style-hotelcalleb.com.br",
+        "mode": "single-source",
+        "decisionState": "resolved",
+        "selection": {
+          "type": "composed",
+          "families": {
+            "primary": {
+              "family": "Georgia",
+              "sources": [
+                "hmx-style-hotelcalleb.com.br"
+              ],
+              "state": "suggested"
+            },
+            "secondary": {
+              "family": "Inter",
+              "sources": [
+                "hmx-style-hotelcalleb.com.br"
+              ],
+              "state": "suggested"
+            },
+            "tertiary": {
+              "family": null,
+              "sources": [],
+              "state": "suggested"
+            }
+          },
+          "scale": {
+            "type": "reference",
+            "source": "hmx-style-hotelcalleb.com.br",
+            "state": "suggested"
+          },
+          "mapping": {
+            "h1": "primary",
+            "h2": "primary",
+            "h3": "primary",
+            "h4": "primary",
+            "body": "secondary",
+            "blockquote": "primary"
+          }
+        },
+        "resolution": {
+          "status": "resolved",
+          "typography": {
+            "fontStacks": [
+              {
+                "family": "Inter",
+                "textWeight": 2944
+              },
+              {
+                "family": "Outfit",
+                "textWeight": 215
+              },
+              {
+                "family": "Georgia",
+                "textWeight": 151
+              }
+            ],
+            "googleFonts": [],
+            "fontStylesheets": [],
+            "scale": {
+              "h1": {
+                "sample": "Conforto e Hospitalidade no Coração da Amazônia.",
+                "family": "Georgia",
+                "size": "96px",
+                "weight": "300",
+                "lineHeight": "105.6px",
+                "letterSpacing": "-2.4px",
+                "transform": "",
+                "color": "#ffffff"
+              },
+              "h2": {
+                "sample": "A moda do Hotel Calleb no portão de entrada para a selva.",
+                "family": "Georgia",
+                "size": "60px",
+                "weight": "300",
+                "lineHeight": "75px",
+                "letterSpacing": "",
+                "transform": "",
+                "color": "#003c96"
+              },
+              "h3": {
+                "sample": "2.500+",
+                "family": "Outfit",
+                "size": "30px",
+                "weight": "700",
+                "lineHeight": "36px",
+                "letterSpacing": "",
+                "transform": "",
+                "color": "#ffffff"
+              },
+              "h4": {
+                "sample": "Sua melhor escolha",
+                "family": "Inter",
+                "size": "12px",
+                "weight": "700",
+                "lineHeight": "16px",
+                "letterSpacing": "2.4px",
+                "transform": "uppercase",
+                "color": "#f97300"
+              },
+              "body": {
+                "family": "Inter",
+                "size": "14px",
+                "weight": "700",
+                "lineHeight": "20px",
+                "color": "#ffffff"
+              },
+              "blockquote": null
+            }
+          }
+        },
+        "summary": "Georgia + Inter · 6.86×",
+        "evidence": "referencia/design-direction.json"
+      },
+      "espaçamento": {
+        "source": "hmx-style-hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "seção 96 · gaps 4/8/16",
+        "evidence": "referencia/design-direction.json"
+      },
+      "forma": {
+        "source": "hmx-style-hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "raios 3.35544e+07px/24px/12px",
+        "evidence": "referencia/design-direction.json"
+      },
+      "movimento": {
+        "source": "hmx-style-hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "31 hovers · 5 invisíveleis após scroll",
+        "evidence": "referencia/animations.json"
+      }
+    },
+    "sections": [
+      {
+        "index": 1,
+        "role": "hero",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 1,
+        "sourceSectionKey": "section-hero-19upbwn",
+        "mode": "single-source",
+        "shape": "duo: 2 × [ícone]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/01-conforto-e-hospitalidade-no--p01.png",
+              "referencia/screenshots/sections/01-conforto-e-hospitalidade-no--p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 2,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 2,
+        "sourceSectionKey": "section-section-0nzvdlu",
+        "mode": "single-source",
+        "shape": "card-grid: 4 × [ícone+título+texto]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/02-2-500.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 3,
+        "role": "about",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 3,
+        "sourceSectionKey": "section-about-0y1yv5v",
+        "mode": "single-source",
+        "shape": "split",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/03-sua-melhor-escolha-p01.png",
+              "referencia/screenshots/sections/03-sua-melhor-escolha-p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 4,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 4,
+        "sourceSectionKey": "section-section-0wfp63r",
+        "mode": "single-source",
+        "shape": "card-grid: 3 × [mídia+título+texto (2 parágrafos)+link/botão]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/04-delegacoes-p01.png",
+              "referencia/screenshots/sections/04-delegacoes-p02.png",
+              "referencia/screenshots/sections/04-delegacoes-p03.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 5,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 5,
+        "sourceSectionKey": "section-section-1yv9rqr",
+        "mode": "single-source",
+        "shape": "card-grid: 3 × [mídia+título+texto]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/05-explore-o-destino-p01.png",
+              "referencia/screenshots/sections/05-explore-o-destino-p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 6,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 6,
+        "sourceSectionKey": "section-section-0gzoaid",
+        "mode": "single-source",
+        "shape": "card-grid: 6 × [mídia]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/06-galeria-de-fotos-p01.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p02.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p03.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p04.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p05.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 7,
+        "role": "contact",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 7,
+        "sourceSectionKey": "section-contact-1okicd9",
+        "mode": "single-source",
+        "shape": "split",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/07-reserve-sua-estadia-premium--p01.png",
+              "referencia/screenshots/sections/07-reserve-sua-estadia-premium--p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      }
+    ],
+    "patterns": []
+  },
+  "quality": {
+    "dir": "qualidade",
+    "docs": [
+      "PADROES-PROIBIDOS.md",
+      "RESPONSIVIDADE.md",
+      "PERFORMANCE-SEO.md",
+      "verificar.mjs"
+    ],
+    "copyIntel": [
+      "PRINCIPIOS.md",
+      "AUDITORIA.md",
+      "nichos/index.json",
+      "nichos/advogado.md",
+      "nichos/medico.md",
+      "nichos/dentista.md",
+      "nichos/psicologo.md",
+      "nichos/generico.md"
+    ],
+    "checker": "qualidade/verificar.mjs"
+  },
+  "copyMode": "folder",
+  "createdAt": "2026-09-16T01:18:45.603Z"
+}

@@ -1,0 +1,1142 @@
+{
+  "v": 1,
+  "runId": "2026-09-16T01:17:00.131Z",
+  "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+  "tiers": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "mobile": false
+    },
+    "tablet": {
+      "width": 768,
+      "height": 900,
+      "mobile": false
+    },
+    "mobile": {
+      "width": 390,
+      "height": 900,
+      "mobile": true
+    }
+  },
+  "sections": [
+    {
+      "key": "section-hero-19upbwn",
+      "index": 1,
+      "role": "hero",
+      "label": "Conforto e Hospitalidade no Coração da Amazônia.",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [
+        "hover"
+      ],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/01-conforto-e-hospitalidade-no--p01.png",
+            "sections/01-conforto-e-hospitalidade-no--p02.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 1425,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 738,
+              "width": 1425,
+              "height": 162,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 1282500,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/01-conforto-e-hospitalidade-no--p01.png",
+              "offsetY": 0,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 0,
+                  "targetY": 0,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 5,
+                    "total": 5
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 2062.47,
+                    "edgeDensity": 0.2868,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 67
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/01-conforto-e-hospitalidade-no--p02.png",
+              "offsetY": 738,
+              "sourceHeight": 162,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 369,
+                  "targetY": 369,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 5,
+                    "total": 5
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 344.62,
+                    "edgeDensity": 0.0694,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 36
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    },
+    {
+      "key": "section-section-0nzvdlu",
+      "index": 2,
+      "role": "section",
+      "label": "2.500+",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/02-2-500.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 900,
+              "width": 1440,
+              "height": 300,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 432000,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/02-2-500.png",
+              "offsetY": 0,
+              "sourceHeight": 300,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 600,
+                  "targetY": 600,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 5,
+                    "total": 5
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 281.19,
+                    "edgeDensity": 0.0306,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 28
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    },
+    {
+      "key": "section-about-0y1yv5v",
+      "index": 3,
+      "role": "about",
+      "label": "Sua melhor escolha",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [
+        "hover"
+      ],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/03-sua-melhor-escolha-p01.png",
+            "sections/03-sua-melhor-escolha-p02.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 1200,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 1938,
+              "width": 1440,
+              "height": 256,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 1431360,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/03-sua-melhor-escolha-p01.png",
+              "offsetY": 0,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 1119,
+                  "targetY": 1119,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 4,
+                    "total": 4
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 6191.2,
+                    "edgeDensity": 0.2411,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 109
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/03-sua-melhor-escolha-p02.png",
+              "offsetY": 738,
+              "sourceHeight": 256,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 1616,
+                  "targetY": 1616,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 2,
+                    "total": 2
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 1328.92,
+                    "edgeDensity": 0.0742,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 63
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    },
+    {
+      "key": "section-section-0wfp63r",
+      "index": 4,
+      "role": "section",
+      "label": "delegações",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [
+        "hover"
+      ],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/04-delegacoes-p01.png",
+            "sections/04-delegacoes-p02.png",
+            "sections/04-delegacoes-p03.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 2194,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 2932,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 3670,
+              "width": 1425,
+              "height": 118,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 2271450,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/04-delegacoes-p01.png",
+              "offsetY": 0,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 2113,
+                  "targetY": 2113,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 3,
+                    "total": 3
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 4169.69,
+                    "edgeDensity": 0.2305,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 69
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/04-delegacoes-p02.png",
+              "offsetY": 738,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 2851,
+                  "targetY": 2851,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 4,
+                    "total": 4
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 1851.55,
+                    "edgeDensity": 0.0869,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 49
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/04-delegacoes-p03.png",
+              "offsetY": 1476,
+              "sourceHeight": 118,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 3279,
+                  "targetY": 3279,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 0,
+                    "total": 0
+                  },
+                  "animations": {
+                    "finite": 2,
+                    "pending": 0
+                  },
+                  "domQuality": "sparse",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "low-detail",
+                    "variance": 6.13,
+                    "edgeDensity": 0.0024,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 1
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    },
+    {
+      "key": "section-section-1yv9rqr",
+      "index": 5,
+      "role": "section",
+      "label": "Explore o Destino",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/05-explore-o-destino-p01.png",
+            "sections/05-explore-o-destino-p02.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 3788,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 4526,
+              "width": 1425,
+              "height": 258,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 1419300,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/05-explore-o-destino-p01.png",
+              "offsetY": 0,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 3707,
+                  "targetY": 3707,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 3,
+                    "total": 3
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 8525.32,
+                    "edgeDensity": 0.2256,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 68
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/05-explore-o-destino-p02.png",
+              "offsetY": 738,
+              "sourceHeight": 258,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 4205,
+                  "targetY": 4205,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 3,
+                    "total": 3
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 67,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 11112.72,
+                    "edgeDensity": 0.1857,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 46
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    },
+    {
+      "key": "section-section-0gzoaid",
+      "index": 6,
+      "role": "section",
+      "label": "Galeria de Fotos",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/06-galeria-de-fotos-p01.png",
+            "sections/06-galeria-de-fotos-p02.png",
+            "sections/06-galeria-de-fotos-p03.png",
+            "sections/06-galeria-de-fotos-p04.png",
+            "sections/06-galeria-de-fotos-p05.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 4784,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 5522,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 6260,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 6998,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 7736,
+              "width": 1440,
+              "height": 164,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 4487040,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/06-galeria-de-fotos-p01.png",
+              "offsetY": 0,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 4703,
+                  "targetY": 4703,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 9,
+                    "total": 9
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 7977.79,
+                    "edgeDensity": 0.2114,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 80
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/06-galeria-de-fotos-p02.png",
+              "offsetY": 738,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 5441,
+                  "targetY": 5441,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 9,
+                    "total": 9
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 4834.62,
+                    "edgeDensity": 0.3424,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 131
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/06-galeria-de-fotos-p03.png",
+              "offsetY": 1476,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 6179,
+                  "targetY": 6179,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 7,
+                    "total": 7
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 5198.69,
+                    "edgeDensity": 0.43,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 130
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/06-galeria-de-fotos-p04.png",
+              "offsetY": 2214,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 6917,
+                  "targetY": 6917,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 6,
+                    "total": 6
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 4838.95,
+                    "edgeDensity": 0.3907,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 95
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/06-galeria-de-fotos-p05.png",
+              "offsetY": 2952,
+              "sourceHeight": 164,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 7368,
+                  "targetY": 7368,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 3,
+                    "total": 3
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 2030.44,
+                    "edgeDensity": 0.0319,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 19
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    },
+    {
+      "key": "section-contact-1okicd9",
+      "index": 7,
+      "role": "contact",
+      "label": "Reserve sua estadia premium hoje.",
+      "locatorMatch": "logical-marker",
+      "authority": "static",
+      "behavior": [
+        "hover"
+      ],
+      "captureKind": "element",
+      "captureMode": "viewport-tiles",
+      "quality": "ok",
+      "recoveredParts": 0,
+      "resolved": true,
+      "captures": {
+        "desktop": {
+          "status": "ok",
+          "paths": [
+            "sections/07-reserve-sua-estadia-premium--p01.png",
+            "sections/07-reserve-sua-estadia-premium--p02.png"
+          ],
+          "clips": [
+            {
+              "x": 0,
+              "y": 7901,
+              "width": 1440,
+              "height": 738,
+              "scale": 1
+            },
+            {
+              "x": 0,
+              "y": 8639,
+              "width": 1440,
+              "height": 189,
+              "scale": 1
+            }
+          ],
+          "rasterScale": 1,
+          "estimatedRasterPixels": 1334880,
+          "truncated": false,
+          "quality": "ok",
+          "mode": "viewport-tiles",
+          "tiles": [
+            {
+              "path": "sections/07-reserve-sua-estadia-premium--p01.png",
+              "offsetY": 0,
+              "sourceHeight": 738,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 7820,
+                  "targetY": 7820,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 1,
+                    "total": 1
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "ok",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 8175.92,
+                    "edgeDensity": 0.1057,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 43
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            },
+            {
+              "path": "sections/07-reserve-sua-estadia-premium--p02.png",
+              "offsetY": 738,
+              "sourceHeight": 189,
+              "state": "natural",
+              "quality": "ok",
+              "attempts": [
+                {
+                  "number": 1,
+                  "state": "natural",
+                  "ready": true,
+                  "stable": true,
+                  "scrollStalled": false,
+                  "actualY": 8284,
+                  "targetY": 8284,
+                  "assets": {
+                    "broken": 0,
+                    "pending": 0,
+                    "ready": 0,
+                    "total": 0
+                  },
+                  "animations": {
+                    "finite": 0,
+                    "pending": 0
+                  },
+                  "domQuality": "sparse",
+                  "domScore": 100,
+                  "hiddenCandidates": 0,
+                  "pendingImages": 0,
+                  "raster": {
+                    "quality": "ok",
+                    "variance": 6022.92,
+                    "edgeDensity": 0.0344,
+                    "alphaCoverage": 1,
+                    "colorBuckets": 10
+                  },
+                  "recovered": 0,
+                  "selected": true,
+                  "error": ""
+                }
+              ],
+              "recoveredElements": [],
+              "error": ""
+            }
+          ],
+          "error": ""
+        }
+      },
+      "sequenceIds": []
+    }
+  ],
+  "sequences": [],
+  "warnings": []
+}

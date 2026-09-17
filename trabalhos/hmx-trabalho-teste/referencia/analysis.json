@@ -1,0 +1,117 @@
+{
+  "v": 1,
+  "generatedAt": "2026-09-16T01:16:04.000Z",
+  "source": {
+    "url": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+    "title": "Hotel Calleb",
+    "description": "",
+    "language": "en",
+    "generator": "",
+    "siteId": "",
+    "pageId": ""
+  },
+  "options": {
+    "projectName": "hotelcalleb.com.br",
+    "notes": ""
+  },
+  "counts": {
+    "elements": 9,
+    "sections": 0,
+    "headings": 0,
+    "links": 0,
+    "images": 0,
+    "forms": 0,
+    "scripts": 1,
+    "stylesheets": 1,
+    "navbars": 0,
+    "sliders": 0,
+    "tabs": 0,
+    "dropdowns": 0,
+    "lotties": 0,
+    "videos": 0,
+    "embeds": 0
+  },
+  "headings": [],
+  "sections": [],
+  "forms": [],
+  "links": {
+    "total": 0,
+    "internal": 0,
+    "external": 0,
+    "empty": 0
+  },
+  "dependencies": {
+    "runtime": {
+      "webflow": false,
+      "gsap": false,
+      "scrollTrigger": false,
+      "splitText": false,
+      "swiper": false,
+      "lenis": false,
+      "draggable": false,
+      "inertiaPlugin": false,
+      "observer": false,
+      "finsweet": false,
+      "lottie": false,
+      "commerce": false
+    },
+    "structures": {
+      "backgroundVideos": 0,
+      "marquees": 0,
+      "customCarousels": 0,
+      "nativeInteractions": 0,
+      "hoverStyles": 0,
+      "forms": 0
+    }
+  },
+  "scripts": [
+    {
+      "src": "https://hotelcalleb.com.br/assets/index-zoI6MCcx.js",
+      "type": "module",
+      "inlineBytes": 0
+    }
+  ],
+  "stylesheets": [
+    "https://hotelcalleb.com.br/assets/index-CWNMrd5e.css"
+  ],
+  "cssCapture": {
+    "bytes": 50349,
+    "accessible": [
+      {
+        "href": "https://hotelcalleb.com.br/assets/index-CWNMrd5e.css",
+        "bytes": 50349
+      }
+    ],
+    "inaccessible": []
+  },
+  "assets": {
+    "total": 1,
+    "byType": {
+      "stylesheet": 1
+    }
+  },
+  "capture": {
+    "breakpoints": [
+      {
+        "id": "desktop",
+        "min": 1024,
+        "max": 0
+      },
+      {
+        "id": "tablet",
+        "min": 600,
+        "max": 1023
+      },
+      {
+        "id": "mobile",
+        "min": 0,
+        "max": 599
+      }
+    ],
+    "viewport": {
+      "width": 1478,
+      "height": 987,
+      "devicePixelRatio": 1
+    }
+  }
+}

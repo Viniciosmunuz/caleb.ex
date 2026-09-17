@@ -1,0 +1,1865 @@
+{
+  "v": 1,
+  "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+  "direction": {
+    "v": 1,
+    "capturedAt": "2026-09-16T01:16:04.014Z",
+    "source": {
+      "url": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+      "title": "Hotel Calleb"
+    },
+    "viewport": {
+      "width": 1478,
+      "height": 987,
+      "devicePixelRatio": 1,
+      "note": "Tokens medidos neste viewport. Layout por seção (3 breakpoints) é gerado à parte."
+    },
+    "scoped": false,
+    "scannedElements": 796,
+    "theme": "light",
+    "themeSections": {
+      "light": 6,
+      "dark": 1
+    },
+    "palette": {
+      "roles": {
+        "bg": "#ffffff",
+        "surface": "#f5f5f5",
+        "text": "#003c96",
+        "muted": "#f97300",
+        "border": "oklch(0.967 0.003 264.542)",
+        "textHeading": "#003c96",
+        "accent": "#0047b3",
+        "primary": "#0047b3",
+        "primaryHover": "#002894"
+      },
+      "swatches": [
+        {
+          "hex": "#f5f5f5",
+          "usage": "background",
+          "weight": 7039739,
+          "role": "surface",
+          "vividness": 0
+        },
+        {
+          "hex": "#ffffff",
+          "usage": "background",
+          "weight": 5434291,
+          "role": "bg",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.4356 -0.0301778 -0.179942 / 0.4)",
+          "usage": "background",
+          "weight": 1734542,
+          "role": "",
+          "vividness": 0
+        },
+        {
+          "hex": "#003c96",
+          "usage": "background",
+          "weight": 1111441,
+          "role": "",
+          "vividness": 1
+        },
+        {
+          "hex": "#0047b3",
+          "usage": "background",
+          "weight": 938338,
+          "role": "",
+          "vividness": 1
+        },
+        {
+          "hex": "#f97300",
+          "usage": "background",
+          "weight": 57434,
+          "role": "",
+          "vividness": 1
+        },
+        {
+          "hex": "oklch(0.446 0.03 256.802)",
+          "usage": "text",
+          "weight": 655,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+          "usage": "text",
+          "weight": 496,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "#ffffff",
+          "usage": "text",
+          "weight": 465,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+          "usage": "text",
+          "weight": 322,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "oklch(0.967 0.003 264.542)",
+          "usage": "border",
+          "weight": 11,
+          "role": "border",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+          "usage": "border",
+          "weight": 7,
+          "role": "border",
+          "vividness": 0
+        },
+        {
+          "hex": "#0047b3",
+          "usage": "accent",
+          "weight": 3358,
+          "role": "primary/accent",
+          "vividness": 1
+        },
+        {
+          "hex": "#003c96",
+          "usage": "accent",
+          "weight": 1874,
+          "role": "accent",
+          "vividness": 1
+        },
+        {
+          "hex": "#f97300",
+          "usage": "accent",
+          "weight": 1787,
+          "role": "accent",
+          "vividness": 1
+        }
+      ],
+      "accent": [
+        {
+          "hex": "#0047b3",
+          "score": 3358,
+          "vividness": 1
+        },
+        {
+          "hex": "#003c96",
+          "score": 1874,
+          "vividness": 1
+        },
+        {
+          "hex": "#f97300",
+          "score": 1787,
+          "vividness": 1
+        }
+      ]
+    },
+    "typography": {
+      "fontStacks": [
+        {
+          "family": "Inter",
+          "textWeight": 2944
+        },
+        {
+          "family": "Outfit",
+          "textWeight": 215
+        },
+        {
+          "family": "Georgia",
+          "textWeight": 151
+        }
+      ],
+      "googleFonts": [],
+      "fontStylesheets": [],
+      "scale": {
+        "h1": {
+          "sample": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "family": "Georgia",
+          "size": "96px",
+          "weight": "300",
+          "lineHeight": "105.6px",
+          "letterSpacing": "-2.4px",
+          "transform": "",
+          "color": "#ffffff"
+        },
+        "h2": {
+          "sample": "A moda do Hotel Calleb no portão de entrada para a selva.",
+          "family": "Georgia",
+          "size": "60px",
+          "weight": "300",
+          "lineHeight": "75px",
+          "letterSpacing": "",
+          "transform": "",
+          "color": "#003c96"
+        },
+        "h3": {
+          "sample": "2.500+",
+          "family": "Outfit",
+          "size": "30px",
+          "weight": "700",
+          "lineHeight": "36px",
+          "letterSpacing": "",
+          "transform": "",
+          "color": "#ffffff"
+        },
+        "h4": {
+          "sample": "Sua melhor escolha",
+          "family": "Inter",
+          "size": "12px",
+          "weight": "700",
+          "lineHeight": "16px",
+          "letterSpacing": "2.4px",
+          "transform": "uppercase",
+          "color": "#f97300"
+        },
+        "body": {
+          "family": "Inter",
+          "size": "14px",
+          "weight": "700",
+          "lineHeight": "20px",
+          "color": "#ffffff"
+        },
+        "blockquote": null
+      }
+    },
+    "spacing": {
+      "sectionPaddingY": [
+        80,
+        96
+      ],
+      "gaps": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        64
+      ],
+      "maxWidths": [
+        576,
+        672,
+        1024,
+        1280
+      ]
+    },
+    "radii": {
+      "common": [
+        "3.35544e+07px",
+        "24px",
+        "12px",
+        "16px",
+        "4px",
+        "40px"
+      ],
+      "dominant": "3.35544e+07px"
+    },
+    "shadows": [
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(",
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, ",
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(",
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+    ],
+    "borders": {
+      "common": [
+        "oklch(0.967 0.003 264.542)",
+        "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+        "#0047b3",
+        "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+        "#ffffff",
+        "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)"
+      ]
+    },
+    "buttons": {
+      "primary": {
+        "bg": "#0047b3",
+        "color": "#ffffff",
+        "border": "none",
+        "radius": "3.35544e+07px",
+        "padding": "8px 24px 8px 24px",
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "letterSpacing": "",
+        "textTransform": "",
+        "boxShadow": "",
+        "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "color": "#0047b3",
+        "border": "2px solid #0047b3",
+        "radius": "3.35544e+07px",
+        "padding": "16px 40px 16px 40px",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "letterSpacing": "",
+        "textTransform": "",
+        "boxShadow": "",
+        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    },
+    "background": {
+      "dominant": "#ffffff",
+      "gradients": [
+        "linear-gradient(oklab(0 0 0 / 0.6) 0%, rgba(0, 0, 0, 0) 50%, oklab(0 0 0 / 0.6) 100%)",
+        "linear-gradient(to top, oklab(0 0 0 / 0.9) 0%, oklab(0 0 0 / 0.2) 50%, rgba(0, 0, 0, 0) 100%)",
+        "linear-gradient(to top, oklab(0 0 0 / 0.6) 0%, rgba(0, 0, 0, 0) 100%)"
+      ]
+    }
+  },
+  "layouts": {
+    "v": 1,
+    "capturedAt": "2026-09-16T01:16:04.106Z",
+    "faithful": true,
+    "breakpoints": [
+      {
+        "bp": "desktop",
+        "width": 1440
+      },
+      {
+        "bp": "tablet",
+        "width": 768
+      },
+      {
+        "bp": "mobile",
+        "width": 390
+      }
+    ],
+    "sections": [
+      {
+        "index": 1,
+        "role": "hero",
+        "tag": "section",
+        "label": "Conforto e Hospitalidade no Coração da Amazônia.",
+        "domId": "",
+        "className": "relative h-screen flex items-center justify-center overflow-hidden",
+        "captureKey": "section-hero-19upbwn",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "justify-content": "center",
+              "align-items": "center",
+              "grid-auto-flow": "row",
+              "position": "relative"
+            },
+            "summary": "flex horizontal, justify center, align center"
+          },
+          "tablet": {
+            "props": {
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "justify-content": "center",
+              "align-items": "center",
+              "grid-auto-flow": "row",
+              "position": "relative"
+            },
+            "summary": "flex horizontal, justify center, align center"
+          },
+          "mobile": {
+            "props": {
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "justify-content": "center",
+              "align-items": "center",
+              "grid-auto-flow": "row",
+              "position": "relative"
+            },
+            "summary": "flex horizontal, justify center, align center"
+          }
+        },
+        "content": {
+          "shape": "duo",
+          "mediaCount": 6,
+          "contentLayout": null,
+          "cardGroup": {
+            "count": 2,
+            "parts": [
+              "ícone"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "grid-auto-flow": "row",
+                  "position": "relative"
+                },
+                "summary": "flex horizontal, justify center, align center"
+              },
+              "tablet": {
+                "props": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "grid-auto-flow": "row",
+                  "position": "relative"
+                },
+                "summary": "flex horizontal, justify center, align center"
+              },
+              "mobile": {
+                "props": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "grid-auto-flow": "row",
+                  "position": "relative"
+                },
+                "summary": "flex horizontal, justify center, align center"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "absolute.inset-0",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              }
+            }
+          },
+          {
+            "tag": "div",
+            "label": "relative.z-20",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1024px",
+                  "margin-left": "200.5px",
+                  "margin-right": "200.5px",
+                  "text-align": "center",
+                  "position": "relative"
+                },
+                "summary": "padding-x 24px, max-width 1024px, centralizado, texto center"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1024px",
+                  "text-align": "center",
+                  "position": "relative"
+                },
+                "summary": "padding-x 24px, max-width 1024px, texto center"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1024px",
+                  "text-align": "center",
+                  "position": "relative"
+                },
+                "summary": "padding-x 24px, max-width 1024px, texto center"
+              }
+            }
+          },
+          {
+            "tag": "div",
+            "label": "absolute.bottom-10",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              }
+            }
+          },
+          {
+            "tag": "div",
+            "label": "absolute.bottom-10",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "tablet": {
+                "props": {
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "mobile": {
+                "props": {
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "role": "section",
+        "tag": "section",
+        "label": "2.500+",
+        "domId": "",
+        "className": "py-20 bg-primary-dark overflow-hidden",
+        "captureKey": "section-section-0nzvdlu",
+        "tone": {
+          "bg": "#003c96",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "dark"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "80px",
+              "padding-bottom": "80px",
+              "position": "static"
+            },
+            "summary": "padding-y 80px/80px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "80px",
+              "padding-bottom": "80px",
+              "position": "static"
+            },
+            "summary": "padding-y 80px/80px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "80px",
+              "padding-bottom": "80px",
+              "position": "static"
+            },
+            "summary": "padding-y 80px/80px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 4,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "grid",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-template-columns": "280px 280px 280px 280px",
+                "grid-auto-flow": "row",
+                "gap": "32px",
+                "column-gap": "32px",
+                "row-gap": "32px",
+                "position": "static"
+              },
+              "summary": "grid 4 colunas, gap 32px"
+            },
+            "tablet": {
+              "props": {
+                "display": "grid",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-template-columns": "152.25px 152.25px 152.25px 152.25px",
+                "grid-auto-flow": "row",
+                "gap": "32px",
+                "column-gap": "32px",
+                "row-gap": "32px",
+                "position": "static"
+              },
+              "summary": "grid 4 colunas, gap 32px"
+            },
+            "mobile": {
+              "props": {
+                "display": "grid",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-template-columns": "155.5px 155.5px",
+                "grid-auto-flow": "row",
+                "gap": "32px",
+                "column-gap": "32px",
+                "row-gap": "32px",
+                "position": "static"
+              },
+              "summary": "grid 2 colunas, gap 32px"
+            }
+          },
+          "cardGroup": {
+            "count": 4,
+            "parts": [
+              "ícone",
+              "título",
+              "texto"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "280px 280px 280px 280px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 4 colunas, gap 32px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "152.25px 152.25px 152.25px 152.25px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 4 colunas, gap 32px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "155.5px 155.5px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 2 colunas, gap 32px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "role": "about",
+        "tag": "section",
+        "label": "Sua melhor escolha",
+        "domId": "sobre",
+        "className": "py-24 bg-white overflow-hidden",
+        "captureKey": "section-about-0y1yv5v",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "split",
+          "mediaCount": 8,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "align-items": "center",
+                "grid-auto-flow": "row",
+                "gap": "64px",
+                "column-gap": "64px",
+                "row-gap": "64px",
+                "position": "static"
+              },
+              "summary": "flex horizontal, gap 64px, align center"
+            },
+            "tablet": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "align-items": "center",
+                "grid-auto-flow": "row",
+                "gap": "64px",
+                "column-gap": "64px",
+                "row-gap": "64px",
+                "position": "static"
+              },
+              "summary": "flex vertical, gap 64px, align center"
+            },
+            "mobile": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "align-items": "center",
+                "grid-auto-flow": "row",
+                "gap": "64px",
+                "column-gap": "64px",
+                "row-gap": "64px",
+                "position": "static"
+              },
+              "summary": "flex vertical, gap 64px, align center"
+            }
+          },
+          "cardGroup": null
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "role": "section",
+        "tag": "section",
+        "label": "delegações",
+        "domId": "quartos",
+        "className": "py-24 bg-bg-light overflow-hidden",
+        "captureKey": "section-section-0wfp63r",
+        "tone": {
+          "bg": "#f5f5f5",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 28,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "32px",
+                "padding-left": "32px",
+                "max-width": "1280px",
+                "margin-left": "72.5px",
+                "margin-right": "72.5px",
+                "position": "static"
+              },
+              "summary": "padding-x 32px, max-width 1280px, centralizado"
+            },
+            "tablet": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "24px",
+                "padding-left": "24px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 24px, max-width 1280px"
+            },
+            "mobile": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "16px",
+                "padding-left": "16px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 16px, max-width 1280px"
+            }
+          },
+          "cardGroup": {
+            "count": 3,
+            "parts": [
+              "mídia",
+              "título",
+              "texto",
+              "link/botão"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "378.656px 378.672px 378.656px",
+                  "grid-auto-flow": "row",
+                  "gap": "40px",
+                  "column-gap": "40px",
+                  "row-gap": "40px",
+                  "position": "static"
+                },
+                "summary": "grid 3 colunas, gap 40px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "332.5px 332.5px",
+                  "grid-auto-flow": "row",
+                  "gap": "40px",
+                  "column-gap": "40px",
+                  "row-gap": "40px",
+                  "position": "static"
+                },
+                "summary": "grid 2 colunas, gap 40px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "343px",
+                  "grid-auto-flow": "row",
+                  "gap": "40px",
+                  "column-gap": "40px",
+                  "row-gap": "40px",
+                  "position": "static"
+                },
+                "summary": "grid 1 coluna, gap 40px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "role": "section",
+        "tag": "section",
+        "label": "Explore o Destino",
+        "domId": "turismo",
+        "className": "py-24 bg-white overflow-hidden",
+        "captureKey": "section-section-1yv9rqr",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 9,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "32px",
+                "padding-left": "32px",
+                "max-width": "1280px",
+                "margin-left": "72.5px",
+                "margin-right": "72.5px",
+                "position": "static"
+              },
+              "summary": "padding-x 32px, max-width 1280px, centralizado"
+            },
+            "tablet": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "24px",
+                "padding-left": "24px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 24px, max-width 1280px"
+            },
+            "mobile": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "16px",
+                "padding-left": "16px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 16px, max-width 1280px"
+            }
+          },
+          "cardGroup": {
+            "count": 3,
+            "parts": [
+              "mídia",
+              "título",
+              "texto"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "384px 384px 384px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 3 colunas, gap 32px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "705px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 1 coluna, gap 32px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "343px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 1 coluna, gap 32px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "role": "section",
+        "tag": "section",
+        "label": "Galeria de Fotos",
+        "domId": "galeria",
+        "className": "py-24 bg-bg-light overflow-hidden",
+        "captureKey": "section-section-0gzoaid",
+        "tone": {
+          "bg": "#f5f5f5",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 16,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "32px",
+                "padding-left": "32px",
+                "max-width": "1280px",
+                "margin-left": "72.5px",
+                "margin-right": "72.5px",
+                "position": "static"
+              },
+              "summary": "padding-x 32px, max-width 1280px, centralizado"
+            },
+            "tablet": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "24px",
+                "padding-left": "24px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 24px, max-width 1280px"
+            },
+            "mobile": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "16px",
+                "padding-left": "16px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 16px, max-width 1280px"
+            }
+          },
+          "cardGroup": {
+            "count": 6,
+            "parts": [
+              "mídia"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "gap": "24px",
+                  "column-gap": "24px",
+                  "row-gap": "24px",
+                  "position": "static"
+                },
+                "summary": "gap 24px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "gap": "24px",
+                  "column-gap": "24px",
+                  "row-gap": "24px",
+                  "position": "static"
+                },
+                "summary": "gap 24px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "gap": "24px",
+                  "column-gap": "24px",
+                  "row-gap": "24px",
+                  "position": "static"
+                },
+                "summary": "gap 24px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "role": "contact",
+        "tag": "section",
+        "label": "Reserve sua estadia premium hoje.",
+        "domId": "",
+        "className": "py-24 bg-white relative",
+        "captureKey": "section-contact-1okicd9",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "relative"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "relative"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "relative"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "split",
+          "mediaCount": 3,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "position": "static"
+              },
+              "summary": "flex horizontal"
+            },
+            "tablet": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "position": "static"
+              },
+              "summary": "flex vertical"
+            },
+            "mobile": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "position": "static"
+              },
+              "summary": "flex vertical"
+            }
+          },
+          "cardGroup": null
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "imagery": {
+    "photos": 28,
+    "bgPhotos": 0,
+    "total": 28,
+    "sections": 7,
+    "perSection": 4,
+    "photographyLed": true,
+    "samples": [
+      {
+        "alt": "HOTEL CALLEB",
+        "w": 1100,
+        "h": 1467
+      },
+      {
+        "alt": "Interior do Hotel Calleb",
+        "w": 253,
+        "h": 337
+      },
+      {
+        "alt": "Quarto padrão",
+        "w": 252,
+        "h": 189
+      },
+      {
+        "alt": "Café da Manhã",
+        "w": 253,
+        "h": 337
+      }
+    ]
+  },
+  "capturePlan": [
+    {
+      "captureKey": "section-hero-19upbwn",
+      "index": 1,
+      "role": "hero",
+      "label": "Conforto e Hospitalidade no Coração da Amazônia.",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "",
+          "dataSection": "",
+          "classTokens": [
+            "relative",
+            "h-screen",
+            "flex",
+            "items-center"
+          ],
+          "heading": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "textHash": "1rdm1n8"
+        }
+      }
+    },
+    {
+      "captureKey": "section-section-0nzvdlu",
+      "index": 2,
+      "role": "section",
+      "label": "2.500+",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "",
+          "dataSection": "",
+          "classTokens": [
+            "py-20",
+            "bg-primary-dark",
+            "overflow-hidden"
+          ],
+          "heading": "2.500+",
+          "textHash": "122362g"
+        }
+      }
+    },
+    {
+      "captureKey": "section-about-0y1yv5v",
+      "index": 3,
+      "role": "about",
+      "label": "Sua melhor escolha",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "sobre",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-white",
+            "overflow-hidden"
+          ],
+          "heading": "Sua melhor escolha",
+          "textHash": "16g6cbd"
+        }
+      }
+    },
+    {
+      "captureKey": "section-section-0wfp63r",
+      "index": 4,
+      "role": "section",
+      "label": "delegações",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "quartos",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-bg-light",
+            "overflow-hidden"
+          ],
+          "heading": "delegações",
+          "textHash": "0u58esl"
+        }
+      }
+    },
+    {
+      "captureKey": "section-section-1yv9rqr",
+      "index": 5,
+      "role": "section",
+      "label": "Explore o Destino",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "turismo",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-white",
+            "overflow-hidden"
+          ],
+          "heading": "Explore o Destino",
+          "textHash": "1k6hwer"
+        }
+      }
+    },
+    {
+      "captureKey": "section-section-0gzoaid",
+      "index": 6,
+      "role": "section",
+      "label": "Galeria de Fotos",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "galeria",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-bg-light",
+            "overflow-hidden"
+          ],
+          "heading": "Galeria de Fotos",
+          "textHash": "0ykty22"
+        }
+      }
+    },
+    {
+      "captureKey": "section-contact-1okicd9",
+      "index": 7,
+      "role": "contact",
+      "label": "Reserve sua estadia premium hoje.",
+      "tag": "section",
+      "capture": {
+        "kind": "element",
+        "locator": {
+          "tag": "section",
+          "domId": "",
+          "dataSection": "",
+          "classTokens": [
+            "py-24",
+            "bg-white",
+            "relative"
+          ],
+          "heading": "Reserve sua estadia premium hoje.",
+          "textHash": "040qv7w"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "v": 1,
+  "origin": "https://hotelcalleb.com.br",
+  "images": [
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/34/35/03/5c/caption.jpg?w=1100&h=-1&s=1",
+      "filename": "home-01.jpg",
+      "role": "hero",
+      "sectionRole": "hero",
+      "alt": "HOTEL CALLEB",
+      "width": 1100,
+      "height": 1467,
+      "page": "home"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/p/AF1QipOjzMpsPYI8vOpwo3MXutHXvsTa-WAxoENc58HW=w253-h337-k-no",
+      "filename": "home-02.jpg",
+      "role": "hero",
+      "sectionRole": "about",
+      "alt": "Interior do Hotel Calleb",
+      "width": 253,
+      "height": 337,
+      "page": "home"
+    },
+    {
+      "url": "https://lh4.googleusercontent.com/proxy/7lxWAgixMv_SVXMfGYnkSQMxLyvBzIjxko9adwYY-mjqyTMKRCpeIqh_fpeNqmj22GhqhEpZNvdVwt0-Eslw8jEC8UWEiAWtXNKaEixbuBSa1VvoGnLMD-fOqVQSi-3jGVV2OnHxYAwrW7GAMFQd8TA6gwrR998=w253-h189-k-no",
+      "filename": "home-03.jpg",
+      "role": "hero",
+      "sectionRole": "about",
+      "alt": "Quarto Standard",
+      "width": 252,
+      "height": 189,
+      "page": "home"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/p/AF1QipOnJgYIip12TZqm5rvykbP1U2LrfUoCXQYczLLm=w253-h337-k-no",
+      "filename": "home-04.jpg",
+      "role": "hero",
+      "sectionRole": "about",
+      "alt": "Café da Manhã",
+      "width": 253,
+      "height": 337,
+      "page": "home"
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/678321185.jpg?k=7a15a8d09d4575cd9e7c838435b3f1e9fccbcb2c8a8d6d356e113fff623dde7b&o=",
+      "filename": "home-05.jpg",
+      "role": "hero",
+      "sectionRole": "about",
+      "alt": "Acomodações Calleb",
+      "width": 576,
+      "height": 768,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/98/caption.jpg?w=1000&h=-1&s=1",
+      "filename": "home-06.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Triple Room",
+      "width": 960,
+      "height": 1280,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/95/caption.jpg?w=1000&h=-1&s=1",
+      "filename": "home-07.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Casal",
+      "width": 960,
+      "height": 1280,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/99/caption.jpg?w=1000&h=-1&s=1",
+      "filename": "home-08.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Single",
+      "width": 960,
+      "height": 1280,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/16/f9/93/cachoeira-do-santuario.jpg?w=700&h=400&s=1",
+      "filename": "home-09.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Cachoeira do Santuário",
+      "width": 700,
+      "height": 400,
+      "page": "home"
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/678321442.jpg?k=da1061dbead2f5567c93553ae3fef60feba20baeebfa671972e7c8afc7f7eb7b&o=",
+      "filename": "home-10.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 2",
+      "width": 576,
+      "height": 768,
+      "page": "home"
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/678321678.jpg?k=9aac22db4920b193366f23c1c9f01d0fd7be1fcf25f3aca68f8b233a116fd950&o=",
+      "filename": "home-11.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 3",
+      "width": 576,
+      "height": 768,
+      "page": "home"
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/778756000.jpg?k=2f344d183153ab3413e69ddedf08dbf4a0b2671cf8cea05095fbcef6ea37e3d4&o=",
+      "filename": "home-12.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 4",
+      "width": 576,
+      "height": 768,
+      "page": "home"
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/778756396.jpg?k=198fddda576cf5f35cf8abb353c1ee88955df9280186be457387302eb7a4c886&o=",
+      "filename": "home-13.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 5",
+      "width": 576,
+      "height": 768,
+      "page": "home"
+    },
+    {
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/778757875.jpg?k=198e804322b5378711f7d070fe16352869dcfc84bffe56e7af20962968b66120&o=",
+      "filename": "home-14.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 6",
+      "width": 576,
+      "height": 768,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/b1/58/84/caption.jpg?w=1100&h=-1&s=1",
+      "filename": "home-15.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 7",
+      "width": 1100,
+      "height": 1467,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/a1/caption.jpg?w=1000&h=-1&s=1",
+      "filename": "home-16.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 8",
+      "width": 960,
+      "height": 1280,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/97/caption.jpg?w=1000&h=-1&s=1",
+      "filename": "home-17.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 11",
+      "width": 960,
+      "height": 1280,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/9b/caption.jpg?w=1400&h=-1&s=1",
+      "filename": "home-18.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 12",
+      "width": 1280,
+      "height": 960,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/9f/caption.jpg?w=1400&h=-1&s=1",
+      "filename": "home-19.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 13",
+      "width": 1280,
+      "height": 960,
+      "page": "home"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/a2/caption.jpg?w=1000&h=-1&s=1",
+      "filename": "home-20.jpg",
+      "role": "hero",
+      "sectionRole": "section",
+      "alt": "Hotel Gallery 14",
+      "width": 960,
+      "height": 1280,
+      "page": "home"
+    }
+  ]
+}

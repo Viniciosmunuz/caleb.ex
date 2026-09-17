@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Calleb | Conforto e Hospitalidade na Amazônia</title>
+    <meta
+      name="description"
+      content="Hotel Calleb em Presidente Figueiredo com conforto, café da manhã incluso, acomodações premium e acesso às cachoeiras da Amazônia."
+    />
+    <link rel="canonical" href="https://hotelcalleb.com.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hotel Calleb | Conforto e Hospitalidade na Amazônia" />
+    <meta property="og:description" content="Hospedagem premium em Presidente Figueiredo, com café da manhã incluso e acesso às cachoeiras da Amazônia." />
+    <meta property="og:image" content="./images/hero-1600.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="./images/logohigh.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --color-bg: #ffffff;
+        --color-surface: #f4f8fc;
+        --color-text: #3c5068;
+        --color-heading: #0b3355;
+        --color-muted: #f2760c;
+        --color-border: rgba(11, 63, 120, 0.1);
+        --color-accent: #1f6fc0;
+        --color-primary: #1f6fc0;
+        --color-primary-hover: #0b3f78;
+        --color-amber: #f2760c;
+        --color-cta: #f2760c;
+        --color-cta-hover: #c9520a;
+        --color-icon-bg: #fde8d0;
+        --color-dark: #0b2338;
+        --font-heading: "Cormorant Garamond", Georgia, serif;
+        --font-body: "Manrope", "Segoe UI", sans-serif;
+        --radius: 9999px;
+        --space-4: 4px;
+        --space-8: 8px;
+        --space-16: 16px;
+        --space-24: 24px;
+        --space-32: 32px;
+        --space-64: 64px;
+        --container: 1280px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-body);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin: 0 0 12px;
+        color: var(--color-muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        color: var(--color-heading);
+        font-family: var(--font-heading);
+        line-height: 1.1;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 5vw, 6.4rem);
+        letter-spacing: -0.06em;
+        font-weight: 600;
+      }
+
+      h2 {
+        font-size: clamp(2.5rem, 3vw, 4rem);
+        letter-spacing: -0.04em;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .btn-cta,
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 10px 26px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: background-color 0.16s ease-out, color 0.16s ease-out, border-color 0.16s ease-out, transform 0.16s ease-out;
+      }
+
+      .btn-cta {
+        background: var(--color-cta);
+        color: #ffffff;
+        box-shadow: 0 18px 28px rgba(242, 118, 12, 0.28);
+      }
+
+      .btn-cta:hover,
+      .btn-cta:focus-visible {
+        background: var(--color-cta-hover);
+      }
+
+      .btn-secondary {
+        border: 1.5px solid rgba(255,255,255,0.7);
+        color: #fff;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(3px);
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        min-height: 76px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand img {
+        height: 52px;
+        width: auto;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 0.9rem;
+        color: var(--color-text);
+      }
+
+      .main-nav a {
+        position: relative;
+      }
+
+      .main-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background: var(--color-accent);
+        opacity: 0;
+        transform: scaleX(0.4);
+        transition: opacity 0.16s ease-out, transform 0.16s ease-out;
+      }
+
+      .main-nav a:hover::after,
+      .main-nav a:focus-visible::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .menu-toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border);
+        background: transparent;
+        color: var(--color-text);
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+      }
+
+      .menu-toggle .icon-close {
+        display: none;
+      }
+
+      .menu-toggle[aria-expanded="true"] .icon-menu {
+        display: none;
+      }
+
+      .menu-toggle[aria-expanded="true"] .icon-close {
+        display: block;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: #111827;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.68) saturate(0.85) contrast(1.08);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 42%, rgba(0, 0, 0, 0.15) 100%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        align-items: center;
+        min-height: 760px;
+        padding: 120px 0 80px;
+      }
+
+      .hero-content {
+        max-width: 760px;
+        color: #ffffff;
+      }
+
+      .hero-content .eyebrow,
+      .hero-content h1,
+      .hero-content p,
+      .hero-content .hero-meta,
+      .hero-content .hero-actions {
+        color: #ffffff;
+      }
+
+      .hero-content h1 {
+        color: #ffffff;
+        margin-bottom: 20px;
+      }
+
+      .hero-content p {
+        max-width: 640px;
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .hero-actions .btn-secondary {
+        border-color: rgba(255, 255, 255, 0.7);
+        color: #ffffff;
+      }
+
+      .hero-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 32px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        font-size: 0.95rem;
+      }
+
+      .hero-meta span:first-child {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      section {
+        position: relative;
+      }
+
+      .stats {
+        background: var(--color-accent);
+        color: #ffffff;
+        padding: 80px 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px;
+      }
+
+      .top-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(17, 24, 39, 0.75);
+      }
+
+      .top-cta::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #1bb05c;
+        box-shadow: 0 0 0 5px rgba(27, 176, 92, 0.14);
+      }
+
+      .stat-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+        padding: 20px 16px;
+      }
+
+      .stat-icon {
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 4px;
+      }
+
+      .stat-number {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 3vw, 3.5rem);
+        line-height: 1;
+        color: #ffffff;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .section-pad {
+        padding: 96px 0;
+      }
+
+      .feature-collection {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .feature-collection .feature-card {
+        min-height: 100%;
+        background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,245,245,0.96));
+        border: 1px solid var(--color-border);
+      }
+
+      .service-card {
+        background: #ffffff;
+        border-radius: 22px;
+        border: 1px solid var(--color-border);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 100%;
+        box-shadow: 0 12px 28px -18px rgba(17, 24, 39, 0.22);
+        transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+      }
+
+      .service-card:hover {
+        box-shadow: 0 18px 34px -18px rgba(17, 24, 39, 0.32);
+        transform: translateY(-2px);
+      }
+
+      .service-card .mini-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-icon-bg);
+        color: var(--color-cta);
+      }
+
+      .service-card h3 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+      }
+
+      .service-card p {
+        color: var(--color-text);
+      }
+
+      .premium-panel {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        min-height: 420px;
+        border-radius: 28px;
+        overflow: hidden;
+        color: #ffffff;
+        box-shadow: 0 20px 40px rgba(17, 24, 39, 0.16);
+      }
+
+      .premium-panel-media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .premium-panel-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.15) 100%);
+      }
+
+      .premium-panel-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        padding: 40px;
+      }
+
+      .premium-panel h3 {
+        color: #ffffff;
+        font-size: clamp(2rem, 2.7vw, 3rem);
+        margin-bottom: 12px;
+      }
+
+      .premium-panel p {
+        color: rgba(255,255,255,0.85);
+        max-width: 480px;
+      }
+
+      .premium-panel .btn-cta {
+        background: #ffffff;
+        color: var(--color-cta);
+        flex-shrink: 0;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 64px;
+      }
+
+      .about-media img,
+      .contact-media img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .story-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .story-copy .eyebrow {
+        margin-bottom: 0;
+      }
+
+      .story-copy h2 {
+        font-size: clamp(2.4rem, 3vw, 3.25rem);
+      }
+
+      .story-copy p {
+        font-size: 1.05rem;
+        color: var(--color-text);
+      }
+
+      .story-copy .btn-cta {
+        align-self: flex-start;
+        margin-top: 10px;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px;
+      }
+
+      .card-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .room-card,
+      .feature-card,
+      .gallery-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 16px 32px -22px rgba(17, 24, 39, 0.28);
+        transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+      }
+
+      .room-card:hover {
+        box-shadow: 0 22px 40px -20px rgba(17, 24, 39, 0.38);
+        transform: translateY(-2px);
+      }
+
+      .feature-card {
+        box-shadow: none;
+        border-color: var(--color-border);
+      }
+
+      .room-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-image {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 20px 20px 24px;
+      }
+
+      .card-body h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--color-heading);
+      }
+
+      .room-price {
+        display: inline-flex;
+        align-items: center;
+        margin: 10px 0 14px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: var(--color-icon-bg);
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--color-cta);
+      }
+
+      .card-body p {
+        color: var(--color-text);
+      }
+
+      .card-link {
+        margin-top: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 46px;
+        padding: 10px 20px;
+        border-radius: 12px;
+        background: var(--color-icon-bg);
+        font-weight: 700;
+        color: var(--color-cta);
+        transition: background-color 0.16s ease-out, color 0.16s ease-out;
+      }
+
+      .card-link:hover,
+      .card-link:focus-visible {
+        background: var(--color-cta);
+        color: #ffffff;
+      }
+
+      .head-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 36px;
+      }
+
+      .head-block p {
+        max-width: 700px;
+        color: var(--color-text);
+      }
+
+      .feature-card {
+        padding: 22px 18px 20px;
+      }
+
+      .feature-card .mini-icon {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--color-icon-bg);
+        color: var(--color-cta);
+        margin-bottom: 16px;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+
+      .feature-card p {
+        color: var(--color-text);
+      }
+
+      .gallery-shell {
+        position: relative;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 28px;
+        align-items: center;
+      }
+
+      .brand-mark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        min-height: 360px;
+        padding: 24px;
+        border-radius: 30px;
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        box-shadow: 0 24px 50px rgba(11, 51, 85, 0.12);
+        text-align: center;
+      }
+
+      .brand-mark-word img {
+        max-width: 100%;
+        width: 220px;
+        height: auto;
+      }
+
+      .brand-mark-rule {
+        width: 48px;
+        height: 2px;
+        background: var(--color-cta);
+      }
+
+      .brand-mark-tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-text);
+      }
+
+      .gallery-carrossel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(249,250,251,0.9));
+        border: 1px solid var(--color-border);
+        box-shadow: 0 20px 32px rgba(17, 24, 39, 0.08);
+      }
+
+      .gallery-track {
+        display: flex;
+        transition: transform 0.45s ease;
+        will-change: transform;
+      }
+
+      .gallery-slide {
+        min-width: 100%;
+        height: 460px;
+        position: relative;
+      }
+
+      .gallery-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .gallery-nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .gallery-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg);
+        color: var(--color-heading);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .gallery-btn:hover {
+        background: var(--color-primary);
+        color: #ffffff;
+        border-color: var(--color-primary);
+      }
+
+      .location-box {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 32px;
+        align-items: center;
+        margin-top: 24px;
+      }
+
+      .location-card {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 24px;
+        padding: 24px;
+      }
+
+      .location-card h3 {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+      }
+
+      .location-card p {
+        color: var(--color-text);
+        margin-bottom: 18px;
+      }
+
+      .location-map {
+        width: 100%;
+        min-height: 320px;
+        border: 1px solid var(--color-border);
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(31, 111, 192, 0.08), rgba(31, 111, 192, 0.02));
+      }
+
+      .location-map iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        border: 0;
+        display: block;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 8px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--color-text);
+      }
+
+      .contact-item .dot {
+        width: 10px;
+        height: 10px;
+        margin-top: 8px;
+        border-radius: 999px;
+        background: var(--color-muted);
+        flex-shrink: 0;
+      }
+
+      .booking-form {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .booking-form h3 {
+        margin-bottom: 18px;
+        font-size: 2rem;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .field label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--color-text);
+      }
+
+      .field input,
+      .field select {
+        width: 100%;
+        min-height: 46px;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 10px 14px;
+        background: var(--color-bg);
+        color: var(--color-text);
+      }
+
+      .field input:focus,
+      .field select:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 1px;
+        border-color: var(--color-primary);
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .booking-form .btn-cta {
+        width: 100%;
+        margin-top: 18px;
+      }
+
+      .site-footer {
+        padding: 64px 0 0;
+        background: var(--color-dark);
+        border-top: none;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+
+      .footer-col h3 {
+        color: var(--color-amber);
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+      }
+
+      .footer-col h4 {
+        color: #ffffff;
+        font-size: 1rem;
+        margin-bottom: 16px;
+      }
+
+      .footer-col p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.62);
+      }
+
+      .footer-links {
+        display: grid;
+        gap: 10px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.16s ease-out;
+      }
+
+      .footer-links a:hover,
+      .footer-links a:focus-visible {
+        color: var(--color-amber);
+      }
+
+      .footer-links a.footer-cta {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .footer-icon-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-icon-link svg {
+        flex-shrink: 0;
+        color: var(--color-amber);
+      }
+
+      .footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 449px) {
+        .gallery-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .brand-mark {
+          min-height: 180px;
+        }
+
+        .gallery-slide {
+          height: 340px;
+        }
+
+        .location-box,
+        .feature-collection {
+          grid-template-columns: 1fr;
+        }
+
+        .premium-panel {
+          min-height: 360px;
+        }
+
+        .premium-panel-content {
+          padding: 28px 24px;
+        }
+
+        .nav-row {
+          min-height: 64px;
+        }
+
+        .main-nav,
+        .header-cta {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-nav {
+          display: none;
+          padding: 0 16px 16px;
+        }
+
+        .mobile-nav.open {
+          display: block;
+        }
+
+        .mobile-nav a {
+          display: block;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-inner {
+          min-height: 620px;
+          padding-top: 90px;
+        }
+
+        .stats-grid,
+        .card-grid,
+        .gallery-grid,
+        .split,
+        .contact-wrap,
+        .field-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (min-width: 450px) and (max-width: 768px) {
+        .gallery-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .brand-mark {
+          min-height: 220px;
+        }
+
+        .gallery-slide {
+          height: 360px;
+        }
+
+        .location-box,
+        .feature-collection {
+          grid-template-columns: 1fr;
+        }
+
+        .main-nav {
+          display: none;
+        }
+
+        .header-cta {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-nav {
+          display: none;
+          padding: 0 16px 16px;
+        }
+
+        .mobile-nav.open {
+          display: block;
+        }
+
+        .mobile-nav a {
+          display: block;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-inner {
+          min-height: 680px;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .split,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .mobile-nav {
+          display: none !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="#hero">
+          <img src="./images/logohigh.png" alt="Hotel Calleb" width="220" height="132" />
+        </a>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#quartos">Acomodações</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#destino">Destino</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#localizacao">Localização</a>
+        </nav>
+        <span class="top-cta header-cta">WhatsApp</span>
+        <a class="btn-cta header-cta" href="#contato">Reservar Agora</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav" aria-label="Menu mobile">
+        <a href="#sobre">Sobre</a>
+        <a href="#quartos">Acomodações</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#destino">Destino</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#localizacao">Localização</a>
+        <a class="btn-cta" href="#contato">Reservar Agora</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" data-section="hero" class="hero reveal">
+        <div class="hero-media">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="./images/hero-800.avif 800w, ./images/hero-1600.avif 1600w"
+              sizes="100vw"
+            />
+            <img
+              src="./images/hero-1600.jpg"
+              srcset="./images/hero-800.jpg 800w, ./images/hero-1600.jpg 1600w"
+              sizes="100vw"
+              width="1600"
+              height="900"
+              alt="Terraço do Hotel Calleb ao entardecer, com hóspedes reunidos à mesa"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <div class="eyebrow">Presidente Figueiredo</div>
+            <h1>Conforto e Hospitalidade no Coração da Amazônia.</h1>
+            <p>
+              Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso
+              e localização privilegiada no centro da cidade.
+            </p>
+            <div class="hero-actions">
+              <a class="btn-cta" href="#contato">Reservar Agora</a>
+              <a class="btn-secondary" href="#sobre">Conheça Nossa História</a>
+            </div>
+            <div class="hero-meta">
+              <span>4.9/5</span>
+              <span>Avaliação média dos hóspedes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats reveal" data-section="estatisticas">
+        <div class="container stats-grid">
+          <article class="stat-card">
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div class="stat-number">2.500+</div>
+            <div class="stat-label">Hóspedes felizes</div>
+          </article>
+          <article class="stat-card">
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Cachoeiras próximas</div>
+          </article>
+          <article class="stat-card">
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Hospitalidade regional</div>
+          </article>
+          <article class="stat-card">
+            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 6V11C19 15.4 16 19 12 21C8 19 5 15.4 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <div class="stat-number">Premium</div>
+            <div class="stat-label">Segurança e conforto</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="sobre" data-section="sobre" class="section-pad reveal">
+        <div class="container split">
+          <div class="about-media">
+            <picture>
+              <source type="image/avif" srcset="./images/home-18.avif" />
+              <img
+                src="./images/home-18.jpg"
+                width="1200"
+                height="900"
+                alt="Corredor e área de convivência do Hotel Calleb, com iluminação aconchegante"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <div class="story-copy">
+            <div class="eyebrow">A nossa essência</div>
+            <h2>Sua melhor escolha</h2>
+            <p>
+              A elegância do Hotel Calleb no portão de entrada para a selva.
+            </p>
+            <p>
+              O Hotel Calleb nasceu do desejo de oferecer uma experiência superior em Presidente Figueiredo.
+              Combinamos a rusticidade da floresta com a sofisticação de um hotel premium, proporcionando aos
+              nossos hóspedes o refúgio perfeito após um dia explorando as majestosas cachoeiras da região.
+            </p>
+            <a class="btn-cta" href="#contato">Reservar Agora</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="quartos" data-section="quartos" class="section-pad reveal" style="background: var(--color-surface);">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">Acomodações</div>
+            <h2>Descanse em suítes desenhadas para seu relaxamento.</h2>
+            <p>Todos os nossos quartos contam com ar-condicionado silencioso, enxoval premium e café da manhã incluso.</p>
+          </div>
+          <div class="card-grid three">
+            <article class="room-card">
+              <div class="card-image">
+                <picture>
+                  <source type="image/avif" srcset="./images/home-06.avif" />
+                  <img src="./images/home-06.jpg" width="1200" height="900" alt="Quarto padrão com cama de casal e beliche para até quatro pessoas" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="card-body">
+                <div class="room-price">R$ 390/noite</div>
+                <h3>Standard</h3>
+                <p>Quarto com capacidade para até 4 pessoas, com café da manhã.</p>
+                <a href="#contato" class="card-link">Detalhes</a>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <div class="card-image">
+                <picture>
+                  <source type="image/avif" srcset="./images/home-19.avif" />
+                  <img src="./images/home-19.jpg" width="1200" height="900" alt="Suíte tripla com camas de solteiro e sofá para famílias e grupos" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="card-body">
+                <div class="room-price">R$ 320/noite</div>
+                <h3>Triple Room</h3>
+                <p>Quarto com capacidade para até 3 pessoas, com café da manhã.</p>
+                <a href="#contato" class="card-link">Detalhes</a>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <div class="card-image">
+                <picture>
+                  <source type="image/avif" srcset="./images/home-08.avif" />
+                  <img src="./images/home-08.jpg" width="1200" height="900" alt="Quarto casal com ambiente aconchegante para duas pessoas" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="card-body">
+                <div class="room-price">R$ 280/noite</div>
+                <h3>Casal</h3>
+                <p>Quarto com capacidade para até duas pessoas, com café da manhã.</p>
+                <a href="#contato" class="card-link">Detalhes</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia" data-section="experiencia" class="section-pad reveal">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">Experiência</div>
+            <h2>Uma estadia pensada para descansar, explorar e voltar renovado.</h2>
+          </div>
+
+          <div class="feature-collection">
+            <article class="service-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13.5C4 9.9 6.9 7 10.5 7H13.5C17.1 7 20 9.9 20 13.5V14H4V13.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M7 18H17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M10 4L12 2L14 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Café da manhã incluso</h3>
+              <p>Comece o dia com energia e conforto antes de sair para explorar a região.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2 12C2 7.6 5.6 4 10 4H14C18.4 4 22 7.6 22 12V13H2V12Z" stroke="currentColor" stroke-width="1.7"/><path d="M3 14L6 19H18L21 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Conforto premium</h3>
+              <p>Ar-condicionado silencioso, enxovais cuidadosos e ambiente acolhedor para descansar.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Natureza ao redor</h3>
+              <p>Uma base perfeita para chegar perto das cachoeiras, trilhas e paisagens da Amazônia.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 7.5V5.8C5 4.8 5.8 4 6.8 4H17.2C18.2 4 19 4.8 19 5.8V12.2C19 13.2 18.2 14 17.2 14H9L5 18V7.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 9H16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 12H13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Reserva simples</h3>
+              <p>Fale com nossa equipe e confirme sua estadia com agilidade e atenção personalizada.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="destino" data-section="destino" class="section-pad reveal" style="background: var(--color-surface);">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">Destino</div>
+            <h2>Explore o Destino</h2>
+            <p>Presidente Figueiredo esconde segredos milenares. O Hotel Calleb é sua base estratégica para vivenciar o melhor do turismo amazônico.</p>
+          </div>
+
+          <div class="premium-panel">
+            <picture>
+              <source type="image/avif" srcset="./images/home-09.avif" />
+              <img
+                class="premium-panel-media"
+                src="./images/home-09.jpg"
+                width="1600"
+                height="900"
+                alt="Cachoeira em meio à floresta amazônica próxima a Presidente Figueiredo"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <div class="premium-panel-scrim"></div>
+            <div class="premium-panel-content">
+              <h3>Um refúgio moderno em meio à selva.</h3>
+              <p>Conforto, hospitalidade e proximidade com as cachoeiras fazem do Hotel Calleb a escolha certa para quem quer viver a Amazônia com qualidade e tranquilidade.</p>
+              <a class="btn-cta" href="#contato">Solicitar reserva</a>
+            </div>
+          </div>
+
+          <div class="card-grid three" style="margin-top: 32px;">
+            <article class="feature-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L20 8V16L12 22L4 16V8L12 2Z" stroke="currentColor" stroke-width="1.7"/></svg>
+              </div>
+              <h3>Cachoeira do Santuário</h3>
+              <p>Uma das mais famosas, com infraestrutura completa e reserva ecológica.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Cachoeira da Iracema</h3>
+              <p>Cenário cinematográfico com grutas e paredões de arenito impressionantes.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="mini-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 18L12 4L18 18H6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Caverna Refúgio do Maruaga</h3>
+              <p>Trilha guiada por cavernas milenares envoltas pela densa selva amazônica.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" data-section="galeria" class="section-pad reveal">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">Galeria</div>
+            <h2>Cada detalhe importa</h2>
+          </div>
+
+          <div class="gallery-shell">
+            <div class="brand-mark" aria-label="Hotel Calleb">
+              <span class="brand-mark-word"><img src="./images/logohigh.png" alt="Hotel Calleb" loading="lazy" decoding="async" /></span>
+              <span class="brand-mark-rule"></span>
+              <span class="brand-mark-tag">Presidente Figueiredo</span>
+            </div>
+
+            <div>
+              <div class="gallery-carrossel" aria-label="Carrossel de imagens do hotel">
+                <div class="gallery-track" id="galleryTrack">
+                  <figure class="gallery-slide"><picture><source type="image/avif" srcset="./images/home-01.avif" /><img src="./images/home-01.jpg" width="1200" height="900" alt="Fachada do Hotel Calleb em Presidente Figueiredo" loading="lazy" decoding="async" /></picture></figure>
+                  <figure class="gallery-slide"><picture><source type="image/avif" srcset="./images/home-04.avif" /><img src="./images/home-04.jpg" width="1200" height="900" alt="Entrada do hotel iluminada durante a noite" loading="lazy" decoding="async" /></picture></figure>
+                  <figure class="gallery-slide"><picture><source type="image/avif" srcset="./images/home-07.avif" /><img src="./images/home-07.jpg" width="1200" height="900" alt="Quarto aconchegante com armário e detalhes de decoração" loading="lazy" decoding="async" /></picture></figure>
+                  <figure class="gallery-slide"><picture><source type="image/avif" srcset="./images/home-11.avif" /><img src="./images/home-11.jpg" width="1200" height="900" alt="Área de convivência com sofá para os hóspedes" loading="lazy" decoding="async" /></picture></figure>
+                  <figure class="gallery-slide"><picture><source type="image/avif" srcset="./images/home-20.avif" /><img src="./images/home-20.jpg" width="1200" height="900" alt="Mesa de café da manhã servida com pães e café" loading="lazy" decoding="async" /></picture></figure>
+                  <figure class="gallery-slide"><picture><source type="image/avif" srcset="./images/home-17.avif" /><img src="./images/home-17.jpg" width="1200" height="900" alt="Detalhe do quarto com armário e frigobar" loading="lazy" decoding="async" /></picture></figure>
+                </div>
+              </div>
+
+              <div class="gallery-nav" aria-label="Navegação da galeria">
+                <button class="gallery-btn" type="button" data-direction="prev" aria-label="Imagem anterior">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5L8 12L15 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="gallery-btn" type="button" data-direction="next" aria-label="Próxima imagem">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="localizacao" data-section="localizacao" class="section-pad reveal" style="background: var(--color-surface);">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">Localização</div>
+            <h2>Estaremos no coração de Presidente Figueiredo.</h2>
+            <p>Uma base estratégica para curtir as cachoeiras, a natureza e o conforto de um hotel pensado para relaxar e explorar a Amazônia.</p>
+          </div>
+
+          <div class="location-box">
+            <div class="location-card">
+              <h3>Hotel Calleb</h3>
+              <p>Localizado no centro de Presidente Figueiredo, com fácil acesso às principais trilhas, cachoeiras e atrações da região.</p>
+              <a class="btn-cta" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
+            </div>
+
+            <div class="location-map">
+              <iframe
+                title="Mapa do Hotel Calleb em Presidente Figueiredo"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=-2.0516612,-60.0245065&z=15&output=embed">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" data-section="contato" class="section-pad reveal">
+        <div class="container contact-wrap">
+          <div class="contact-details">
+            <div class="eyebrow">Reserve sua estadia</div>
+            <h2>Reserve sua estadia premium hoje.</h2>
+            <p>Preencha os dados e entraremos em contato via WhatsApp para confirmar sua reserva com as melhores tarifas.</p>
+            <div class="contact-list">
+              <div class="contact-item"><span class="dot"></span><div>Confirmação instantânea</div></div>
+              <div class="contact-item"><span class="dot"></span><div>Suporte humanizado via WhatsApp</div></div>
+              <div class="contact-item"><span class="dot"></span><div>Políticas flexíveis</div></div>
+              <div class="contact-item"><span class="dot"></span><div>Cancelamento grátis até 24h antes</div></div>
+            </div>
+          </div>
+
+          <div class="booking-form" aria-label="Formulário de reserva">
+            <h3>Reserva Inteligente</h3>
+            <form>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="checkin">Check-in</label>
+                  <input id="checkin" name="checkin" type="date" />
+                </div>
+                <div class="field">
+                  <label for="checkout">Check-out</label>
+                  <input id="checkout" name="checkout" type="date" />
+                </div>
+                <div class="field">
+                  <label for="hospedes">Hóspedes</label>
+                  <select id="hospedes" name="hospedes">
+                    <option>2 hóspedes</option>
+                    <option>3 hóspedes</option>
+                    <option>4 hóspedes</option>
+                    <option>5 hóspedes</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="quarto">Tipo de quarto</label>
+                  <select id="quarto" name="quarto">
+                    <option>Standard</option>
+                    <option>Triple Room</option>
+                    <option>Casal</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="nome">Nome Completo</label>
+                  <input id="nome" name="nome" type="text" placeholder="Seu nome" />
+                </div>
+                <div class="field full">
+                  <label for="email">E-mail</label>
+                  <input id="email" name="email" type="email" placeholder="seu@email.com" />
+                </div>
+                <div class="field full">
+                  <label for="whatsapp">WhatsApp para Contato</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" placeholder="(99) 99999-9999" />
+                </div>
+              </div>
+              <button class="btn-cta" type="submit">Verificar Disponibilidade</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>Hotel Calleb</h3>
+          <p>Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso e localização privilegiada no centro da cidade.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <nav class="footer-links" aria-label="Links rápidos do rodapé">
+            <a href="#sobre">Sobre</a>
+            <a href="#quartos">Acomodações</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#destino">Destino</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#localizacao">Localização</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <div class="footer-links">
+            <a class="footer-icon-link footer-cta" href="#contato">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7.5V5.8C5 4.8 5.8 4 6.8 4H17.2C18.2 4 19 4.8 19 5.8V12.2C19 13.2 18.2 14 17.2 14H9L5 18V7.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              Reservar Agora
+            </a>
+            <a class="footer-icon-link" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Presidente Figueiredo · Amazônia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-row">
+        <p>Hotel Calleb © 2026</p>
+      </div>
+    </footer>
+
+    <script src="./js/animations.js"></script>
+  </body>
+</html>

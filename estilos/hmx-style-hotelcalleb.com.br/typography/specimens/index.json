@@ -1,0 +1,80 @@
+{
+  "v": 1,
+  "kind": "htmlmentor-origin-rendered-font-specimens",
+  "note": "Evidência rasterizada na origem; nenhum arquivo de fonte foi copiado ou instalado.",
+  "totalBytes": 40108,
+  "specimens": [
+    {
+      "version": 1,
+      "key": "font-georgia-16lghw4",
+      "family": "Georgia",
+      "sample": "Aa — Georgia · Áã Çç 0123",
+      "style": {
+        "weight": "300",
+        "style": "normal",
+        "stretch": "normal",
+        "variationSettings": "normal"
+      },
+      "state": "unverified",
+      "fidelity": "origin-rendered",
+      "raster": {
+        "mime": "image/png",
+        "width": 600,
+        "height": 128,
+        "cssWidth": 300,
+        "cssHeight": 64,
+        "bytes": 15030,
+        "path": "typography/specimens/01-font-georgia-16lghw4.png",
+        "filename": "01-font-georgia-16lghw4.png"
+      }
+    },
+    {
+      "version": 1,
+      "key": "font-outfit-01g2f5d",
+      "family": "Outfit",
+      "sample": "Aa — Outfit · Áã Çç 0123",
+      "style": {
+        "weight": "700",
+        "style": "normal",
+        "stretch": "normal",
+        "variationSettings": "normal"
+      },
+      "state": "captured",
+      "fidelity": "origin-rendered",
+      "raster": {
+        "mime": "image/png",
+        "width": 600,
+        "height": 128,
+        "cssWidth": 300,
+        "cssHeight": 64,
+        "bytes": 12651,
+        "path": "typography/specimens/02-font-outfit-01g2f5d.png",
+        "filename": "02-font-outfit-01g2f5d.png"
+      }
+    },
+    {
+      "version": 1,
+      "key": "font-inter-1v653fq",
+      "family": "Inter",
+      "sample": "Aa — Inter · Áã Çç 0123",
+      "style": {
+        "weight": "700",
+        "style": "normal",
+        "stretch": "normal",
+        "variationSettings": "normal"
+      },
+      "state": "captured",
+      "fidelity": "origin-rendered",
+      "raster": {
+        "mime": "image/png",
+        "width": 600,
+        "height": 128,
+        "cssWidth": 300,
+        "cssHeight": 64,
+        "bytes": 12427,
+        "path": "typography/specimens/03-font-inter-1v653fq.png",
+        "filename": "03-font-inter-1v653fq.png"
+      }
+    }
+  ]
+}

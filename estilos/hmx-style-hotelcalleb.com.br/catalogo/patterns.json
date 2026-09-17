@@ -1,0 +1,1477 @@
+{
+  "v": 2,
+  "kind": "htmlmentor-pattern-package",
+  "package": {
+    "name": "hmx-style-hotelcalleb.com.br",
+    "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+    "capturedAt": "2026-09-16T01:16:04.310Z"
+  },
+  "dependencies": [],
+  "deduplication": {
+    "strategy": "semantic-structure-v1",
+    "fingerprint": "fnv1a-over-canonical-json",
+    "excludedFromIdentity": [
+      "id",
+      "selector",
+      "selectorHint",
+      "count",
+      "occurrences",
+      "instances",
+      "origins"
+    ]
+  },
+  "items": [
+    {
+      "id": "hover-01",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:99ad3534",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "custom",
+        "selectorHint": ".group-hover\\:translate-y-0:is(:where(.group) *)",
+        "properties": {
+          "translate": "var(--tw-translate-x) var(--tw-translate-y)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:translate-y-0:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-01",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:translate-y-0:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-02",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:0515840b",
+      "occurrences": 2,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "scale",
+        "selectorHint": ".group-hover\\:scale-110:is(:where(.group) *)",
+        "properties": {
+          "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:scale-110:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-02",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:scale-110:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        },
+        {
+          "id": "hover-09",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:scale-105",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 2,
+          "instances": 2
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-03",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:bc96d621",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "border-shift",
+        "selectorHint": ".group-hover\\:border-accent:is(:where(.group) *)",
+        "properties": {
+          "border-color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:border-accent:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-03",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:border-accent:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-04",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:409a2d3c",
+      "occurrences": 2,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:bg-accent:is(:where(.group) *)",
+        "properties": {
+          "background-color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:bg-accent:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-04",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:bg-accent:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        },
+        {
+          "id": "hover-11",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-accent",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 2,
+          "instances": 2
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-05",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:5944024a",
+      "occurrences": 2,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:bg-primary:is(:where(.group) *)",
+        "properties": {
+          "background-color": "var(--color-primary)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:bg-primary:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-05",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:bg-primary:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        },
+        {
+          "id": "hover-17",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-primary",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 2,
+          "instances": 2
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-06",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:4871945d",
+      "occurrences": 2,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:text-accent:is(:where(.group) *)",
+        "properties": {
+          "color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:text-accent:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-06",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:text-accent:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        },
+        {
+          "id": "hover-26",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:text-accent",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 2,
+          "instances": 2
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-07",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:7d37811c",
+      "occurrences": 2,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:text-white:is(:where(.group) *)",
+        "properties": {
+          "color": "var(--color-white)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:text-white:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-07",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:text-white:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        },
+        {
+          "id": "hover-27",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:text-white",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 2,
+          "instances": 2
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-08",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:6eb4e104",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "fade",
+        "selectorHint": ".group-hover\\:opacity-100:is(:where(.group) *)",
+        "properties": {
+          "opacity": "1"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".group-hover\\:opacity-100:is(:where(.group) *)"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-08",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".group-hover\\:opacity-100:is(:where(.group) *)",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-10",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:a1a88b51",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "border-shift",
+        "selectorHint": ".hover\\:border-primary",
+        "properties": {
+          "border-color": "var(--color-primary)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:border-primary"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-10",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:border-primary",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-12",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:e4b74a77",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-accent-light",
+        "properties": {
+          "background-color": "var(--color-accent-light)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-accent-light"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-12",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-accent-light",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-13",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:f83547e9",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-50",
+        "properties": {
+          "background-color": "var(--color-gray-50)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-gray-50"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-13",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-gray-50",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-14",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:deb28f55",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-50\\/50",
+        "properties": {
+          "background-color": "#f9fafb80"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-gray-50\\/50"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-14",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-gray-50\\/50",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-15",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:5e69c7f5",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-50\\/50",
+        "properties": {
+          "background-color": "color-mix(in oklab,var(--color-gray-50) 50%,transparent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)",
+          "@supports (color:color-mix(in lab,red,red))"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-gray-50\\/50"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-15",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-gray-50\\/50",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)",
+            "@supports (color:color-mix(in lab,red,red))"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-16",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:2015ea1d",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-100",
+        "properties": {
+          "background-color": "var(--color-gray-100)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-gray-100"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-16",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-gray-100",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-18",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:a5529e81",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-primary-dark",
+        "properties": {
+          "background-color": "var(--color-primary-dark)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-primary-dark"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-18",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-primary-dark",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-19",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:2b1c7b9b",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-50",
+        "properties": {
+          "background-color": "var(--color-red-50)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-red-50"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-19",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-red-50",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-20",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:13bb02fe",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-400",
+        "properties": {
+          "background-color": "var(--color-red-400)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-red-400"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-20",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-red-400",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-21",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:36bc531c",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-400\\/10",
+        "properties": {
+          "background-color": "#ff65681a"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-red-400\\/10"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-21",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-red-400\\/10",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-22",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:9316a8ca",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-400\\/10",
+        "properties": {
+          "background-color": "color-mix(in oklab,var(--color-red-400) 10%,transparent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)",
+          "@supports (color:color-mix(in lab,red,red))"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-red-400\\/10"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-22",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-red-400\\/10",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)",
+            "@supports (color:color-mix(in lab,red,red))"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-23",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:715cdb37",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-500",
+        "properties": {
+          "background-color": "var(--color-red-500)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-red-500"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-23",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-red-500",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-24",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:d9f2f0c1",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-white\\/5",
+        "properties": {
+          "background-color": "#ffffff0d"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-white\\/5"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-24",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-white\\/5",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hover-25",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:935eee8d",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-white\\/5",
+        "properties": {
+          "background-color": "color-mix(in oklab,var(--color-white) 5%,transparent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)",
+          "@supports (color:color-mix(in lab,red,red))"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      },
+      "source": {
+        "package": "hmx-style-hotelcalleb.com.br",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+        "selectorHint": ".hover\\:bg-white\\/5"
+      },
+      "preview": {
+        "kind": "declarative",
+        "path": ""
+      },
+      "instances": [
+        {
+          "id": "hover-25",
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "selectorHint": ".hover\\:bg-white\\/5",
+          "occurrences": 1,
+          "context": [
+            "@layer components;@layer utilities",
+            "@media(hover:hover)",
+            "@supports (color:color-mix(in lab,red,red))"
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "package": "hmx-style-hotelcalleb.com.br",
+          "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+          "occurrences": 1,
+          "instances": 1
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "safety": {
+    "executableCodeStored": false,
+    "thirdPartyBodiesStored": false,
+    "note": "Somente sinais, propriedades CSS permitidas e referências HTTP(S)."
+  }
+}

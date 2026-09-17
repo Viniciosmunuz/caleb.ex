@@ -1,0 +1,1521 @@
+{
+  "v": 1,
+  "origin": "https://hotelcalleb.com.br",
+  "pages": [
+    {
+      "url": "https://hotelcalleb.com.br/",
+      "slug": "home",
+      "title": "Hotel Calleb",
+      "label": "",
+      "pageRole": "home",
+      "sectionRole": "hero",
+      "excluded": false,
+      "body": [
+        {
+          "index": 1,
+          "role": "hero",
+          "label": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "tag": "section",
+          "id": "",
+          "className": "relative h-screen flex items-center justify-center overflow-hidden",
+          "visible": true,
+          "textPreview": "Presidente Figueiredo • AMConforto e Hospitalidade no Coração da Amazônia.Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso e localização privilegiada no centro da cidade.4.9Avaliação Global24hAtendimentoRESERVAR AGORA4.9/5Avaliação Média+1k",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "headline",
+              "tag": "h1",
+              "text": "Conforto e Hospitalidade no Coração da Amazônia.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white text-3xl md:text-8xl font-serif font-light leading-[1.1] mb-8 tracking-tight italic"
+            },
+            {
+              "order": 2,
+              "role": "body",
+              "tag": "p",
+              "text": "Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso e localização privilegiada no centro da cidade.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white/80 text-sm md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+            },
+            {
+              "order": 3,
+              "role": "cta",
+              "tag": "button",
+              "text": "RESERVAR AGORA",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "bg-accent text-white px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase shadow-2xl shadow-accent/40 w-full sm:w-auto"
+            },
+            {
+              "order": 4,
+              "role": "body",
+              "tag": "p",
+              "text": "4.9/5",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-accent font-bold text-2xl"
+            },
+            {
+              "order": 5,
+              "role": "body",
+              "tag": "p",
+              "text": "Avaliação Média",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-sm font-medium opacity-80"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "role": "section",
+          "label": "2.500+",
+          "tag": "section",
+          "id": "",
+          "className": "py-20 bg-primary-dark overflow-hidden",
+          "visible": true,
+          "textPreview": "2.500+Hóspedes Felizes15+Cachoeiras Próximas100% RegionalCafés da ManhãPremiumSegurança e Conforto",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "heading",
+              "tag": "h3",
+              "text": "2.500+",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-3xl font-display font-bold text-white mb-1"
+            },
+            {
+              "order": 2,
+              "role": "body",
+              "tag": "p",
+              "text": "Hóspedes Felizes",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white/60 text-sm font-medium uppercase tracking-wider"
+            },
+            {
+              "order": 3,
+              "role": "heading",
+              "tag": "h3",
+              "text": "15+",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-3xl font-display font-bold text-white mb-1"
+            },
+            {
+              "order": 4,
+              "role": "body",
+              "tag": "p",
+              "text": "Cachoeiras Próximas",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white/60 text-sm font-medium uppercase tracking-wider"
+            },
+            {
+              "order": 5,
+              "role": "heading",
+              "tag": "h3",
+              "text": "100% Regional",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-3xl font-display font-bold text-white mb-1"
+            },
+            {
+              "order": 6,
+              "role": "body",
+              "tag": "p",
+              "text": "Cafés da Manhã",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white/60 text-sm font-medium uppercase tracking-wider"
+            },
+            {
+              "order": 7,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Premium",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-3xl font-display font-bold text-white mb-1"
+            },
+            {
+              "order": 8,
+              "role": "body",
+              "tag": "p",
+              "text": "Segurança e Conforto",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white/60 text-sm font-medium uppercase tracking-wider"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "role": "about",
+          "label": "Sua melhor escolha",
+          "tag": "section",
+          "id": "sobre",
+          "className": "py-24 bg-white overflow-hidden",
+          "visible": true,
+          "textPreview": "10+Anos de ExperiênciaSua melhor escolhaA elegância do Hotel Calleb no portão de entrada para a selva.O Hotel Calleb nasceu do desejo de oferecer uma experiência superior em Presidente Figueiredo. Combinamos a rusticidade da floresta com a sofisticação de um hotel premium, proporcionando aos nossos hóspedes o refúgio perfeito após um dia explorando as majestosas cachoeiras da região.Localização estratégica no centro de Presidente FigueiredoAtendimento personalizado e regionalConexão wi-fi de alt",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "body",
+              "tag": "p",
+              "text": "10+",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-xl md:text-3xl font-bold"
+            },
+            {
+              "order": 2,
+              "role": "body",
+              "tag": "p",
+              "text": "Anos de Experiência",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[8px] md:text-[10px] uppercase font-bold tracking-widest"
+            },
+            {
+              "order": 3,
+              "role": "heading",
+              "tag": "h4",
+              "text": "Sua melhor escolha",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-accent font-bold tracking-[0.2em] mb-4 uppercase text-xs"
+            },
+            {
+              "order": 4,
+              "role": "heading",
+              "tag": "h2",
+              "text": "A elegância do Hotel Calleb no portão de entrada para a selva.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-4xl md:text-6xl font-serif font-light leading-tight mb-8 italic"
+            },
+            {
+              "order": 5,
+              "role": "body",
+              "tag": "p",
+              "text": "O Hotel Calleb nasceu do desejo de oferecer uma experiência superior em Presidente Figueiredo. Combinamos a rusticidade da floresta com a sofisticação de um hotel premium, proporcionando aos nossos hóspedes o refúgio perfeito após um dia explorando as majestosas cachoeiras da região.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-600 text-lg leading-relaxed mb-8"
+            },
+            {
+              "order": 6,
+              "role": "cta",
+              "tag": "button",
+              "text": "CONHEÇA NOSSA HISTÓRIA",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-4 rounded-full font-bold transition-all duration-300"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "role": "section",
+          "label": "Acomodações",
+          "tag": "section",
+          "id": "quartos",
+          "className": "py-24 bg-bg-light overflow-hidden",
+          "visible": true,
+          "textPreview": "AcomodaçõesDescanse em suítes desenhadas para seu relaxamento.Todos os nossos quartos contam com ar-condicionado silencioso, enxoval premium e café da manhã incluso.Ar-condicionado.Televisão.WifiR$ 390/noite4 Pessoas35m²Wi-fiStandartQuarto com capacidade para ate 4 pessoas, com cafe da manhãDETALHESAr-condicionado.wifi.TelevisãoR$ 320/noite3 Pessoas35m²Wi-fiTriple RoomQuarto com capacidade para ate 3 pessoas, com cafe da manhDETALHESAr-condicionado.Televisão.WifiR$ 280/noite2 Pessoas35m²Wi-fiCas",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "heading",
+              "tag": "h4",
+              "text": "Acomodações",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-accent font-bold tracking-[0.2em] mb-4 uppercase"
+            },
+            {
+              "order": 2,
+              "role": "heading",
+              "tag": "h2",
+              "text": "Descanse em suítes desenhadas para seu relaxamento.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-4xl md:text-5xl font-display font-bold"
+            },
+            {
+              "order": 3,
+              "role": "body",
+              "tag": "p",
+              "text": "Todos os nossos quartos contam com ar-condicionado silencioso, enxoval premium e café da manhã incluso.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-500 max-w-sm"
+            },
+            {
+              "order": 4,
+              "role": "price",
+              "tag": "p",
+              "text": "R$ 390/noite",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white font-bold text-2xl"
+            },
+            {
+              "order": 5,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Standart",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-2xl font-bold mb-3 group-hover:text-accent transition-colors"
+            },
+            {
+              "order": 6,
+              "role": "body",
+              "tag": "p",
+              "text": "Quarto com capacidade para ate 4 pessoas, com cafe da manhã",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-600 text-sm mb-8 line-clamp-2"
+            },
+            {
+              "order": 7,
+              "role": "cta",
+              "tag": "button",
+              "text": "DETALHES",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "bg-primary text-white px-6 py-2 rounded-full text-xs font-bold hover:bg-accent transition-colors"
+            },
+            {
+              "order": 8,
+              "role": "price",
+              "tag": "p",
+              "text": "R$ 320/noite",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white font-bold text-2xl"
+            },
+            {
+              "order": 9,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Triple Room",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-2xl font-bold mb-3 group-hover:text-accent transition-colors"
+            },
+            {
+              "order": 10,
+              "role": "body",
+              "tag": "p",
+              "text": "Quarto com capacidade para ate 3 pessoas, com cafe da manh",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-600 text-sm mb-8 line-clamp-2"
+            },
+            {
+              "order": 12,
+              "role": "price",
+              "tag": "p",
+              "text": "R$ 280/noite",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white font-bold text-2xl"
+            },
+            {
+              "order": 13,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Casal",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-2xl font-bold mb-3 group-hover:text-accent transition-colors"
+            },
+            {
+              "order": 14,
+              "role": "body",
+              "tag": "p",
+              "text": "Quarto com capacidade para ate duas pessoas, com cafe da manhã.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-600 text-sm mb-8 line-clamp-2"
+            },
+            {
+              "order": 16,
+              "role": "price",
+              "tag": "p",
+              "text": "R$ 220/noite",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white font-bold text-2xl"
+            },
+            {
+              "order": 17,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Single",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-2xl font-bold mb-3 group-hover:text-accent transition-colors"
+            },
+            {
+              "order": 18,
+              "role": "body",
+              "tag": "p",
+              "text": "quarto individual para apenas um hospede,com cafe da manhã",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-600 text-sm mb-8 line-clamp-2"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "role": "section",
+          "label": "Explore o Destino",
+          "tag": "section",
+          "id": "turismo",
+          "className": "py-24 bg-white overflow-hidden",
+          "visible": true,
+          "textPreview": "Explore o DestinoDescubra a Terra das Cachoeiras.Presidente Figueiredo esconde segredos milenares. O Hotel Calleb é sua base estratégica para vivenciar o melhor do turismo amazônico.15 min de carroCachoeira do SantuárioUma das mais famosas, com infraestrutura completa e reserva ecológica.Explorar20 min de carroCachoeira da IracemaCenário cinematográfico com grutas e paredões de arenito impressionantes.Explorar10 min de carroCaverna Refúgio do MaruagaTrilha guiada por cavernas milenares envoltas ",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "heading",
+              "tag": "h4",
+              "text": "Explore o Destino",
+              "href": "",
+              "visible": false,
+              "id": "",
+              "className": "text-accent font-bold tracking-[0.2em] mb-4 uppercase"
+            },
+            {
+              "order": 2,
+              "role": "heading",
+              "tag": "h2",
+              "text": "Descubra a Terra das Cachoeiras.",
+              "href": "",
+              "visible": false,
+              "id": "",
+              "className": "text-primary-dark text-4xl md:text-6xl font-serif italic font-light mb-6"
+            },
+            {
+              "order": 3,
+              "role": "body",
+              "tag": "p",
+              "text": "Presidente Figueiredo esconde segredos milenares. O Hotel Calleb é sua base estratégica para vivenciar o melhor do turismo amazônico.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-gray-600 text-lg"
+            },
+            {
+              "order": 4,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Cachoeira do Santuário",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white text-3xl font-display font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            },
+            {
+              "order": 5,
+              "role": "body",
+              "tag": "p",
+              "text": "Uma das mais famosas, com infraestrutura completa e reserva ecológica.",
+              "href": "",
+              "visible": false,
+              "id": "",
+              "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+            },
+            {
+              "order": 6,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Cachoeira da Iracema",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white text-3xl font-display font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            },
+            {
+              "order": 7,
+              "role": "body",
+              "tag": "p",
+              "text": "Cenário cinematográfico com grutas e paredões de arenito impressionantes.",
+              "href": "",
+              "visible": false,
+              "id": "",
+              "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+            },
+            {
+              "order": 8,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Caverna Refúgio do Maruaga",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white text-3xl font-display font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            },
+            {
+              "order": 9,
+              "role": "body",
+              "tag": "p",
+              "text": "Trilha guiada por cavernas milenares envoltas pela densa selva amazônica.",
+              "href": "",
+              "visible": false,
+              "id": "",
+              "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "role": "section",
+          "label": "Galeria de Fotos",
+          "tag": "section",
+          "id": "galeria",
+          "className": "py-24 bg-bg-light overflow-hidden",
+          "visible": true,
+          "textPreview": "Galeria de FotosCada detalhe importa",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "heading",
+              "tag": "h4",
+              "text": "Galeria de Fotos",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-accent font-bold tracking-[0.2em] mb-4 uppercase"
+            },
+            {
+              "order": 2,
+              "role": "heading",
+              "tag": "h2",
+              "text": "Cada detalhe importa",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-primary-dark text-4xl font-display font-bold"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "role": "contact",
+          "label": "Reserve sua estadia premium hoje.",
+          "tag": "section",
+          "id": "",
+          "className": "py-24 bg-white relative",
+          "visible": true,
+          "textPreview": "Reserve sua estadia premium hoje.Preencha os dados e entraremos em contato via WhatsApp para confirmar sua reserva com as melhores tarifas.Confirmação InstantâneaSuporte humanizado via WhatsAppPolíticas FlexíveisCancelamento grátis até 24h antesReserva InteligenteConsultar DisponibilidadeCheck-inCheck-outHóspedes01 Adulto02 Adultos03 Adultos (Família)04+ Acomodação ColetivaNome CompletoE-mailWhatsApp para ContatoVerificar Disponibilidade✓ Wi-Fi Ultra✓ Café Regional✓ Atendimento 24h",
+          "blocks": [
+            {
+              "order": 1,
+              "role": "heading",
+              "tag": "h2",
+              "text": "Reserve sua estadia premium hoje.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-4xl lg:text-5xl font-display font-bold mb-6"
+            },
+            {
+              "order": 2,
+              "role": "body",
+              "tag": "p",
+              "text": "Preencha os dados e entraremos em contato via WhatsApp para confirmar sua reserva com as melhores tarifas.",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-white/70 text-lg mb-10"
+            },
+            {
+              "order": 3,
+              "role": "body",
+              "tag": "p",
+              "text": "Confirmação Instantânea",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "font-bold"
+            },
+            {
+              "order": 4,
+              "role": "body",
+              "tag": "p",
+              "text": "Suporte humanizado via WhatsApp",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-sm text-white/60"
+            },
+            {
+              "order": 5,
+              "role": "body",
+              "tag": "p",
+              "text": "Políticas Flexíveis",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "font-bold"
+            },
+            {
+              "order": 6,
+              "role": "body",
+              "tag": "p",
+              "text": "Cancelamento grátis até 24h antes",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-sm text-white/60"
+            },
+            {
+              "order": 7,
+              "role": "heading",
+              "tag": "h3",
+              "text": "Reserva Inteligente",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-2xl font-bold text-primary-dark font-serif italic"
+            },
+            {
+              "order": 8,
+              "role": "form-label",
+              "tag": "label",
+              "text": "Check-in",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[9px] uppercase font-bold text-accent block mb-2"
+            },
+            {
+              "order": 9,
+              "role": "form-label",
+              "tag": "label",
+              "text": "Check-out",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[9px] uppercase font-bold text-accent block mb-2"
+            },
+            {
+              "order": 10,
+              "role": "form-label",
+              "tag": "label",
+              "text": "Hóspedes",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[9px] uppercase font-bold text-accent block mb-2"
+            },
+            {
+              "order": 11,
+              "role": "form-label",
+              "tag": "label",
+              "text": "Nome Completo",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[9px] uppercase font-bold text-accent block mb-2"
+            },
+            {
+              "order": 12,
+              "role": "form-label",
+              "tag": "label",
+              "text": "E-mail",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[9px] uppercase font-bold text-accent block mb-2"
+            },
+            {
+              "order": 13,
+              "role": "form-label",
+              "tag": "label",
+              "text": "WhatsApp para Contato",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "text-[9px] uppercase font-bold text-accent block mb-2"
+            },
+            {
+              "order": 14,
+              "role": "cta",
+              "tag": "button",
+              "text": "Verificar Disponibilidade",
+              "href": "",
+              "visible": true,
+              "id": "",
+              "className": "w-full bg-primary text-white py-5 rounded-xl font-bold uppercase tracking-widest shadow-xl flex items-center justify-center gap-3 transition-all hover:bg-primary-dark disabled:opacity-50"
+            }
+          ]
+        }
+      ],
+      "digest": {
+        "title": "Conforto e Hospitalidade no Coração da Amazônia.",
+        "text": "Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso e localização privilegiada no centro da cidade.",
+        "words": 308,
+        "blocks": 60
+      },
+      "links": [
+        {
+          "index": 1,
+          "text": "Início",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": false,
+          "target": ""
+        },
+        {
+          "index": 2,
+          "text": "Sobre",
+          "href": "#sobre",
+          "originalHref": "#sobre",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": false,
+          "target": ""
+        },
+        {
+          "index": 3,
+          "text": "Quartos",
+          "href": "#quartos",
+          "originalHref": "#quartos",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": false,
+          "target": ""
+        },
+        {
+          "index": 4,
+          "text": "Turismo",
+          "href": "#turismo",
+          "originalHref": "#turismo",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": false,
+          "target": ""
+        },
+        {
+          "index": 5,
+          "text": "Galeria",
+          "href": "#galeria",
+          "originalHref": "#galeria",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": false,
+          "target": ""
+        },
+        {
+          "index": 6,
+          "text": "Contato",
+          "href": "#contato",
+          "originalHref": "#contato",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": false,
+          "target": ""
+        },
+        {
+          "index": 7,
+          "text": "RESERVAR AGORA",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 9,
+          "text": "RESERVAR AGORA",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "sectionRole": "hero",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 10,
+          "text": "CONHEÇA NOSSA HISTÓRIA",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Sua melhor escolha",
+          "sectionRole": "about",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 11,
+          "text": "DETALHES",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Acomodações",
+          "sectionRole": "section",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 12,
+          "text": "DETALHES",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Acomodações",
+          "sectionRole": "section",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 13,
+          "text": "DETALHES",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Acomodações",
+          "sectionRole": "section",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 14,
+          "text": "DETALHES",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Acomodações",
+          "sectionRole": "section",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 15,
+          "text": "Verificar Disponibilidade",
+          "href": "",
+          "originalHref": "",
+          "type": "button",
+          "section": "Reserve sua estadia premium hoje.",
+          "sectionRole": "contact",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 16,
+          "text": "",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 17,
+          "text": "",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 18,
+          "text": "Sobre Nós",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 19,
+          "text": "Acomodações",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 20,
+          "text": "Turismo Local",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 21,
+          "text": "Galeria",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 22,
+          "text": "Reservas",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 24,
+          "text": "Política de Privacidade",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 25,
+          "text": "Termos de Uso",
+          "href": "#",
+          "originalHref": "#",
+          "type": "anchor",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": ""
+        },
+        {
+          "index": 26,
+          "text": "",
+          "href": "https://wa.me/559285372368",
+          "originalHref": "https://wa.me/559285372368",
+          "type": "whatsapp",
+          "section": "",
+          "sectionRole": "",
+          "visible": true,
+          "target": "_blank"
+        }
+      ],
+      "forms": [
+        {
+          "index": 1,
+          "id": "",
+          "name": "",
+          "action": "",
+          "method": "get",
+          "section": "Reserve sua estadia premium hoje.",
+          "successMessage": "",
+          "fields": [
+            {
+              "tag": "input",
+              "type": "date",
+              "name": "",
+              "label": "",
+              "placeholder": "",
+              "required": true,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "type": "date",
+              "name": "",
+              "label": "",
+              "placeholder": "",
+              "required": true,
+              "value": ""
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "name": "",
+              "label": "",
+              "placeholder": "",
+              "required": false,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "type": "text",
+              "name": "",
+              "label": "Seu nome",
+              "placeholder": "Seu nome",
+              "required": true,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "type": "email",
+              "name": "",
+              "label": "seu@email.com",
+              "placeholder": "seu@email.com",
+              "required": true,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "type": "tel",
+              "name": "",
+              "label": "(92) 99999-9999",
+              "placeholder": "(92) 99999-9999",
+              "required": true,
+              "value": ""
+            },
+            {
+              "tag": "button",
+              "type": "submit",
+              "name": "",
+              "label": "",
+              "placeholder": "",
+              "required": false,
+              "value": "Verificar Disponibilidade"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/34/35/03/5c/caption.jpg?w=1100&h=-1&s=1",
+          "filename": "home-01.jpg",
+          "role": "hero",
+          "sectionRole": "hero",
+          "alt": "HOTEL CALLEB",
+          "width": 1100,
+          "height": 1467
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/p/AF1QipOjzMpsPYI8vOpwo3MXutHXvsTa-WAxoENc58HW=w253-h337-k-no",
+          "filename": "home-02.jpg",
+          "role": "hero",
+          "sectionRole": "about",
+          "alt": "Interior do Hotel Calleb",
+          "width": 253,
+          "height": 337
+        },
+        {
+          "url": "https://lh4.googleusercontent.com/proxy/7lxWAgixMv_SVXMfGYnkSQMxLyvBzIjxko9adwYY-mjqyTMKRCpeIqh_fpeNqmj22GhqhEpZNvdVwt0-Eslw8jEC8UWEiAWtXNKaEixbuBSa1VvoGnLMD-fOqVQSi-3jGVV2OnHxYAwrW7GAMFQd8TA6gwrR998=w253-h189-k-no",
+          "filename": "home-03.jpg",
+          "role": "hero",
+          "sectionRole": "about",
+          "alt": "Quarto Standard",
+          "width": 252,
+          "height": 189
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/p/AF1QipOnJgYIip12TZqm5rvykbP1U2LrfUoCXQYczLLm=w253-h337-k-no",
+          "filename": "home-04.jpg",
+          "role": "hero",
+          "sectionRole": "about",
+          "alt": "Café da Manhã",
+          "width": 253,
+          "height": 337
+        },
+        {
+          "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/678321185.jpg?k=7a15a8d09d4575cd9e7c838435b3f1e9fccbcb2c8a8d6d356e113fff623dde7b&o=",
+          "filename": "home-05.jpg",
+          "role": "hero",
+          "sectionRole": "about",
+          "alt": "Acomodações Calleb",
+          "width": 576,
+          "height": 768
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/98/caption.jpg?w=1000&h=-1&s=1",
+          "filename": "home-06.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Triple Room",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/95/caption.jpg?w=1000&h=-1&s=1",
+          "filename": "home-07.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Casal",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/99/caption.jpg?w=1000&h=-1&s=1",
+          "filename": "home-08.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Single",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/16/f9/93/cachoeira-do-santuario.jpg?w=700&h=400&s=1",
+          "filename": "home-09.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Cachoeira do Santuário",
+          "width": 700,
+          "height": 400
+        },
+        {
+          "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/678321442.jpg?k=da1061dbead2f5567c93553ae3fef60feba20baeebfa671972e7c8afc7f7eb7b&o=",
+          "filename": "home-10.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 2",
+          "width": 576,
+          "height": 768
+        },
+        {
+          "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/678321678.jpg?k=9aac22db4920b193366f23c1c9f01d0fd7be1fcf25f3aca68f8b233a116fd950&o=",
+          "filename": "home-11.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 3",
+          "width": 576,
+          "height": 768
+        },
+        {
+          "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/778756000.jpg?k=2f344d183153ab3413e69ddedf08dbf4a0b2671cf8cea05095fbcef6ea37e3d4&o=",
+          "filename": "home-12.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 4",
+          "width": 576,
+          "height": 768
+        },
+        {
+          "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/778756396.jpg?k=198fddda576cf5f35cf8abb353c1ee88955df9280186be457387302eb7a4c886&o=",
+          "filename": "home-13.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 5",
+          "width": 576,
+          "height": 768
+        },
+        {
+          "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/778757875.jpg?k=198e804322b5378711f7d070fe16352869dcfc84bffe56e7af20962968b66120&o=",
+          "filename": "home-14.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 6",
+          "width": 576,
+          "height": 768
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/b1/58/84/caption.jpg?w=1100&h=-1&s=1",
+          "filename": "home-15.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 7",
+          "width": 1100,
+          "height": 1467
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/a1/caption.jpg?w=1000&h=-1&s=1",
+          "filename": "home-16.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 8",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/97/caption.jpg?w=1000&h=-1&s=1",
+          "filename": "home-17.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 11",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/9b/caption.jpg?w=1400&h=-1&s=1",
+          "filename": "home-18.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 12",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/9f/caption.jpg?w=1400&h=-1&s=1",
+          "filename": "home-19.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 13",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/33/61/d4/a2/caption.jpg?w=1000&h=-1&s=1",
+          "filename": "home-20.jpg",
+          "role": "hero",
+          "sectionRole": "section",
+          "alt": "Hotel Gallery 14",
+          "width": 960,
+          "height": 1280
+        }
+      ],
+      "briefing": {
+        "generatedAt": "2026-09-16T01:17:41.063Z",
+        "projectName": "Hotel Calleb",
+        "sourceUrl": "https://hotelcalleb.com.br/",
+        "mode": "faithful",
+        "positioning": {
+          "pageTitle": "Hotel Calleb",
+          "metaDescription": "",
+          "mainPromise": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "supportPromise": "Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso e localização privilegiada no centro da cidade."
+        },
+        "narrative": [
+          {
+            "order": 1,
+            "role": "hero",
+            "label": "Conforto e Hospitalidade no Coração da Amazônia."
+          },
+          {
+            "order": 2,
+            "role": "section",
+            "label": "2.500+"
+          },
+          {
+            "order": 3,
+            "role": "about",
+            "label": "Sua melhor escolha"
+          },
+          {
+            "order": 4,
+            "role": "section",
+            "label": "Acomodações"
+          },
+          {
+            "order": 5,
+            "role": "section",
+            "label": "Explore o Destino"
+          },
+          {
+            "order": 6,
+            "role": "section",
+            "label": "Galeria de Fotos"
+          },
+          {
+            "order": 7,
+            "role": "contact",
+            "label": "Reserve sua estadia premium hoje."
+          }
+        ],
+        "problems": {
+          "found": false,
+          "label": "",
+          "items": []
+        },
+        "benefits": {
+          "found": false,
+          "label": "",
+          "items": []
+        },
+        "proof": {
+          "found": false,
+          "label": "",
+          "items": []
+        },
+        "offer": {
+          "found": false,
+          "label": "",
+          "items": []
+        },
+        "objections": {
+          "found": false,
+          "label": "",
+          "items": []
+        },
+        "primaryCtas": [
+          {
+            "index": 1,
+            "text": "Início",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": false,
+            "target": ""
+          },
+          {
+            "index": 2,
+            "text": "Sobre",
+            "href": "#sobre",
+            "originalHref": "#sobre",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": false,
+            "target": ""
+          },
+          {
+            "index": 3,
+            "text": "Quartos",
+            "href": "#quartos",
+            "originalHref": "#quartos",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": false,
+            "target": ""
+          },
+          {
+            "index": 4,
+            "text": "Turismo",
+            "href": "#turismo",
+            "originalHref": "#turismo",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": false,
+            "target": ""
+          },
+          {
+            "index": 5,
+            "text": "Galeria",
+            "href": "#galeria",
+            "originalHref": "#galeria",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": false,
+            "target": ""
+          },
+          {
+            "index": 6,
+            "text": "Contato",
+            "href": "#contato",
+            "originalHref": "#contato",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": false,
+            "target": ""
+          },
+          {
+            "index": 16,
+            "text": "",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 17,
+            "text": "",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 18,
+            "text": "Sobre Nós",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 19,
+            "text": "Acomodações",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 20,
+            "text": "Turismo Local",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 21,
+            "text": "Galeria",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 22,
+            "text": "Reservas",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 24,
+            "text": "Política de Privacidade",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 25,
+            "text": "Termos de Uso",
+            "href": "#",
+            "originalHref": "#",
+            "type": "anchor",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": ""
+          },
+          {
+            "index": 26,
+            "text": "",
+            "href": "https://wa.me/559285372368",
+            "originalHref": "https://wa.me/559285372368",
+            "type": "whatsapp",
+            "section": "",
+            "sectionRole": "",
+            "visible": true,
+            "target": "_blank"
+          }
+        ],
+        "forms": [
+          {
+            "name": "",
+            "action": "",
+            "fields": [
+              "",
+              "",
+              "",
+              "Seu nome",
+              "seu@email.com",
+              "(92) 99999-9999",
+              ""
+            ]
+          }
+        ],
+        "imageSummary": {
+          "hero": 26
+        },
+        "reviewQuestions": [
+          "Qual é o público prioritário?",
+          "Qual é o mecanismo — como exatamente a solução funciona?",
+          "Qual é a promessa principal que deve permanecer?",
+          "Quais provas podem ser usadas legalmente no redesign?",
+          "Quais CTAs e destinos continuam válidos?",
+          "Quais imagens possuem autorização de reutilização?",
+          "Quais informações estão desatualizadas ou ausentes?"
+        ],
+        "notes": ""
+      }
+    }
+  ],
+  "sections": [
+    {
+      "role": "hero",
+      "collapsed": false,
+      "from": [
+        "https://hotelcalleb.com.br/"
+      ],
+      "items": null
+    }
+  ]
+}

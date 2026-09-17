@@ -1,0 +1,897 @@
+{
+  "v": 2,
+  "libs": {
+    "gsap": false,
+    "scrollTrigger": false,
+    "lenis": false,
+    "swiper": false,
+    "lottie": false,
+    "webflowIx2": false
+  },
+  "entry": [],
+  "native": [],
+  "lottie": [],
+  "scripts": [],
+  "hoverEffects": [
+    {
+      "id": "hover-01",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:f5dcb91b",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "custom",
+        "selectorHint": ".group-hover\\:translate-y-0:is(:where(.group) *)",
+        "properties": {
+          "translate": "var(--tw-translate-x) var(--tw-translate-y)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-02",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:7b94c8fe",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "scale",
+        "selectorHint": ".group-hover\\:scale-110:is(:where(.group) *)",
+        "properties": {
+          "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-03",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:3a483da0",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "border-shift",
+        "selectorHint": ".group-hover\\:border-accent:is(:where(.group) *)",
+        "properties": {
+          "border-color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-04",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:b7899c78",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:bg-accent:is(:where(.group) *)",
+        "properties": {
+          "background-color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-05",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:bf81bcf8",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:bg-primary:is(:where(.group) *)",
+        "properties": {
+          "background-color": "var(--color-primary)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-06",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:72856cc5",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:text-accent:is(:where(.group) *)",
+        "properties": {
+          "color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-07",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:54702cc7",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".group-hover\\:text-white:is(:where(.group) *)",
+        "properties": {
+          "color": "var(--color-white)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-08",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:81ab6b05",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "fade",
+        "selectorHint": ".group-hover\\:opacity-100:is(:where(.group) *)",
+        "properties": {
+          "opacity": "1"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-09",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:8a1f4aec",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "scale",
+        "selectorHint": ".hover\\:scale-105",
+        "properties": {
+          "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-10",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:c1f77832",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "border-shift",
+        "selectorHint": ".hover\\:border-primary",
+        "properties": {
+          "border-color": "var(--color-primary)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-11",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:3930f480",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-accent",
+        "properties": {
+          "background-color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-12",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:e14ba0d4",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-accent-light",
+        "properties": {
+          "background-color": "var(--color-accent-light)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-13",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:f439a1fe",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-50",
+        "properties": {
+          "background-color": "var(--color-gray-50)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-14",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:900fe154",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-50\\/50",
+        "properties": {
+          "background-color": "#f9fafb80"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-15",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:5d1439f8",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-50\\/50",
+        "properties": {
+          "background-color": "color-mix(in oklab,var(--color-gray-50) 50%,transparent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)",
+          "@supports (color:color-mix(in lab,red,red))"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-16",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:60ea747c",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-gray-100",
+        "properties": {
+          "background-color": "var(--color-gray-100)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-17",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:ad3c845c",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-primary",
+        "properties": {
+          "background-color": "var(--color-primary)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-18",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:6377bae4",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-primary-dark",
+        "properties": {
+          "background-color": "var(--color-primary-dark)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-19",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:39c0d270",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-50",
+        "properties": {
+          "background-color": "var(--color-red-50)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-20",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:c90f8418",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-400",
+        "properties": {
+          "background-color": "var(--color-red-400)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-21",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:a821ba64",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-400\\/10",
+        "properties": {
+          "background-color": "#ff65681a"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-22",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:3ac76fec",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-400\\/10",
+        "properties": {
+          "background-color": "color-mix(in oklab,var(--color-red-400) 10%,transparent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)",
+          "@supports (color:color-mix(in lab,red,red))"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-23",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:00afd096",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-red-500",
+        "properties": {
+          "background-color": "var(--color-red-500)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-24",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:aac3e8b0",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-white\\/5",
+        "properties": {
+          "background-color": "#ffffff0d"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-25",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:1a1d23ec",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:bg-white\\/5",
+        "properties": {
+          "background-color": "color-mix(in oklab,var(--color-white) 5%,transparent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)",
+          "@supports (color:color-mix(in lab,red,red))"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-26",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:646e3f23",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:text-accent",
+        "properties": {
+          "color": "var(--color-accent)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    },
+    {
+      "id": "hover-27",
+      "category": "motion",
+      "variant": "hover",
+      "fingerprint": "fnv1a:b7f9df61",
+      "occurrences": 1,
+      "detection": {
+        "confidence": 0.78,
+        "methods": [
+          "static-css"
+        ],
+        "warnings": [
+          "regra condicionada por media/supports/layer"
+        ]
+      },
+      "spec": {
+        "trigger": "hover",
+        "effect": "color-shift",
+        "selectorHint": ".hover\\:text-white",
+        "properties": {
+          "color": "var(--color-white)"
+        },
+        "context": [
+          "@layer components;@layer utilities",
+          "@media(hover:hover)"
+        ]
+      },
+      "safety": {
+        "executable": false,
+        "containsThirdPartyCode": false
+      }
+    }
+  ],
+  "backgroundEffects": [],
+  "galleries": [],
+  "dependencies": [],
+  "css": {
+    "keyframes": [
+      "fade-in",
+      "slide-up",
+      "spin",
+      "pulse"
+    ],
+    "transitions": 0,
+    "hovers": 31
+  }
+}

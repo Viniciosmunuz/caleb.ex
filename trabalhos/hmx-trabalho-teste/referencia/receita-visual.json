@@ -1,0 +1,4281 @@
+{
+  "v": 3,
+  "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#",
+  "direction": {
+    "theme": "light",
+    "themeSections": {
+      "light": 6,
+      "dark": 1
+    },
+    "palette": {
+      "roles": {
+        "bg": "#ffffff",
+        "surface": "#f5f5f5",
+        "text": "#003c96",
+        "muted": "#f97300",
+        "border": "oklch(0.967 0.003 264.542)",
+        "textHeading": "#003c96",
+        "accent": "#0047b3",
+        "primary": "#0047b3",
+        "primaryHover": "#002894"
+      },
+      "swatches": [
+        {
+          "hex": "#f5f5f5",
+          "usage": "background",
+          "weight": 7039739,
+          "role": "surface",
+          "vividness": 0
+        },
+        {
+          "hex": "#ffffff",
+          "usage": "background",
+          "weight": 5434291,
+          "role": "bg",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.4356 -0.0301778 -0.179942 / 0.4)",
+          "usage": "background",
+          "weight": 1734542,
+          "role": "",
+          "vividness": 0
+        },
+        {
+          "hex": "#003c96",
+          "usage": "background",
+          "weight": 1111441,
+          "role": "",
+          "vividness": 1
+        },
+        {
+          "hex": "#0047b3",
+          "usage": "background",
+          "weight": 938338,
+          "role": "",
+          "vividness": 1
+        },
+        {
+          "hex": "#f97300",
+          "usage": "background",
+          "weight": 57434,
+          "role": "",
+          "vividness": 1
+        },
+        {
+          "hex": "oklch(0.446 0.03 256.802)",
+          "usage": "text",
+          "weight": 655,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+          "usage": "text",
+          "weight": 496,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "#ffffff",
+          "usage": "text",
+          "weight": 465,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+          "usage": "text",
+          "weight": 322,
+          "role": "muted",
+          "vividness": 0
+        },
+        {
+          "hex": "oklch(0.967 0.003 264.542)",
+          "usage": "border",
+          "weight": 11,
+          "role": "border",
+          "vividness": 0
+        },
+        {
+          "hex": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+          "usage": "border",
+          "weight": 7,
+          "role": "border",
+          "vividness": 0
+        },
+        {
+          "hex": "#0047b3",
+          "usage": "accent",
+          "weight": 3358,
+          "role": "primary/accent",
+          "vividness": 1
+        },
+        {
+          "hex": "#003c96",
+          "usage": "accent",
+          "weight": 1874,
+          "role": "accent",
+          "vividness": 1
+        },
+        {
+          "hex": "#f97300",
+          "usage": "accent",
+          "weight": 1787,
+          "role": "accent",
+          "vividness": 1
+        }
+      ],
+      "accent": [
+        {
+          "hex": "#0047b3",
+          "score": 3358,
+          "vividness": 1
+        },
+        {
+          "hex": "#003c96",
+          "score": 1874,
+          "vividness": 1
+        },
+        {
+          "hex": "#f97300",
+          "score": 1787,
+          "vividness": 1
+        }
+      ]
+    },
+    "typography": {
+      "fontStacks": [
+        {
+          "family": "Inter",
+          "textWeight": 2944
+        },
+        {
+          "family": "Outfit",
+          "textWeight": 215
+        },
+        {
+          "family": "Georgia",
+          "textWeight": 151
+        }
+      ],
+      "googleFonts": [],
+      "fontStylesheets": [],
+      "scale": {
+        "h1": {
+          "sample": "Conforto e Hospitalidade no Coração da Amazônia.",
+          "family": "Georgia",
+          "size": "96px",
+          "weight": "300",
+          "lineHeight": "105.6px",
+          "letterSpacing": "-2.4px",
+          "transform": "",
+          "color": "#ffffff"
+        },
+        "h2": {
+          "sample": "A moda do Hotel Calleb no portão de entrada para a selva.",
+          "family": "Georgia",
+          "size": "60px",
+          "weight": "300",
+          "lineHeight": "75px",
+          "letterSpacing": "",
+          "transform": "",
+          "color": "#003c96"
+        },
+        "h3": {
+          "sample": "2.500+",
+          "family": "Outfit",
+          "size": "30px",
+          "weight": "700",
+          "lineHeight": "36px",
+          "letterSpacing": "",
+          "transform": "",
+          "color": "#ffffff"
+        },
+        "h4": {
+          "sample": "Sua melhor escolha",
+          "family": "Inter",
+          "size": "12px",
+          "weight": "700",
+          "lineHeight": "16px",
+          "letterSpacing": "2.4px",
+          "transform": "uppercase",
+          "color": "#f97300"
+        },
+        "body": {
+          "family": "Inter",
+          "size": "14px",
+          "weight": "700",
+          "lineHeight": "20px",
+          "color": "#ffffff"
+        },
+        "blockquote": null
+      }
+    },
+    "spacing": {
+      "sectionPaddingY": [
+        80,
+        96
+      ],
+      "gaps": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        64
+      ],
+      "maxWidths": [
+        576,
+        672,
+        1024,
+        1280
+      ]
+    },
+    "radii": {
+      "common": [
+        "3.35544e+07px",
+        "24px",
+        "12px",
+        "16px",
+        "4px",
+        "40px"
+      ],
+      "dominant": "3.35544e+07px"
+    },
+    "shadows": [
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(",
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, ",
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(",
+      "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+    ],
+    "borders": {
+      "common": [
+        "oklch(0.967 0.003 264.542)",
+        "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+        "#0047b3",
+        "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+        "#ffffff",
+        "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)"
+      ]
+    },
+    "buttons": {
+      "primary": {
+        "radius": "3.35544e+07px",
+        "padding": "8px 24px 8px 24px",
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "letterSpacing": "",
+        "textTransform": "",
+        "boxShadow": "",
+        "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "bg": "#0047b3",
+        "color": "#ffffff",
+        "border": "none",
+        "hoverBg": "#002894"
+      },
+      "secondary": {
+        "radius": "3.35544e+07px",
+        "padding": "16px 40px 16px 40px",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "letterSpacing": "",
+        "textTransform": "",
+        "boxShadow": "",
+        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "bg": "transparent",
+        "color": "#0047b3",
+        "border": "2px solid #0047b3"
+      }
+    },
+    "background": {
+      "dominant": "#ffffff",
+      "gradients": [
+        "linear-gradient(oklab(0 0 0 / 0.6) 0%, rgba(0, 0, 0, 0) 50%, oklab(0 0 0 / 0.6) 100%)",
+        "linear-gradient(to top, oklab(0 0 0 / 0.9) 0%, oklab(0 0 0 / 0.2) 50%, rgba(0, 0, 0, 0) 100%)",
+        "linear-gradient(to top, oklab(0 0 0 / 0.6) 0%, rgba(0, 0, 0, 0) 100%)"
+      ]
+    },
+    "paletteResolution": {
+      "status": "resolved",
+      "roles": {
+        "bg": "#ffffff",
+        "surface": "#f5f5f5",
+        "text": "#003c96",
+        "muted": "#f97300",
+        "border": "oklch(0.967 0.003 264.542)",
+        "textHeading": "#003c96",
+        "accent": "#0047b3",
+        "primary": "#0047b3",
+        "primaryHover": "#002894"
+      }
+    }
+  },
+  "layouts": {
+    "v": 1,
+    "capturedAt": "2026-09-16T01:16:04.106Z",
+    "faithful": true,
+    "breakpoints": [
+      {
+        "bp": "desktop",
+        "width": 1440
+      },
+      {
+        "bp": "tablet",
+        "width": 768
+      },
+      {
+        "bp": "mobile",
+        "width": 390
+      }
+    ],
+    "sections": [
+      {
+        "index": 1,
+        "role": "hero",
+        "tag": "section",
+        "label": "Conforto e Hospitalidade no Coração da Amazônia.",
+        "domId": "",
+        "className": "relative h-screen flex items-center justify-center overflow-hidden",
+        "captureKey": "section-hero-19upbwn",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "justify-content": "center",
+              "align-items": "center",
+              "grid-auto-flow": "row",
+              "position": "relative"
+            },
+            "summary": "flex horizontal, justify center, align center"
+          },
+          "tablet": {
+            "props": {
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "justify-content": "center",
+              "align-items": "center",
+              "grid-auto-flow": "row",
+              "position": "relative"
+            },
+            "summary": "flex horizontal, justify center, align center"
+          },
+          "mobile": {
+            "props": {
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "justify-content": "center",
+              "align-items": "center",
+              "grid-auto-flow": "row",
+              "position": "relative"
+            },
+            "summary": "flex horizontal, justify center, align center"
+          }
+        },
+        "content": {
+          "shape": "duo",
+          "mediaCount": 6,
+          "contentLayout": null,
+          "cardGroup": {
+            "count": 2,
+            "parts": [
+              "ícone"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "grid-auto-flow": "row",
+                  "position": "relative"
+                },
+                "summary": "flex horizontal, justify center, align center"
+              },
+              "tablet": {
+                "props": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "grid-auto-flow": "row",
+                  "position": "relative"
+                },
+                "summary": "flex horizontal, justify center, align center"
+              },
+              "mobile": {
+                "props": {
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "grid-auto-flow": "row",
+                  "position": "relative"
+                },
+                "summary": "flex horizontal, justify center, align center"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "absolute.inset-0",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              }
+            }
+          },
+          {
+            "tag": "div",
+            "label": "relative.z-20",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1024px",
+                  "margin-left": "200.5px",
+                  "margin-right": "200.5px",
+                  "text-align": "center",
+                  "position": "relative"
+                },
+                "summary": "padding-x 24px, max-width 1024px, centralizado, texto center"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1024px",
+                  "text-align": "center",
+                  "position": "relative"
+                },
+                "summary": "padding-x 24px, max-width 1024px, texto center"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1024px",
+                  "text-align": "center",
+                  "position": "relative"
+                },
+                "summary": "padding-x 24px, max-width 1024px, texto center"
+              }
+            }
+          },
+          {
+            "tag": "div",
+            "label": "absolute.bottom-10",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              }
+            }
+          },
+          {
+            "tag": "div",
+            "label": "absolute.bottom-10",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "tablet": {
+                "props": {
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              },
+              "mobile": {
+                "props": {
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "position": "absolute"
+                },
+                "summary": "fluxo padrão (block)"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      },
+      {
+        "index": 2,
+        "role": "section",
+        "tag": "section",
+        "label": "2.500+",
+        "domId": "",
+        "className": "py-20 bg-primary-dark overflow-hidden",
+        "captureKey": "section-section-0nzvdlu",
+        "tone": {
+          "bg": "#003c96",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "dark"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "80px",
+              "padding-bottom": "80px",
+              "position": "static"
+            },
+            "summary": "padding-y 80px/80px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "80px",
+              "padding-bottom": "80px",
+              "position": "static"
+            },
+            "summary": "padding-y 80px/80px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "80px",
+              "padding-bottom": "80px",
+              "position": "static"
+            },
+            "summary": "padding-y 80px/80px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 4,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "grid",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-template-columns": "280px 280px 280px 280px",
+                "grid-auto-flow": "row",
+                "gap": "32px",
+                "column-gap": "32px",
+                "row-gap": "32px",
+                "position": "static"
+              },
+              "summary": "grid 4 colunas, gap 32px"
+            },
+            "tablet": {
+              "props": {
+                "display": "grid",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-template-columns": "152.25px 152.25px 152.25px 152.25px",
+                "grid-auto-flow": "row",
+                "gap": "32px",
+                "column-gap": "32px",
+                "row-gap": "32px",
+                "position": "static"
+              },
+              "summary": "grid 4 colunas, gap 32px"
+            },
+            "mobile": {
+              "props": {
+                "display": "grid",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-template-columns": "155.5px 155.5px",
+                "grid-auto-flow": "row",
+                "gap": "32px",
+                "column-gap": "32px",
+                "row-gap": "32px",
+                "position": "static"
+              },
+              "summary": "grid 2 colunas, gap 32px"
+            }
+          },
+          "cardGroup": {
+            "count": 4,
+            "parts": [
+              "ícone",
+              "título",
+              "texto"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "280px 280px 280px 280px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 4 colunas, gap 32px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "152.25px 152.25px 152.25px 152.25px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 4 colunas, gap 32px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "155.5px 155.5px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 2 colunas, gap 32px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      },
+      {
+        "index": 3,
+        "role": "about",
+        "tag": "section",
+        "label": "Sua melhor escolha",
+        "domId": "sobre",
+        "className": "py-24 bg-white overflow-hidden",
+        "captureKey": "section-about-0y1yv5v",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "split",
+          "mediaCount": 8,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "align-items": "center",
+                "grid-auto-flow": "row",
+                "gap": "64px",
+                "column-gap": "64px",
+                "row-gap": "64px",
+                "position": "static"
+              },
+              "summary": "flex horizontal, gap 64px, align center"
+            },
+            "tablet": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "align-items": "center",
+                "grid-auto-flow": "row",
+                "gap": "64px",
+                "column-gap": "64px",
+                "row-gap": "64px",
+                "position": "static"
+              },
+              "summary": "flex vertical, gap 64px, align center"
+            },
+            "mobile": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "align-items": "center",
+                "grid-auto-flow": "row",
+                "gap": "64px",
+                "column-gap": "64px",
+                "row-gap": "64px",
+                "position": "static"
+              },
+              "summary": "flex vertical, gap 64px, align center"
+            }
+          },
+          "cardGroup": null
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      },
+      {
+        "index": 4,
+        "role": "section",
+        "tag": "section",
+        "label": "delegações",
+        "domId": "quartos",
+        "className": "py-24 bg-bg-light overflow-hidden",
+        "captureKey": "section-section-0wfp63r",
+        "tone": {
+          "bg": "#f5f5f5",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 28,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "32px",
+                "padding-left": "32px",
+                "max-width": "1280px",
+                "margin-left": "72.5px",
+                "margin-right": "72.5px",
+                "position": "static"
+              },
+              "summary": "padding-x 32px, max-width 1280px, centralizado"
+            },
+            "tablet": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "24px",
+                "padding-left": "24px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 24px, max-width 1280px"
+            },
+            "mobile": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "16px",
+                "padding-left": "16px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 16px, max-width 1280px"
+            }
+          },
+          "cardGroup": {
+            "count": 3,
+            "parts": [
+              "mídia",
+              "título",
+              "texto",
+              "link/botão"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "378.656px 378.672px 378.656px",
+                  "grid-auto-flow": "row",
+                  "gap": "40px",
+                  "column-gap": "40px",
+                  "row-gap": "40px",
+                  "position": "static"
+                },
+                "summary": "grid 3 colunas, gap 40px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "332.5px 332.5px",
+                  "grid-auto-flow": "row",
+                  "gap": "40px",
+                  "column-gap": "40px",
+                  "row-gap": "40px",
+                  "position": "static"
+                },
+                "summary": "grid 2 colunas, gap 40px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "343px",
+                  "grid-auto-flow": "row",
+                  "gap": "40px",
+                  "column-gap": "40px",
+                  "row-gap": "40px",
+                  "position": "static"
+                },
+                "summary": "grid 1 coluna, gap 40px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      },
+      {
+        "index": 5,
+        "role": "section",
+        "tag": "section",
+        "label": "Explore o Destino",
+        "domId": "turismo",
+        "className": "py-24 bg-white overflow-hidden",
+        "captureKey": "section-section-1yv9rqr",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 9,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "32px",
+                "padding-left": "32px",
+                "max-width": "1280px",
+                "margin-left": "72.5px",
+                "margin-right": "72.5px",
+                "position": "static"
+              },
+              "summary": "padding-x 32px, max-width 1280px, centralizado"
+            },
+            "tablet": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "24px",
+                "padding-left": "24px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 24px, max-width 1280px"
+            },
+            "mobile": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "16px",
+                "padding-left": "16px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 16px, max-width 1280px"
+            }
+          },
+          "cardGroup": {
+            "count": 3,
+            "parts": [
+              "mídia",
+              "título",
+              "texto"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "384px 384px 384px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 3 colunas, gap 32px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "705px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 1 coluna, gap 32px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "grid",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-template-columns": "343px",
+                  "grid-auto-flow": "row",
+                  "gap": "32px",
+                  "column-gap": "32px",
+                  "row-gap": "32px",
+                  "position": "static"
+                },
+                "summary": "grid 1 coluna, gap 32px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      },
+      {
+        "index": 6,
+        "role": "section",
+        "tag": "section",
+        "label": "Galeria de Fotos",
+        "domId": "galeria",
+        "className": "py-24 bg-bg-light overflow-hidden",
+        "captureKey": "section-section-0gzoaid",
+        "tone": {
+          "bg": "#f5f5f5",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "static"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "card-grid",
+          "mediaCount": 16,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "32px",
+                "padding-left": "32px",
+                "max-width": "1280px",
+                "margin-left": "72.5px",
+                "margin-right": "72.5px",
+                "position": "static"
+              },
+              "summary": "padding-x 32px, max-width 1280px, centralizado"
+            },
+            "tablet": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "24px",
+                "padding-left": "24px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 24px, max-width 1280px"
+            },
+            "mobile": {
+              "props": {
+                "display": "block",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "padding-right": "16px",
+                "padding-left": "16px",
+                "max-width": "1280px",
+                "position": "static"
+              },
+              "summary": "padding-x 16px, max-width 1280px"
+            }
+          },
+          "cardGroup": {
+            "count": 6,
+            "parts": [
+              "mídia"
+            ],
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "gap": "24px",
+                  "column-gap": "24px",
+                  "row-gap": "24px",
+                  "position": "static"
+                },
+                "summary": "gap 24px"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "gap": "24px",
+                  "column-gap": "24px",
+                  "row-gap": "24px",
+                  "position": "static"
+                },
+                "summary": "gap 24px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "gap": "24px",
+                  "column-gap": "24px",
+                  "row-gap": "24px",
+                  "position": "static"
+                },
+                "summary": "gap 24px"
+              }
+            }
+          }
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      },
+      {
+        "index": 7,
+        "role": "contact",
+        "tag": "section",
+        "label": "Reserve sua estadia premium hoje.",
+        "domId": "",
+        "className": "py-24 bg-white relative",
+        "captureKey": "section-contact-1okicd9",
+        "tone": {
+          "bg": "#ffffff",
+          "text": "oklch(0.21 0.034 264.665)",
+          "tone": "light"
+        },
+        "layout": {
+          "desktop": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "relative"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "tablet": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "relative"
+            },
+            "summary": "padding-y 96px/96px"
+          },
+          "mobile": {
+            "props": {
+              "display": "block",
+              "flex-direction": "row",
+              "flex-wrap": "nowrap",
+              "grid-auto-flow": "row",
+              "padding-top": "96px",
+              "padding-bottom": "96px",
+              "position": "relative"
+            },
+            "summary": "padding-y 96px/96px"
+          }
+        },
+        "content": {
+          "shape": "split",
+          "mediaCount": 3,
+          "contentLayout": {
+            "desktop": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "row",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "position": "static"
+              },
+              "summary": "flex horizontal"
+            },
+            "tablet": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "position": "static"
+              },
+              "summary": "flex vertical"
+            },
+            "mobile": {
+              "props": {
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "grid-auto-flow": "row",
+                "position": "static"
+              },
+              "summary": "flex vertical"
+            }
+          },
+          "cardGroup": null
+        },
+        "children": [
+          {
+            "tag": "div",
+            "label": "max-w-7xl.mx-auto",
+            "layout": {
+              "desktop": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "32px",
+                  "padding-left": "32px",
+                  "max-width": "1280px",
+                  "margin-left": "72.5px",
+                  "margin-right": "72.5px",
+                  "position": "static"
+                },
+                "summary": "padding-x 32px, max-width 1280px, centralizado"
+              },
+              "tablet": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "24px",
+                  "padding-left": "24px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 24px, max-width 1280px"
+              },
+              "mobile": {
+                "props": {
+                  "display": "block",
+                  "flex-direction": "row",
+                  "flex-wrap": "nowrap",
+                  "grid-auto-flow": "row",
+                  "padding-right": "16px",
+                  "padding-left": "16px",
+                  "max-width": "1280px",
+                  "position": "static"
+                },
+                "summary": "padding-x 16px, max-width 1280px"
+              }
+            }
+          }
+        ],
+        "recipeSource": "hmx-style-hotelcalleb.com.br",
+        "recipeSourceLabel": "hotelcalleb.com.br",
+        "recipeEvidence": "measured-layout"
+      }
+    ]
+  },
+  "animations": {
+    "source": "hmx-style-hotelcalleb.com.br",
+    "sourceLabel": "hotelcalleb.com.br",
+    "spec": "referencia/animations.json",
+    "observed": "referencia/animations-observed.json",
+    "screenshots": "referencia/screenshots",
+    "sequences": "referencia/screenshots/sequences",
+    "summary": {
+      "available": true,
+      "libraries": [],
+      "reveals": 0,
+      "pins": 0,
+      "hovers": 31,
+      "hoverEffects": 27,
+      "backgroundEffects": 0,
+      "galleries": 0,
+      "transitions": 0,
+      "keyframes": 4,
+      "native": 0,
+      "lottie": 0,
+      "scripts": 0,
+      "hidden": 5,
+      "mobileMenu": false,
+      "tags": [
+        "31 hovers",
+        "5 invisíveleis após scroll"
+      ],
+      "patterns": {
+        "entry": [],
+        "pinned": [],
+        "native": [],
+        "lottie": [],
+        "keyframes": [
+          "fade-in",
+          "slide-up",
+          "spin",
+          "pulse"
+        ],
+        "hover": [
+          {
+            "id": "hover-01",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:f5dcb91b",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "custom",
+              "selectorHint": ".group-hover\\:translate-y-0:is(:where(.group) *)",
+              "properties": {
+                "translate": "var(--tw-translate-x) var(--tw-translate-y)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-02",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:7b94c8fe",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "scale",
+              "selectorHint": ".group-hover\\:scale-110:is(:where(.group) *)",
+              "properties": {
+                "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-03",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:3a483da0",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "border-shift",
+              "selectorHint": ".group-hover\\:border-accent:is(:where(.group) *)",
+              "properties": {
+                "border-color": "var(--color-accent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-04",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:b7899c78",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".group-hover\\:bg-accent:is(:where(.group) *)",
+              "properties": {
+                "background-color": "var(--color-accent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-05",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:bf81bcf8",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".group-hover\\:bg-primary:is(:where(.group) *)",
+              "properties": {
+                "background-color": "var(--color-primary)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-06",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:72856cc5",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".group-hover\\:text-accent:is(:where(.group) *)",
+              "properties": {
+                "color": "var(--color-accent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-07",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:54702cc7",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".group-hover\\:text-white:is(:where(.group) *)",
+              "properties": {
+                "color": "var(--color-white)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-08",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:81ab6b05",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "fade",
+              "selectorHint": ".group-hover\\:opacity-100:is(:where(.group) *)",
+              "properties": {
+                "opacity": "1"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-09",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:8a1f4aec",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "scale",
+              "selectorHint": ".hover\\:scale-105",
+              "properties": {
+                "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-10",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:c1f77832",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "border-shift",
+              "selectorHint": ".hover\\:border-primary",
+              "properties": {
+                "border-color": "var(--color-primary)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-11",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:3930f480",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-accent",
+              "properties": {
+                "background-color": "var(--color-accent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-12",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:e14ba0d4",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-accent-light",
+              "properties": {
+                "background-color": "var(--color-accent-light)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-13",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:f439a1fe",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-gray-50",
+              "properties": {
+                "background-color": "var(--color-gray-50)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-14",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:900fe154",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-gray-50\\/50",
+              "properties": {
+                "background-color": "#f9fafb80"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-15",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:5d1439f8",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-gray-50\\/50",
+              "properties": {
+                "background-color": "color-mix(in oklab,var(--color-gray-50) 50%,transparent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)",
+                "@supports (color:color-mix(in lab,red,red))"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-16",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:60ea747c",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-gray-100",
+              "properties": {
+                "background-color": "var(--color-gray-100)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-17",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:ad3c845c",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-primary",
+              "properties": {
+                "background-color": "var(--color-primary)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-18",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:6377bae4",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-primary-dark",
+              "properties": {
+                "background-color": "var(--color-primary-dark)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-19",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:39c0d270",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-red-50",
+              "properties": {
+                "background-color": "var(--color-red-50)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-20",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:c90f8418",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-red-400",
+              "properties": {
+                "background-color": "var(--color-red-400)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-21",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:a821ba64",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-red-400\\/10",
+              "properties": {
+                "background-color": "#ff65681a"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-22",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:3ac76fec",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-red-400\\/10",
+              "properties": {
+                "background-color": "color-mix(in oklab,var(--color-red-400) 10%,transparent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)",
+                "@supports (color:color-mix(in lab,red,red))"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-23",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:00afd096",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-red-500",
+              "properties": {
+                "background-color": "var(--color-red-500)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-24",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:aac3e8b0",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-white\\/5",
+              "properties": {
+                "background-color": "#ffffff0d"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-25",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:1a1d23ec",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:bg-white\\/5",
+              "properties": {
+                "background-color": "color-mix(in oklab,var(--color-white) 5%,transparent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)",
+                "@supports (color:color-mix(in lab,red,red))"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-26",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:646e3f23",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:text-accent",
+              "properties": {
+                "color": "var(--color-accent)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          },
+          {
+            "id": "hover-27",
+            "category": "motion",
+            "variant": "hover",
+            "fingerprint": "fnv1a:b7f9df61",
+            "occurrences": 1,
+            "detection": {
+              "confidence": 0.78,
+              "methods": [
+                "static-css"
+              ],
+              "warnings": [
+                "regra condicionada por media/supports/layer"
+              ]
+            },
+            "spec": {
+              "trigger": "hover",
+              "effect": "color-shift",
+              "selectorHint": ".hover\\:text-white",
+              "properties": {
+                "color": "var(--color-white)"
+              },
+              "context": [
+                "@layer components;@layer utilities",
+                "@media(hover:hover)"
+              ]
+            },
+            "safety": {
+              "executable": false,
+              "containsThirdPartyCode": false
+            }
+          }
+        ],
+        "background": [],
+        "galleries": [],
+        "hidden": [
+          {
+            "className": "text-accent font-bold tracking-[0.2em] mb-4 uppercase",
+            "hasMedia": false,
+            "id": "",
+            "reason": "opacity 0",
+            "sample": "Explore o Destino",
+            "tag": "h4",
+            "transform": ""
+          },
+          {
+            "className": "text-primary-dark text-4xl md:text-6xl font-serif italic font-light mb-6",
+            "hasMedia": false,
+            "id": "",
+            "reason": "opacity 0",
+            "sample": "Descubra a Terra das Cachoeiras .",
+            "tag": "h2",
+            "transform": "matrix(1, 0, 0, 1, 0, 20)"
+          },
+          {
+            "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity ",
+            "hasMedia": false,
+            "id": "",
+            "reason": "opacity 0",
+            "sample": "Uma das mais famosas, com infraestrutura completa e reserva ecológica.",
+            "tag": "p",
+            "transform": ""
+          },
+          {
+            "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity ",
+            "hasMedia": false,
+            "id": "",
+            "reason": "opacity 0",
+            "sample": "Cenário cinematográfico com grutas e paredões de arenito impressionant",
+            "tag": "p",
+            "transform": ""
+          },
+          {
+            "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity ",
+            "hasMedia": false,
+            "id": "",
+            "reason": "opacity 0",
+            "sample": "Trilha guiada por cavernas milenares envoltas pela densa selva amazôni",
+            "tag": "p",
+            "transform": ""
+          }
+        ],
+        "mobileMenu": {
+          "found": false
+        }
+      }
+    },
+    "selectedPatterns": []
+  },
+  "recipe": {
+    "v": 3,
+    "kind": "htmlmentor-visual-recipe",
+    "projectName": "teste",
+    "base": "hmx-style-hotelcalleb.com.br",
+    "references": [
+      {
+        "name": "hmx-style-hotelcalleb.com.br",
+        "label": "hotelcalleb.com.br",
+        "marker": "A",
+        "role": "base",
+        "sourceUrl": "https://hotelcalleb.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeQUJ675tC4SoBuPTn1K_s2N4v5AyIVLwW_9iXYTjKq6nn83W6BFw149s_pJA_aem_redB1JcuXn0TFHwVJXUNZw#"
+      }
+    ],
+    "layers": {
+      "paleta": {
+        "label": "Paleta + tema",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "claro · 15 cores · acento #0047b3",
+        "snapshot": {
+          "theme": "light",
+          "roles": {
+            "bg": "#ffffff",
+            "surface": "#f5f5f5",
+            "text": "#003c96",
+            "muted": "#f97300",
+            "border": "oklch(0.967 0.003 264.542)",
+            "textHeading": "#003c96",
+            "accent": "#0047b3",
+            "primary": "#0047b3",
+            "primaryHover": "#002894"
+          },
+          "swatches": [
+            {
+              "hex": "#f5f5f5",
+              "usage": "background",
+              "weight": 7039739,
+              "role": "surface",
+              "vividness": 0
+            },
+            {
+              "hex": "#ffffff",
+              "usage": "background",
+              "weight": 5434291,
+              "role": "bg",
+              "vividness": 0
+            },
+            {
+              "hex": "oklab(0.4356 -0.0301778 -0.179942 / 0.4)",
+              "usage": "background",
+              "weight": 1734542,
+              "role": "",
+              "vividness": 0
+            },
+            {
+              "hex": "#003c96",
+              "usage": "background",
+              "weight": 1111441,
+              "role": "",
+              "vividness": 1
+            },
+            {
+              "hex": "#0047b3",
+              "usage": "background",
+              "weight": 938338,
+              "role": "",
+              "vividness": 1
+            },
+            {
+              "hex": "#f97300",
+              "usage": "background",
+              "weight": 57434,
+              "role": "",
+              "vividness": 1
+            },
+            {
+              "hex": "oklch(0.446 0.03 256.802)",
+              "usage": "text",
+              "weight": 655,
+              "role": "muted",
+              "vividness": 0
+            },
+            {
+              "hex": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+              "usage": "text",
+              "weight": 496,
+              "role": "muted",
+              "vividness": 0
+            },
+            {
+              "hex": "#ffffff",
+              "usage": "text",
+              "weight": 465,
+              "role": "muted",
+              "vividness": 0
+            },
+            {
+              "hex": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+              "usage": "text",
+              "weight": 322,
+              "role": "muted",
+              "vividness": 0
+            },
+            {
+              "hex": "oklch(0.967 0.003 264.542)",
+              "usage": "border",
+              "weight": 11,
+              "role": "border",
+              "vividness": 0
+            },
+            {
+              "hex": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+              "usage": "border",
+              "weight": 7,
+              "role": "border",
+              "vividness": 0
+            },
+            {
+              "hex": "#0047b3",
+              "usage": "accent",
+              "weight": 3358,
+              "role": "primary/accent",
+              "vividness": 1
+            },
+            {
+              "hex": "#003c96",
+              "usage": "accent",
+              "weight": 1874,
+              "role": "accent",
+              "vividness": 1
+            },
+            {
+              "hex": "#f97300",
+              "usage": "accent",
+              "weight": 1787,
+              "role": "accent",
+              "vividness": 1
+            }
+          ],
+          "accent": [
+            {
+              "hex": "#0047b3",
+              "score": 3358,
+              "vividness": 1
+            },
+            {
+              "hex": "#003c96",
+              "score": 1874,
+              "vividness": 1
+            },
+            {
+              "hex": "#f97300",
+              "score": 1787,
+              "vividness": 1
+            }
+          ]
+        },
+        "evidence": "referencia/design-direction.json",
+        "decisionState": "resolved",
+        "selection": {
+          "type": "reference",
+          "source": "hmx-style-hotelcalleb.com.br"
+        },
+        "resolution": {
+          "status": "resolved",
+          "roles": {
+            "bg": "#ffffff",
+            "surface": "#f5f5f5",
+            "text": "#003c96",
+            "muted": "#f97300",
+            "border": "oklch(0.967 0.003 264.542)",
+            "textHeading": "#003c96",
+            "accent": "#0047b3",
+            "primary": "#0047b3",
+            "primaryHover": "#002894"
+          }
+        }
+      },
+      "tipografia": {
+        "label": "Tipografia",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "Georgia + Inter · 6.86×",
+        "snapshot": {
+          "fontStacks": [
+            {
+              "family": "Inter",
+              "textWeight": 2944
+            },
+            {
+              "family": "Outfit",
+              "textWeight": 215
+            },
+            {
+              "family": "Georgia",
+              "textWeight": 151
+            }
+          ],
+          "googleFonts": [],
+          "fontStylesheets": [],
+          "scale": {
+            "h1": {
+              "sample": "Conforto e Hospitalidade no Coração da Amazônia.",
+              "family": "Georgia",
+              "size": "96px",
+              "weight": "300",
+              "lineHeight": "105.6px",
+              "letterSpacing": "-2.4px",
+              "transform": "",
+              "color": "#ffffff"
+            },
+            "h2": {
+              "sample": "A moda do Hotel Calleb no portão de entrada para a selva.",
+              "family": "Georgia",
+              "size": "60px",
+              "weight": "300",
+              "lineHeight": "75px",
+              "letterSpacing": "",
+              "transform": "",
+              "color": "#003c96"
+            },
+            "h3": {
+              "sample": "2.500+",
+              "family": "Outfit",
+              "size": "30px",
+              "weight": "700",
+              "lineHeight": "36px",
+              "letterSpacing": "",
+              "transform": "",
+              "color": "#ffffff"
+            },
+            "h4": {
+              "sample": "Sua melhor escolha",
+              "family": "Inter",
+              "size": "12px",
+              "weight": "700",
+              "lineHeight": "16px",
+              "letterSpacing": "2.4px",
+              "transform": "uppercase",
+              "color": "#f97300"
+            },
+            "body": {
+              "family": "Inter",
+              "size": "14px",
+              "weight": "700",
+              "lineHeight": "20px",
+              "color": "#ffffff"
+            },
+            "blockquote": null
+          }
+        },
+        "evidence": "referencia/design-direction.json",
+        "decisionState": "resolved",
+        "selection": {
+          "type": "composed",
+          "families": {
+            "primary": {
+              "family": "Georgia",
+              "sources": [
+                "hmx-style-hotelcalleb.com.br"
+              ],
+              "state": "suggested"
+            },
+            "secondary": {
+              "family": "Inter",
+              "sources": [
+                "hmx-style-hotelcalleb.com.br"
+              ],
+              "state": "suggested"
+            },
+            "tertiary": {
+              "family": null,
+              "sources": [],
+              "state": "suggested"
+            }
+          },
+          "scale": {
+            "type": "reference",
+            "source": "hmx-style-hotelcalleb.com.br",
+            "state": "suggested"
+          },
+          "mapping": {
+            "h1": "primary",
+            "h2": "primary",
+            "h3": "primary",
+            "h4": "primary",
+            "body": "secondary",
+            "blockquote": "primary"
+          }
+        },
+        "resolution": {
+          "status": "resolved",
+          "typography": {
+            "fontStacks": [
+              {
+                "family": "Inter",
+                "textWeight": 2944
+              },
+              {
+                "family": "Outfit",
+                "textWeight": 215
+              },
+              {
+                "family": "Georgia",
+                "textWeight": 151
+              }
+            ],
+            "googleFonts": [],
+            "fontStylesheets": [],
+            "scale": {
+              "h1": {
+                "sample": "Conforto e Hospitalidade no Coração da Amazônia.",
+                "family": "Georgia",
+                "size": "96px",
+                "weight": "300",
+                "lineHeight": "105.6px",
+                "letterSpacing": "-2.4px",
+                "transform": "",
+                "color": "#ffffff"
+              },
+              "h2": {
+                "sample": "A moda do Hotel Calleb no portão de entrada para a selva.",
+                "family": "Georgia",
+                "size": "60px",
+                "weight": "300",
+                "lineHeight": "75px",
+                "letterSpacing": "",
+                "transform": "",
+                "color": "#003c96"
+              },
+              "h3": {
+                "sample": "2.500+",
+                "family": "Outfit",
+                "size": "30px",
+                "weight": "700",
+                "lineHeight": "36px",
+                "letterSpacing": "",
+                "transform": "",
+                "color": "#ffffff"
+              },
+              "h4": {
+                "sample": "Sua melhor escolha",
+                "family": "Inter",
+                "size": "12px",
+                "weight": "700",
+                "lineHeight": "16px",
+                "letterSpacing": "2.4px",
+                "transform": "uppercase",
+                "color": "#f97300"
+              },
+              "body": {
+                "family": "Inter",
+                "size": "14px",
+                "weight": "700",
+                "lineHeight": "20px",
+                "color": "#ffffff"
+              },
+              "blockquote": null
+            }
+          }
+        }
+      },
+      "espaçamento": {
+        "label": "Espaçamento",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "seção 96 · gaps 4/8/16",
+        "snapshot": {
+          "sectionPaddingY": [
+            80,
+            96
+          ],
+          "gaps": [
+            4,
+            8,
+            16,
+            24,
+            32,
+            64
+          ],
+          "maxWidths": [
+            576,
+            672,
+            1024,
+            1280
+          ]
+        },
+        "evidence": "referencia/design-direction.json"
+      },
+      "forma": {
+        "label": "Forma",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "raios 3.35544e+07px/24px/12px",
+        "snapshot": {
+          "radii": {
+            "common": [
+              "3.35544e+07px",
+              "24px",
+              "12px",
+              "16px",
+              "4px",
+              "40px"
+            ],
+            "dominant": "3.35544e+07px"
+          },
+          "shadows": [
+            "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(",
+            "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, ",
+            "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(",
+            "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+          ],
+          "borders": {
+            "common": [
+              "oklch(0.967 0.003 264.542)",
+              "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+              "#0047b3",
+              "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+              "#ffffff",
+              "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)"
+            ]
+          },
+          "buttons": {
+            "primary": {
+              "bg": "#0047b3",
+              "color": "#ffffff",
+              "border": "none",
+              "radius": "3.35544e+07px",
+              "padding": "8px 24px 8px 24px",
+              "fontSize": "12px",
+              "fontWeight": "700",
+              "letterSpacing": "",
+              "textTransform": "",
+              "boxShadow": "",
+              "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+            },
+            "secondary": {
+              "bg": "transparent",
+              "color": "#0047b3",
+              "border": "2px solid #0047b3",
+              "radius": "3.35544e+07px",
+              "padding": "16px 40px 16px 40px",
+              "fontSize": "16px",
+              "fontWeight": "700",
+              "letterSpacing": "",
+              "textTransform": "",
+              "boxShadow": "",
+              "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            }
+          }
+        },
+        "evidence": "referencia/design-direction.json"
+      },
+      "movimento": {
+        "label": "Movimento",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "mode": "single-source",
+        "summary": "31 hovers · 5 invisíveleis após scroll",
+        "snapshot": {
+          "available": true,
+          "libraries": [],
+          "reveals": 0,
+          "pins": 0,
+          "hovers": 31,
+          "hoverEffects": 27,
+          "backgroundEffects": 0,
+          "galleries": 0,
+          "transitions": 0,
+          "keyframes": 4,
+          "native": 0,
+          "lottie": 0,
+          "scripts": 0,
+          "hidden": 5,
+          "mobileMenu": false,
+          "tags": [
+            "31 hovers",
+            "5 invisíveleis após scroll"
+          ],
+          "patterns": {
+            "entry": [],
+            "pinned": [],
+            "native": [],
+            "lottie": [],
+            "keyframes": [
+              "fade-in",
+              "slide-up",
+              "spin",
+              "pulse"
+            ],
+            "hover": [
+              {
+                "id": "hover-01",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:f5dcb91b",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "custom",
+                  "selectorHint": ".group-hover\\:translate-y-0:is(:where(.group) *)",
+                  "properties": {
+                    "translate": "var(--tw-translate-x) var(--tw-translate-y)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-02",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:7b94c8fe",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "scale",
+                  "selectorHint": ".group-hover\\:scale-110:is(:where(.group) *)",
+                  "properties": {
+                    "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-03",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:3a483da0",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "border-shift",
+                  "selectorHint": ".group-hover\\:border-accent:is(:where(.group) *)",
+                  "properties": {
+                    "border-color": "var(--color-accent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-04",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:b7899c78",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".group-hover\\:bg-accent:is(:where(.group) *)",
+                  "properties": {
+                    "background-color": "var(--color-accent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-05",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:bf81bcf8",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".group-hover\\:bg-primary:is(:where(.group) *)",
+                  "properties": {
+                    "background-color": "var(--color-primary)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-06",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:72856cc5",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".group-hover\\:text-accent:is(:where(.group) *)",
+                  "properties": {
+                    "color": "var(--color-accent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-07",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:54702cc7",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".group-hover\\:text-white:is(:where(.group) *)",
+                  "properties": {
+                    "color": "var(--color-white)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-08",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:81ab6b05",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "fade",
+                  "selectorHint": ".group-hover\\:opacity-100:is(:where(.group) *)",
+                  "properties": {
+                    "opacity": "1"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-09",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:8a1f4aec",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "scale",
+                  "selectorHint": ".hover\\:scale-105",
+                  "properties": {
+                    "scale": "var(--tw-scale-x) var(--tw-scale-y)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-10",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:c1f77832",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "border-shift",
+                  "selectorHint": ".hover\\:border-primary",
+                  "properties": {
+                    "border-color": "var(--color-primary)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-11",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:3930f480",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-accent",
+                  "properties": {
+                    "background-color": "var(--color-accent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-12",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:e14ba0d4",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-accent-light",
+                  "properties": {
+                    "background-color": "var(--color-accent-light)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-13",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:f439a1fe",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-gray-50",
+                  "properties": {
+                    "background-color": "var(--color-gray-50)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-14",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:900fe154",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-gray-50\\/50",
+                  "properties": {
+                    "background-color": "#f9fafb80"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-15",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:5d1439f8",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-gray-50\\/50",
+                  "properties": {
+                    "background-color": "color-mix(in oklab,var(--color-gray-50) 50%,transparent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)",
+                    "@supports (color:color-mix(in lab,red,red))"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-16",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:60ea747c",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-gray-100",
+                  "properties": {
+                    "background-color": "var(--color-gray-100)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-17",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:ad3c845c",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-primary",
+                  "properties": {
+                    "background-color": "var(--color-primary)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-18",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:6377bae4",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-primary-dark",
+                  "properties": {
+                    "background-color": "var(--color-primary-dark)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-19",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:39c0d270",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-red-50",
+                  "properties": {
+                    "background-color": "var(--color-red-50)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-20",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:c90f8418",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-red-400",
+                  "properties": {
+                    "background-color": "var(--color-red-400)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-21",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:a821ba64",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-red-400\\/10",
+                  "properties": {
+                    "background-color": "#ff65681a"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-22",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:3ac76fec",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-red-400\\/10",
+                  "properties": {
+                    "background-color": "color-mix(in oklab,var(--color-red-400) 10%,transparent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)",
+                    "@supports (color:color-mix(in lab,red,red))"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-23",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:00afd096",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-red-500",
+                  "properties": {
+                    "background-color": "var(--color-red-500)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-24",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:aac3e8b0",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-white\\/5",
+                  "properties": {
+                    "background-color": "#ffffff0d"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-25",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:1a1d23ec",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:bg-white\\/5",
+                  "properties": {
+                    "background-color": "color-mix(in oklab,var(--color-white) 5%,transparent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)",
+                    "@supports (color:color-mix(in lab,red,red))"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-26",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:646e3f23",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:text-accent",
+                  "properties": {
+                    "color": "var(--color-accent)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              },
+              {
+                "id": "hover-27",
+                "category": "motion",
+                "variant": "hover",
+                "fingerprint": "fnv1a:b7f9df61",
+                "occurrences": 1,
+                "detection": {
+                  "confidence": 0.78,
+                  "methods": [
+                    "static-css"
+                  ],
+                  "warnings": [
+                    "regra condicionada por media/supports/layer"
+                  ]
+                },
+                "spec": {
+                  "trigger": "hover",
+                  "effect": "color-shift",
+                  "selectorHint": ".hover\\:text-white",
+                  "properties": {
+                    "color": "var(--color-white)"
+                  },
+                  "context": [
+                    "@layer components;@layer utilities",
+                    "@media(hover:hover)"
+                  ]
+                },
+                "safety": {
+                  "executable": false,
+                  "containsThirdPartyCode": false
+                }
+              }
+            ],
+            "background": [],
+            "galleries": [],
+            "hidden": [
+              {
+                "className": "text-accent font-bold tracking-[0.2em] mb-4 uppercase",
+                "hasMedia": false,
+                "id": "",
+                "reason": "opacity 0",
+                "sample": "Explore o Destino",
+                "tag": "h4",
+                "transform": ""
+              },
+              {
+                "className": "text-primary-dark text-4xl md:text-6xl font-serif italic font-light mb-6",
+                "hasMedia": false,
+                "id": "",
+                "reason": "opacity 0",
+                "sample": "Descubra a Terra das Cachoeiras .",
+                "tag": "h2",
+                "transform": "matrix(1, 0, 0, 1, 0, 20)"
+              },
+              {
+                "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity ",
+                "hasMedia": false,
+                "id": "",
+                "reason": "opacity 0",
+                "sample": "Uma das mais famosas, com infraestrutura completa e reserva ecológica.",
+                "tag": "p",
+                "transform": ""
+              },
+              {
+                "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity ",
+                "hasMedia": false,
+                "id": "",
+                "reason": "opacity 0",
+                "sample": "Cenário cinematográfico com grutas e paredões de arenito impressionant",
+                "tag": "p",
+                "transform": ""
+              },
+              {
+                "className": "text-white/70 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity ",
+                "hasMedia": false,
+                "id": "",
+                "reason": "opacity 0",
+                "sample": "Trilha guiada por cavernas milenares envoltas pela densa selva amazôni",
+                "tag": "p",
+                "transform": ""
+              }
+            ],
+            "mobileMenu": {
+              "found": false
+            }
+          }
+        },
+        "evidence": "referencia/animations.json"
+      }
+    },
+    "sections": [
+      {
+        "index": 1,
+        "role": "hero",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 1,
+        "sourceSectionKey": "section-hero-19upbwn",
+        "mode": "single-source",
+        "shape": "duo: 2 × [ícone]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/01-conforto-e-hospitalidade-no--p01.png",
+              "referencia/screenshots/sections/01-conforto-e-hospitalidade-no--p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 2,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 2,
+        "sourceSectionKey": "section-section-0nzvdlu",
+        "mode": "single-source",
+        "shape": "card-grid: 4 × [ícone+título+texto]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/02-2-500.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 3,
+        "role": "about",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 3,
+        "sourceSectionKey": "section-about-0y1yv5v",
+        "mode": "single-source",
+        "shape": "split",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/03-sua-melhor-escolha-p01.png",
+              "referencia/screenshots/sections/03-sua-melhor-escolha-p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 4,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 4,
+        "sourceSectionKey": "section-section-0wfp63r",
+        "mode": "single-source",
+        "shape": "card-grid: 3 × [mídia+título+texto (2 parágrafos)+link/botão]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/04-delegacoes-p01.png",
+              "referencia/screenshots/sections/04-delegacoes-p02.png",
+              "referencia/screenshots/sections/04-delegacoes-p03.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 5,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 5,
+        "sourceSectionKey": "section-section-1yv9rqr",
+        "mode": "single-source",
+        "shape": "card-grid: 3 × [mídia+título+texto]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/05-explore-o-destino-p01.png",
+              "referencia/screenshots/sections/05-explore-o-destino-p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 6,
+        "role": "section",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 6,
+        "sourceSectionKey": "section-section-0gzoaid",
+        "mode": "single-source",
+        "shape": "card-grid: 6 × [mídia]",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/06-galeria-de-fotos-p01.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p02.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p03.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p04.png",
+              "referencia/screenshots/sections/06-galeria-de-fotos-p05.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      },
+      {
+        "index": 7,
+        "role": "contact",
+        "source": "hmx-style-hotelcalleb.com.br",
+        "sourceLabel": "hotelcalleb.com.br",
+        "sourceSectionIndex": 7,
+        "sourceSectionKey": "section-contact-1okicd9",
+        "mode": "single-source",
+        "shape": "split",
+        "layoutSpec": "referencia/design-direction.json",
+        "copySkeleton": "referencia/copy-skeleton.json",
+        "screenshots": "referencia/screenshots",
+        "evidence": {
+          "manifest": "referencia/screenshots/manifest.json",
+          "authority": "static",
+          "locatorMatch": "logical-marker",
+          "behavior": [
+            "hover"
+          ],
+          "staticByTier": {
+            "desktop": [
+              "referencia/screenshots/sections/07-reserve-sua-estadia-premium--p01.png",
+              "referencia/screenshots/sections/07-reserve-sua-estadia-premium--p02.png"
+            ]
+          },
+          "sequenceIds": []
+        }
+      }
+    ],
+    "patterns": []
+  }
+}
