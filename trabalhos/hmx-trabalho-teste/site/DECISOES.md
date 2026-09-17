@@ -577,3 +577,47 @@ vazio. Não diziam nada do que estava escrito embaixo:
 a linha do texto ficou duplicada e o `<svg>` se perdeu. Ambos corrigidos — e o
 rodapé ficou com um alfinete de mapa, que é o ícone certo para um link do Google
 Maps; o coração ali nunca fez sentido.
+
+## Seção "sobre" reconstruída
+
+Era uma foto grande e arredondada de um lado e um bloco de texto do outro. Foi
+refeita no formato que o próprio site do hotel usa — mosaico de quatro fotos,
+selo de tempo de casa e lista de diferenciais.
+
+### Mosaico
+
+Quatro fotos em duas colunas, com **alturas diferentes** (230 / 190 / 210 /
+250px) e deslocamento vertical nas duas da direita. Grade de alturas iguais fica
+rígida; o degrau dá ritmo sem virar bagunça.
+
+O raio caiu de `var(--r-md)` (16px) para **8px**. Canto muito redondo amolece a
+foto e a faz parecer adesivo; 8px arremata sem chamar atenção.
+
+As quatro escolhidas cobrem o que o hotel oferece: café da manhã, fachada à
+noite, quarto e salão de refeições.
+
+### Selo "10+ anos"
+
+Fica na emenda das quatro fotos, com borda da cor do fundo para parecer recortado
+sobre elas. **O dado é real** — `10+` e `Anos de Experiência` estão no
+`alvo/site-content.json`, vindos do site do cliente. Leva `aria-hidden` porque é
+reforço visual de algo que o texto ao lado já diz.
+
+### Lista de diferenciais
+
+Os quatro itens vieram do conteúdo do cliente. **O JSON os traz truncados** —
+termina em `"Conexão wi-fi de alt"` —, então os dois últimos foram completados
+pela captura do site que o dono do trabalho enviou:
+
+- Conexão wi-fi de alta velocidade em todas as áreas
+- Quartos equipados com o que há de mais moderno
+
+A marca de confirmação é desenhada em CSS (`::before` faz o círculo, `::after`
+faz o traço), em vez de repetir o mesmo SVG quatro vezes no HTML.
+
+### Botão de contorno
+
+`Conheça nossa história` deixou de ser laranja sólido e virou contorno azul.
+Havia dois botões laranja idênticos competindo na mesma tela — um para reservar,
+outro para ler a história, que não têm o mesmo peso. O contorno diz "secundário"
+sem precisar de mais nada.

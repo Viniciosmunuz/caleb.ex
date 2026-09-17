@@ -755,14 +755,136 @@
         align-items: center;
         gap: 64px;
       }
-
-      .about-media img,
-      .contact-media img {
-        width: 100%;
-        height: 560px;
-        object-fit: cover;
-        border-radius: var(--r-md);
+      /* ---- Mosaico da seção "sobre" ----
+         Quatro fotos em duas colunas, com alturas diferentes para o conjunto
+         não virar uma grade rígida. Cantos discretos: o raio grande de antes
+         amolecia demais a foto. */
+      .about-mosaico {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        align-items: start;
       }
+
+      .about-mosaico .mos {
+        margin: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--color-surface);
+      }
+
+      .about-mosaico .mos img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* alturas alternadas: a coluna da direita desce um degrau */
+      .mos-a { height: 230px; }
+      .mos-b { height: 190px; margin-top: 34px; }
+      .mos-c { height: 210px; }
+      .mos-d { height: 250px; margin-top: -34px; }
+
+      /* selo com o tempo de casa, na emenda das quatro fotos */
+      .about-selo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        background: var(--color-cta);
+        color: #ffffff;
+        border: 5px solid var(--color-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        text-align: center;
+        line-height: 1.1;
+      }
+
+      .about-selo strong {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+
+      .about-selo span {
+        font-size: 0.6rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        max-width: 72px;
+      }
+
+      /* lista de diferenciais */
+      .about-lista {
+        list-style: none;
+        margin: 4px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .about-lista li {
+        position: relative;
+        padding-left: 30px;
+        font-size: 0.97rem;
+        color: var(--color-text);
+      }
+
+      /* marca de confirmação desenhada em CSS, sem SVG repetido quatro vezes */
+      .about-lista li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1.5px solid var(--color-cta);
+      }
+
+      .about-lista li::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 8px;
+        width: 5px;
+        height: 8px;
+        border: solid var(--color-cta);
+        border-width: 0 1.7px 1.7px 0;
+        transform: rotate(45deg);
+      }
+
+      /* botão de contorno: pesa menos que o laranja sólido e marca que esta
+         ação é secundária diante de "Reservar Agora" */
+      .btn-linha {
+        align-self: flex-start;
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 10px 26px;
+        border: 1.5px solid var(--color-primary);
+        border-radius: 999px;
+        color: var(--color-primary);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background-color 0.16s ease-out, color 0.16s ease-out;
+      }
+
+      .btn-linha:hover,
+      .btn-linha:focus-visible {
+        background: var(--color-primary);
+        color: #ffffff;
+      }
+
 
       .story-copy {
         display: flex;
@@ -1778,30 +1900,42 @@
 
       <section id="sobre" data-section="sobre" class="section-pad reveal">
         <div class="container split">
-          <div class="about-media">
-            <picture>
-              <img
-                src="./images/sobre-fachada-noite.jpg"
-                width="1200"
-                height="900"
-                alt="Fachada do Hotel Calleb à noite, com o letreiro iluminado"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
+          <div class="about-mosaico">
+            <figure class="mos mos-a">
+              <img src="./images/sobre-cafe.jpg" width="620" height="700" alt="Espaço de café da manhã do Hotel Calleb, com balcão e luminárias" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="mos mos-b">
+              <img src="./images/sobre-noite.jpg" width="620" height="560" alt="Fachada do Hotel Calleb à noite, com o letreiro iluminado" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="mos mos-c">
+              <img src="./images/sobre-quarto.jpg" width="620" height="620" alt="Quarto do hotel com cama de casal e beliche" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="mos mos-d">
+              <img src="./images/sobre-salao.jpg" width="620" height="760" alt="Salão de refeições do hotel com mesas postas" loading="lazy" decoding="async" />
+            </figure>
+            <div class="about-selo" aria-hidden="true">
+              <strong>10+</strong>
+              <span>Anos de experiência</span>
+            </div>
           </div>
+
           <div class="story-copy">
             <div class="eyebrow">A nossa essência</div>
-            <h2>Sua melhor escolha</h2>
-            <p>
-              A elegância do Hotel Calleb no portão de entrada para a selva.
-            </p>
+            <h2>A elegância do Hotel Calleb no <em>portão de entrada</em> para a selva.</h2>
             <p>
               O Hotel Calleb nasceu do desejo de oferecer uma experiência superior em Presidente Figueiredo.
               Combinamos a rusticidade da floresta com a sofisticação de um hotel premium, proporcionando aos
               nossos hóspedes o refúgio perfeito após um dia explorando as majestosas cachoeiras da região.
             </p>
-            <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
+            <ul class="about-lista">
+              <li>Localização estratégica no centro de Presidente Figueiredo</li>
+              <li>Atendimento personalizado e regional</li>
+              <li>Conexão wi-fi de alta velocidade em todas as áreas</li>
+              <li>Quartos equipados com o que há de mais moderno</li>
+            </ul>
+            <a class="btn-linha" href="#contato">
+              <span>Conheça nossa história</span>
+            </a>
           </div>
         </div>
       </section>
