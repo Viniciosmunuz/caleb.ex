@@ -350,10 +350,24 @@
         background: var(--color-cta-hover);
       }
 
+      /* Vidro fosco ao rolar. O fundo precisa ser bem translúcido: a 96% de
+         opacidade, como estava antes, não sobra nada para o blur borrar.
+         O saturate reforça a cor do que passa por trás — é o que faz parecer
+         vidro de verdade e não um véu cinza. */
       .site-header.is-scrolled {
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(10px);
-        border-bottom-color: var(--color-border);
+        background: rgba(255, 255, 255, 0.68);
+        -webkit-backdrop-filter: blur(18px) saturate(170%);
+        backdrop-filter: blur(18px) saturate(170%);
+        border-bottom-color: rgba(0, 35, 72, 0.08);
+        box-shadow: 0 1px 16px rgba(0, 35, 72, 0.07);
+      }
+
+      /* navegador sem backdrop-filter recebe fundo quase sólido, senão o
+         texto do menu fica ilegível sobre a foto */
+      @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .site-header.is-scrolled {
+          background: rgba(255, 255, 255, 0.95);
+        }
       }
 
       /* sobre a foto do hero o texto do menu precisa ser claro */

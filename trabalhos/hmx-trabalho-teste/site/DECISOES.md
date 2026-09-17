@@ -633,3 +633,28 @@ WhatsApp; e os CTAs das seções de acomodações e contato, mais abaixo.
 
 Em página de hotel o botão do hero costuma ser o de maior conversão, porque pega
 quem já chegou decidido. Se as reservas caírem, é o primeiro lugar a olhar.
+
+### Cabeçalho em vidro fosco ao rolar
+
+O `backdrop-filter` já estava no CSS, mas **não produzia efeito nenhum**: o
+fundo era `rgba(255,255,255,0.96)`, quase opaco, então não sobrava nada por trás
+para borrar. Na prática era um cabeçalho branco com uma propriedade inútil.
+
+| | Antes | Agora |
+|---|---|---|
+| Fundo | branco 96% | branco **68%** |
+| Blur | 10px | **18px** |
+| Saturação | nenhuma | **170%** |
+
+O `saturate` é o que separa vidro de véu cinza: sem ele o que passa por trás
+perde cor e o efeito fica sujo. Com ele, a foto do hero atravessa borrada mas
+ainda colorida.
+
+`-webkit-backdrop-filter` incluído para o Safari, que ainda exige o prefixo.
+
+**Fallback:** um bloco `@supports not` devolve o fundo a 95% em navegador sem
+`backdrop-filter`. Sem isso, quem não suporta o efeito veria o menu escuro sobre
+um fundo 68% transparente com foto por baixo — ilegível.
+
+O estado sobre o hero, antes de rolar, continua totalmente transparente. O vidro
+só existe depois que a página desce.
