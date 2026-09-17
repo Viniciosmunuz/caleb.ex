@@ -26,9 +26,17 @@
         --color-brand-blue-deep: #002894;
         --color-brand-orange: #f97300;
 
-        --color-bg: #ffffff;
-        --color-surface: #fdfbee;
+        /* Fundo: branco puro e creme quase branco davam duas faixas que
+           mal se distinguiam (razao 1,04) — a pagina parecia uma folha so.
+           O claro ganhou calor e o creme ganhou corpo: a diferenca entre as
+           faixas foi de 1,04 para 1,13, e agora se ve onde uma secao termina. */
+        --color-bg: #fffdf7;
+        --color-surface: #f6efdd;
         --color-text: #2b3d55;
+        /* tom solido para rotulos e legendas. Antes eram cores com opacidade,
+           que mudam de contraste conforme o fundo atras — sobre o creme mais
+           escuro cairiam abaixo do minimo de leitura. */
+        --color-text-soft: #5a6b80;
         --color-heading: var(--color-brand-blue-dark);
         --color-muted: var(--color-brand-orange);
         --color-border: rgba(0, 71, 179, 0.12);
@@ -66,9 +74,27 @@
         --sh-sm: 0 1px 2px rgba(0, 35, 72, 0.05), 0 2px 6px rgba(0, 35, 72, 0.04);
         --sh-md: 0 1px 3px rgba(0, 35, 72, 0.06), 0 8px 20px rgba(0, 35, 72, 0.07);
         --sh-lg: 0 2px 6px rgba(0, 35, 72, 0.06), 0 16px 40px rgba(0, 35, 72, 0.09);
+
+        /* Grao de papel: ruido cinza gerado no proprio CSS, sem arquivo.
+           E o que tira a chapa do fundo sem recorrer a gradiente. */
+        --textura-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
       }
 
       * { box-sizing: border-box; }
+
+      /* Veu de grao sobre a pagina inteira, inclusive sobre as fotos e o
+         cabecalho de vidro. Fica por cima de tudo mas nao captura clique.
+         A 4% nao se enxerga como textura: se percebe como papel em vez de
+         tela chapada. */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        background-image: var(--textura-grao);
+        opacity: 0.055;
+      }
 
       html {
         scroll-behavior: smooth;
@@ -709,7 +735,7 @@
 
       .stat-label {
         font-size: 0.88rem;
-        color: rgba(0, 35, 72, 0.6);
+        color: var(--color-text-soft);
       }
 
       .section-pad {
@@ -1230,7 +1256,7 @@
         max-width: 680px;
         font-size: 0.74rem;
         line-height: 1.6;
-        color: rgba(43, 61, 85, 0.72);
+        color: var(--color-text-soft);
       }
 
       .cachoeiras-credito a {

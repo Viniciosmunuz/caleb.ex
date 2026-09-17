@@ -1215,3 +1215,70 @@ classes no arquivo.
 
 E entre 450 e 768px os quatro diferenciais ainda estavam em quatro colunas —
 só havia regra de duas colunas abaixo de 450px. Corrigido.
+
+---
+
+## Paleta de fundo: calor, corpo e grão
+
+O fundo era branco puro (`#ffffff`) alternando com um creme quase branco
+(`#fdfbee`). A razão de luminância entre as duas faixas era **1,04** — ou seja,
+praticamente nenhuma. A página inteira parecia uma folha só, e o creme não
+cumpria o papel de separar uma seção da outra.
+
+| | Antes | Agora |
+|---|---|---|
+| Faixa clara | `#ffffff` | `#fffdf7` |
+| Faixa creme | `#fdfbee` | `#f6efdd` |
+| Diferença entre elas | 1,04 | **1,13** |
+
+O claro ganhou calor e o creme ganhou corpo. Nenhum dos dois sai da estética da
+casa — continuam o mesmo creme da marca, só que agora se vê onde uma seção
+termina e a outra começa. Os cartões continuam em branco puro, o que passou a
+dar a eles um pouco de relevo contra o fundo, de graça.
+
+### Grão de papel
+
+Cor sozinha não tira a chapa. O que tira é textura — e textura não estava na
+lista de proibições, gradiente estava.
+
+Um véu de ruído cinza cobre a página inteira, inclusive as fotos e o cabeçalho
+de vidro, a **5,5%** de opacidade:
+
+```css
+--textura-grao: url("data:image/svg+xml,…feTurbulence…feColorMatrix saturate 0…");
+
+body::after {
+  content: ""; position: fixed; inset: 0;
+  z-index: 60; pointer-events: none;
+  background-image: var(--textura-grao);
+  opacity: 0.055;
+}
+```
+
+O ruído é gerado pelo próprio SVG (`feTurbulence`), sem arquivo de imagem —
+não há requisição nem peso adicional. O `feColorMatrix` tira a cor do ruído,
+senão ele entra colorido e suja a paleta. `pointer-events: none` é o que deixa
+o véu ficar por cima de tudo sem bloquear um único clique.
+
+A 5,5% não se enxerga como textura: se percebe como papel em vez de tela chapada.
+
+### Um defeito na minha própria verificação
+
+Ao testar as cores novas, descobri que **a varredura de contraste que venho
+rodando estava errada**: ela lia a cor do texto e ignorava a opacidade dela.
+Um `rgba(0, 35, 72, 0.6)` era medido como se fosse `#002348` opaco — 14,7:1,
+aprovado — quando na tela o valor real é 4,37:1, reprovado.
+
+Corrigida a conta, apareceram duas cores que passavam há rodadas:
+
+| Onde | Cor | Real | Mínimo |
+|---|---|---|---|
+| Rótulo dos números | `rgba(0,35,72,.6)` | 4,37 | 4,5 |
+| Crédito das fotos | `rgba(43,61,85,.72)` | — | 4,5 |
+
+As duas viraram um token sólido, `--color-text-soft: #5a6b80`. Sólido de
+propósito: cor com opacidade **muda de contraste conforme o fundo atrás**, e
+sobre o creme mais encorpado as duas cairiam mais ainda. Um valor fixo dá 5,36
+no claro e 4,76 no creme — passa nos dois.
+
+Varredura refeita com a conta certa, em 375px e 1280px: **zero falhas**.
