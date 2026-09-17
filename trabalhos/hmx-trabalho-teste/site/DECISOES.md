@@ -1,3 +1,5 @@
+| Celular | monumento do arqueiro, retrato 740×1014 |
+| Desktop | monumento do arqueiro, paisagem 1549×871 |
 | Desktop | **monumento do arqueiro**, paisagem 1549×871 |
 # DECISÕES do projeto
 
@@ -477,3 +479,20 @@ cachoeira é verde e vale manter a cor.
 **A confirmar:** a origem da foto do arqueiro (`pf.png` na raiz do projeto) não
 foi informada. Se veio de banco de imagens ou de site de turismo, o hotel
 precisa de licença para uso comercial. Vale checar antes de publicar.
+
+### O arqueiro nas duas telas
+
+A fachada saiu também do celular: agora é a mesma foto nas duas, cada uma no
+seu enquadramento nativo.
+
+| Tela | Arquivo | Recorte |
+|---|---|---|
+| Celular | `hero-mob-740.jpg` 740×1014 | retrato, centrado na estátua (foco 60% da largura) |
+| Desktop | `hero-desk-1549.jpg` 1549×871 | paisagem 16:9 |
+
+Nenhum dos dois estica: o retrato sai de uma faixa vertical do original
+1549×1015, e o paisagem é o maior 16:9 que cabe nele.
+
+Vale um recorte por orientação em vez de deixar o `object-fit: cover` resolver:
+no celular, o `cover` sobre a versão paisagem mostraria só 26% da largura da
+foto e ainda baixaria a imagem inteira.
