@@ -355,11 +355,22 @@
          O saturate reforça a cor do que passa por trás — é o que faz parecer
          vidro de verdade e não um véu cinza. */
       .site-header.is-scrolled {
-        background: rgba(255, 255, 255, 0.68);
-        -webkit-backdrop-filter: blur(18px) saturate(170%);
-        backdrop-filter: blur(18px) saturate(170%);
+        background: rgba(255, 255, 255, 0.45);
+        /* blur mais forte compensa o fundo mais aberto: quanto mais borrado o
+           que passa atrás, mais uniforme o contraste sob o texto do menu */
+        -webkit-backdrop-filter: blur(26px) saturate(180%);
+        backdrop-filter: blur(26px) saturate(180%);
         border-bottom-color: rgba(0, 35, 72, 0.08);
         box-shadow: 0 1px 16px rgba(0, 35, 72, 0.07);
+      }
+
+      /* Com o fundo a 45% o que passa atrás interfere na leitura do menu.
+         Peso um pouco maior e um halo branco bem sutil separam o texto do
+         fundo sem precisar fechar o vidro de novo. */
+      .site-header.is-scrolled .main-nav a,
+      .site-header.is-scrolled .brand {
+        font-weight: 500;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
       }
 
       /* navegador sem backdrop-filter recebe fundo quase sólido, senão o

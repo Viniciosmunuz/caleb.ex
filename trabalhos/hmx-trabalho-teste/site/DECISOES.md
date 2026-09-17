@@ -1,3 +1,6 @@
+| Fundo | branco 96% | branco **45%** |
+| Blur | 10px | **26px** |
+| Saturação | nenhuma | **180%** |
 | Celular | monumento do arqueiro, retrato 740×1014 |
 | Desktop | monumento do arqueiro, paisagem 1549×871 |
 | Desktop | **monumento do arqueiro**, paisagem 1549×871 |
@@ -658,3 +661,17 @@ um fundo 68% transparente com foto por baixo — ilegível.
 
 O estado sobre o hero, antes de rolar, continua totalmente transparente. O vidro
 só existe depois que a página desce.
+
+**Custo da transparência alta:** a 45% o que passa por trás começa a interferir
+na leitura do menu, que é texto escuro. Em vez de fechar o vidro de novo, o
+texto ganhou peso 500 e um halo branco de 1px (`text-shadow` claro). O halo
+separa a letra do fundo sem adicionar caixa nem sombra visível.
+
+O blur subiu junto, de 18px para 26px: quanto mais borrado o que está atrás,
+mais uniforme fica o fundo sob o texto — o blur atua como estabilizador de
+contraste, não só como enfeite.
+
+**Onde ainda pode apertar:** se a pessoa parar a rolagem com uma área bem escura
+da foto exatamente sob o menu, o contraste fica no limite. As seções internas
+têm fundo claro, então o problema só existe enquanto o hero está atrás — uma
+faixa curta da página.
