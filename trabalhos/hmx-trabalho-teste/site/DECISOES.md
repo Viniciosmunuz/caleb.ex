@@ -303,3 +303,45 @@ fora de vista.
 confirmado que a custom property move o contentor, que as duas camadas não se
 sobrescrevem e que o cálculo do deslocamento está certo — mas ver a foto se
 mexendo depende de abrir na tela.
+
+## Menu mobile e botão terciário
+
+### Hambúrguer que se dobra em X
+
+Componente do Uiverse (talhabangyal), com uma troca importante: o original usa
+`<label>` + `<input type="checkbox">` e anima por `:checked`. Aqui a animação é
+disparada por `[aria-expanded="true"]` no `<button>` que já existia.
+
+O motivo é acessibilidade: com o truque do checkbox, o leitor de tela anuncia
+"caixa de seleção" em vez de botão, e não informa se o menu está aberto. O
+`<button>` com `aria-expanded` e `aria-controls` diz as duas coisas. A animação
+é idêntica — `stroke-dasharray` de `12 63` para `20 300` com `dashoffset`
+-32.42, mais `rotate(-45deg)` no SVG, em 600ms.
+
+`stroke` virou `currentColor`, para o ícone acompanhar a cor do cabeçalho
+(claro sobre a foto, escuro depois de rolar).
+
+### Botão terciário com seta
+
+Componente do Uiverse (edu-amr), convertido de Tailwind para CSS puro e
+aplicado em "Conheça Nossa História" (hero) e nos três "Detalhes" das
+acomodações, que antes eram `.card-link` com fundo bege.
+
+- Sublinhado cresce de `origin: bottom right` para `bottom left` em 500ms.
+- Seta desliza de `-8px` para `+4px` e muda para a cor de acento.
+- Variante `--claro` para uso sobre a foto do hero: texto branco e sublinhado
+  no laranja da marca.
+
+**Não foi aplicado nos CTAs** "Reservar Agora", "Solicitar reserva" e
+"Verificar Disponibilidade": o componente é um botão de fundo transparente, e
+usá-lo ali apagaria o laranja da marca e a hierarquia entre ação principal e
+secundária. Fica em aberto para decisão.
+
+**Mesma divergência da regra 3** já registrada para o ícone de calendário: a
+seta usa `translateX` no hover. O alvo do clique, de novo, não se move — o que
+desliza é o ícone dentro dele.
+
+### CSS removido
+
+`.btn-secondary` e `.card-link` ficaram sem uso e saíram, junto com seus
+`:hover`.
