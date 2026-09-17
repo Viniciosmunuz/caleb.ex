@@ -851,6 +851,13 @@ O `saturate` caiu de 180% para 110% porque era ele que fazia a barra virar
 mancha colorida: 180% amplifica a cor da foto atrás em vez de neutralizá-la.
 Quem faz o efeito de vidro é o desfoque, não a tinta.
 
+**Sem contorno.** A pílula tinha borda branca e um brilho interno no topo —
+dois recursos que *desenham* a forma do vidro. O efeito que o cliente queria
+(referência: cabeçalho do site da Wuzi) é o oposto: o vidro não tem contorno
+nenhum, ele se dissolve no fundo e quem marca a barra é só o desfoque. Os dois
+saíram; sobrou uma sombra externa fraca, que separa a barra das seções claras
+sem desenhar nada por cima da foto.
+
 Sem suporte a `backdrop-filter` os dois estados caem para branco a 96% e o texto
 volta ao escuro — senão o menu branco ficaria sobre fundo branco.
 
