@@ -517,31 +517,25 @@ O contorno enquanto o cabeçalho está transparente resolve de quebra a
 legibilidade: laranja sólido sobre foto clara fica pesado, e o contorno branco
 acompanha o resto do menu, que já é branco ali.
 
-## Números em rolagem contínua
+## Animação dos números
 
-A faixa de estatísticas virou um marquee, no modelo do `LogosCarousel` —
-convertido de React + Tailwind para CSS puro, já que a entrega é HTML único.
+Os quatro números continuam **centralizados no grid**, como estavam. A animação
+acontece dentro de cada um, não deslocando a linha.
 
-**Como o laço fica sem emenda:** os quatro cartões são duplicados no HTML e a
-faixa anda de `translateX(0)` a `translateX(-50%)` em 38s, linear. Em -50% a
-cópia está exatamente onde a original começou, então o reinício não aparece.
-Medido: faixa de 2000px, deslocamento de 1000px, que é a largura dos quatro
-cartões originais.
+Primeira tentativa foi um marquee de rolagem contínua, e estava errada: no
+`LogosCarousel`, `count={4}` significa **quatro posições fixas** por onde os
+dezesseis logos passam — os slots não andam, o conteúdo dentro deles é que
+troca. Por isso a linha não devia sair do lugar.
 
-**Pontas esmaecidas** com `mask-image`, em vez de cortar os cartões a seco na
-borda do bloco.
+O que ficou: entrada escalonada. Quando a seção entra na tela, os quatro
+aparecem em sequência, subindo 16px e ganhando opacidade, com 100ms de
+intervalo entre eles (60 / 160 / 260 / 360ms), em
+`cubic-bezier(0.22, 1, 0.36, 1)` — uma curva que desacelera no fim, então o
+número assenta em vez de parar seco.
 
-**Acessibilidade:**
+`animation-fill-mode: backwards` mantém cada cartão invisível durante o próprio
+atraso; sem isso os quatro apareceriam juntos e só depois recuariam para animar.
 
-- A cópia leva `aria-hidden="true"` — sem isso o leitor de tela anuncia os
-  quatro números duas vezes.
-- Pausa no `:hover` e no `:focus-within`, via `animation-play-state`.
-- Sob `prefers-reduced-motion` não há movimento nenhum: a regra global do site
-  zeraria a duração e a faixa saltaria direto para o fim, então há uma regra
-  própria que desliga a animação, esconde a cópia e devolve os quatro cartões
-  centralizados e estáticos.
-
-**Observação:** com apenas quatro itens, em tela larga todos cabem de uma vez —
-ali o movimento é decorativo, não funcional. O carrossel de logos original
-existe porque há dezesseis logos e eles não cabem. Se incomodar no desktop, dá
-para rodar só abaixo de 768px, onde os quatro realmente não cabem lado a lado.
+Sob `prefers-reduced-motion` a regra global do site já zera a duração, e como
+aqui não há deslocamento contínuo, o resultado é simplesmente os quatro números
+no lugar — que é o comportamento correto.

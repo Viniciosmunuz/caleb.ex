@@ -577,44 +577,37 @@
         padding: 56px 0;
       }
 
-      /* ---- Faixa de números em rolagem contínua ----
-         O conteúdo é duplicado no HTML e a faixa anda até -50%: nesse ponto a
-         cópia está exatamente onde a original começou, então o laço não tem
-         emenda visível. A cópia leva aria-hidden para o leitor de tela não
-         ler os números duas vezes. */
-      .stats-marquee {
-        overflow: hidden;
-        /* esmaece as pontas, em vez de cortar os cartões a seco na borda */
-        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
-        mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px;
       }
 
-      .stats-track {
-        display: flex;
-        width: max-content;
-        animation: stats-marquee 38s linear infinite;
+      /* Entrada escalonada: os quatro ficam parados no lugar e aparecem em
+         sequência quando a seção entra na tela — o movimento acontece dentro
+         de cada um, não deslocando a linha. */
+      .stats.is-visible .stat-card {
+        animation: stat-entra 0.62s cubic-bezier(0.22, 1, 0.36, 1) backwards;
       }
 
-      .stats-marquee:hover .stats-track,
-      .stats-marquee:focus-within .stats-track {
-        animation-play-state: paused;
-      }
+      .stats.is-visible .stat-card:nth-child(1) { animation-delay: 0.06s; }
+      .stats.is-visible .stat-card:nth-child(2) { animation-delay: 0.16s; }
+      .stats.is-visible .stat-card:nth-child(3) { animation-delay: 0.26s; }
+      .stats.is-visible .stat-card:nth-child(4) { animation-delay: 0.36s; }
 
-      @keyframes stats-marquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
+      @keyframes stat-entra {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
 
       .stat-card {
-        flex: 0 0 auto;
-        width: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 6px;
         text-align: center;
-        padding: 8px 20px;
+        padding: 8px 12px;
       }
 
       .stat-icon {
@@ -1452,6 +1445,10 @@
       }
 
       @media (min-width: 450px) and (max-width: 768px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .gallery-slide {
           flex-basis: calc((100% - 14px) / 2);
         }
@@ -1529,23 +1526,6 @@
         .reveal {
           opacity: 1;
           transform: none;
-        }
-
-        .stats-track {
-          animation: none !important;
-          transform: none !important;
-          width: 100%;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .stats-track .stat-card[aria-hidden="true"] {
-          display: none;
-        }
-
-        .stats-marquee {
-          -webkit-mask-image: none;
-          mask-image: none;
         }
       }
     </style>
@@ -1661,8 +1641,7 @@
       </section>
 
       <section class="stats reveal" data-section="estatisticas">
-        <div class="stats-marquee">
-          <div class="stats-track">
+        <div class="container stats-grid">
           <article class="stat-card">
             <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             <div class="stat-number">2.500+</div>
@@ -1684,28 +1663,7 @@
             <div class="stat-label">Segurança e conforto</div>
           </article>
         
-          <article class="stat-card" aria-hidden="true">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            <div class="stat-number">2.500+</div>
-            <div class="stat-label">Hóspedes felizes</div>
-          </article>
-          <article class="stat-card" aria-hidden="true">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15C4 12 7 9 12 9C17 9 20 12 21 15M5 18C6 16.5 8.5 14 12 14C15.5 14 18 16.5 19 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Cachoeiras próximas</div>
-          </article>
-          <article class="stat-card" aria-hidden="true">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C16.3 17.5 19 14.3 19 10.5C19 7.4 16.5 5 13.5 5C12.1 5 10.8 5.7 10 6.7C9.2 5.7 7.9 5 6.5 5C3.5 5 1 7.4 1 10.5C1 14.3 3.7 17.5 8 21L12 24L16 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Hospitalidade regional</div>
-          </article>
-          <article class="stat-card" aria-hidden="true">
-            <svg class="stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 6V11C19 15.4 16 19 12 21C8 19 5 15.4 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            <div class="stat-number">Premium</div>
-            <div class="stat-label">Segurança e conforto</div>
-          </article>
-        </div>
-        </div>
+          </div>
       </section>
 
       <section id="sobre" data-section="sobre" class="section-pad reveal">
