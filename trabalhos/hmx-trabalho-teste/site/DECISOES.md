@@ -968,3 +968,100 @@ Varredura na página inteira depois das mudanças:
 
 Conferido no desktop (1280px), no tablet (790px) e no celular (375px), com a
 gaveta de menu aberta e fechada.
+
+---
+
+## Vidro de iOS, cartões lado a lado no celular e botão de menu sem disco
+
+### O degradê da barra
+
+A referência (cabeçalho da Wuzi) tem um degradê leve puxando para o preto. Aqui
+o degradê puxa para o **azul da marca**, não para o laranja: o laranja é a cor
+do botão "Reservar Agora", que é a única coisa no cabeçalho que precisa saltar.
+Tingir a barra inteira de laranja tiraria dele o contraste que faz o botão
+funcionar.
+
+| | Sobre o hero | Sobre o corpo |
+|---|---|---|
+| Topo | `rgba(214,235,255,.14)` | `rgba(255,255,255,.46)` |
+| Base | `rgba(0,32,70,.24)` | `rgba(206,227,255,.32)` |
+| Desfoque | 30px | 30px |
+| Saturação | 140% | 125% |
+
+A saturação subiu de volta (110% → 125/140%) porque é ela que faz o vidro
+*iluminar* o que está atrás, que é o efeito do iOS. Antes ela era problema
+porque o texto escuro competia com a cor da foto; sobre o hero o texto é branco,
+então a cor pode passar.
+
+**O degradê deixou a barra mais legível, não menos.** Sobre o hero ele escurece
+para baixo, e o texto é branco — o pior caso medido subiu de **4,60 para 5,35**.
+Nas seções claras fica em 14,4–15,2.
+
+### Cartões lado a lado no celular
+
+Os quartos apareciam um por linha: quem quisesse comparar preço tinha de rolar
+entre eles. Agora são **dois por linha**, com ~165px cada. Nessa largura nada
+cabia no tamanho de desktop, então tudo encolheu junto:
+
+| | Desktop | Celular |
+|---|---|---|
+| Colunas | 2 | 2 |
+| Largura do cartão | 474px | 165px |
+| Proporção da foto | 3:2 | 4:3 |
+| Nome do quarto | 28px | 18,9px |
+| Preço | 27,2px | 19,2px |
+| Respiro interno | 24/26px | 14/13px |
+| Rodapé | ícones e botão lado a lado | empilhados |
+
+Os quatro cartões de "Experiência" também foram para duas colunas — são ícone
+e duas linhas, cabem bem, e a seção deixou de ser uma pilha de quatro blocos
+iguais.
+
+**A galeria das cachoeiras continua de um por linha.** Em 165px o nome
+"Caverna Refúgio do Maroaga" e o endereço ficariam abaixo de 11px, que é o
+limite de leitura que este projeto adota — e o endereço é justamente o que
+essa galeria existe para mostrar.
+
+**Um erro de cascata no caminho:** o bloco `@media (max-width: 560px)` foi
+escrito antes das regras base dos cartões. Mesma especificidade, e quem vem
+depois ganha — então *nada* dele valia: o nome continuava em 28px e o respiro
+em 26px, mesmo com a regra declarada. Só apareceu porque medi os valores
+computados em vez de confiar no que estava escrito. O bloco foi para o fim do
+CSS, junto das outras media queries.
+
+### Menos arredondado
+
+`--r-lg` de 24px para **14px** e `--r-md` de 16 para 12. Mexer no token e não
+nos elementos mantém cartões, painel, mapa, formulário e rodapé no mesmo
+desenho — se cada um tivesse o seu valor, a próxima mudança deixaria algum para
+trás.
+
+### Botão de menu sem disco
+
+O hambúrguer era um disco azul escuro com os palitos brancos. Agora são **só os
+palitos, no laranja da marca**.
+
+Medido antes de aplicar, e o resultado mudou a implementação: laranja sozinho
+sobre a foto do hero fica entre **1,0 e 2,5:1** contra céu, folhagem, telhado e
+estátua — ou seja, some. E no celular esse botão é a navegação inteira.
+
+O disco era o que resolvia isso. Sem ele, o que devolve a leitura é uma sombra
+escura no próprio traço (`drop-shadow(0 1px 3px rgba(0,20,43,.85))`), aplicada
+só enquanto a barra está sobre o hero. Contorna os palitos sem desenhar disco
+nenhum. Sobre a pílula clara das seções, o laranja dá 4,44:1 e a sombra sai.
+
+O alvo de toque continua com 44px: o que sumiu foi o fundo, não o botão.
+
+### Botão no hero
+
+Voltou um **"Reservar Agora"** no hero, no mesmo estilo de "Conheça Nossa
+História" — texto claro, filete que cresce e seta que avança — apontando para
+o formulário de reserva.
+
+Ficou **depois** de "Conheça Nossa História", não antes: essa posição foi
+escolhida pelo cliente numa rodada anterior, quando ele pediu para mover o
+botão de história para o lugar do de reserva. Inverter agora desfaria aquilo
+sem ele ter pedido.
+
+A folga entre os dois é de 30px, não 16px: com a seta avançando no hover, 16px
+faziam a seta de um quase encostar no texto do outro.
