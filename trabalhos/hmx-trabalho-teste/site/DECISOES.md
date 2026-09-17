@@ -335,7 +335,7 @@ acomodações, que antes eram `.card-link` com fundo bege.
 **Não foi aplicado nos CTAs** "Reservar Agora", "Solicitar reserva" e
 "Verificar Disponibilidade": o componente é um botão de fundo transparente, e
 usá-lo ali apagaria o laranja da marca e a hierarquia entre ação principal e
-secundária. Fica em aberto para decisão.
+secundária. — decidido manter assim.
 
 **Mesma divergência da regra 3** já registrada para o ícone de calendário: a
 seta usa `translateX` no hover. O alvo do clique, de novo, não se move — o que
@@ -345,3 +345,15 @@ desliza é o ícone dentro dele.
 
 `.btn-secondary` e `.card-link` ficaram sem uso e saíram, junto com seus
 `:hover`.
+
+### Escopo final dos botões
+
+| Tipo | Onde | Aparência |
+|---|---|---|
+| Primário | "Reservar Agora" (×4), "Verificar Disponibilidade" | laranja sólido + calendário que balança |
+| Primário invertido | "Solicitar reserva" (painel do Destino) | fundo branco, texto laranja — variante que já existia |
+| Primário sem ícone | "Abrir no Google Maps" | laranja sólido; calendário não cabe, não é ação de data |
+| Terciário | "Conheça Nossa História", "Detalhes" (×3) | transparente, sublinhado que cresce + seta |
+
+O calendário entrou no "Verificar Disponibilidade" por ser o botão mais ligado
+a datas do site — é o que submete check-in e check-out.
