@@ -1,3 +1,4 @@
+| Desktop | **monumento do arqueiro**, paisagem 1549×871 |
 # DECISÕES do projeto
 
 ## Da entrega original (mantidas)
@@ -437,9 +438,18 @@ O `<picture>` já trocava por `media`; mudou a foto do desktop:
 | Desktop | **cachoeira**, paisagem 1920×1080 |
 
 A fachada tem quatro letreiros disputando atenção (HC Crédito, HC Pub, Hotel
-Calleb, Brahma) — em tela larga isso polui. A cachoeira é limpa e casa com
-"Coração da Amazônia" do título. No celular a fachada continua, porque ali o
+Calleb, Brahma) — em tela larga isso polui. No celular ela continua, porque o
 recorte vertical corta o entorno e sobra o hotel.
+
+No desktop entrou o **monumento do arqueiro** da entrada de Presidente
+Figueiredo, escolhido pelo dono do trabalho. A escolha tem uma coincidência
+feliz: o logo do hotel traz uma coroa de penas indígena, e o arqueiro é o
+símbolo da cidade — marca e lugar se encontram na mesma imagem.
+
+O arquivo tem 1549×1015, então o maior recorte 16:9 possível **sem esticar** é
+1549×871, e é esse o teto do `srcset`. Enquadramento em 30% da altura: mantém
+o céu e a estátua, corta o asfalto. A estátua fica à direita e o céu à
+esquerda, onde entra o texto.
 
 ### Overlay do hero
 
@@ -463,3 +473,7 @@ cachoeira é verde e vale manter a cor.
 - **Foto da seção Sobre:** era um corredor com lustre, escuro e sem apelo.
   Passou a ser a fachada à noite, com os letreiros acesos — a melhor foto do
   acervo (4284×5712 no original).
+
+**A confirmar:** a origem da foto do arqueiro (`pf.png` na raiz do projeto) não
+foi informada. Se veio de banco de imagens ou de site de turismo, o hotel
+precisa de licença para uso comercial. Vale checar antes de publicar.
