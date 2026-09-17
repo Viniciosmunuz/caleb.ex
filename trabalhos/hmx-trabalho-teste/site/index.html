@@ -266,34 +266,43 @@
          precisa gritar. Menor, sem ícone, e contornado enquanto está sobre a
          foto — só vira laranja sólido depois que a página rola e ganha fundo. */
       .header-cta {
-        min-height: 38px;
-        padding: 7px 18px;
+        min-height: 40px;
+        padding: 8px 18px;
         font-size: 0.85rem;
-        border: 1.5px solid transparent;
+        border-radius: 999px;
+        border: none;
+        gap: 7px;
       }
 
-      .site-header:not(.is-scrolled) .header-cta {
-        background: transparent;
-        border-color: rgba(255, 255, 255, 0.55);
-        color: #ffffff;
-        transition: background-color 0.18s ease-out, border-color 0.18s ease-out;
+      .header-cta::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border: solid currentColor;
+        border-width: 1.6px 1.6px 0 0;
+        transform: rotate(45deg);
+        margin-left: 1px;
       }
 
-      .site-header:not(.is-scrolled) .header-cta:hover,
-      .site-header:not(.is-scrolled) .header-cta:focus-visible {
-        background: rgba(255, 255, 255, 0.16);
-        border-color: #ffffff;
-      }
 
+      /* ---- Cabeçalho ----
+         No topo é a barra comum: largura inteira, transparente sobre a foto.
+         Ao rolar, a linha interna vira uma pílula de vidro solta das bordas.
+         Quem muda é a .nav-row, não o <header>: transicionar fundo e raio de
+         um elemento é suave — transicionar largura e posição do cabeçalho
+         inteiro treme. */
       .site-header {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 40;
-        background: transparent;
-        border-bottom: 1px solid transparent;
-        transition: background 0.3s ease-out, border-color 0.3s ease-out;
+        padding: 0;
+        transition: padding 0.3s ease-out;
+      }
+
+      .site-header.is-scrolled {
+        padding: 14px 20px;
       }
 
       /* ---- Gaveta de menu ----
@@ -302,15 +311,18 @@
          E sai de display:none para opacity/visibility, que da transicao. */
       .mobile-nav {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 10px);
         left: 0;
         right: 0;
         display: grid;
         gap: 2px;
-        padding: 10px 16px 18px;
-        background: var(--color-bg);
-        border-top: 1px solid var(--color-border);
-        box-shadow: var(--sh-lg);
+        padding: 12px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.86);
+        -webkit-backdrop-filter: blur(26px) saturate(180%);
+        backdrop-filter: blur(26px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 34px rgba(0, 35, 72, 0.16);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
@@ -350,76 +362,34 @@
         background: var(--color-cta-hover);
       }
 
-      /* Vidro fosco ao rolar. O fundo precisa ser bem translúcido: a 96% de
-         opacidade, como estava antes, não sobra nada para o blur borrar.
-         O saturate reforça a cor do que passa por trás — é o que faz parecer
-         vidro de verdade e não um véu cinza. */
-      .site-header.is-scrolled {
-        background: rgba(255, 255, 255, 0.45);
-        /* blur mais forte compensa o fundo mais aberto: quanto mais borrado o
-           que passa atrás, mais uniforme o contraste sob o texto do menu */
-        -webkit-backdrop-filter: blur(26px) saturate(180%);
-        backdrop-filter: blur(26px) saturate(180%);
-        border-bottom-color: rgba(0, 35, 72, 0.08);
-        box-shadow: 0 1px 16px rgba(0, 35, 72, 0.07);
+      /* sobre a foto do hero, texto claro */
+      .site-header:not(.is-scrolled) .main-nav {
+        color: #ffffff;
       }
 
-      /* Com o fundo a 45% o que passa atrás interfere na leitura do menu.
-         Peso um pouco maior e um halo branco bem sutil separam o texto do
-         fundo sem precisar fechar o vidro de novo. */
-      .site-header.is-scrolled .main-nav a,
-      .site-header.is-scrolled .brand {
+      /* sobre a pílula de vidro, texto escuro com halo para firmar a leitura */
+      .is-scrolled .main-nav {
+        color: var(--color-heading);
+      }
+
+      .is-scrolled .main-nav a,
+      .is-scrolled .brand {
         font-weight: 500;
         text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
       }
 
-      /* navegador sem backdrop-filter recebe fundo quase sólido, senão o
-         texto do menu fica ilegível sobre a foto */
       @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-        .site-header.is-scrolled {
-          background: rgba(255, 255, 255, 0.95);
+        .is-scrolled .nav-row {
+          background: rgba(255, 255, 255, 0.94);
         }
       }
 
-      /* sobre a foto do hero o texto do menu precisa ser claro */
-      .site-header:not(.is-scrolled) .main-nav,
-      .site-header:not(.is-scrolled) .main-nav a,
-      .site-header:not(.is-scrolled) .menu-toggle {
-        color: #ffffff;
-      }
-
-      .site-header:not(.is-scrolled) .menu-toggle {
-        border-color: rgba(255, 255, 255, 0.5);
-      }
-
-      .site-header:not(.is-scrolled) .main-nav a::after {
-        background: #ffffff;
-      }
-
-      .nav-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        min-height: 76px;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-      }
-
-      .brand img {
-        height: 52px;
-        width: auto;
-      }
-
+      /* Os links saem da barra: navegação fica só na gaveta, em qualquer tela. */
       .main-nav {
         display: flex;
         align-items: center;
         gap: 24px;
         font-size: 0.9rem;
-        color: var(--color-text);
       }
 
       .main-nav a {
@@ -433,7 +403,7 @@
         bottom: -6px;
         width: 100%;
         height: 2px;
-        background: var(--color-accent);
+        background: currentColor;
         opacity: 0;
         transform: scaleX(0.4);
         transition: opacity 0.16s ease-out, transform 0.16s ease-out;
@@ -445,16 +415,65 @@
         transform: scaleX(1);
       }
 
+      .nav-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 70px;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        border: 1px solid transparent;
+        transition: min-height 0.3s ease-out, padding 0.3s ease-out,
+          border-radius 0.3s ease-out, background 0.3s ease-out,
+          border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+      }
+
+      /* a pílula de vidro é este estado */
+      .is-scrolled .nav-row {
+        min-height: 58px;
+        padding: 0 10px 0 20px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.45);
+        -webkit-backdrop-filter: blur(26px) saturate(180%);
+        backdrop-filter: blur(26px) saturate(180%);
+        border-color: rgba(255, 255, 255, 0.55);
+        box-shadow: 0 6px 26px rgba(0, 35, 72, 0.14);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand img {
+        height: 36px;
+        width: auto;
+      }
+
       .menu-toggle {
         display: none;
         align-items: center;
         justify-content: center;
-        border: 1px solid var(--color-border);
-        background: transparent;
-        color: var(--color-text);
-        width: 44px;
-        height: 44px;
-        border-radius: var(--r-sm);
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--color-dark);
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.16s ease-out;
+      }
+
+      .menu-toggle:hover {
+        background: var(--color-primary);
+      }
+
+      .menu-toggle .hamburger-svg {
+        width: 20px;
+        height: 20px;
       }
 
       /* Hambúrguer que se dobra em X.
@@ -1574,15 +1593,8 @@
           min-height: 64px;
         }
 
-        .main-nav,
         .header-cta {
           display: none;
-        }
-
-        .menu-toggle {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
         }
 
         .hero-inner {
@@ -1632,18 +1644,8 @@
           grid-template-columns: 1fr;
         }
 
-        .main-nav {
-          display: none;
-        }
-
         .header-cta {
           display: none;
-        }
-
-        .menu-toggle {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
         }
 
         .hero-inner {
@@ -1665,6 +1667,18 @@
 
         .footer-grid {
           grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Até 768px a navegação é o botão de menu mais a gaveta; acima disso são
+         os links na barra, e nem o botão nem a gaveta existem. */
+      @media (max-width: 768px) {
+        .main-nav {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
         }
       }
 

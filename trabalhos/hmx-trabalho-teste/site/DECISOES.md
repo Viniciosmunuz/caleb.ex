@@ -675,3 +675,40 @@ contraste, não só como enfeite.
 da foto exatamente sob o menu, o contraste fica no limite. As seções internas
 têm fundo claro, então o problema só existe enquanto o hero está atrás — uma
 faixa curta da página.
+
+## Cabeçalho que vira pílula ao rolar
+
+Modelo trazido pelo dono do trabalho (site da Wuzi): barra flutuante de canto
+arredondado, fundo de vidro, botão em pílula com seta e o menu num botão
+circular.
+
+### Dois estados
+
+| | No hero (topo) | Depois de rolar |
+|---|---|---|
+| Forma | barra comum, largura inteira | pílula solta das bordas |
+| Raio | 0 | 999px |
+| Fundo | transparente | vidro a 45% com blur 26px |
+| Altura | 70px | 58px |
+| Texto do menu | branco | escuro, com halo branco |
+
+### Por que a pílula é a `.nav-row` e não o `<header>`
+
+A primeira tentativa transformou o próprio `<header>` em pílula, com
+`width`, `left: 50%` e `translateX`. Funciona parado, mas **treme na
+transição**: animar largura e posição força o navegador a recalcular layout a
+cada quadro.
+
+Agora o `<header>` fica sempre fixo e de largura inteira, e quem muda é a linha
+interna — fundo, raio, sombra e altura. São propriedades de pintura, não de
+layout, e a transição fica lisa.
+
+### Navegação por largura
+
+- **Até 768px:** os links somem da barra e ficam só na gaveta, aberta pelo botão
+  circular.
+- **Acima de 768px:** os links aparecem na barra; nem o botão nem a gaveta
+  existem.
+
+A gaveta acompanha o novo visual: solta 10px abaixo da barra, canto de 20px e o
+mesmo vidro.
