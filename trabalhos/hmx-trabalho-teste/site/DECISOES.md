@@ -388,3 +388,63 @@ Medido depois: `h1` em **35,2px** no celular (era 51,2) e **43px** em 1024px
 
 O `letter-spacing` negativo também foi afrouxado de `-0.06em` para `-0.04em` no
 `h1`: aperto de letra que funciona em 96px sufoca o texto em 43px.
+
+## Passagem de acabamento visual
+
+### O que estava feio não era subjetivo
+
+O CSS tinha **10 valores de raio de borda** (4, 12, 16, 20, 22, 24, 28, 30,
+999px, 50%) e **9 sombras**, cada uma com cor e opacidade próprias — algumas em
+cinza (`rgba(17,24,39)`), outras em azul (`rgba(11,51,85)`), outras em laranja.
+Nada disso é escolha, é acúmulo. É o que faz um site parecer amador mesmo com
+conteúdo bom.
+
+Agora há escala: `--r-sm/md/lg` (10/16/24px) mais pílula e círculo, e
+`--sh-sm/md/lg` em camadas, todas na mesma matiz azul da marca. Sombra cinza
+sobre fundo creme suja; a mesma matiz do fundo mantém tudo coeso.
+
+### Botões minimalistas
+
+| | Antes | Depois |
+|---|---|---|
+| Fonte | 12px, peso 800, caixa alta, `letter-spacing: .08em` | 14,4px, peso 600, caixa normal |
+| Sombra | `0 18px 28px rgba(229,103,10,.28)` | nenhuma |
+| Altura | 48px | 46px |
+
+A sombra laranja era o que mais pesava: sombra colorida sob botão colorido é
+justamente o tique que `PADROES-PROIBIDOS.md` chama de "pior ainda".
+
+### Gaveta de menu
+
+Estava assim: `display: none` → `block`, sem fundo próprio e sem transição.
+Como o cabeçalho é transparente sobre a foto do hero, **a gaveta abria por cima
+da imagem** — daí parecer quebrada.
+
+- Fundo branco próprio, borda no topo e `--sh-lg` para separar do conteúdo.
+- `opacity` + `visibility` + `translateY` no lugar de `display`, com transição
+  de 220ms.
+- Links com 48px de altura de toque, cantos `--r-sm` e realce no toque, em vez
+  de lista com `border-bottom`.
+- Os dois blocos duplicados nas media queries viraram um só no CSS base.
+
+### Hero diferente por dispositivo
+
+O `<picture>` já trocava por `media`; mudou a foto do desktop:
+
+| Tela | Foto |
+|---|---|
+| Celular | fachada do hotel, retrato 1100×1467 |
+| Desktop | **cachoeira**, paisagem 1920×1080 |
+
+A fachada tem quatro letreiros disputando atenção (HC Crédito, HC Pub, Hotel
+Calleb, Brahma) — em tela larga isso polui. A cachoeira é limpa e casa com
+"Coração da Amazônia" do título. No celular a fachada continua, porque ali o
+recorte vertical corta o entorno e sobra o hotel.
+
+### Overlay do hero
+
+Era preto puro em gradiente só horizontal. Agora é azul-noite
+(`rgba(0,20,43,…)`) em duas camadas — horizontal para o texto, vertical para
+assentar o cabeçalho no topo e o indicador de rolagem na base. O filtro passou
+de `brightness(.68) saturate(.85)` para `brightness(.74) saturate(1.02)`: a
+cachoeira é verde e vale manter a cor.
