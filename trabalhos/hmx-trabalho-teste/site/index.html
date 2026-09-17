@@ -156,7 +156,7 @@
         cursor: pointer;
         font-family: inherit;
         font-size: 0.9rem;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 0.01em;
         color: var(--color-heading);
       }
@@ -222,13 +222,13 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 46px;
-        padding: 10px 24px;
-        border-radius: 999px;
+        min-height: 44px;
+        padding: 10px 20px;
+        border-radius: var(--r-sm);
         font-size: 0.9rem;
-        font-weight: 600;
-        letter-spacing: 0.01em;
-        gap: 9px;
+        font-weight: 500;
+        letter-spacing: 0;
+        gap: 8px;
         transition: background-color 0.16s ease-out, color 0.16s ease-out, border-color 0.16s ease-out;
       }
 
@@ -548,9 +548,9 @@
       }
 
       .stats {
-        background: var(--color-accent);
+        background: var(--color-dark);
         color: #ffffff;
-        padding: 80px 0;
+        padding: 56px 0;
       }
 
       .stats-grid {
@@ -559,38 +559,19 @@
         gap: 32px;
       }
 
-      .top-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(17, 24, 39, 0.75);
-      }
-
-      .top-cta::before {
-        content: "";
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: #1bb05c;
-        box-shadow: 0 0 0 5px rgba(27, 176, 92, 0.14);
-      }
-
       .stat-card {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
         text-align: center;
-        padding: 20px 16px;
+        padding: 8px 12px;
       }
 
       .stat-icon {
-        color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 4px;
+        color: var(--color-brand-orange);
+        margin-bottom: 6px;
       }
 
       .stat-number {
@@ -1551,8 +1532,7 @@
           <a href="#galeria">Galeria</a>
           <a href="#localizacao">Localização</a>
         </nav>
-        <a class="top-cta header-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Hotel%20Calleb." target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn-cta header-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
+        <a class="btn-cta header-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
         <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuMobile">
           <svg class="hamburger-svg" viewBox="0 0 32 32" aria-hidden="true">
             <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
@@ -1567,7 +1547,7 @@
         <a href="#destino">Destino</a>
         <a href="#galeria">Galeria</a>
         <a href="#localizacao">Localização</a>
-        <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
+        <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
       </nav>
     </header>
 
@@ -1605,7 +1585,7 @@
               e localização privilegiada no centro da cidade.
             </p>
             <div class="hero-actions">
-              <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
+              <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
               <a class="btn-arrow btn-arrow--claro" href="#sobre"><span class="lable">Conheça Nossa História</span><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="9" viewBox="0 0 46 16" aria-hidden="true"><path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path></svg></a>
             </div>
             <div class="hero-meta">
@@ -1650,10 +1630,10 @@
           <div class="about-media">
             <picture>
               <img
-                src="./images/sobre-recepcao.jpg"
+                src="./images/sobre-fachada-noite.jpg"
                 width="1200"
                 height="900"
-                alt="Corredor e área de convivência do Hotel Calleb, com iluminação aconchegante"
+                alt="Fachada do Hotel Calleb à noite, com o letreiro iluminado"
                 loading="lazy"
                 decoding="async"
               />
@@ -1670,7 +1650,7 @@
               Combinamos a rusticidade da floresta com a sofisticação de um hotel premium, proporcionando aos
               nossos hóspedes o refúgio perfeito após um dia explorando as majestosas cachoeiras da região.
             </p>
-            <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
+            <a class="btn-cta" href="#contato"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Reservar Agora</span></a>
           </div>
         </div>
       </section>
@@ -1978,7 +1958,7 @@
                   <input id="whatsapp" name="whatsapp" type="tel" placeholder="(99) 99999-9999" required />
                 </div>
               </div>
-              <button class="btn-cta" type="submit"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Verificar Disponibilidade</span></button>
+              <button class="btn-cta" type="submit"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Verificar Disponibilidade</span></button>
               <p class="form-note">Ao enviar, abrimos o WhatsApp do hotel com os seus dados já preenchidos.</p>
             </form>
           </div>

@@ -448,3 +448,18 @@ Era preto puro em gradiente só horizontal. Agora é azul-noite
 assentar o cabeçalho no topo e o indicador de rolagem na base. O filtro passou
 de `brightness(.68) saturate(.85)` para `brightness(.74) saturate(1.02)`: a
 cachoeira é verde e vale manter a cor.
+
+### Ajustes seguintes
+
+- **WhatsApp saiu do cabeçalho.** Era um link solto ao lado do "Reservar
+  Agora", com bolinha verde pulsante. O botão flutuante já cobre esse caminho
+  em toda a página; ter os dois competia com o CTA.
+- **Botão mais minimalista ainda:** cantos retos (`--r-sm`) no lugar da pílula,
+  peso 500, 44px de altura, ícone de 15px.
+- **Bloco de estatísticas:** era `--color-accent` (#0047b3) puro, 80px de
+  padding — um retângulo de azul saturado no meio da página. Agora é
+  `--color-dark` (#002348) com 56px, e os ícones passaram a laranja. Azul
+  escuro com laranja é o par do próprio logo, e para de brigar com os botões.
+- **Foto da seção Sobre:** era um corredor com lustre, escuro e sem apelo.
+  Passou a ser a fachada à noite, com os letreiros acesos — a melhor foto do
+  acervo (4284×5712 no original).
