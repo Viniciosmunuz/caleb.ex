@@ -1156,3 +1156,62 @@ O segundo divisor saiu pelo mesmo motivo: dois filetes horizontais em 165px
 picam o cartão em fatias. Sobrou o do rodapé, que separa a ação do conteúdo.
 
 No desktop nada mudou — foto 3:2, três specs, os dois divisores.
+
+---
+
+## Seção "Experiência" sem caixas
+
+Quatro molduras brancas com borda, raio e sombra numa linha é exatamente o
+"aparência de dashboard" que estava na lista do que **não** fazer, desde o
+briefing. Eram quatro widgets, não quatro diferenciais.
+
+A caixa saiu inteira — fundo, borda, raio e sombra. O que organiza cada coluna
+agora é um **filete de 1px em cima**, como numa tabela de características, e o
+ícone em laranja. Mesma informação, sem a moldura.
+
+### Os ícones diziam a coisa errada
+
+| | Antes | Agora |
+|---|---|---|
+| Café da manhã | cúpula abstrata | xícara com vapor |
+| Conforto premium | cúpula abstrata | cama com travesseiro |
+| Natureza ao redor | coração | folha |
+| Reserva simples | balão de conversa | calendário com visto |
+
+Os dois primeiros eram **praticamente o mesmo desenho** — duas cúpulas
+arredondadas, lado a lado, sem nada que distinguisse café de quarto. O coração
+não diz nada sobre natureza e o balão de conversa servia para qualquer coisa.
+Agora cada ícone desenha o que a coluna diz, e o calendário é o mesmo dos botões
+de reserva, o que amarra a seção ao resto da página.
+
+### O texto
+
+Este texto **não é do cliente** — a seção "Experiência" não existe no site dele,
+foi escrita aqui numa rodada anterior. Confirmado antes de mexer: nenhuma das
+quatro frases aparece em `alvo/` ou `copies/`. Por isso pôde ser reescrito; o
+texto do proprietário continua intocado onde ele existe.
+
+As frases saíram do genérico para o verificável:
+
+- "Comece o dia com energia e conforto" → "Café regional servido todas as
+  manhãs, já na diária" — apoiado nos números do próprio cliente
+  ("100% Regional / Cafés da Manhã") e na descrição de todos os quartos.
+- "Uma base perfeita para chegar perto das cachoeiras" → "A poucos quilômetros
+  das cachoeiras, grutas e trilhas" — concreto, e agora a seção seguinte mostra
+  essas cachoeiras com foto e endereço.
+- "Fale com nossa equipe e confirme sua estadia com agilidade" → "Sem cadastro e
+  sem espera: você fala direto com a equipe pelo WhatsApp" — descreve o que o
+  formulário realmente faz.
+
+### Limpeza
+
+Com a seção refeita, `.service-card`, `.feature-card`, `.feature-collection`,
+`.gallery-card` e `.mini-icon` ficaram sem nenhum uso no HTML — restos das
+versões anteriores desta seção e da seção Destino. Todo o CSS deles saiu,
+incluindo `.feature-card` dentro de um seletor agrupado com `.room-card`
+(removido com cuidado: apagar uma linha de um seletor agrupado já quebrou o
+`.btn-cta` duas vezes neste projeto). Verificado: **zero ocorrências** das cinco
+classes no arquivo.
+
+E entre 450 e 768px os quatro diferenciais ainda estavam em quatro colunas —
+só havia regra de duas colunas abaixo de 450px. Corrigido.
