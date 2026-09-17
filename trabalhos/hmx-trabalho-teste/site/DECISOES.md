@@ -877,7 +877,7 @@ no branco, onde se lê sem disputar com a foto.
 |---|---|---|
 | Cachoeira do Santuário | Rodovia AM-240 (estrada de Balbina), km 12 | MTur Destinos — domínio público |
 | Cachoeira da Iracema | Rodovia BR-174, km 998 · a 8 km do centro | MTur Destinos — domínio público |
-| Caverna Refúgio do Maruaga | Rodovia AM-240 (estrada de Balbina), km 6 | Fabricio Ferreira Silva — CC BY-SA 3.0 |
+| Caverna Refúgio do Maroaga | Rodovia AM-240 (estrada de Balbina), km 6 | Fabricio Ferreira Silva — CC BY-SA 3.0 |
 
 As fotos vieram do Wikimedia Commons, recortadas em 4:3 e servidas em 480w e
 900w. Duas são de domínio público (Ministério do Turismo); a terceira é CC BY-SA
@@ -886,6 +886,13 @@ licença, não enfeite: sem ele o uso comercial da foto fica irregular.**
 
 A galeria é separada da galeria do hotel, que continua na seção seguinte com o
 carrossel das fotos do estabelecimento.
+
+**Grafia corrigida com autorização do cliente:** o site dele escreve
+"Maruaga", mas o nome da caverna é **Maroaga** — é assim na Área de Proteção
+Ambiental Caverna do Maroaga, que é unidade de conservação estadual, e no acervo
+do Wikimedia Commons. Foi a única palavra do texto dele alterada nesta rodada, e
+só depois de perguntar. Grafia errada de nome próprio de atração custa busca:
+quem procura "Maroaga" não encontra a página.
 
 O véu sobre a foto é `rgba(0,20,43,.74)` só na base. No pior caso — nome branco
 sobre a parte mais clara de uma cachoeira — dá **7,4:1**.
