@@ -930,14 +930,8 @@
       /* quatro cartões só cabem lado a lado em tela larga; abaixo disso a
          grade se reorganiza em vez de espremer */
       .card-grid.quatro {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      @media (max-width: 1080px) {
-        .card-grid.quatro {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
       }
 
       @media (max-width: 560px) {
@@ -951,7 +945,7 @@
       .gallery-card {
         background: #ffffff;
         border: 1px solid var(--color-border);
-        border-radius: var(--r-md);
+        border-radius: var(--r-lg);
         overflow: hidden;
         box-shadow: var(--sh-md);
         transition: border-color 0.16s ease-out;
@@ -973,8 +967,11 @@
 
       .card-image {
         position: relative;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 3 / 2;
         overflow: hidden;
+        /* o cartão é flex em coluna: sem isto o flex encolhe a foto para
+           igualar as alturas, e a proporção declarada não vale nada */
+        flex-shrink: 0;
       }
 
       .card-image img {
@@ -986,14 +983,15 @@
       .card-body {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         height: 100%;
-        padding: 20px 20px 24px;
+        padding: 24px 26px 26px;
       }
 
       .card-body h3 {
-        font-size: 1.6rem;
-        font-weight: 700;
+        font-size: 1.75rem;
+        font-weight: 400;
+        letter-spacing: -0.01em;
         color: var(--color-heading);
       }
 
@@ -1002,8 +1000,8 @@
          pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
       .room-preco {
         position: absolute;
-        left: 14px;
-        bottom: 12px;
+        left: 20px;
+        bottom: 16px;
         z-index: 1;
         display: inline-flex;
         align-items: baseline;
@@ -1015,7 +1013,7 @@
 
       .room-preco strong {
         font-family: var(--font-heading);
-        font-size: 1.45rem;
+        font-size: 1.7rem;
         font-weight: 400;
         line-height: 1;
       }
@@ -1044,8 +1042,8 @@
       .room-specs li {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        font-size: 0.8rem;
+        gap: 6px;
+        font-size: 0.84rem;
         color: var(--color-text);
       }
 
@@ -1099,6 +1097,7 @@
          botões sólidos lado a lado brigariam entre si e com o cabeçalho. */
       .room-cta {
         flex-shrink: 0;
+        font-size: 0.92rem;
         position: relative;
         font-size: 0.88rem;
         font-weight: 500;

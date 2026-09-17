@@ -778,3 +778,27 @@ fora da tela sem sumir da árvore de acessibilidade.
 No site do cliente esses ícones são coloridos, um laranja e três azuis. Aqui
 ficaram todos no mesmo azul a 50% — a cor não distingue nada entre eles, e
 quatro cores diferentes numa linha de 17px viram ruído.
+
+### Cartões maiores
+
+Quatro numa linha deixavam cada um com ~230px — estreito demais para foto,
+preço, specs, texto e rodapé. Passaram a **2×2**, com 474px cada.
+
+| | Antes | Agora |
+|---|---|---|
+| Colunas | 4 | 2 |
+| Largura do cartão | ~230px | 474px |
+| Proporção da foto | 4:3 | 3:2 |
+| Nome do quarto | 1,6rem peso 700 | 1,75rem peso 400 |
+| Raio | `--r-md` | `--r-lg` |
+| Respiro interno | 20px | 24/26px |
+
+O peso do nome caiu de 700 para 400 pelo mesmo motivo dos títulos do site:
+Georgia não tem 700 real e o navegador engrossa artificialmente. Em 28px isso
+fica pesado.
+
+**Um defeito que só apareceu no tamanho maior:** a foto estava com proporção
+2,43 em vez de 1,5, mesmo com `aspect-ratio: 3/2` declarado. O cartão é flex em
+coluna, e o flex **encolhia a imagem** para igualar as alturas — `aspect-ratio`
+perde para `flex-shrink`. Resolvido com `flex-shrink: 0` na foto. Medido depois:
+proporção 1,50, altura 314px, e os quatro cartões continuam da mesma altura.
