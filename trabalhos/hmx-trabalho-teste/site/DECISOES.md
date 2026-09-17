@@ -179,3 +179,36 @@ nativo:
 - **Fotos que faltam ao acervo:** uma cachoeira em alta resolução, uma
   externa do hotel em paisagem e uma da fachada sem as lojas vizinhas no
   enquadramento. Vale pedir ao cliente — ou uma visita com celular bom.
+
+## Acervo em alta resolução — 17/09/2026
+
+O `images-manifest.json` guarda a URL de origem de cada foto. Elas vêm de três
+CDNs (TripAdvisor, Booking e Google), e o site atual do hotel carrega apenas
+**thumbnails** delas. Pedindo a versão sem o sufixo de tamanho, as mesmas fotos
+voltam muito maiores:
+
+| Foto | No site do hotel | Original | Ganho |
+|---|---|---|---|
+| Fachada à noite | 253×337 | 4284×5712 | 287× |
+| Café / HC Pub | 253×337 | 1200×1600 | 22,5× |
+| Cachoeira | 700×400 | 2000×1328 | 9,5× |
+| Fachada de dia | 1100×1467 | 3072×4096 | 7,8× |
+| 6 fotos do Booking | 576×768 | 810×1080 | 2× |
+
+Os originais ficam em `trabalhos/hmx-trabalho-teste/fotos-reais/hd/`, fora do
+git (são insumo, não entrega).
+
+### O que mudou por causa disso
+
+- **Hero: o espaço de café da manhã** (`hd-cafe`), a pedido do cliente do
+  trabalho. Era inviável antes — a 253×337 teria 7,6× de ampliação. Com
+  1200×1600 o desktop recebe um recorte 16:9 nativo, enquadrado um pouco acima
+  do centro para pegar as luminárias e o balcão em vez do piso.
+- **Destino: a cachoeira saiu de 640×480 para 1600×900.** Era a pendência
+  registrada acima como "elo fraco do acervo" — resolvida sem foto nova.
+
+### Ponto aberto
+
+A foto do hero tem **um hóspede identificável** sentado à mesa. Para uso
+comercial convém confirmar autorização de imagem com o hotel, ou trocar por um
+enquadramento sem pessoas.
