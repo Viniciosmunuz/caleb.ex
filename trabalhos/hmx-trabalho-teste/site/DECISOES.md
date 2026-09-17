@@ -621,3 +621,15 @@ faz o traço), em vez de repetir o mesmo SVG quatro vezes no HTML.
 Havia dois botões laranja idênticos competindo na mesma tela — um para reservar,
 outro para ler a história, que não têm o mesmo peso. O contorno diz "secundário"
 sem precisar de mais nada.
+
+### Hero sem botão de reserva
+
+O "Reservar Agora" saiu do hero a pedido; "Conheça Nossa História" assumiu a
+posição dele, alinhado à esquerda com o texto.
+
+**Vale saber o efeito:** o hero deixa de ter caminho direto para reservar. Sobram
+três: o botão do cabeçalho, que fica visível o tempo todo; o botão flutuante do
+WhatsApp; e os CTAs das seções de acomodações e contato, mais abaixo.
+
+Em página de hotel o botão do hero costuma ser o de maior conversão, porque pega
+quem já chegou decidido. Se as reservas caírem, é o primeiro lugar a olhar.
