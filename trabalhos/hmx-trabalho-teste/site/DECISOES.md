@@ -1836,3 +1836,33 @@ Os pontos inativos continuam cinza. O ícone fica quadrado (16px), para não
 esticar, e **os 24px de alvo de toque continuam**: o ícone cresce e o respiro
 encolhe na mesma medida, então a caixa não muda de altura e os pontos não pulam
 ao trocar de carta. Medido: todos os pontos com 24px de altura, ativo ou não.
+
+### As setas não funcionavam de verdade — e o teste é que estava errado
+
+O cliente reportou que os botões não passavam a foto. Eu tinha "verificado"
+duas vezes que funcionavam. **O teste é que estava errado**, e escondia o
+defeito exatamente.
+
+Eu testava com `elemento.click()`, que dispara só o evento `click`. Um toque de
+verdade dispara `pointerdown`, depois `pointerup`, e só então `click` — e era
+no meio dessa sequência que tudo quebrava:
+
+1. `pointerdown` no botão sobe até a `.pilha`, que chamava `setPointerCapture`.
+2. Com o ponteiro capturado, o navegador passa a entregar o `pointerup` ao
+   elemento que capturou — a `.pilha` — e não ao botão onde o dedo desceu.
+3. O `click` é disparado no **ancestral comum** do `pointerdown` com o
+   `pointerup`. Como o `pointerup` foi para a `.pilha`, o clique caía nela.
+4. O botão nunca recebia clique nenhum.
+
+Isso derrubava as setas **e** o clique nas cartas laterais. As duas coisas que
+eu tinha dado como verificadas.
+
+**A correção:** a captura só entra depois que o dedo anda 6px. Toque parado
+segue o caminho normal do navegador e o clique acontece; arraste captura no
+primeiro movimento e continua valendo mesmo se o dedo sair da pilha.
+
+Reteste, agora com a sequência completa de ponteiro e sem `.click()` sintético,
+nas duas galerias: seta avança, seta volta, carta lateral vem para a frente,
+arraste troca a carta, e a classe de arraste não entra antes do movimento nem
+fica presa depois. **Lição: testar interação de ponteiro com `.click()` prova
+que o tratador existe, não que o usuário consegue chegar nele.**

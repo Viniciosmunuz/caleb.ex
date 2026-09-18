@@ -233,23 +233,36 @@ function iniciarPilha(pilha) {
 
   const limite = () => Math.max(40, pilha.getBoundingClientRect().width * 0.1);
 
+  /* ---- por que a captura do ponteiro so acontece depois do primeiro movimento ----
+     Capturar no pointerdown quebrava todo clique dentro da pilha. Ao capturar,
+     o navegador passa a entregar o pointerup ao elemento que capturou — a
+     .pilha — e nao ao botao onde o dedo desceu. Como o clique e disparado no
+     ancestral comum do pointerdown com o pointerup, ele caia na .pilha, e o
+     botao (seta ou carta) nunca recebia clique nenhum.
+
+     Agora a captura so entra quando o dedo anda de verdade. Toque parado
+     segue o caminho normal do navegador e o clique acontece; arraste captura
+     no primeiro movimento e continua valendo mesmo se o dedo sair da pilha. */
   pilha.addEventListener("pointerdown", (e) => {
     if (e.button !== undefined && e.button !== 0) return;
     arrastando = true;
     inicioX = e.clientX;
     deslocado = 0;
     idPonteiro = e.pointerId;
-    pilha.classList.add("arrastando");
-    /* capturar o ponteiro nao e essencial — serve para o arraste continuar
-       valendo se o dedo sair da pilha. Se o navegador recusar, o gesto segue
-       funcionando, entao o erro nao pode derrubar o resto do tratador. */
-    try { pilha.setPointerCapture(idPonteiro); } catch (e) { idPonteiro = null; }
     pausar();
   });
 
   pilha.addEventListener("pointermove", (e) => {
     if (!arrastando) return;
     deslocado = e.clientX - inicioX;
+
+    /* abaixo de 6px ainda pode ser um toque: nao captura e nao mexe no leque */
+    if (!pilha.classList.contains("arrastando")) {
+      if (Math.abs(deslocado) < 6) return;
+      pilha.classList.add("arrastando");
+      try { pilha.setPointerCapture(idPonteiro); } catch (erro) { idPonteiro = null; }
+    }
+
     /* resistencia: o leque acompanha o dedo pela metade, para a pilha nao
        sair voando e para o gesto ter peso */
     desenhar(deslocado * 0.5);
