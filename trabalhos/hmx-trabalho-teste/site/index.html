@@ -75,6 +75,17 @@
         --sh-md: 0 1px 3px rgba(0, 35, 72, 0.06), 0 8px 20px rgba(0, 35, 72, 0.07);
         --sh-lg: 0 2px 6px rgba(0, 35, 72, 0.06), 0 16px 40px rgba(0, 35, 72, 0.09);
 
+        /* Vidro da casa: um material so, usado na pilula do cabecalho e nos
+           cartoes de quarto. Escrito uma vez para os dois nao divergirem na
+           proxima mexida. */
+        --vidro: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.46) 0%,
+          rgba(206, 227, 255, 0.32) 100%
+        );
+        --vidro-desfoque: blur(30px) saturate(125%);
+        --vidro-sombra: 0 6px 26px rgba(0, 35, 72, 0.08);
+
         /* Grao de papel: ruido cinza gerado no proprio CSS, sem arquivo.
            E o que tira a chapa do fundo sem recorrer a gradiente. */
         --textura-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
@@ -214,6 +225,10 @@
       @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
         .hero-btn {
           background: rgba(0, 28, 60, 0.45);
+        }
+
+        .room-card {
+          background: #ffffff;
         }
       }
 
@@ -452,15 +467,11 @@
         /* Degrade de cima para baixo, puxando de leve para o azul da marca.
            O azul entra so na base, onde nao encosta no texto — e o que da a
            sensacao de vidro grosso, com uma face mais clara que a outra. */
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.46) 0%,
-          rgba(206, 227, 255, 0.32) 100%
-        );
-        -webkit-backdrop-filter: blur(30px) saturate(125%);
-        backdrop-filter: blur(30px) saturate(125%);
+        background: var(--vidro);
+        -webkit-backdrop-filter: var(--vidro-desfoque);
+        backdrop-filter: var(--vidro-desfoque);
         border-color: transparent;
-        box-shadow: 0 6px 26px rgba(0, 35, 72, 0.08);
+        box-shadow: var(--vidro-sombra);
       }
 
       /* ---- Pilula sobre a foto do hero ----
@@ -982,22 +993,24 @@
       }
 
 
-      .room-card {
-        background: #ffffff;
-        border: 1px solid var(--color-border);
-        border-radius: var(--r-lg);
-        overflow: hidden;
-        box-shadow: var(--sh-md);
-        transition: border-color 0.16s ease-out;
-      }
+      /* ---- Cartao de quarto ----
+         Mesmo material da pilula do cabecalho: o vidro azulado, o mesmo
+         desfoque, a mesma sombra. Nao e uma caixa branca com borda — e a
+         mesma peca de vidro que ja existe no topo da pagina, repetida aqui.
 
-      .room-card:hover {
-        border-color: var(--color-accent);
-      }
-
+         O canto: so o inferior direito arredondado. Arredondar os quatro
+         devolve a pastilha de painel; arredondar um vira gesto de desenho, e
+         repetido nos quatro quartos vira assinatura da secao. */
       .room-card {
         display: flex;
         flex-direction: column;
+        background: var(--vidro);
+        -webkit-backdrop-filter: var(--vidro-desfoque);
+        backdrop-filter: var(--vidro-desfoque);
+        border: none;
+        border-radius: 0 0 22px 0;
+        box-shadow: var(--vidro-sombra);
+        overflow: hidden;
       }
 
       .card-image {
@@ -1020,7 +1033,7 @@
         flex-direction: column;
         gap: 12px;
         height: 100%;
-        padding: 24px 26px 26px;
+        padding: 22px 24px 24px;
       }
 
       .card-body h3 {
@@ -1035,8 +1048,8 @@
          pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
       .room-preco {
         position: absolute;
-        left: 20px;
-        bottom: 16px;
+        left: 18px;
+        bottom: 14px;
         z-index: 1;
         display: inline-flex;
         align-items: baseline;
@@ -1132,11 +1145,13 @@
          botões sólidos lado a lado brigariam entre si e com o cabeçalho. */
       .room-cta {
         flex-shrink: 0;
-        font-size: 0.92rem;
         position: relative;
         font-size: 0.88rem;
         font-weight: 500;
-        color: var(--color-cta);
+        /* laranja de tinta, nao o do botao: sem a caixa branca do cartao este
+           texto passou a assentar no creme da secao, e ali o #c25400 cai para
+           4,01:1. O #b34700 da 4,80 no creme e 5,41 no claro. */
+        color: var(--color-orange-ink);
       }
 
       .room-cta::after {

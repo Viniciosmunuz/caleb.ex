@@ -1282,3 +1282,63 @@ sobre o creme mais encorpado as duas cairiam mais ainda. Um valor fixo dá 5,36
 no claro e 4,76 no creme — passa nos dois.
 
 Varredura refeita com a conta certa, em 375px e 1280px: **zero falhas**.
+
+---
+
+## Cartão de quarto: o mesmo vidro da barra, com um canto
+
+O cartão era uma caixa branca com borda, sombra e os quatro cantos arredondados
+— a mesma fórmula que foi retirada da seção de diferenciais por parecer painel
+de sistema. Agora ele é **a mesma peça de vidro que já existe no topo da
+página**, com um canto só.
+
+### O vidro virou token
+
+O degradê e o desfoque estavam escritos à mão dentro da `.nav-row`. Com dois
+lugares usando o mesmo material, valor solto vira divergência na próxima
+mexida — basta alguém ajustar um e esquecer o outro.
+
+```css
+--vidro: linear-gradient(180deg, rgba(255,255,255,.46), rgba(206,227,255,.32));
+--vidro-desfoque: blur(30px) saturate(125%);
+--vidro-sombra: 0 6px 26px rgba(0,35,72,.08);
+```
+
+Escrito uma vez, usado na pílula e no cartão. Verificado no navegador: o
+`background-image` computado dos dois é **a mesma string**, caractere por
+caractere.
+
+### Um canto só
+
+`border-radius: 0 0 22px 0` — inferior direito arredondado, os outros três em
+ângulo reto. Arredondar os quatro devolve a pastilha de painel; arredondar um
+vira gesto de desenho, e repetido nos quatro quartos vira assinatura da seção.
+
+O canto fica no cartão, não na foto: o cartão tem `overflow: hidden` e recorta
+a imagem junto. Foi preciso tirar o raio que a foto tinha ganhado na tentativa
+anterior, senão haveria dois recortes concorrentes no mesmo lugar.
+
+### O contraste que a mudança quebrou
+
+Na versão sem caixa, o "Reservar agora" passou a assentar **no creme da seção**
+em vez do branco do cartão, e o `--color-cta` (`#c25400`) caiu de 4,60 para
+**4,01:1** — abaixo do mínimo. Trocado por `--color-orange-ink` (`#b34700`),
+que existe no projeto exatamente para texto pequeno laranja sobre fundo claro.
+
+A troca continuou valendo com o vidro: medido no ponto mais escuro do degradê
+do cartão sobre o creme, dá **4,59:1**. Se tivesse ficado o `#c25400`, ali
+daria 3,8.
+
+Medições do texto sobre o cartão de vidro, no pé do degradê (pior caso):
+
+| | sobre creme | sobre claro |
+|---|---|---|
+| Nome do quarto | 8,39 | 9,16 |
+| Descrição | 9,21 | 10,05 |
+| Reservar agora | 4,59 | 5,01 |
+
+De quebra, `.room-cta` tinha **`font-size` declarado duas vezes** (0,92rem e
+0,88rem), resto de uma rodada anterior. Ficou o valor que já valia.
+
+Sem suporte a `backdrop-filter` o cartão cai para branco sólido — senão ficaria
+translúcido sobre a seção, sem o desfoque que o sustenta.
