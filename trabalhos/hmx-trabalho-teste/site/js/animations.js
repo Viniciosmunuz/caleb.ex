@@ -105,8 +105,6 @@ if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
 /* ---------- Galeria ---------- */
 const galleryTrack = document.querySelector("#galleryTrack");
 const galleryDots = document.querySelector("#galleryDots");
-const galleryPrev = document.querySelector(".gallery-btn--prev");
-const galleryNext = document.querySelector(".gallery-btn--next");
 
 if (galleryTrack) {
   const slides = Array.from(galleryTrack.children);
@@ -151,14 +149,6 @@ if (galleryTrack) {
     else galleryTrack.scrollBy({ left: dir * passo(), behavior: "smooth" });
   };
 
-  [galleryPrev, galleryNext].forEach((b) => {
-    if (!b) return;
-    b.addEventListener("click", () => {
-      mover(b.dataset.direction === "next" ? 1 : -1);
-      reiniciarAuto();
-    });
-  });
-
   // teclado: setas navegam quando a faixa esta em foco
   galleryTrack.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") { e.preventDefault(); mover(1); reiniciarAuto(); }
@@ -186,10 +176,95 @@ if (galleryTrack) {
     if (document.hidden) pararAuto(); else reiniciarAuto();
   });
   prefersReducedMotion.addEventListener("change", reiniciarAuto);
-  window.addEventListener("resize", sincronizar);
+  /* mesma logica de dica da galeria das atracoes: sem setas, quem avisa que
+     ha mais foto ao lado e a espiada na borda mais a linha de dica */
+  const areaGaleria = galleryTrack.closest(".gallery-carrossel");
+  const conferirGaleria = () => {
+    if (!areaGaleria) return;
+    const transborda = galleryTrack.scrollWidth > galleryTrack.clientWidth + 4;
+    const noFim = fimDaLista();
+    areaGaleria.classList.toggle("tem-mais", transborda && !noFim);
+  };
+
+  galleryTrack.addEventListener("scroll", () => {
+    if (galleryTrack.scrollLeft > 8 && areaGaleria) areaGaleria.classList.add("ja-arrastou");
+    conferirGaleria();
+  }, { passive: true });
+
+  window.addEventListener("resize", () => { sincronizar(); conferirGaleria(); });
 
   sincronizar();
+  conferirGaleria();
   reiniciarAuto();
+}
+
+/* ---------- Galeria das atracoes ----------
+   Uma foto em destaque e as outras em tiras. Clicar numa tira promove ela.
+   Sem setas: quem indica que ha mais coisa ao lado e a propria tira seguinte
+   aparecendo cortada na borda, o esmaecido e a linha de dica — e a dica some
+   no primeiro arrasto, porque depois disso ela ja cumpriu o papel. */
+const atracaoTiras = document.querySelector("#atracaoTiras");
+
+if (atracaoTiras) {
+  const tiras = Array.from(atracaoTiras.querySelectorAll(".atracao-tira"));
+  const quadros = Array.from(document.querySelectorAll(".atracao-quadro"));
+  const descricao = document.querySelector("#atracaoDesc");
+  const area = atracaoTiras.closest(".tiras-area");
+
+  // rola so a faixa, nunca a pagina: scrollIntoView mexeria nas duas
+  const trazerAVista = (el) => {
+    const faixa = atracaoTiras.getBoundingClientRect();
+    const alvo = el.getBoundingClientRect();
+    if (alvo.left < faixa.left) {
+      atracaoTiras.scrollBy({ left: alvo.left - faixa.left - 10, behavior: "smooth" });
+    } else if (alvo.right > faixa.right) {
+      atracaoTiras.scrollBy({ left: alvo.right - faixa.right + 10, behavior: "smooth" });
+    }
+  };
+
+  const mostrar = (i, focar) => {
+    tiras.forEach((t, n) => {
+      const ativa = n === i;
+      t.classList.toggle("is-ativa", ativa);
+      t.setAttribute("aria-selected", String(ativa));
+      t.tabIndex = ativa ? 0 : -1;
+    });
+    quadros.forEach((q, n) => {
+      q.hidden = n !== i;
+      q.classList.toggle("is-ativa", n === i);
+    });
+    if (descricao && tiras[i].dataset.desc) descricao.textContent = tiras[i].dataset.desc;
+    if (focar) tiras[i].focus();
+    trazerAVista(tiras[i]);
+  };
+
+  tiras.forEach((t, i) => t.addEventListener("click", () => mostrar(i, false)));
+
+  const atual = () => tiras.findIndex((t) => t.getAttribute("aria-selected") === "true");
+
+  atracaoTiras.addEventListener("keydown", (e) => {
+    const i = atual();
+    if (e.key === "ArrowRight") { e.preventDefault(); mostrar((i + 1) % tiras.length, true); }
+    if (e.key === "ArrowLeft")  { e.preventDefault(); mostrar((i - 1 + tiras.length) % tiras.length, true); }
+    if (e.key === "Home")       { e.preventDefault(); mostrar(0, true); }
+    if (e.key === "End")        { e.preventDefault(); mostrar(tiras.length - 1, true); }
+  });
+
+  /* dica e esmaecido so existem enquanto sobra tira para o lado: numa tela
+     larga as tres cabem, e ai nao ha nada para avisar */
+  const conferir = () => {
+    const transborda = atracaoTiras.scrollWidth > atracaoTiras.clientWidth + 4;
+    const noFim = atracaoTiras.scrollLeft >= atracaoTiras.scrollWidth - atracaoTiras.clientWidth - 4;
+    area.classList.toggle("tem-mais", transborda && !noFim);
+  };
+
+  atracaoTiras.addEventListener("scroll", () => {
+    if (atracaoTiras.scrollLeft > 8) area.classList.add("ja-arrastou");
+    conferir();
+  }, { passive: true });
+
+  window.addEventListener("resize", conferir, { passive: true });
+  conferir();
 }
 
 /* ---------- Formulário de reserva: abre o WhatsApp do hotel ---------- */

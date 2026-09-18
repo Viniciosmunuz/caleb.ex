@@ -1342,3 +1342,104 @@ De quebra, `.room-cta` tinha **`font-size` declarado duas vezes** (0,92rem e
 
 Sem suporte a `backdrop-filter` o cartão cai para branco sólido — senão ficaria
 translúcido sobre a seção, sem o desfoque que o sustenta.
+
+---
+
+## Galeria interativa das atrações e varredura de responsividade
+
+### As cachoeiras viraram galeria, sem setas
+
+Os três cartões estáticos viraram **uma foto em destaque e três tiras**. Clicar
+numa tira promove ela ao destaque: a foto troca com um leve esmaecido, o nome e
+o endereço acompanham na legenda sobre a imagem, e a descrição do cliente troca
+logo abaixo.
+
+Nada de informação nova: os três nomes, os três endereços e as três descrições
+são os mesmos de antes, só que agora cada um aparece junto da foto que lhe
+pertence.
+
+**Sem setas, a pedido.** O que avisa que há mais coisa ao lado são três sinais
+que funcionam juntos, todos discretos:
+
+1. **Espiada** — a tira ocupa 62% da largura no celular, então a seguinte
+   sempre aparece cortada na borda. É o sinal mais forte, e não pede nenhum
+   ícone.
+2. **Esmaecido** — a faixa desbota nos últimos 16% da borda direita
+   (`mask-image`), reforçando que o conteúdo continua.
+3. **Linha de dica** — "Arraste para ver as outras", em texto pequeno, que
+   **some no primeiro arrasto**: depois disso já cumpriu o papel.
+
+Os três só aparecem quando a faixa realmente transborda. Em tela larga as três
+tiras cabem, e aí não há nada para avisar — a dica e o esmaecido somem sozinhos.
+
+A galeria de fotos do hotel perdeu as setas pelo mesmo critério e ganhou o mesmo
+esmaecido e a mesma dica. Os pontos continuam, que já eram discretos.
+
+**Teclado e leitor de tela:** a faixa é um `tablist` de verdade — setas
+esquerda/direita trocam a atração, Home e End vão às pontas, só a tira ativa
+entra na ordem de tabulação, e cada foto em destaque é um `tabpanel` ligado à
+sua tira. Não usei modal: o destaque já é grande, e um modal só acrescentaria
+uma tecla a mais para sair dele.
+
+### Dois defeitos encontrados na verificação
+
+**O `aspect-ratio` não valia nada nas fotos da galeria.** As miniaturas saíam
+213×360 em vez de 16:10. O motivo: o atributo `height="360"` do `<img>` entra
+como dica de apresentação e **conta como altura declarada** — e com altura
+declarada o navegador ignora `aspect-ratio`. Resolvido com `height: auto`. É a
+mesma família de armadilha do `flex-shrink` que já tinha achatado a foto do
+cartão de quarto.
+
+**938px de rolagem horizontal em 768px de tela.** Essa é a pior: a largura de
+tablet nunca tinha sido testada exatamente (as rodadas anteriores usaram 375,
+790, 1180 e 1280). A grade da galeria caía para `grid-template-columns: 1fr` no
+celular, e `1fr` é `minmax(auto, 1fr)` — o `auto` impede a coluna de encolher
+abaixo do min-content do item. Dentro dela há uma faixa rolável com slides em
+porcentagem, cujo min-content é enorme: a coluna ia a **1690px**. A regra padrão
+já usava `minmax(0, 1fr)`; as sobrescritas do celular, não. Corrigido ali e nas
+outras grades de uma coluna, por precaução.
+
+### Outros ajustes
+
+- **Botão do formulário**: "Verificar Disponibilidade" (texto do cliente) ganhou
+  "pelo WhatsApp". A frase dele continua; o que se acrescentou foi para onde o
+  clique leva.
+- **Alvo de toque dos pontos** da galeria: 22×8px era pequeno demais para o
+  dedo. A bolinha continua com 8px — quem cresceu foi a área clicável, para
+  34×24, via `content-box` + `background-clip`.
+- **Botão flutuante do WhatsApp**: menor no celular (48px), respeitando a barra
+  de gestos (`env(safe-area-inset-bottom)`), e o rodapé ganhou 90px de folga
+  embaixo para ele não cobrir o último conteúdo da página.
+
+### Varredura final
+
+| Largura | Rolagem horizontal | Contraste | Texto cortado | Texto < 11,5px | Imagem quebrada |
+|---|---|---|---|---|---|
+| 1440 | 0 | 0 | 0 | 0 | 0 |
+| 1280 | 0 | 0 | 0 | 0 | 0 |
+| 1024 | 0 | 0 | 0 | 0 | 0 |
+| 768 | 0 | 0 | 0 | 0 | 0 |
+| 430 | 0 | 0 | 0 | 0 | 0 |
+| 390 | 0 | 0 | 0 | 0 | 0 |
+| 375 | 0 | 0 | 0 | 0 | 0 |
+
+Console sem erros. Os seis links de WhatsApp apontam para o número certo com
+mensagem preenchida. Os sete campos do formulário têm `label` associado.
+
+### O que NÃO foi feito, e por quê
+
+O briefing pedia depoimentos, comodidades e horários de check-in — **sob a regra
+de não inventar nada**. Fui procurar no material do cliente antes:
+
+- **Depoimentos**: não existe nenhum. Em `alvo/` há só "4.9/5 Avaliação Média" e
+  "+1k" — nenhum nome, comentário ou nota individual. Seção não criada.
+- **Check-in / check-out**: só existem como *rótulos de formulário*. Não há
+  horário nenhum. Seção não criada.
+- **Comodidades**: as que existem (café da manhã, wi-fi, TV, ar-condicionado,
+  estacionamento) já estão nos ícones dos cartões de quarto, na lista da seção
+  "sobre" e no JSON-LD. Uma seção nova só repetiria.
+- **"Por que se hospedar"**: é a seção "Experiência", que já cumpre esse papel
+  com quatro diferenciais. Criar outra seria duplicar.
+
+Todas as quatro dependem de dados que o cliente precisa fornecer. O lugar delas
+na página existe; o conteúdo, não.
