@@ -1985,7 +1985,7 @@
       /* o botao e fixo: sem esta folga ele fica por cima do ultimo conteudo
          da pagina quando a pessoa chega ao fim */
       .site-footer {
-        padding-bottom: 90px;
+        padding-bottom: 76px;
       }
 
       @media (max-width: 560px) {
@@ -2028,7 +2028,11 @@
          Por isso ha um veu branco fixo por baixo do degrade: o vidro continua
          translucido e desfocado, mas a cor final varia pouco, e o icone em
          verde escuro fecha em 4.3:1 no pior caso. */
-      .fab-whatsapp {
+      /* `.floating-actions a` tem especificidade maior que `.fab-whatsapp`
+         (uma classe mais um tipo contra uma classe so), entao o branco de la
+         vencia e o icone sumia no vidro claro. Por isso esta regra desce um
+         nivel junto: agora e classe + classe. */
+      .floating-actions .fab-whatsapp {
         background-color: rgba(255, 255, 255, 0.7);
         background-image: var(--vidro);
         -webkit-backdrop-filter: var(--vidro-desfoque);
@@ -2038,13 +2042,13 @@
         transition: background-color 0.18s ease-out;
       }
 
-      .fab-whatsapp:hover,
-      .fab-whatsapp:focus-visible {
+      .floating-actions .fab-whatsapp:hover,
+      .floating-actions .fab-whatsapp:focus-visible {
         background-color: rgba(255, 255, 255, 0.88);
       }
 
       @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-        .fab-whatsapp {
+        .floating-actions .fab-whatsapp {
           background-color: rgba(255, 255, 255, 0.94);
         }
       }

@@ -1866,3 +1866,57 @@ nas duas galerias: seta avança, seta volta, carta lateral vem para a frente,
 arraste troca a carta, e a classe de arraste não entra antes do movimento nem
 fica presa depois. **Lição: testar interação de ponteiro com `.click()` prova
 que o tratador existe, não que o usuário consegue chegar nele.**
+
+---
+
+## Rodapé enxuto e botão flutuante de vidro
+
+### O rodapé
+
+Eram três colunas, cada uma com título ("Links Rápidos", "Contato"), mais a
+frase do hero repetida embaixo do nome. Num celular isso virava uma tela inteira
+de rodapé.
+
+Agora é **uma linha só**: marca à esquerda, seções no meio, chamada à direita —
+que no celular vira uma pilha curta.
+
+| | Antes | Agora |
+|---|---|---|
+| Colunas | 3 com título cada | 1 linha que quebra |
+| Links | um por linha (6 linhas) | em linha, quebrando |
+| Altura em 1440 | ~420px | **285px** |
+
+**Dois blocos saíram.** Os títulos "Links Rápidos" e "Contato", porque com os
+links em linha e uma chamada só não há o que rotular. E a frase *"Sua melhor
+escolha em Presidente Figueiredo, com café da manhã incluso e localização
+privilegiada no centro da cidade"*, que era **cópia literal do parágrafo do
+hero** — o mesmo texto duas vezes na mesma página não é conteúdo, é repetição.
+O texto continua no hero, onde o cliente o escreveu.
+
+O endereço virou link para o mapa e o "Reservar Agora" virou pílula contornada,
+com 44px de altura.
+
+### O botão flutuante
+
+Ganhou o vidro da barra de navegação, com uma diferença que foi preciso medir:
+a barra só aparece sobre fundo claro ou sobre a foto do hero, mas **este botão
+passa por cima de tudo**, inclusive do rodapé azul escuro.
+
+Só com o degradê do vidro, o fundo atrás mandaria na cor final e o ícone ficaria
+ilegível metade do tempo:
+
+| Ícone | Sobre seção clara | Sobre o rodapé navy |
+|---|---|---|
+| Verde da marca `#25d366` | 1,87 | **2,45** |
+| Verde escuro `#128c7e` | 3,91 | **1,17** |
+| Verde `#0b6b5f` + véu branco | **6,06** | **4,18** |
+
+Nenhum verde sobrevive aos dois extremos com o vidro puro. A saída foi um **véu
+branco fixo por baixo do degradê**: o vidro continua translúcido e desfocado,
+mas a cor final varia pouco, e aí o verde escuro fecha em 4,18 no pior caso —
+acima dos 3:1 que um símbolo precisa.
+
+**Um defeito no caminho:** `.floating-actions a` define `color: #ffffff` e tem
+especificidade maior que `.fab-whatsapp` (uma classe mais um tipo contra uma
+classe só). O branco de lá vencia e o ícone sumia no vidro claro. Só apareceu
+porque medi a cor computada em vez de conferir que a regra estava escrita.
