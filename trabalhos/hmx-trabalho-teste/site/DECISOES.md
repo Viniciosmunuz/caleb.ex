@@ -1443,3 +1443,83 @@ de não inventar nada**. Fui procurar no material do cliente antes:
 
 Todas as quatro dependem de dados que o cliente precisa fornecer. O lugar delas
 na página existe; o conteúdo, não.
+
+---
+
+## Fundo orgânico vivo e galerias que passam sozinhas
+
+### Uma camada só
+
+Três manchas orgânicas desfocadas, numa única camada `position: fixed` atrás de
+todo o conteúdo. Fixa de propósito: assim a ambientação **não recomeça a cada
+seção** — é um fundo contínuo por trás da página inteira.
+
+| | |
+|---|---|
+| Formas | 3 (esquerda, direita-baixo, direita-cima) |
+| Desfoque | 70–86px |
+| Opacidade da camada | **0,14** desktop · 0,10 tablet · **0,07** celular |
+| Cores | verde `#7f9b7c`, areia `#c4ad78`, azul `#6f8bad` — todos lavados |
+| Movimento | só translação, 64–110px **no curso inteiro da página** |
+
+A intensidade toda está num número só (`.ambiente { opacity }`). Se um dia
+parecer demais, é esse que baixa — não há efeito espalhado por vários lugares.
+
+**O deslocamento não usa a rolagem em pixels, e sim a fração da página já
+percorrida (0 a 1).** Com pixels, uma página de 8000px arrastaria as manchas
+para fora da tela; com a fração, o curso total é sempre o mesmo, não importa o
+tamanho da página. O JS escreve *uma* custom property por quadro e nada mais —
+quem desloca é o CSS, via `transform`, que o compositor resolve sem repintar o
+desfoque.
+
+**Duas coisas precisaram abrir passagem para a camada:** as três seções creme
+tinham fundo opaco (viraram 90% translúcidas, diferença de menos de 2 pontos de
+RGB) e a faixa de números tinha fundo próprio da mesma cor do corpo, que só
+servia para tapar. Nenhuma outra mudou.
+
+No celular a camada cai para 7% e a terceira forma some: tela pequena tem menos
+área vazia, e o que sobra é justamente onde o texto está.
+
+### As galerias passam sozinhas
+
+Ambas avançam a cada **7 segundos**, e o relógio para assim que a pessoa encosta
+— clique, foco ou dedo — voltando depois. O controle manual continua inteiro:
+arrastar, clicar na tira, clicar no ponto, setas do teclado.
+
+Também param quando a galeria sai da tela (`IntersectionObserver`) e quando a
+aba fica em segundo plano. Animar o que ninguém está vendo é trabalho à toa.
+
+### Três defeitos encontrados no caminho
+
+**O parallax se desligava para sempre.** O tratador de `prefers-reduced-motion`
+removia o listener de rolagem quando o visitante pedia menos movimento — e nunca
+o recolocava se ele voltasse atrás. Porta de mão única. Apareceu porque a camada
+nova simplesmente não se mexia: o painel de testes reportou a preferência uma
+vez, e pronto. **O mesmo defeito estava no parallax do hero desde o início** —
+provavelmente nunca notado porque depende de a preferência mudar com a página
+aberta. Os dois agora consultam a preferência a cada quadro, em vez de decidir
+uma vez no começo: ligar ou desligar o movimento no sistema passa a valer na
+hora.
+
+**A galeria das atrações nunca começava a passar.** O relógio só era acionado
+pelo `IntersectionObserver`, e observador não dispara em documento oculto — se a
+aba abrisse em segundo plano, a galeria ficava parada para sempre. Agora nasce
+ligada e o observador só a desliga se estiver fora da tela, mais um arranque
+explícito no fim da montagem.
+
+**O `aspect-ratio` das fotos da galeria** (documentado na seção anterior) era o
+terceiro.
+
+### Verificação
+
+Rolagem horizontal, contraste, texto cortado e imagem quebrada: **zero** em
+1440, 1280, 768 e 375. Console limpo. A troca automática foi verificada
+desligando os guardas temporariamente — a sequência trocou sozinha
+(Iracema → Santuário → Maroaga) e os guardas foram repostos em seguida.
+
+**Uma limitação do ambiente de teste, não do site:** o painel do navegador aqui
+fica com `document.hidden = true`, e nesse estado o navegador não roda
+`IntersectionObserver` nem anima `scroll-behavior: smooth`. Por isso o avanço
+automático da galeria do hotel não pôde ser observado diretamente — o código é
+o mesmo que já funcionava antes, com o intervalo de 5s para 7s e o observador
+novo por cima. Vale conferir num navegador comum.

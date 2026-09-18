@@ -30,13 +30,18 @@ if (siteHeader) {
 const heroMedia = document.querySelector(".hero-media");
 const heroSection = document.querySelector(".hero");
 
-if (heroMedia && heroSection && !prefersReducedMotion.matches) {
+if (heroMedia && heroSection) {
   const FATOR = 0.28;          // quanto a foto fica para tras do scroll
   let ticking = false;
   let ultimoValor = -1;
 
   const aplicar = () => {
     ticking = false;
+    if (prefersReducedMotion.matches) {
+      heroMedia.style.setProperty("--parallax", "0px");
+      ultimoValor = 0;
+      return;
+    }
     const y = window.scrollY;
     const altura = heroSection.offsetHeight;
     if (y > altura) return;                       // hero ja saiu da tela
@@ -57,13 +62,55 @@ if (heroMedia && heroSection && !prefersReducedMotion.matches) {
   window.addEventListener("resize", aoRolar, { passive: true });
   aplicar();
 
-  // se o visitante passar a pedir menos movimento, devolve tudo ao lugar
-  prefersReducedMotion.addEventListener("change", (e) => {
-    if (e.matches) {
-      window.removeEventListener("scroll", aoRolar);
-      heroMedia.style.setProperty("--parallax", "0px");
+  // ligar ou desligar o movimento no sistema vale na hora
+  prefersReducedMotion.addEventListener("change", aplicar);
+}
+
+/* ---------- Ambientacao do fundo ----------
+   Escreve uma unica custom property (--amb, de 0 a 1) com o quanto da pagina
+   ja foi percorrido. Quem desloca as manchas e o CSS, via transform — o JS
+   nao toca em estilo de elemento nenhum.
+
+   Fracao em vez de pixels: numa pagina de 8000px, um fator sobre o scroll
+   arrastaria as manchas para fora da tela; com a fracao o curso total e
+   sempre o mesmo. */
+const ambiente = document.querySelector("#ambiente");
+
+if (ambiente) {
+  let pendente = false;
+  let ultimo = -1;
+
+  const aplicarAmbiente = () => {
+    pendente = false;
+    /* a preferencia e consultada aqui, a cada quadro, em vez de decidir
+       uma vez no inicio: assim ligar ou desligar o movimento no sistema
+       vale na hora, sem precisar recarregar */
+    if (prefersReducedMotion.matches) {
+      ambiente.style.setProperty("--amb", "0");
+      ultimo = 0;
+      return;
     }
-  });
+    const curso = document.documentElement.scrollHeight - window.innerHeight;
+    if (curso <= 0) return;
+    // duas casas bastam: escrever menos vezes e escrever menos trabalho
+    const p = Math.round((window.scrollY / curso) * 100) / 100;
+    if (p === ultimo) return;
+    ultimo = p;
+    ambiente.style.setProperty("--amb", String(p));
+  };
+
+  const aoRolarAmbiente = () => {
+    if (!pendente) {
+      pendente = true;
+      requestAnimationFrame(aplicarAmbiente);
+    }
+  };
+
+  window.addEventListener("scroll", aoRolarAmbiente, { passive: true });
+  window.addEventListener("resize", aoRolarAmbiente, { passive: true });
+  aplicarAmbiente();
+
+  prefersReducedMotion.addEventListener("change", aplicarAmbiente);
 }
 
 /* ---------- Menu mobile ---------- */
@@ -160,11 +207,13 @@ if (galleryTrack) {
     galleryTrack._t = setTimeout(sincronizar, 90);
   }, { passive: true });
 
+  let galeriaNaTela = true;
   const pararAuto = () => { if (timer) { clearInterval(timer); timer = null; } };
   const reiniciarAuto = () => {
     pararAuto();
     if (prefersReducedMotion.matches || document.hidden) return;
-    timer = setInterval(() => mover(1), 5000);
+    if (!galeriaNaTela) return;
+    timer = setInterval(() => mover(1), 7000);
   };
 
   ["mouseenter", "focusin", "pointerdown"].forEach((ev) =>
@@ -192,6 +241,13 @@ if (galleryTrack) {
   }, { passive: true });
 
   window.addEventListener("resize", () => { sincronizar(); conferirGaleria(); });
+
+  /* so roda enquanto a galeria estiver a vista */
+  const olhoGaleria = new IntersectionObserver((entradas) => {
+    galeriaNaTela = entradas[0].isIntersecting;
+    if (galeriaNaTela) reiniciarAuto(); else pararAuto();
+  }, { threshold: 0.25 });
+  olhoGaleria.observe(galleryTrack);
 
   sincronizar();
   conferirGaleria();
@@ -265,7 +321,43 @@ if (atracaoTiras) {
 
   window.addEventListener("resize", conferir, { passive: true });
   conferir();
+
+  /* Passa sozinha, devagar. O relogio para assim que a pessoa encosta —
+     clique, foco ou dedo — e volta depois; e para de vez enquanto a secao
+     estiver fora da tela, que e trabalho a toa. */
+  let relogio = null;
+  /* nasce ligada: o observador corrige depois se estiver fora da tela.
+     Comecar em false deixava a galeria parada para sempre quando o
+     primeiro aviso do observador nao vinha (aba em segundo plano). */
+  let naTela = true;
+
+  const pararSozinho = () => { if (relogio) { clearInterval(relogio); relogio = null; } };
+  const andarSozinho = () => {
+    pararSozinho();
+    if (!naTela || prefersReducedMotion.matches || document.hidden) return;
+    relogio = setInterval(() => mostrar((atual() + 1) % tiras.length, false), 7000);
+  };
+
+  ["mouseenter", "focusin", "pointerdown"].forEach((ev) =>
+    atracaoTiras.addEventListener(ev, pararSozinho));
+  ["mouseleave", "focusout"].forEach((ev) =>
+    atracaoTiras.addEventListener(ev, andarSozinho));
+  tiras.forEach((t) => t.addEventListener("click", andarSozinho));
+
+  const olho = new IntersectionObserver((entradas) => {
+    naTela = entradas[0].isIntersecting;
+    if (naTela) andarSozinho(); else pararSozinho();
+  }, { threshold: 0.25 });
+  olho.observe(document.querySelector(".atracao-palco"));
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) pararSozinho(); else andarSozinho();
+  });
+  prefersReducedMotion.addEventListener("change", andarSozinho);
+
+  andarSozinho();
 }
+
 
 /* ---------- Formulário de reserva: abre o WhatsApp do hotel ---------- */
 const WHATSAPP_NUMERO = '559285372368';

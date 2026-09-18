@@ -107,6 +107,121 @@
         opacity: 0.055;
       }
 
+      /* ---- Ambientacao do fundo ----
+         Uma camada so, fixa na tela, atras de tudo. Tres manchas organicas
+         muito desfocadas, nas cores da casa dessaturadas, deslocando devagar
+         conforme a pagina rola.
+
+         Fixa e de proposito: assim a ambientacao nao recomeca a cada secao —
+         e um fundo continuo por tras da pagina inteira, do hero ao rodape.
+
+         O deslocamento nao usa a rolagem em pixels, e sim o quanto da pagina
+         ja foi percorrido (0 a 1). Com pixels, uma pagina longa arrastaria as
+         manchas para longe demais; com a fracao, o curso total e sempre o
+         mesmo, nao importa o tamanho da pagina. */
+      .ambiente {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+        /* a intensidade inteira do efeito esta neste numero. Se um dia
+           parecer demais, e este que baixa. */
+        opacity: 0.14;
+      }
+
+      .ambiente-forma {
+        position: absolute;
+        display: block;
+        /* so transform anima: o desfoque e caro para recalcular, entao o
+           navegador guarda a mancha ja borrada e move a camada pronta */
+        will-change: transform;
+        transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .ambiente-forma path {
+        fill: currentColor;
+      }
+
+      /* verde amazonico bem lavado, na lateral esquerda */
+      .forma-a {
+        top: -12vh;
+        left: -16vw;
+        width: 52vw;
+        height: 88vh;
+        color: #7f9b7c;
+        filter: blur(70px);
+        transform: translate3d(0, calc(var(--amb, 0) * -80px), 0);
+      }
+
+      /* areia, no canto direito de baixo */
+      .forma-b {
+        right: -20vw;
+        bottom: -18vh;
+        width: 58vw;
+        height: 76vh;
+        color: #c4ad78;
+        filter: blur(86px);
+        transform: translate3d(0, calc(var(--amb, 0) * 64px), 0);
+      }
+
+      /* azul da marca, quase apagado, atravessando a direita de cima */
+      .forma-c {
+        top: 22vh;
+        right: -24vw;
+        width: 56vw;
+        height: 62vh;
+        color: #6f8bad;
+        filter: blur(78px);
+        transform: translate3d(calc(var(--amb, 0) * -26px), calc(var(--amb, 0) * -110px), 0);
+      }
+
+      /* O conteudo fica por cima da camada. O cabecalho e os botoes
+         flutuantes ja tem z-index proprio e maior. */
+      body > main,
+      body > .site-footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* As faixas creme deixam de ser opacas para a ambientacao aparecer
+         atraves delas. A 0.9 sobre o fundo claro a cor resultante fica a
+         menos de 2 pontos de RGB da anterior — o contraste nao muda. */
+      .fundo-creme {
+        background: rgba(246, 239, 221, 0.9);
+      }
+
+      /* No tablet a camada encolhe; no celular quase some. Tela pequena tem
+         menos area vazia, e o que sobra e justamente onde o texto esta. */
+      @media (max-width: 979px) {
+        .ambiente {
+          opacity: 0.1;
+        }
+
+        .forma-c {
+          display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .ambiente {
+          opacity: 0.07;
+        }
+
+        .forma-a,
+        .forma-b {
+          filter: blur(56px);
+        }
+      }
+
+      /* Com movimento reduzido a camada continua, parada. */
+      @media (prefers-reduced-motion: reduce) {
+        .ambiente-forma {
+          transform: none !important;
+          transition: none;
+        }
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -679,7 +794,9 @@
       }
 
       .stats {
-        background: var(--color-bg);
+        /* sem fundo proprio: a cor era a mesma do corpo e so servia para
+           tapar a camada de ambientacao */
+        background: transparent;
         padding: 56px 0;
         border-bottom: 1px solid var(--color-border);
       }
@@ -2254,6 +2371,21 @@
     </script>
   </head>
   <body>
+    <!-- Camada de ambientacao: tres manchas organicas desfocadas, fixas na
+         tela e atras de todo o conteudo. Nao e decoracao por secao — e uma
+         so camada que acompanha a pagina inteira, deslocando devagar
+         conforme a rolagem. aria-hidden porque nao carrega informacao. -->
+    <div class="ambiente" id="ambiente" aria-hidden="true">
+      <svg class="ambiente-forma forma-a" viewBox="0 0 400 520" preserveAspectRatio="none" focusable="false">
+        <path d="M232 8c74 52 96 152 62 236-34 84-124 132-104 216 20 84-70 68-134 26C-8 444-22 340 16 252 54 164 158-44 232 8Z" />
+      </svg>
+      <svg class="ambiente-forma forma-b" viewBox="0 0 460 460" preserveAspectRatio="none" focusable="false">
+        <path d="M268 14c96 26 168 118 176 216 8 98-48 186-134 208-86 22-202-22-262-106C-12 248 8 132 78 68 148 4 172-12 268 14Z" />
+      </svg>
+      <svg class="ambiente-forma forma-c" viewBox="0 0 520 380" preserveAspectRatio="none" focusable="false">
+        <path d="M78 34c118-48 262-44 356 24 94 68 104 180 36 250-68 70-214 88-318 48C48 316-18 222 4 150 26 78 -40 82 78 34Z" />
+      </svg>
+    </div>
     <header class="site-header">
       <div class="container nav-row">
         <a class="brand" href="#hero" aria-label="Hotel Calleb — ir para o início da página">
@@ -2506,7 +2638,7 @@
         </div>
       </section>
 
-      <section id="quartos" data-section="quartos" class="section-pad reveal" style="background: var(--color-surface);">
+      <section id="quartos" data-section="quartos" class="section-pad reveal fundo-creme">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Acomodações</div>
@@ -2672,7 +2804,7 @@
         </div>
       </section>
 
-      <section id="destino" data-section="destino" class="section-pad reveal" style="background: var(--color-surface);">
+      <section id="destino" data-section="destino" class="section-pad reveal fundo-creme">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Explore o Destino</div>
@@ -2843,7 +2975,7 @@
         </div>
       </section>
 
-      <section id="localizacao" data-section="localizacao" class="section-pad reveal" style="background: var(--color-surface);">
+      <section id="localizacao" data-section="localizacao" class="section-pad reveal fundo-creme">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Localização</div>
