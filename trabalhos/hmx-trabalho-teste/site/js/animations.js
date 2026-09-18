@@ -294,6 +294,15 @@ function iniciarPilha(pilha) {
     });
   });
 
+  /* ---- setas ---- */
+  const seta = (sel, passo) => {
+    const b = pilha.querySelector(sel);
+    if (!b) return;
+    b.addEventListener("click", () => { irPara(frente + passo); retomar(); });
+  };
+  seta("[data-pilha-anterior]", -1);
+  seta("[data-pilha-proxima]", 1);
+
   /* ---- pontos ---- */
   if (pontos) {
     itens.forEach((item, i) => {

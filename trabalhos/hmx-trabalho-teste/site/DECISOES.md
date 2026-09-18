@@ -1673,3 +1673,72 @@ tom já está quase branco.
 Nada desalinhado nem sobreposto: em uma coluna, texto, formulário e assinatura
 começam todos no mesmo x e ocupam a mesma largura. Zero imagem quebrada em
 todas as larguras.
+
+---
+
+## Painel removido, cartas maiores com setas de vidro e fundo mais aberto
+
+### O painel da selva saiu
+
+O bloco "Um refúgio moderno em meio à selva." foi removido a pedido, com o
+parágrafo e o botão "Solicitar reserva" que vinham dentro dele. Sete blocos de
+CSS órfão saíram junto.
+
+**O que se perdeu, para registro:** era o único lugar da seção Destino com um
+botão de reserva. A conversão na página continua pelo cabeçalho, pelo hero,
+pelos quatro cartões de quarto, pelo formulário e pelo botão flutuante — mas
+essa seção agora termina sem chamada.
+
+### Cartas maiores e movimento mais macio
+
+| | Antes | Agora |
+|---|---|---|
+| Altura no desktop | 480px | **580px** |
+| Altura no tablet | 420px | 480px |
+| Altura no celular | 340px | 400px |
+| Transição | 0,62s | **0,85s** |
+| Curva | `cubic-bezier(.22,1,.36,1)` | `cubic-bezier(.16,1,.3,1)` |
+
+A curva mais aberta e o tempo maior fazem o leque **assentar** em vez de travar
+no fim do percurso. A centralização não mudou — a pilha ganhou
+`max-width: calc(altura * 1.55)`, que é a largura do leque mais folga para as
+setas, e continua centrada na seção.
+
+### Setas de vidro
+
+Duas por pilha, nas pontas, no **mesmo material da barra de navegação**: o
+degradê, o desfoque e a sombra vêm dos tokens `--vidro`, `--vidro-desfoque` e
+`--vidro-sombra`. Ficam fora do leque — verificado em todas as larguras que
+nenhuma seta encosta na carta da frente.
+
+Não contradizem o pedido anterior de tirar as setas: aquelas eram círculos
+sólidos de borda dura no meio da foto. Estas são vidro translúcido nas pontas,
+que é o que foi pedido agora.
+
+### O fundo, mais aberto
+
+A máscara ganhou um degrau a mais de cada lado e a zona morta do meio encolheu
+de 48% para 20% da largura:
+
+| | Antes | Agora |
+|---|---|---|
+| Opacidade (desktop) | 0,95 | **1** |
+| Opacidade (tablet) | 0,50 | 0,70 |
+| Opacidade (celular) | 0,34 | 0,50 |
+| Primeiro degrau | 0,62 | **0,80** |
+| Zona morta | 42%–58% | 40%–60% |
+| Degraus por lado | 2 | **3** |
+
+Três degraus em vez de dois dão uma queda mais gradual — a folhagem vai
+aparecendo em vez de cortar, que é o efeito de vidro na frente da mata.
+
+### A logo do contato
+
+Sem véu (opacidade de volta a 1), 150px, e a linha "Presidente Figueiredo ·
+Amazônia" removida junto com o CSS dela. Ficou só a marca, com o brilho próprio.
+
+### Verificação
+
+1440, 1024, 995 e 452: zero rolagem horizontal, zero falha de contraste, zero
+texto cortado, zero imagem quebrada. As quatro setas funcionam e nenhuma
+sobrepõe a carta da frente em nenhuma largura.
