@@ -1921,21 +1921,15 @@ especificidade maior que `.fab-whatsapp` (uma classe mais um tipo contra uma
 classe só). O branco de lá vencia e o ícone sumia no vidro claro. Só apareceu
 porque medi a cor computada em vez de conferir que a regra estava escrita.
 
-### Só o símbolo, sem o disco
+### O disco de vidro voltou
 
-A pedido, o disco de vidro saiu e ficou só o símbolo do WhatsApp.
+Chegou a sair, a pedido, ficando só o símbolo. O cliente preferiu o disco de
+volta depois de ver — então está como estava: mesmo vidro da barra de navegação,
+com o véu branco fixo por baixo do degradê, e o ícone em verde escuro.
 
-**O que se perde:** o fundo era o que garantia o contraste. Sem ele o símbolo
-fica à mercê do que estiver atrás — o verde da marca dá 1,9:1 sobre as seções
-claras e 2,4:1 sobre o rodapé azul.
-
-**Por que ainda assim funciona:** logotipo é dispensado da regra de contraste
-(WCAG 1.4.11 exclui logotipos explicitamente), e o desenho é uma mancha cheia,
-não traço fino — o olho acha pela cor saturada mesmo com pouca diferença de
-luminância. Quem garante a separação em foto movimentada é a sombra, que
-contorna o símbolo sem desenhar moldura nenhuma. É o mesmo recurso do botão de
-menu, pela mesma razão.
-
-O link continua com 54px (48px no celular): **o que sumiu foi o fundo, não o
-alvo de toque**. O símbolo cresceu de 26 para 44px para ocupar o espaço que o
-disco deixou, e o hover virou uma aproximação de 6% — uma mudança só.
+Fica o registro do porquê do véu, que é o que diferencia este botão da barra:
+a barra só aparece sobre fundo claro ou sobre a foto do hero, mas o botão
+flutuante passa por cima de tudo, inclusive do rodapé azul escuro. Só com o
+degradê, o fundo atrás mandaria na cor final e o ícone ficaria ilegível metade
+do tempo. Conferido: o `backdrop-filter` do botão e o da barra são a mesma
+string.

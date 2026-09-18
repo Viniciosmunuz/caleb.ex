@@ -1999,54 +1999,58 @@
           height: 48px;
         }
 
-        .floating-actions .fab-whatsapp svg {
-          width: 38px;
-          height: 38px;
+        .floating-actions svg {
+          width: 23px;
+          height: 23px;
         }
       }
 
-      /* Sem disco: so o simbolo. O link mantem os 54px para o alvo de toque
-         continuar do tamanho certo — o que sumiu foi o fundo, nao o botao. */
       .floating-actions a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 54px;
         height: 54px;
-        background: transparent;
-        transition: transform 0.18s ease-out;
+        border-radius: 50%;
+        color: #ffffff;
+        box-shadow: 0 6px 18px -6px rgba(0, 35, 72, 0.45);
+        transition: background-color 0.16s ease-out;
       }
 
       /* ---- Botao flutuante ----
-         So o simbolo do WhatsApp, sem disco atras.
+         Mesmo vidro da barra de navegacao. Com uma diferenca necessaria: a
+         barra so aparece sobre fundo claro ou sobre a foto do hero, mas este
+         botao passa por cima de tudo, inclusive do rodape azul escuro. So com
+         o degrade do vidro, o fundo atras mandaria na cor final e o icone
+         ficaria ilegivel metade do tempo — medido: verde da marca sobre o
+         rodape da 2.4:1, abaixo do minimo de 3:1 para simbolo.
 
-         Sem fundo proprio, o simbolo fica a merce do que estiver atras: o verde
-         da marca da 1,9:1 sobre as secoes claras e 2,4:1 sobre o rodape azul.
-         Logotipo e dispensado da regra de contraste, e o desenho e uma mancha
-         cheia (nao traco fino), entao se enxerga — mas quem garante a separacao
-         em foto movimentada e a sombra, que contorna o simbolo sem desenhar
-         moldura nenhuma. Mesmo recurso do botao de menu. */
+         Por isso ha um veu branco fixo por baixo do degrade: o vidro continua
+         translucido e desfocado, mas a cor final varia pouco, e o icone em
+         verde escuro fecha em 4.3:1 no pior caso. */
+      /* `.floating-actions a` tem especificidade maior que `.fab-whatsapp`
+         (uma classe mais um tipo contra uma classe so), entao o branco de la
+         vencia e o icone sumia no vidro claro. Por isso esta regra desce um
+         nivel junto: agora e classe + classe. */
       .floating-actions .fab-whatsapp {
-        color: var(--color-whatsapp);
-        filter: drop-shadow(0 2px 5px rgba(0, 20, 43, 0.4))
-          drop-shadow(0 0 1px rgba(255, 255, 255, 0.6));
+        background-color: rgba(255, 255, 255, 0.7);
+        background-image: var(--vidro);
+        -webkit-backdrop-filter: var(--vidro-desfoque);
+        backdrop-filter: var(--vidro-desfoque);
+        box-shadow: var(--vidro-sombra);
+        color: #0b6b5f;
+        transition: background-color 0.18s ease-out;
       }
 
-      .floating-actions .fab-whatsapp svg {
-        width: 44px;
-        height: 44px;
-      }
-
-      /* uma mudanca so no hover: o simbolo aproxima */
       .floating-actions .fab-whatsapp:hover,
       .floating-actions .fab-whatsapp:focus-visible {
-        transform: scale(1.06);
+        background-color: rgba(255, 255, 255, 0.88);
       }
 
-      .floating-actions .fab-whatsapp:focus-visible {
-        outline: 2px solid var(--color-accent);
-        outline-offset: 4px;
-        border-radius: 50%;
+      @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .floating-actions .fab-whatsapp {
+          background-color: rgba(255, 255, 255, 0.94);
+        }
       }
 
       .reveal {
