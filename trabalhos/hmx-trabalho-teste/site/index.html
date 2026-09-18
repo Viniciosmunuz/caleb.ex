@@ -328,22 +328,31 @@
         overflow: hidden;
         pointer-events: none;
         opacity: 0.95;
+        /* A mascara e medida em pixels a partir do centro, nao em % da tela:
+           assim a faixa forte termina sempre na borda do container (640px do
+           centro) em tela larga. Os max()/min() sao a trava: abaixo de
+           ~1320px os pixels ficariam negativos e a mascara apagaria a camada
+           inteira, entao ali quem vale sao as porcentagens. */
         -webkit-mask-image: linear-gradient(
           90deg,
-          #000 0%,
-          rgba(0, 0, 0, 0.34) 22%,
-          transparent 42%,
-          transparent 58%,
-          rgba(0, 0, 0, 0.34) 78%,
+          #000 0,
+          rgba(0, 0, 0, 0.62) max(6%, calc(50% - 660px)),
+          rgba(0, 0, 0, 0.2) max(14%, calc(50% - 430px)),
+          transparent max(26%, calc(50% - 230px)),
+          transparent min(74%, calc(50% + 230px)),
+          rgba(0, 0, 0, 0.2) min(86%, calc(50% + 430px)),
+          rgba(0, 0, 0, 0.62) min(94%, calc(50% + 660px)),
           #000 100%
         );
         mask-image: linear-gradient(
           90deg,
-          #000 0%,
-          rgba(0, 0, 0, 0.34) 22%,
-          transparent 42%,
-          transparent 58%,
-          rgba(0, 0, 0, 0.34) 78%,
+          #000 0,
+          rgba(0, 0, 0, 0.62) max(6%, calc(50% - 660px)),
+          rgba(0, 0, 0, 0.2) max(14%, calc(50% - 430px)),
+          transparent max(26%, calc(50% - 230px)),
+          transparent min(74%, calc(50% + 230px)),
+          rgba(0, 0, 0, 0.2) min(86%, calc(50% + 430px)),
+          rgba(0, 0, 0, 0.62) min(94%, calc(50% + 660px)),
           #000 100%
         );
       }
@@ -362,11 +371,11 @@
       .ambiente-lado--esq {
         left: -8vw;
         background-image:
-          radial-gradient(34% 22% at 10% 10%, rgba(114, 135, 121, 0.72), transparent 68%),
-          radial-gradient(26% 18% at 0% 26%, rgba(148, 164, 150, 0.5), transparent 70%),
-          radial-gradient(22% 15% at 18% 22%, rgba(134, 154, 140, 0.4), transparent 72%),
-          radial-gradient(40% 27% at 4% 80%, rgba(106, 127, 115, 0.7), transparent 68%),
-          radial-gradient(24% 17% at 22% 70%, rgba(140, 158, 144, 0.42), transparent 72%),
+          radial-gradient(38% 25% at 14% 9%, rgba(106, 128, 113, 0.82), transparent 70%),
+          radial-gradient(30% 21% at 2% 28%, rgba(132, 152, 137, 0.66), transparent 72%),
+          radial-gradient(26% 18% at 26% 20%, rgba(120, 142, 127, 0.54), transparent 72%),
+          radial-gradient(44% 30% at 6% 82%, rgba(98, 120, 107, 0.8), transparent 70%),
+          radial-gradient(28% 20% at 30% 72%, rgba(126, 146, 131, 0.56), transparent 72%),
           radial-gradient(58% 42% at 30% 50%, rgba(205, 197, 180, 0.52), transparent 72%),
           radial-gradient(74% 30% at 34% 28%, rgba(214, 208, 193, 0.44), transparent 76%);
         transform: translate3d(0, calc(var(--amb, 0) * -78px), 0);
@@ -377,12 +386,12 @@
       .ambiente-lado--dir {
         right: -8vw;
         background-image:
-          radial-gradient(30% 20% at 76% 6%, rgba(84, 108, 98, 0.82), transparent 66%),
-          radial-gradient(24% 17% at 95% 18%, rgba(62, 86, 80, 0.8), transparent 68%),
-          radial-gradient(20% 14% at 82% 26%, rgba(104, 126, 116, 0.5), transparent 70%),
-          radial-gradient(36% 26% at 93% 45%, rgba(76, 99, 91, 0.7), transparent 68%),
-          radial-gradient(44% 32% at 100% 78%, rgba(52, 75, 70, 0.84), transparent 64%),
-          radial-gradient(26% 19% at 74% 64%, rgba(118, 139, 127, 0.44), transparent 72%),
+          radial-gradient(34% 23% at 70% 5%, rgba(78, 102, 92, 0.9), transparent 68%),
+          radial-gradient(28% 20% at 93% 17%, rgba(56, 80, 74, 0.88), transparent 70%),
+          radial-gradient(24% 17% at 76% 27%, rgba(92, 115, 105, 0.64), transparent 72%),
+          radial-gradient(40% 28% at 90% 46%, rgba(70, 93, 85, 0.8), transparent 70%),
+          radial-gradient(48% 34% at 100% 80%, rgba(46, 69, 64, 0.9), transparent 66%),
+          radial-gradient(30% 21% at 68% 66%, rgba(106, 128, 116, 0.6), transparent 72%),
           radial-gradient(52% 38% at 88% 34%, rgba(196, 190, 176, 0.36), transparent 74%);
         transform: translate3d(0, calc(var(--amb, 0) * 62px), 0);
       }
@@ -1700,7 +1709,7 @@
         grid-area: detalhes;
       }
 
-      .contact-direct {
+      .contact-marca {
         grid-area: direto;
       }
 
@@ -1910,48 +1919,38 @@
       }
 
       /* ---- Contato direto (cartões) ---- */
-      .contact-direct {
-        display: grid;
-        gap: 12px;
-        margin-top: 28px;
-      }
-
-      .contact-card {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 16px 18px;
-        border: 1px solid var(--color-border);
-        border-radius: var(--r-md);
-        background: #ffffff;
-        color: var(--color-heading);
-        transition: border-color 0.16s ease-out;
-      }
-
-      .contact-card:hover {
-        border-color: var(--color-accent);
-      }
-
-      .contact-card span {
+      /* ---- Assinatura da marca ----
+         Fecha a coluna de texto sem disputar com o formulario ao lado: a logo
+         em tamanho pequeno, esmaecida, sobre um filete. Nao e botao nem
+         cartao — e so a assinatura no pe da secao. */
+      .contact-marca {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 34px;
+        padding-top: 26px;
+        border-top: 1px solid var(--color-border);
       }
 
-      .contact-card strong {
-        font-size: 0.98rem;
-        font-weight: 700;
+      .contact-marca img {
+        width: 130px;
+        height: auto;
+        opacity: 0.62;
       }
 
-      .contact-card small {
-        font-size: 0.84rem;
-        color: var(--color-text);
+      .contact-marca span {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-text-soft);
       }
 
-      .contact-card--whatsapp svg {
-        color: var(--color-whatsapp);
-        flex-shrink: 0;
-      }
+
+
+
+
+
 
       .form-note {
         margin: 12px 0 0;
@@ -2238,7 +2237,7 @@
           row-gap: 28px;
         }
 
-        .contact-direct {
+        .contact-marca {
           margin-top: 0;
         }
       }
@@ -2954,14 +2953,10 @@
 
           </div>
 
-            <div class="contact-direct">
-              <a class="contact-card contact-card--whatsapp" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Hotel%20Calleb." target="_blank" rel="noopener">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-                <span>
-                  <strong>Reservar pelo WhatsApp</strong>
-                  <small>Resposta rápida, sem formulário</small>
-                </span>
-              </a>
+            <div class="contact-marca">
+              <img src="./images/logo-440.png" srcset="./images/logo-440.png 440w, ./images/logo-880.png 880w"
+                   sizes="130px" width="440" height="241" alt="Hotel Calleb" loading="lazy" decoding="async" />
+              <span>Presidente Figueiredo · Amazônia</span>
             </div>
 
           <div class="booking-form" aria-label="Formulário de reserva">

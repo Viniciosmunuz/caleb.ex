@@ -1612,3 +1612,64 @@ Rolagem horizontal, contraste, texto cortado e imagem quebrada: **zero** em
 1440, 768, 430 e 375. As duas pilhas montam com o número certo de cartas e
 pontos. Arraste, clique em carta lateral, clique em ponto e avanço automático
 verificados um a um.
+
+---
+
+## Assinatura da marca no contato e fundo na intensidade da referência
+
+### O cartão do WhatsApp deu lugar à marca
+
+O bloco "Reservar pelo WhatsApp" saiu a pedido. No lugar entrou a **assinatura
+da casa**: a logo em 130px com 62% de opacidade sobre um filete, e abaixo
+"Presidente Figueiredo · Amazônia" em versalete miúdo. Não é botão nem cartão —
+fecha a coluna de texto sem disputar com o formulário ao lado.
+
+Nenhum caminho de conversão se perdeu com a remoção: o botão do formulário agora
+diz "Verificar disponibilidade pelo WhatsApp", o botão flutuante continua na
+tela e o cabeçalho tem o "Reservar Agora". O CSS órfão do cartão saiu junto
+(seis blocos).
+
+### O fundo, na presença da referência
+
+Estava fraco demais. Duas mudanças:
+
+**As manchas entraram mais e ficaram mais encorpadas** — o verde da direita foi
+de `rgba(84,108,98,.82)` para `rgba(78,102,92,.9)` no topo e de
+`rgba(52,75,70,.84)` para `rgba(46,69,64,.9)` no volume de baixo, com as
+posições puxadas para dentro.
+
+**A máscara passou a ser medida em pixels a partir do centro**, não em
+porcentagem da tela:
+
+```css
+rgba(0,0,0,.62) max(6%, calc(50% - 660px))
+rgba(0,0,0,.2)  max(14%, calc(50% - 430px))
+transparent     max(26%, calc(50% - 230px))
+```
+
+Assim a faixa forte termina sempre logo depois da borda do container (640px do
+centro), em vez de esticar ou encolher conforme o monitor. Em tela larga sobra
+muito mais borda livre, e a camada pode ser rica ali sem chegar perto do texto.
+
+**Os `max()`/`min()` são a trava, e foram necessários:** na primeira tentativa,
+só com `calc()`, abaixo de ~1320px os valores ficavam **negativos** e a máscara
+apagava a camada inteira — a tela de 790px ficou completamente branca. Com a
+trava, quem manda em tela estreita são as porcentagens.
+
+Conferido isolando a camada (todo o conteúdo escondido): a folhagem aparece
+clara nas duas bordas, o centro fica limpo, e no ponto onde o texto começa o
+tom já está quase branco.
+
+### Varredura de responsividade
+
+| Largura | Rolagem horiz. | Contraste | Texto cortado | Contato | Carta da pilha |
+|---|---|---|---|---|---|
+| 1440 | 0 | 0 | 0 | 2 colunas | 320px |
+| 1024 | 0 | 0 | 0 | 2 colunas | 320px |
+| 790 | 0 | 0 | 0 | 2 colunas | 280px |
+| 768 | 0 | 0 | 0 | 1 coluna | 280px |
+| 412 | 0 | 0 | 0 | 1 coluna | 227px |
+
+Nada desalinhado nem sobreposto: em uma coluna, texto, formulário e assinatura
+começam todos no mesmo x e ocupam a mesma largura. Zero imagem quebrada em
+todas as larguras.
