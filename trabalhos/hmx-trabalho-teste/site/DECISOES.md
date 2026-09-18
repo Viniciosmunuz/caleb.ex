@@ -1824,3 +1824,15 @@ embaixo — some só o que escapa pelos lados.
 | 375 | 0 | 1 coluna | 165px | 0 falhas |
 
 As setas das duas pilhas avançam e voltam, verificadas uma a uma.
+
+### O ponto ativo virou o ícone da marca
+
+Nas duas pilhas, a posição atual deixou de ser um risco azul e passou a ser o
+**ícone do site** — o mesmo que aparece na aba do navegador. A pessoa reconhece
+sem precisar aprender nada, e o marcador deixa de ser um elemento genérico de
+carrossel para virar assinatura.
+
+Os pontos inativos continuam cinza. O ícone fica quadrado (16px), para não
+esticar, e **os 24px de alvo de toque continuam**: o ícone cresce e o respiro
+encolhe na mesma medida, então a caixa não muda de altura e os pontos não pulam
+ao trocar de carta. Medido: todos os pontos com 24px de altura, ativo ou não.

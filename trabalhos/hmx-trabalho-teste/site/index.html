@@ -326,10 +326,23 @@
         transition: background-color 0.16s ease-out, width 0.24s ease-out;
       }
 
+      /* A posicao atual e marcada pelo icone da marca, nao por um risco
+         azul: e o mesmo simbolo da aba do navegador, entao a pessoa reconhece
+         sem precisar aprender nada. Quadrado, para o icone nao esticar.
+
+         Os 24px de alvo de toque continuam: o icone cresce para 16px e o
+         respiro encolhe na mesma medida, entao a caixa toda nao muda de
+         altura e os pontos nao pulam ao trocar de carta. */
       .pilha-ponto[aria-selected="true"] {
-        background-color: var(--color-primary);
-        width: 22px;
-        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+        padding: 4px 8px;
+        background-color: transparent;
+        background-image: url("./images/favicon-180.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 0;
       }
 
       .pilha-ponto:focus-visible {
