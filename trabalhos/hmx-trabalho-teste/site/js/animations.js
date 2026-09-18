@@ -149,215 +149,194 @@ if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-/* ---------- Galeria ---------- */
-const galleryTrack = document.querySelector("#galleryTrack");
-const galleryDots = document.querySelector("#galleryDots");
 
-if (galleryTrack) {
-  const slides = Array.from(galleryTrack.children);
-  let timer = null;
+/* ---------- Pilha de cartas ----------
+   Um baralho arrastavel, usado nas duas galerias do site. A carta da frente
+   fica no centro; as vizinhas abrem em leque, giradas e menores.
 
-  const passo = () => {
-    const s = slides[0];
-    if (!s) return galleryTrack.clientWidth;
-    const gap = parseFloat(getComputedStyle(galleryTrack).columnGap) || 0;
-    return s.getBoundingClientRect().width + gap;
-  };
+   Arrastar para o lado troca a carta da frente. Clicar numa carta lateral traz
+   ela para a frente. Os pontos abaixo tambem navegam, e as setas do teclado
+   funcionam quando a carta esta em foco.
 
-  const indiceAtual = () => Math.round(galleryTrack.scrollLeft / passo());
-  const fimDaLista = () => galleryTrack.scrollLeft >= galleryTrack.scrollWidth - galleryTrack.clientWidth - 2;
+   Sem biblioteca: o que anima sao transform e opacity, resolvidos pelo
+   compositor. O JS so decide qual carta e a frente e escreve os transforms. */
 
-  // um ponto por foto; marca a que esta em foco
-  slides.forEach((_, i) => {
-    const b = document.createElement("button");
-    b.className = "gallery-dot";
-    b.type = "button";
-    b.setAttribute("role", "tab");
-    b.setAttribute("aria-label", `Foto ${i + 1} de ${slides.length}`);
-    b.addEventListener("click", () => { irPara(i); reiniciarAuto(); });
-    galleryDots && galleryDots.appendChild(b);
-  });
+/* A tabela do leque. Deslocamento em % da largura da carta, giro em graus.
+   E a mesma para as duas pilhas — se um dia mudar, muda nas duas. */
+function configuracaoDaCarta(indice, frente, total) {
+  let d = indice - frente;
+  if (d > total / 2) d -= total;
+  if (d < -total / 2) d += total;
 
-  const sincronizar = () => {
-    const i = indiceAtual();
-    if (galleryDots) {
-      Array.from(galleryDots.children).forEach((d, n) =>
-        d.setAttribute("aria-selected", String(n === i)));
+  if (d === 0) return { x: 0, y: 0, giro: 0, escala: 1, opacidade: 1, z: 5 };
+  if (d === 1) return { x: 25, y: 1, giro: 10, escala: 0.9, opacidade: 1, z: 4 };
+  if (d === -1) return { x: -25, y: 1, giro: -10, escala: 0.9, opacidade: 1, z: 4 };
+  if (d === 2) return { x: 45, y: 5, giro: 15, escala: 0.8, opacidade: 1, z: 3 };
+  if (d === -2) return { x: -45, y: 5, giro: -15, escala: 0.8, opacidade: 1, z: 3 };
+
+  const lado = d > 0 ? 1 : -1;
+  return { x: 55 * lado, y: 5, giro: 20 * lado, escala: 0.6, opacidade: 0, z: 2 };
+}
+
+function iniciarPilha(pilha) {
+  const itens = Array.from(pilha.querySelectorAll("[data-pilha-item]"));
+  const total = itens.length;
+  if (total < 3) return;
+
+  const pontos = pilha.parentElement.querySelector("[data-pilha-pontos]");
+  const legenda = pilha.parentElement.querySelector("[data-pilha-descricao]");
+  const anuncio = pilha.parentElement.querySelector("[data-pilha-anuncio]");
+  let frente = 0;
+
+  /* ---- desenho ---- */
+  const desenhar = (arrasto = 0) => {
+    itens.forEach((item, i) => {
+      const c = configuracaoDaCarta(i, frente, total);
+      item.style.transform =
+        `translate(calc(${c.x}% + ${arrasto}px), ${c.y}%) rotate(${c.giro}deg) scale(${c.escala})`;
+      item.style.opacity = String(c.opacidade);
+      item.style.zIndex = String(c.z);
+      item.dataset.pilhaEstado = i === frente ? "frente" : "lado";
+      /* carta invisivel sai da leitura e da tabulacao */
+      item.setAttribute("aria-hidden", c.opacidade === 0 ? "true" : "false");
+      const carta = item.querySelector("[data-pilha-carta]");
+      if (carta) carta.tabIndex = i === frente ? 0 : c.opacidade === 0 ? -1 : 0;
+    });
+
+    if (pontos) {
+      Array.from(pontos.children).forEach((p, i) =>
+        p.setAttribute("aria-selected", String(i === frente)));
+    }
+    if (legenda) {
+      const texto = itens[frente].dataset.descricao;
+      if (texto) legenda.textContent = texto;
+    }
+    if (anuncio) {
+      anuncio.textContent = `${frente + 1} de ${total}: ${itens[frente].dataset.nome || ""}`;
     }
   };
 
   const irPara = (i) => {
-    galleryTrack.scrollTo({ left: i * passo(), behavior: "smooth" });
+    frente = ((i % total) + total) % total;
+    desenhar();
   };
 
-  const mover = (dir) => {
-    if (dir > 0 && fimDaLista()) irPara(0);            // volta ao inicio no fim
-    else if (dir < 0 && galleryTrack.scrollLeft <= 2) irPara(slides.length - 1);
-    else galleryTrack.scrollBy({ left: dir * passo(), behavior: "smooth" });
-  };
+  /* ---- arraste ---- */
+  let arrastando = false;
+  let inicioX = 0;
+  let deslocado = 0;
+  /* distancia do ultimo gesto, guardada so ate o clique que vem logo depois
+     do pointerup. Sem isso o valor de um arraste antigo ficava retido e
+     bloqueava o proximo clique numa carta lateral. */
+  let ultimoGesto = 0;
+  let idPonteiro = null;
 
-  // teclado: setas navegam quando a faixa esta em foco
-  galleryTrack.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") { e.preventDefault(); mover(1); reiniciarAuto(); }
-    if (e.key === "ArrowLeft")  { e.preventDefault(); mover(-1); reiniciarAuto(); }
+  const limite = () => Math.max(40, pilha.getBoundingClientRect().width * 0.1);
+
+  pilha.addEventListener("pointerdown", (e) => {
+    if (e.button !== undefined && e.button !== 0) return;
+    arrastando = true;
+    inicioX = e.clientX;
+    deslocado = 0;
+    idPonteiro = e.pointerId;
+    pilha.classList.add("arrastando");
+    /* capturar o ponteiro nao e essencial — serve para o arraste continuar
+       valendo se o dedo sair da pilha. Se o navegador recusar, o gesto segue
+       funcionando, entao o erro nao pode derrubar o resto do tratador. */
+    try { pilha.setPointerCapture(idPonteiro); } catch (e) { idPonteiro = null; }
+    pausar();
   });
 
-  galleryTrack.addEventListener("scroll", () => {
-    clearTimeout(galleryTrack._t);
-    galleryTrack._t = setTimeout(sincronizar, 90);
-  }, { passive: true });
-
-  let galeriaNaTela = true;
-  const pararAuto = () => { if (timer) { clearInterval(timer); timer = null; } };
-  const reiniciarAuto = () => {
-    pararAuto();
-    if (prefersReducedMotion.matches || document.hidden) return;
-    if (!galeriaNaTela) return;
-    timer = setInterval(() => mover(1), 7000);
-  };
-
-  ["mouseenter", "focusin", "pointerdown"].forEach((ev) =>
-    galleryTrack.addEventListener(ev, pararAuto));
-  ["mouseleave", "focusout"].forEach((ev) =>
-    galleryTrack.addEventListener(ev, reiniciarAuto));
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) pararAuto(); else reiniciarAuto();
+  pilha.addEventListener("pointermove", (e) => {
+    if (!arrastando) return;
+    deslocado = e.clientX - inicioX;
+    /* resistencia: o leque acompanha o dedo pela metade, para a pilha nao
+       sair voando e para o gesto ter peso */
+    desenhar(deslocado * 0.5);
   });
-  prefersReducedMotion.addEventListener("change", reiniciarAuto);
-  /* mesma logica de dica da galeria das atracoes: sem setas, quem avisa que
-     ha mais foto ao lado e a espiada na borda mais a linha de dica */
-  const areaGaleria = galleryTrack.closest(".gallery-carrossel");
-  const conferirGaleria = () => {
-    if (!areaGaleria) return;
-    const transborda = galleryTrack.scrollWidth > galleryTrack.clientWidth + 4;
-    const noFim = fimDaLista();
-    areaGaleria.classList.toggle("tem-mais", transborda && !noFim);
-  };
 
-  galleryTrack.addEventListener("scroll", () => {
-    if (galleryTrack.scrollLeft > 8 && areaGaleria) areaGaleria.classList.add("ja-arrastou");
-    conferirGaleria();
-  }, { passive: true });
-
-  window.addEventListener("resize", () => { sincronizar(); conferirGaleria(); });
-
-  /* so roda enquanto a galeria estiver a vista */
-  const olhoGaleria = new IntersectionObserver((entradas) => {
-    galeriaNaTela = entradas[0].isIntersecting;
-    if (galeriaNaTela) reiniciarAuto(); else pararAuto();
-  }, { threshold: 0.25 });
-  olhoGaleria.observe(galleryTrack);
-
-  sincronizar();
-  conferirGaleria();
-  reiniciarAuto();
-}
-
-/* ---------- Galeria das atracoes ----------
-   Uma foto em destaque e as outras em tiras. Clicar numa tira promove ela.
-   Sem setas: quem indica que ha mais coisa ao lado e a propria tira seguinte
-   aparecendo cortada na borda, o esmaecido e a linha de dica — e a dica some
-   no primeiro arrasto, porque depois disso ela ja cumpriu o papel. */
-const atracaoTiras = document.querySelector("#atracaoTiras");
-
-if (atracaoTiras) {
-  const tiras = Array.from(atracaoTiras.querySelectorAll(".atracao-tira"));
-  const quadros = Array.from(document.querySelectorAll(".atracao-quadro"));
-  const descricao = document.querySelector("#atracaoDesc");
-  const area = atracaoTiras.closest(".tiras-area");
-
-  // rola so a faixa, nunca a pagina: scrollIntoView mexeria nas duas
-  const trazerAVista = (el) => {
-    const faixa = atracaoTiras.getBoundingClientRect();
-    const alvo = el.getBoundingClientRect();
-    if (alvo.left < faixa.left) {
-      atracaoTiras.scrollBy({ left: alvo.left - faixa.left - 10, behavior: "smooth" });
-    } else if (alvo.right > faixa.right) {
-      atracaoTiras.scrollBy({ left: alvo.right - faixa.right + 10, behavior: "smooth" });
+  const soltar = () => {
+    if (!arrastando) return;
+    arrastando = false;
+    pilha.classList.remove("arrastando");
+    if (idPonteiro !== null && pilha.hasPointerCapture(idPonteiro)) {
+      pilha.releasePointerCapture(idPonteiro);
     }
+    idPonteiro = null;
+    ultimoGesto = Math.abs(deslocado);
+    if (Math.abs(deslocado) > limite()) {
+      irPara(frente + (deslocado < 0 ? 1 : -1));
+    } else {
+      desenhar();
+    }
+    deslocado = 0;
+    retomar();
   };
 
-  const mostrar = (i, focar) => {
-    tiras.forEach((t, n) => {
-      const ativa = n === i;
-      t.classList.toggle("is-ativa", ativa);
-      t.setAttribute("aria-selected", String(ativa));
-      t.tabIndex = ativa ? 0 : -1;
+  pilha.addEventListener("pointerup", soltar);
+  pilha.addEventListener("pointercancel", soltar);
+
+  /* clicar numa carta lateral traz ela para a frente; se o dedo andou, o
+     gesto foi arraste e nao clique */
+  itens.forEach((item, i) => {
+    const carta = item.querySelector("[data-pilha-carta]");
+    if (!carta) return;
+    carta.addEventListener("click", (e) => {
+      /* o clique chega logo depois do pointerup: se o dedo andou, o gesto
+         foi arraste e nao clique */
+      if (ultimoGesto > 6) { ultimoGesto = 0; e.preventDefault(); return; }
+      if (i !== frente) irPara(i);
+      retomar();
     });
-    quadros.forEach((q, n) => {
-      q.hidden = n !== i;
-      q.classList.toggle("is-ativa", n === i);
+    carta.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); irPara(frente + 1); retomar(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); irPara(frente - 1); retomar(); }
     });
-    if (descricao && tiras[i].dataset.desc) descricao.textContent = tiras[i].dataset.desc;
-    if (focar) tiras[i].focus();
-    trazerAVista(tiras[i]);
-  };
-
-  tiras.forEach((t, i) => t.addEventListener("click", () => mostrar(i, false)));
-
-  const atual = () => tiras.findIndex((t) => t.getAttribute("aria-selected") === "true");
-
-  atracaoTiras.addEventListener("keydown", (e) => {
-    const i = atual();
-    if (e.key === "ArrowRight") { e.preventDefault(); mostrar((i + 1) % tiras.length, true); }
-    if (e.key === "ArrowLeft")  { e.preventDefault(); mostrar((i - 1 + tiras.length) % tiras.length, true); }
-    if (e.key === "Home")       { e.preventDefault(); mostrar(0, true); }
-    if (e.key === "End")        { e.preventDefault(); mostrar(tiras.length - 1, true); }
   });
 
-  /* dica e esmaecido so existem enquanto sobra tira para o lado: numa tela
-     larga as tres cabem, e ai nao ha nada para avisar */
-  const conferir = () => {
-    const transborda = atracaoTiras.scrollWidth > atracaoTiras.clientWidth + 4;
-    const noFim = atracaoTiras.scrollLeft >= atracaoTiras.scrollWidth - atracaoTiras.clientWidth - 4;
-    area.classList.toggle("tem-mais", transborda && !noFim);
-  };
+  /* ---- pontos ---- */
+  if (pontos) {
+    itens.forEach((item, i) => {
+      const b = document.createElement("button");
+      b.className = "pilha-ponto";
+      b.type = "button";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", `${item.dataset.nome || "Foto"} (${i + 1} de ${total})`);
+      b.addEventListener("click", () => { irPara(i); retomar(); });
+      pontos.appendChild(b);
+    });
+  }
 
-  atracaoTiras.addEventListener("scroll", () => {
-    if (atracaoTiras.scrollLeft > 8) area.classList.add("ja-arrastou");
-    conferir();
-  }, { passive: true });
-
-  window.addEventListener("resize", conferir, { passive: true });
-  conferir();
-
-  /* Passa sozinha, devagar. O relogio para assim que a pessoa encosta —
-     clique, foco ou dedo — e volta depois; e para de vez enquanto a secao
-     estiver fora da tela, que e trabalho a toa. */
+  /* ---- passa sozinha ---- */
   let relogio = null;
-  /* nasce ligada: o observador corrige depois se estiver fora da tela.
-     Comecar em false deixava a galeria parada para sempre quando o
-     primeiro aviso do observador nao vinha (aba em segundo plano). */
   let naTela = true;
 
-  const pararSozinho = () => { if (relogio) { clearInterval(relogio); relogio = null; } };
-  const andarSozinho = () => {
-    pararSozinho();
+  const pausar = () => { if (relogio) { clearInterval(relogio); relogio = null; } };
+  const retomar = () => {
+    pausar();
     if (!naTela || prefersReducedMotion.matches || document.hidden) return;
-    relogio = setInterval(() => mostrar((atual() + 1) % tiras.length, false), 7000);
+    relogio = setInterval(() => irPara(frente + 1), 7000);
   };
 
-  ["mouseenter", "focusin", "pointerdown"].forEach((ev) =>
-    atracaoTiras.addEventListener(ev, pararSozinho));
-  ["mouseleave", "focusout"].forEach((ev) =>
-    atracaoTiras.addEventListener(ev, andarSozinho));
-  tiras.forEach((t) => t.addEventListener("click", andarSozinho));
+  ["mouseenter", "focusin"].forEach((ev) => pilha.addEventListener(ev, pausar));
+  ["mouseleave", "focusout"].forEach((ev) => pilha.addEventListener(ev, retomar));
 
   const olho = new IntersectionObserver((entradas) => {
     naTela = entradas[0].isIntersecting;
-    if (naTela) andarSozinho(); else pararSozinho();
+    if (naTela) retomar(); else pausar();
   }, { threshold: 0.25 });
-  olho.observe(document.querySelector(".atracao-palco"));
+  olho.observe(pilha);
 
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) pararSozinho(); else andarSozinho();
+    if (document.hidden) pausar(); else retomar();
   });
-  prefersReducedMotion.addEventListener("change", andarSozinho);
+  prefersReducedMotion.addEventListener("change", retomar);
 
-  andarSozinho();
+  desenhar();
+  retomar();
 }
 
+document.querySelectorAll("[data-pilha]").forEach(iniciarPilha);
 
 /* ---------- Formulário de reserva: abre o WhatsApp do hotel ---------- */
 const WHATSAPP_NUMERO = '559285372368';

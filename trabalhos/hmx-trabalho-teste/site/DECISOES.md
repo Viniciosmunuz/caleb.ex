@@ -1523,3 +1523,92 @@ fica com `document.hidden = true`, e nesse estado o navegador não roda
 automático da galeria do hotel não pôde ser observado diretamente — o código é
 o mesmo que já funcionava antes, com o intervalo de 5s para 7s e o observador
 novo por cima. Vale conferir num navegador comum.
+
+---
+
+## Galerias em pilha de cartas e fundo mais próximo da referência
+
+### As duas galerias viraram um baralho
+
+A especificação que o cliente enviou descrevia uma pilha de cartas arrastável.
+As duas galerias do site passaram a usar o mesmo componente: carta da frente no
+centro, vizinhas abertas em leque, giradas e menores.
+
+| Posição | Deslocamento | Giro | Escala | Opacidade |
+|---|---|---|---|---|
+| frente | 0 | 0° | 1 | 1 |
+| ±1 | ±25% | ±10° | 0,9 | 1 |
+| ±2 | ±45% | ±15° | 0,8 | 1 |
+| demais | ±55% | ±20° | 0,6 | 0 |
+
+É a tabela da especificação, sem alteração. Ela vive numa função só
+(`configuracaoDaCarta`), usada pelas duas pilhas — se um dia mudar, muda nas
+duas.
+
+**Sem GSAP.** A especificação pedia GSAP, ScrollTrigger e Draggable — três
+arquivos de CDN, ~170 KB. O que a pilha anima são `transform` e `opacity`, que
+`transition` do CSS resolve, e o arraste são uns 40 linhas de eventos de
+ponteiro. O site hoje não tem nenhuma dependência externa, e o próprio briefing
+do cliente pedia para evitar bibliotecas novas e cuidar da performance. Feito em
+CSS e JS puro. Se ele preferir a biblioteca, a troca é localizada.
+
+Formas de navegar, todas funcionando: arrastar para os lados, clicar numa carta
+lateral para trazê-la à frente, clicar nos pontos, setas do teclado com a carta
+em foco, e o avanço automático a cada 7 s que pausa ao primeiro toque.
+
+Nas cartas das atrações o nome e o endereço ficam sobre a foto, e a descrição do
+cliente troca junto, abaixo da pilha. As cartas da galeria do hotel são só foto:
+não há rótulo para elas no material do cliente, e inventar um seria inventar
+conteúdo. **A logo do hotel que ficava ao lado da galeria foi removida**, a
+pedido.
+
+### Dois defeitos corrigidos
+
+**O clique numa carta lateral parava de funcionar depois de um arraste.** A
+distância percorrida ficava guardada numa variável que só era zerada no
+`pointerdown` seguinte — então o guarda "se o dedo andou, foi arraste, não
+clique" comparava contra um valor velho. Agora a distância é copiada para uma
+variável que o clique consome e descarta.
+
+**`setPointerCapture` podia derrubar o tratador.** Capturar o ponteiro é
+conveniência, não requisito: serve para o arraste continuar valendo se o dedo
+sair da pilha. Envolvido em `try/catch`, para uma recusa do navegador não abortar
+o resto do `pointerdown`.
+
+### O fundo, mais perto da referência
+
+O cliente mandou uma imagem de referência: folhagem fora de foco carregada nas
+duas bordas, tom de areia à esquerda, verde mais fundo à direita, centro quase
+branco.
+
+Não dá para usar a imagem: não gero imagens, e a regra anterior dele era não
+usar fotografia de fundo. Refeito em CSS, que não pesa no carregamento e se
+adapta a qualquer tela.
+
+A camada trocou de técnica: saíram as três formas em SVG com `filter: blur()`,
+entraram **duas faixas laterais feitas de gradientes radiais empilhados**. Sete
+círculos moles sobrepostos por lado dão o mote da folhagem desfocada — manchas
+dentro de manchas, como lente aberta — e saem de graça para o compositor, sem
+custo de desfoque.
+
+**O que protege a leitura é uma máscara horizontal**: força total nas bordas,
+onde não há conteúdo, e zero no meio da página. É o mesmo desenho da referência
+— laterais carregadas, centro limpo — e é ele que permitiu subir a presença de
+0,14 para **0,95** sem encostar no texto.
+
+| | Desktop | Tablet | Celular |
+|---|---|---|---|
+| Opacidade | 0,95 | 0,50 | 0,34 |
+| Largura da faixa | 44vw | 34vw | 26vw |
+| Máscara zera em | 42% | 34% | 26% |
+
+Verificado isolando a camada (todo o conteúdo escondido) para ver o perfil de
+intensidade ao longo da largura: a cor viva fica nos ~8% externos de cada lado,
+e no ponto onde o texto começa já está quase branca.
+
+### Verificação
+
+Rolagem horizontal, contraste, texto cortado e imagem quebrada: **zero** em
+1440, 768, 430 e 375. As duas pilhas montam com o número certo de cartas e
+pontos. Arraste, clique em carta lateral, clique em ponto e avanço automático
+verificados um a um.
