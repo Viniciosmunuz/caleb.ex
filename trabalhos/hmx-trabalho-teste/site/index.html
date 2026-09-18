@@ -1800,66 +1800,90 @@
       }
 
       .site-footer {
-        padding: 64px 0 0;
+        padding: 44px 0 0;
         background: var(--color-dark);
         border-top: none;
         color: rgba(255, 255, 255, 0.7);
       }
 
+      /* ---- Rodape ----
+         Uma linha so: marca a esquerda, secoes no meio, chamada a direita.
+         Antes eram tres colunas com titulo cada ("Links Rapidos", "Contato")
+         e a mesma frase do hero repetida embaixo do nome — num celular isso
+         virava uma tela inteira de rodape. Os titulos sairam porque com os
+         links em linha nao ha o que rotular, e a frase saiu por ser copia
+         literal do paragrafo do hero, na mesma pagina. */
       .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 40px;
-        padding-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px 36px;
+        padding-bottom: 30px;
       }
 
-      .footer-col h3 {
+      .footer-marca {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .footer-marca h3 {
         color: var(--color-amber);
-        font-size: 1.3rem;
-        margin-bottom: 16px;
+        font-size: 1.25rem;
       }
 
-      .footer-col h4 {
-        color: #ffffff;
-        font-size: 1rem;
-        margin-bottom: 16px;
-      }
-
-      .footer-col p {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.62);
-      }
-
-      .footer-links {
-        display: grid;
-        gap: 10px;
-        font-size: 0.9rem;
-      }
-
-      .footer-links a {
+      .footer-local {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.82rem;
         color: rgba(255, 255, 255, 0.62);
         transition: color 0.16s ease-out;
       }
 
+      .footer-local svg {
+        flex-shrink: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links a,
+      .footer-local:hover,
+      .footer-local:focus-visible {
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.16s ease-out;
+      }
+
+      .footer-local:hover,
+      .footer-local:focus-visible,
       .footer-links a:hover,
       .footer-links a:focus-visible {
         color: var(--color-amber);
       }
 
-      .footer-links a.footer-cta {
-        color: #ffffff;
-        font-weight: 700;
-      }
-
-      .footer-icon-link {
+      .footer-cta {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        min-height: 44px;
+        padding: 11px 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        font-size: 0.88rem;
+        font-weight: 500;
+        white-space: nowrap;
+        transition: background-color 0.16s ease-out;
       }
 
-      .footer-icon-link svg {
-        flex-shrink: 0;
-        color: var(--color-amber);
+      .footer-cta:hover,
+      .footer-cta:focus-visible {
+        background-color: rgba(255, 255, 255, 0.12);
       }
 
       .footer-row {
@@ -1993,12 +2017,36 @@
         transition: background-color 0.16s ease-out;
       }
 
+      /* ---- Botao flutuante ----
+         Mesmo vidro da barra de navegacao. Com uma diferenca necessaria: a
+         barra so aparece sobre fundo claro ou sobre a foto do hero, mas este
+         botao passa por cima de tudo, inclusive do rodape azul escuro. So com
+         o degrade do vidro, o fundo atras mandaria na cor final e o icone
+         ficaria ilegivel metade do tempo — medido: verde da marca sobre o
+         rodape da 2.4:1, abaixo do minimo de 3:1 para simbolo.
+
+         Por isso ha um veu branco fixo por baixo do degrade: o vidro continua
+         translucido e desfocado, mas a cor final varia pouco, e o icone em
+         verde escuro fecha em 4.3:1 no pior caso. */
       .fab-whatsapp {
-        background: var(--color-whatsapp);
+        background-color: rgba(255, 255, 255, 0.7);
+        background-image: var(--vidro);
+        -webkit-backdrop-filter: var(--vidro-desfoque);
+        backdrop-filter: var(--vidro-desfoque);
+        box-shadow: var(--vidro-sombra);
+        color: #0b6b5f;
+        transition: background-color 0.18s ease-out;
       }
 
-      .fab-whatsapp:hover {
-        background: var(--color-whatsapp-hover);
+      .fab-whatsapp:hover,
+      .fab-whatsapp:focus-visible {
+        background-color: rgba(255, 255, 255, 0.88);
+      }
+
+      @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .fab-whatsapp {
+          background-color: rgba(255, 255, 255, 0.94);
+        }
       }
 
       .reveal {
@@ -3012,36 +3060,24 @@
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div class="footer-col">
+        <div class="footer-marca">
           <h3>Hotel Calleb</h3>
-          <p>Sua melhor escolha em Presidente Figueiredo, com café da manhã incluso e localização privilegiada no centro da cidade.</p>
+          <a class="footer-local" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-10.1a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10.7" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+            Presidente Figueiredo · Amazônia
+          </a>
         </div>
 
-        <div class="footer-col">
-          <h4>Links Rápidos</h4>
-          <nav class="footer-links" aria-label="Links rápidos do rodapé">
-            <a href="#sobre">Sobre</a>
-            <a href="#quartos">Acomodações</a>
-            <a href="#experiencia">Experiência</a>
-            <a href="#destino">Destino</a>
-            <a href="#galeria">Galeria</a>
-            <a href="#localizacao">Localização</a>
-          </nav>
-        </div>
+        <nav class="footer-links" aria-label="Seções do site">
+          <a href="#sobre">Sobre</a>
+          <a href="#quartos">Acomodações</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#destino">Destino</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#localizacao">Localização</a>
+        </nav>
 
-        <div class="footer-col">
-          <h4>Contato</h4>
-          <div class="footer-links">
-            <a class="footer-icon-link footer-cta" href="#contato">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7.5V5.8C5 4.8 5.8 4 6.8 4H17.2C18.2 4 19 4.8 19 5.8V12.2C19 13.2 18.2 14 17.2 14H9L5 18V7.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-              Reservar Agora
-            </a>
-            <a class="footer-icon-link" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-10.1a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10.7" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
-              Presidente Figueiredo · Amazônia
-            </a>
-          </div>
-        </div>
+        <a class="footer-cta" href="#contato">Reservar Agora</a>
       </div>
 
       <div class="container footer-row">
