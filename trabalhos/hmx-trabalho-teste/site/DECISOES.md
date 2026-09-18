@@ -1742,3 +1742,85 @@ Amazônia" removida junto com o CSS dela. Ficou só a marca, com o brilho própr
 1440, 1024, 995 e 452: zero rolagem horizontal, zero falha de contraste, zero
 texto cortado, zero imagem quebrada. As quatro setas funcionam e nenhuma
 sobrepõe a carta da frente em nenhuma largura.
+
+---
+
+## "Essência" quebrada no celular, cachoeiras novas e o fundo na terceira versão
+
+### O bug da "essência": eu mesmo causei
+
+No celular a seção "A nossa essência" aparecia em **duas colunas de 69px**, com
+as quatro fotos espremidas e o texto quebrando palavra por palavra.
+
+A causa foi uma limpeza de CSS morto minha, três rodadas atrás. Ao remover
+`.gallery-grid`, a expressão pegou um **seletor agrupado**:
+
+```css
+.card-grid,
+.gallery-grid,      /* <- alvo */
+.split,
+.contact-wrap,
+.field-grid,
+.footer-grid { grid-template-columns: 1fr; }
+```
+
+Como o padrão casava de `.gallery-grid` até a chave de fechamento, levou junto
+`.split`, `.contact-wrap` e `.field-grid`. Abaixo de 449px essas três deixaram
+de virar uma coluna. Entre 450 e 768px havia outra regra cobrindo, então só a
+faixa de celular quebrou — e as varreduras não pegaram porque elas medem
+rolagem horizontal e contraste, não "esta grade devia ter uma coluna".
+
+**É a terceira vez que um seletor agrupado me morde neste projeto** (antes foi
+`.btn-cta`, duas vezes). A lição, agora escrita: apagar bloco por expressão
+regular é seguro para regra de seletor único e perigoso para grupo.
+
+### Cachoeiras
+
+O Santuário saiu a pedido. Entraram duas, com foto e endereço conferidos:
+
+| Atração | Localização | Foto |
+|---|---|---|
+| Cachoeira da Iracema | BR-174, km 998 · a 8 km do centro | MTur Destinos — domínio público |
+| Cachoeira da Pedra Furada | AM-240, km 57 | Luciano cta — CC BY-SA 3.0 |
+| Cachoeira das Lajes | BR-174, km 113 | MTur Destinos — domínio público |
+| Caverna Refúgio do Maroaga | AM-240 (Balbina), km 6 | Fabricio Ferreira Silva — CC BY-SA 3.0 |
+
+**As descrições das duas novas não são do cliente.** Ele só escreveu texto para
+Santuário, Iracema e Maroaga. As da Pedra Furada e das Lajes saíram de guias de
+turismo da região e descrevem o que a própria foto mostra — os furos na rocha e
+o poço em meia-lua, as corredeiras de água escura. São curtas de propósito: é
+espaço reservado para a copy dele, não copy dele.
+
+### O fundo, terceira versão
+
+As duas anteriores erravam pelo mesmo motivo: **muita forma pequena**. Catorze
+gradientes por lado viravam mancha picada — ou sumia, ou aparecia demais, nunca
+"profundidade".
+
+Agora são **duas luzes só**, cada uma maior que a tela, ancoradas nos cantos que
+a página não usa: uma quente no alto à esquerda, uma verde embaixo à direita.
+Como nenhuma tem contorno visível, o que se percebe é a variação de tom, não a
+forma — e a máscara horizontal deixou de ser necessária.
+
+**Um erro no caminho:** dei `border-radius: 50%` ao elemento, e a borda dele
+cortou o gradiente antes de acabar de desbotar — apareceu um arco duro
+atravessando a tela. O formato tem de vir do gradiente, não do elemento.
+
+### O leque saindo da tela
+
+Com as cartas maiores, o leque passou a ultrapassar a largura do container no
+celular: **77px de rolagem horizontal**. O corte foi para a seção, com
+`overflow-x: clip`, e não para o `body`: `clip` não cria área rolável e não
+mexe no eixo vertical, então as cartas giradas continuam inteiras em cima e
+embaixo — some só o que escapa pelos lados.
+
+### Verificação
+
+| Largura | Rolagem horiz. | "Essência" | Fotos do mosaico | Contraste |
+|---|---|---|---|---|
+| 1440 | 0 | 2 colunas | 327px | 0 falhas |
+| 1024 | 0 | 2 colunas | 244px | 0 falhas |
+| 390 | 0 | 1 coluna | 172px | 0 falhas |
+| 375 | 0 | 1 coluna | 165px | 0 falhas |
+
+As setas das duas pilhas avançam e voltam, verificadas uma a uma.
