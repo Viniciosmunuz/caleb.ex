@@ -2315,14 +2315,10 @@ que a usava.
 
 ### A chamada final muda de lugar e perde o botão do WhatsApp
 
-Saiu do fim da página e foi para **logo depois do mapa, antes do formulário**.
-Ali ela vira a ponte entre "onde fica" e "reserve": a pessoa acabou de ver a
-localização e cai direto no convite, com o formulário logo abaixo. No fim da
-página ela ficava depois da faixa de números, já perto do rodapé, onde o convite
-chega tarde.
-
-Ordem final: hero, reserva, essência, quartos, experiência, destino, galeria,
-localização, **chamada**, contato, números, rodapé.
+Foi parar **logo depois da galeria das cachoeiras**: é o ponto em que a pessoa
+acabou de ver o que há para fazer na região, e o convite chega junto com a
+vontade. No fim da página ela vinha depois da faixa de números, já perto do
+rodapé, onde o convite chega tarde.
 
 **O botão do WhatsApp saiu** a pedido. Não se perde caminho nenhum: o WhatsApp
 continua no hero, no botão flutuante que acompanha a rolagem, no botão de cada
@@ -2414,3 +2410,8 @@ destino (creme) → galeria (base) → localização (creme).
 
 O link "Sobre" da navegação continua funcionando — o `id` foi junto com a seção.
 Conferido que nenhum link interno do menu aponta para âncora inexistente.
+
+Ordem final da página: hero, reserva, quartos, experiência, essência, destino,
+**chamada**, galeria, localização, contato, números, rodapé. O ritmo de fundos
+segue alternando: destino (creme) → chamada (escura) → galeria (base) →
+localização (creme).
