@@ -67,10 +67,16 @@
         --color-bg: #ffffff;
         --color-surface: #f6efdd;
         --color-text: #2b3d55;
-        /* tom solido para rotulos e legendas. Antes eram cores com opacidade,
-           que mudam de contraste conforme o fundo atras — sobre o creme mais
-           escuro cairiam abaixo do minimo de leitura. */
-        --color-text-soft: #5a6b80;
+        /* Tom solido para rotulos e legendas — nunca com opacidade, que
+           muda de contraste conforme o fundo atras.
+
+           Escureceu de #5a6b80 para ca quando o vidro do fundo ganhou verde:
+           era este token que travava o efeito. Com o antigo, o canto mais
+           verde da tela so podia chegar a #eaeeec antes de o texto cair de
+           4,5:1; com este, a folga permite ir ate #d8deda, que e verde de
+           verdade. Medido: 5,19:1 no canto mais verde, 6,2:1 sobre o creme,
+           7,0:1 no branco. */
+        --color-text-soft: #4b5a6e;
         --color-heading: var(--color-brand-blue-dark);
         --color-muted: var(--color-brand-orange);
         --color-border: rgba(0, 71, 179, 0.12);
@@ -476,9 +482,9 @@
         left: -75vmax;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(122, 152, 118, 0.4) 0%,
-          rgba(150, 174, 140, 0.24) 22%,
-          rgba(178, 196, 168, 0.09) 38%,
+          rgba(122, 152, 118, 0.48) 0%,
+          rgba(150, 174, 140, 0.3) 22%,
+          rgba(178, 196, 168, 0.12) 38%,
           transparent 52%
         );
         transform: translate3d(0, calc(var(--amb, 0) * -60px), 0);
@@ -490,9 +496,9 @@
         right: -75vmax;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(74, 106, 86, 0.44) 0%,
-          rgba(104, 136, 112, 0.26) 22%,
-          rgba(146, 170, 150, 0.09) 38%,
+          rgba(74, 106, 86, 0.52) 0%,
+          rgba(104, 136, 112, 0.32) 22%,
+          rgba(146, 170, 150, 0.12) 38%,
           transparent 52%
         );
         transform: translate3d(0, calc(var(--amb, 0) * 52px), 0);
@@ -508,14 +514,16 @@
          e a escondem — entao, na pratica, o efeito so aparece justamente nas
          secoes brancas, que sao as que nao tem faixa propria.
 
-         O 0,74 nao e arbitrario: e o ponto em que o canto mais verde da tela
-         para em #eaeeec, onde o texto secundario (--color-text-soft) ainda da
-         4,6:1. Abaixo disso o verde ganha corpo e esse texto cai do minimo de
-         leitura. */
+         O 0,58 sai da conta de contraste, nao do olho. Com ele o canto mais
+         verde da tela para em #d8deda, e ali o texto secundario da 5,19:1 —
+         acima do minimo de 4,5. So foi possivel descer da lamina anterior
+         (0,74) porque o --color-text-soft escureceu junto; com o tom antigo,
+         este mesmo 0,58 derrubaria esse texto para 4,0:1. Os dois andam
+         juntos: mexer num sem o outro quebra a leitura. */
       .ambiente-vidro {
         position: absolute;
         inset: 0;
-        background: rgba(255, 255, 255, 0.74);
+        background: rgba(255, 255, 255, 0.58);
       }
 
       /* O conteudo fica por cima da camada. O cabecalho e os botoes
