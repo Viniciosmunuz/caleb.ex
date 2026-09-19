@@ -2136,3 +2136,133 @@ num 390.
 O título da seção diz "**Estaremos** no coração de Presidente Figueiredo" —
 futuro, para um hotel que já está funcionando. Provavelmente é "Estamos". Não
 mudei porque é texto de vitrine, não erro de código; fica para o dono decidir.
+
+---
+
+## Redesenho pelo modelo: reserva, quartos, experiência e chamada final
+
+O pedido foi "igual a esse modelo, mas as cores da logo". Então: **layout do
+modelo, paleta e tipografia da casa**. Azul `#0047b3` e laranja `#f97300`
+continuam, e a Inter continua em tudo.
+
+Cheguei a trocar por verde/dourado e por uma serifada (Cormorant) antes da
+correção, e desfiz as duas — os dois arquivos da serifada foram apagados, não
+ficaram pesando no projeto.
+
+### A conta que faz o hero e a barra conviverem
+
+Dois pedidos que, lidos rápido, se contradizem: a foto tem que ocupar a tela
+inteira ao abrir **e** a barra de reserva tem que ficar por cima da beirada de
+baixo dela.
+
+Dá para ter os dois se o hero for mais alto que a tela **exatamente na medida da
+sobreposição**:
+
+```
+altura do hero  = 100svh + S
+margem da barra = -S
+topo da barra   = (100svh + S) - S = 100svh  ← a dobra
+```
+
+Com `S = 56px` no desktop e `30px` no celular. Medido num iPhone de 375px: hero
+com 842px, tela com 812px, topo da barra em 812px. **Zero pixel do cartão na
+primeira tela**, e 30px de sobreposição assim que se rola.
+
+Os dois valores saem da mesma variável, `--barra-sobre`, no `:root`. Não é
+capricho: se um mudar sem o outro, a ponta do cartão volta a aparecer. Ela fica
+no `:root` porque o hero e a barra são **irmãos** — custom property desce pela
+árvore, não atravessa irmão.
+
+O indicador "Explore" saiu, a pedido.
+
+### Barra de reserva: um caminho só
+
+Check-in, check-out, hóspedes e quarto. Ela **não envia nada por conta própria**:
+copia os quatro campos para o formulário do Contato, leva a pessoa para lá e põe
+o foco no primeiro campo que falta. Um único caminho de reserva — o do WhatsApp,
+que é o que o hotel usa — em vez de dois que podiam divergir.
+
+"Todos os quartos" é o estado neutro da barra e não existe no formulário
+completo, então não viaja.
+
+Desktop: uma linha, filetes entre os campos. Tablet: 2×2 com o botão inteiro
+embaixo. Celular: empilhada. O botão é **azul, não laranja** — o laranja já está
+no hero logo acima e dois laranjas colados tiram o destaque um do outro.
+
+### Quartos: tudo dentro da foto
+
+Primeiro fiz vitrine + uma lista por extenso embaixo. O pedido depois foi claro:
+**tudo na imagem**. A lista saiu e a etiqueta passou a carregar nome, capacidade,
+área, ar-condicionado, preço e o botão de reserva.
+
+O ponto crítico de contraste não é a base do degradê, é o **meio**, onde fica o
+nome do quarto. Com o meio em 0,55 o branco dava 4,15:1 sobre a roupa de cama
+clara — passa como texto grande, mas raspando. Subi para 0,62: **4,7:1**. Na
+altura dos dados e do preço o degradê já está em 0,9 e a razão é de **13:1**.
+
+A caixa da etiqueta não recebe ponteiro, senão engoliria o arraste do carrossel;
+só o botão de reservar volta a receber.
+
+O carrossel dos quartos é **novo e separado** das duas galerias em pilha — elas
+não foram tocadas. Três baralhos iguais na mesma página ficaria repetitivo, e o
+modelo mostra uma foto plana aqui. Mesmo vocabulário: setas, pontos, teclado,
+arraste. Testado com clique e arraste reais a 375px: setas 2→3→4 e 4→3, arraste
+3→4, `transform` em -300% para o índice 3.
+
+### Experiência: faixa escura
+
+Foto da mata atrás, véu do azul da marca por cima, título à esquerda e sete itens
+em duas colunas com ícones finos. É a única seção escura no meio da página —
+serve de pausa entre os quartos e o destino.
+
+Os sete itens **já existiam no site**: quatro vinham dos cartões desta seção e
+três da lista da "essência". Nada foi acrescentado.
+
+### Barra de navegação
+
+Afinada a pedido, e a pílula subiu:
+
+| | antes | agora |
+|---|---|---|
+| barra sobre o hero (desktop) | 82px | **70px** |
+| pílula rolada (desktop) | 66px | **56px** |
+| barra sobre o hero (celular) | 64px | **58px** |
+| pílula rolada (celular) | 56px | **50px** |
+| logo | 44px | **38px** (34 no celular) |
+| altura em que a pílula flutua | 14px do topo | **8px** |
+
+O alvo de toque do menu continua **44×44px** — conferido no DOM.
+
+### Verificação
+
+375, 430, 768, 1024 e ~1230: `scrollWidth` nunca passa da largura da tela. O que
+o auditor aponta como "fora" são só elementos dentro de contêiner com
+`overflow: hidden` — a camada de ambientação, a foto do hero em `scale(1.06)` e
+os slides do carrossel que aguardam a vez.
+
+### O que não foi feito, e por quê
+
+**Depoimentos não existem.** O modelo tem um card de avaliação cinco estrelas com
+texto de hóspede. **Não há nenhuma avaliação real no projeto.** Inventar uma seria
+fabricar prova social para um negócio de verdade. A seção fica de fora até o dono
+fornecer os depoimentos.
+
+**Estacionamento não entrou** na lista de comodidades. O modelo mostra, o site
+nunca afirmou. Se o hotel tem, é só dizer.
+
+**As duas galerias em pilha ficaram como estavam.** O briefing permitia refinar,
+mas elas já tinham sido ajustadas a pedido nas rodadas anteriores e a avaliação
+foi "no desktop estão ótimas". Mexer sem pedido seria churn.
+
+**Sobrou CSS órfão** das classes da grade antiga de quartos (`.room-card`,
+`.card-image`, `.card-body`, `.beneficio` e vizinhas). Escrevi um limpador que
+poda seletor a seletor — para não repetir o acidente do seletor agrupado, que já
+quebrou este projeto três vezes — mas ele entrou em laço e foi abortado. O
+arquivo ficou intacto. São cerca de 5 KB sem efeito nenhum; fica para depois.
+
+### Aberto para o cliente
+
+Além do que já estava em aberto: os números da faixa de estatísticas
+(**2.500+ hóspedes**, **15+ cachoeiras**, **10+ anos**) não têm origem
+conhecida — vieram do template original. São exatamente o tipo de número que o
+briefing manda não inventar. Valem uma conferência com o dono antes da proposta.

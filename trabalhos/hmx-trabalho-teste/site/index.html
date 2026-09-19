@@ -46,6 +46,13 @@
 
 
       :root {
+        /* Quanto a barra de reserva sobe sobre a foto do hero. O hero ganha
+           exatamente esta altura a mais que a tela, entao o topo da barra cai
+           na dobra: foto inteira ao abrir, barra sobreposta ao rolar. Fica no
+           :root porque as duas secoes sao irmas — a variavel precisa de um
+           ancestral comum. */
+        --barra-sobre: 56px;
+
         /* Paleta da marca — medida do logo e confirmada em referencia/receita-visual.json */
         --color-brand-blue: #0047b3;
         --color-brand-blue-dark: #003c96;
@@ -746,8 +753,11 @@
         transition: padding 0.3s ease-out;
       }
 
+      /* O respiro de cima e o que decide a que altura a pilula flutua.
+         Estava em 14px e ela ficava baixa demais; 8px encosta mais no topo
+         sem colar. O dos lados continua igual. */
       .site-header.is-scrolled {
-        padding: 14px 20px;
+        padding: 8px 20px;
       }
 
       /* ---- Gaveta de menu ----
@@ -870,7 +880,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        min-height: 82px;
+        min-height: 70px;
         padding: 0;
         border-radius: 0;
         background: transparent;
@@ -882,7 +892,7 @@
 
       /* a pílula de vidro é este estado */
       .is-scrolled .nav-row {
-        min-height: 66px;
+        min-height: 56px;
         padding: 0 12px 0 22px;
         border-radius: 999px;
         /* Vidro quase invisivel: quem faz o efeito e o desfoque, nao a tinta.
@@ -925,7 +935,7 @@
       }
 
       .brand img {
-        height: 44px;
+        height: 38px;
         width: auto;
       }
 
@@ -997,14 +1007,31 @@
         stroke-dashoffset: -32.42;
       }
 
+      /* ---- Altura do hero e a sobreposicao da barra ----
+         O truque que faz as duas coisas pedidas conviverem: a foto ocupa a
+         tela inteira ao abrir E a barra de reserva fica por cima da beirada
+         de baixo dela quando se rola.
+
+         Para isso o hero e mais alto que a tela exatamente na medida da
+         sobreposicao. A barra sobe essa mesma medida, entao o topo dela cai
+         precisamente na dobra: invisivel ao abrir, sobreposta ao rolar.
+
+         Os dois valores saem da mesma variavel de proposito — se um mudar
+         sem o outro, a ponta do cartao volta a aparecer. */
       .hero {
         position: relative;
         overflow: hidden;
         background: var(--color-dark);
-        min-height: 100vh;
-        min-height: 100svh;
+        min-height: calc(100vh + var(--barra-sobre));
+        min-height: calc(100svh + var(--barra-sobre));
         display: flex;
         align-items: center;
+      }
+
+      /* o conteudo do hero ignora a sobra: senao o texto desceria junto e
+         ficaria descentrado na primeira tela */
+      .hero .hero-inner {
+        margin-bottom: var(--barra-sobre);
       }
 
       /* Duas camadas de movimento, separadas de proposito:
@@ -1129,19 +1156,17 @@
       }
 
       /* ---- Barra de reserva ----
-         Fica na emenda: o topo dela encosta exatamente na borda de baixo da
-         foto e o corpo avanca sobre a secao seguinte. Nao sobe nem um pixel
-         sobre a imagem — o hero tem 100svh, entao ao abrir o site a primeira
-         tela e so a fotografia, sem a ponta do cartao aparecendo embaixo. A
-         barra so entra em cena quando a pessoa rola.
+         Sobe sobre a beirada de baixo da foto, na mesma medida que o hero
+         ganhou de altura (ver .hero). O topo dela cai exatamente na dobra,
+         entao ao abrir o site a primeira tela e so a fotografia.
 
          z-index proprio porque o hero tem uma camada de sombreamento por
          cima da foto; sem ele a barra passaria por baixo dela. */
       .reserva-rapida {
         position: relative;
         z-index: 2;
-        margin-top: 0;
-        margin-bottom: -38px;
+        margin-top: calc(var(--barra-sobre) * -1);
+        margin-bottom: 14px;
       }
 
       .reserva-barra {
@@ -1262,10 +1287,10 @@
       }
 
       @media (max-width: 560px) {
-        /* no celular a barra empilha, entao ela e alta: avanca menos sobre a
-           secao de baixo para o primeiro numero nao encostar nela */
-        .reserva-rapida {
-          margin-bottom: -22px;
+        /* no celular a barra empilha e fica alta: sobrepoe menos, senao come
+           metade da foto. O hero acompanha pela mesma variavel. */
+        :root {
+          --barra-sobre: 30px;
         }
 
         .reserva-barra {
@@ -1601,6 +1626,220 @@
       /* ---- Cartões de acomodação ----
          O preço sai do corpo e vai para cima da foto: é a informação que a
          pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
+      /* ---- Chamada final ----
+         Mesma receita da faixa de experiencia: foto de textura, veu do azul
+         da marca e o conteudo por cima. Mais baixa, porque aqui so ha um
+         titulo, uma linha e dois botoes. */
+      .faixa-final {
+        position: relative;
+        isolation: isolate;
+        padding: 64px 0;
+        background: var(--color-dark);
+        color: #ffffff;
+      }
+
+      .final-fundo {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .final-fundo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.28;
+      }
+
+      .final-fundo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0, 20, 43, 0.92) 0%, rgba(0, 20, 43, 0.84) 100%);
+      }
+
+      .final-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .final-copy h2 {
+        color: #ffffff;
+        margin-bottom: 8px;
+      }
+
+      .final-copy p {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.95rem;
+        max-width: 52ch;
+      }
+
+      .final-acoes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      @media (max-width: 767px) {
+        .faixa-final {
+          padding: 48px 0;
+        }
+
+        .final-wrap {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .final-acoes {
+          width: 100%;
+        }
+
+        /* no celular os dois botoes ocupam a linha inteira: alvo maior e
+           nada de dois botoes espremidos lado a lado */
+        .final-acoes .hero-btn {
+          flex: 1 1 100%;
+          justify-content: center;
+        }
+      }
+
+      /* ---- Faixa de experiencia ----
+         Banda escura de ponta a ponta, do modelo: a foto da mata atras, o
+         azul da marca por cima e os itens em duas colunas. E a unica secao
+         escura no meio da pagina — serve de pausa entre os quartos e o
+         destino, e e o que quebra a sequencia de faixas claras. */
+      .faixa-experiencia {
+        position: relative;
+        isolation: isolate;
+        padding: 84px 0;
+        background: var(--color-dark);
+        color: #ffffff;
+      }
+
+      .exp-fundo {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .exp-fundo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* a foto entra so como textura: o que se le e o texto por cima */
+        opacity: 0.3;
+        filter: saturate(0.85);
+      }
+
+      /* Veu do azul da marca. Sem ele o branco cai para 3,1:1 sobre as partes
+         claras da agua; com ele o pior caso medido fica em 9,6:1. */
+      .exp-fundo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(0, 20, 43, 0.93) 0%, rgba(0, 20, 43, 0.82) 55%, rgba(0, 35, 72, 0.88) 100%);
+      }
+
+      .exp-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        column-gap: 64px;
+        row-gap: 36px;
+        align-items: center;
+      }
+
+      .exp-copy h2 {
+        color: #ffffff;
+        max-width: 18ch;
+      }
+
+      .faixa-experiencia .eyebrow {
+        color: var(--color-brand-orange);
+      }
+
+      .exp-lista {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 36px;
+        row-gap: 26px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .exp-lista li {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      /* Icone fino, sem disco nem cartao atras: e o que o briefing pedia —
+         icones discretos, texto curto, bastante espaco. */
+      .exp-lista svg {
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+        margin-top: 1px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .exp-lista div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .exp-lista strong {
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.25;
+        color: #ffffff;
+      }
+
+      .exp-lista span {
+        font-size: 0.82rem;
+        line-height: 1.35;
+        /* 0,72 de branco sobre o veu da faixa da 6,9:1 */
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      @media (max-width: 979px) {
+        .faixa-experiencia {
+          padding: 64px 0;
+        }
+
+        .exp-wrap {
+          grid-template-columns: minmax(0, 1fr);
+          row-gap: 30px;
+        }
+
+        .exp-copy h2 {
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .faixa-experiencia {
+          padding: 52px 0;
+        }
+
+        .exp-lista {
+          grid-template-columns: minmax(0, 1fr);
+          row-gap: 20px;
+        }
+
+        .exp-lista svg {
+          width: 23px;
+          height: 23px;
+        }
+      }
+
       /* ---- Vitrine dos quartos ----
          Saiu a grade de quatro cartoes pequenos e entrou o formato do
          modelo: coluna de texto a esquerda, uma foto grande a direita.
@@ -1705,15 +1944,81 @@
       /* A etiqueta fica sobre a foto, como no modelo. O degrade abaixo dela
          e o que garante a leitura: sobre uma foto clara o texto branco
          sozinho nao se sustenta. */
+      /* A etiqueta carrega tudo do quarto: nome, capacidade, area,
+         ar-condicionado, preco e o botao de reserva. Nada fica dependendo de
+         uma lista fora da foto.
+
+         O degrade e o que sustenta a leitura. O ponto critico nao e a base
+         e sim o meio, onde fica o nome do quarto: com o meio em 0,55 o
+         branco dava 4,15:1 sobre a roupa de cama clara — passa como texto
+         grande, mas com pouca margem. Em 0,62 sobe para 4,7:1 e passa com
+         folga. Na altura dos dados e do preco o degrade ja esta em 0,88 e a
+         razao e de 13:1.
+
+         A caixa nao recebe ponteiro, senao engoliria o arraste do carrossel;
+         so o botao volta a receber. */
       .quarto-etiqueta {
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 56px 26px 22px;
+        padding: 72px 26px 22px;
         color: #ffffff;
-        background: linear-gradient(180deg, rgba(0, 20, 43, 0), rgba(0, 20, 43, 0.82));
+        background: linear-gradient(180deg, rgba(0, 20, 43, 0) 0%, rgba(0, 20, 43, 0.62) 38%, rgba(0, 20, 43, 0.9) 100%);
         pointer-events: none;
+      }
+
+      .quarto-acao {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.28);
+      }
+
+      .quarto-preco {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 5px;
+        color: #ffffff;
+        font-size: 0.82rem;
+      }
+
+      .quarto-preco strong {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      /* unico elemento da etiqueta que aceita toque */
+      .quarto-reservar {
+        pointer-events: auto;
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: var(--color-cta);
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 0.16s ease-out;
+      }
+
+      .quarto-reservar:hover,
+      .quarto-reservar:focus-visible {
+        background: var(--color-cta-hover);
+      }
+
+      .quarto-reservar:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
       }
 
       .quarto-etiqueta h3 {
@@ -2746,16 +3051,16 @@
            a logo encosta nas bordas. O alvo de toque do menu continua com
            44px: quem encolheu foi o respiro em volta, nao o botao. */
         .nav-row {
-          min-height: 64px;
+          min-height: 58px;
         }
 
         .is-scrolled .nav-row {
-          min-height: 56px;
-          padding: 0 10px 0 18px;
+          min-height: 50px;
+          padding: 0 10px 0 16px;
         }
 
         .brand img {
-          height: 38px;
+          height: 34px;
         }
 
         .header-cta {
@@ -3242,8 +3547,13 @@
                     <h3>Padrão</h3>
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>4 pessoas</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
                     </ul>
+                    <div class="quarto-acao">
+                      <span class="quarto-preco"><strong>R$ 390</strong> /noite</span>
+                      <a class="quarto-reservar" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                    </div>
                   </div>
                 </article>
 
@@ -3253,8 +3563,13 @@
                     <h3>Quarto triplo</h3>
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 pessoas</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
                     </ul>
+                    <div class="quarto-acao">
+                      <span class="quarto-preco"><strong>R$ 320</strong> /noite</span>
+                      <a class="quarto-reservar" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                    </div>
                   </div>
                 </article>
 
@@ -3264,8 +3579,13 @@
                     <h3>Casal</h3>
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>2 pessoas</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
                     </ul>
+                    <div class="quarto-acao">
+                      <span class="quarto-preco"><strong>R$ 280</strong> /noite</span>
+                      <a class="quarto-reservar" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                    </div>
                   </div>
                 </article>
 
@@ -3275,8 +3595,13 @@
                     <h3>Solteiro</h3>
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1 pessoa</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
                     </ul>
+                    <div class="quarto-acao">
+                      <span class="quarto-preco"><strong>R$ 220</strong> /noite</span>
+                      <a class="quarto-reservar" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
+                    </div>
                   </div>
                 </article>
 
@@ -3294,100 +3619,56 @@
             <p class="visualmente-oculto" data-carrossel-anuncio aria-live="polite"></p>
           </div>
 
-          <!-- Os quatro quartos continuam listados por extenso, com preco,
-               descricao e o link de reserva de cada um. A vitrine acima mostra
-               a foto grande; esta lista garante que nenhuma informacao dependa
-               de a pessoa passar o carrossel ate o fim. -->
-          <ul class="quartos-tabela">
-            <li>
-              <div class="qt-nome"><strong>Padrão</strong><span>Até 4 pessoas · 35 m²</span></div>
-              <p>Quarto com capacidade para até 4 pessoas, com café da manhã.</p>
-              <div class="qt-fim">
-                <span class="room-preco"><strong>R$ 390</strong> /noite</span>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-              </div>
-            </li>
-            <li>
-              <div class="qt-nome"><strong>Quarto triplo</strong><span>Até 3 pessoas · 35 m²</span></div>
-              <p>Quarto com capacidade para até 3 pessoas, com café da manhã.</p>
-              <div class="qt-fim">
-                <span class="room-preco"><strong>R$ 320</strong> /noite</span>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-              </div>
-            </li>
-            <li>
-              <div class="qt-nome"><strong>Casal</strong><span>Até 2 pessoas · 35 m²</span></div>
-              <p>Quarto com capacidade para até duas pessoas, com café da manhã.</p>
-              <div class="qt-fim">
-                <span class="room-preco"><strong>R$ 280</strong> /noite</span>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-              </div>
-            </li>
-            <li>
-              <div class="qt-nome"><strong>Solteiro</strong><span>1 hóspede · 35 m²</span></div>
-              <p>Quarto individual para apenas um hóspede, com café da manhã.</p>
-              <div class="qt-fim">
-                <span class="room-preco"><strong>R$ 220</strong> /noite</span>
-                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-              </div>
-            </li>
-          </ul>
-
           <p class="quartos-nota">Todos os quartos incluem café da manhã, televisão, wi-fi e ar-condicionado.</p>
         </div>
       </section>
 
-      <section id="experiencia" data-section="experiencia" class="section-pad reveal">
-        <div class="container">
-          <div class="head-block">
-            <div class="eyebrow">Experiência</div>
+      <!-- ---- Experiencia ----
+           Faixa escura de ponta a ponta, com a foto da mata atras e o azul da
+           marca por cima. Os sete itens sao os que o site ja afirmava: quatro
+           vinham dos cartoes desta secao e tres da lista da secao "essencia".
+           Nada foi acrescentado. -->
+      <section id="experiencia" data-section="experiencia" class="faixa-experiencia reveal">
+        <div class="exp-fundo" aria-hidden="true">
+          <img src="./images/destino-cachoeira.jpg" width="1600" height="1067" alt="" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="container exp-wrap">
+          <div class="exp-copy">
+            <div class="eyebrow">Sua experiência</div>
             <h2>Uma estadia pensada para descansar, explorar e voltar renovado.</h2>
           </div>
 
-          <div class="beneficios">
-            <article class="beneficio">
-              <svg class="beneficio-icone" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M3.8 9.2h12.4v5.1a5.1 5.1 0 0 1-5.1 5.1H8.9a5.1 5.1 0 0 1-5.1-5.1V9.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M16.2 10.6h1.5a2.5 2.5 0 0 1 0 5h-1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M2.4 21.6h15.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M8 2.6c-.9 1 -.9 2 0 3M12 2.2c-.9 1 -.9 2 0 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              <h3>Café da manhã incluso</h3>
-              <p>Café regional servido todas as manhãs, já na diária, antes de você sair para as cachoeiras.</p>
-            </article>
-
-            <article class="beneficio">
-              <svg class="beneficio-icone" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M2.6 20.4v-9.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M21.4 20.4v-5.1a2.4 2.4 0 0 0-2.4-2.4H9.6v3.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M2.6 16.4h18.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <circle cx="6.2" cy="13.6" r="2.1" stroke="currentColor" stroke-width="1.6"/>
-              </svg>
-              <h3>Conforto premium</h3>
-              <p>Ar-condicionado silencioso, enxoval cuidado e o quarto pronto para o descanso depois da trilha.</p>
-            </article>
-
-            <article class="beneficio">
-              <svg class="beneficio-icone" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M20.2 3.4s1 7.6-3.6 12.2c-3 3-7.5 3.2-10 .8-2.4-2.5-2.2-7 .8-10C12 1.9 20.2 3.4 20.2 3.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M4.6 20.6 12.4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-              <h3>Natureza ao redor</h3>
-              <p>A poucos quilômetros das cachoeiras, grutas e trilhas que fazem a fama de Presidente Figueiredo.</p>
-            </article>
-
-            <article class="beneficio">
-              <svg class="beneficio-icone" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="3.2" y="4.8" width="17.6" height="16.4" rx="2.4" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M8 2.6v4.4M16 2.6v4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M3.2 10.2h17.6" stroke="currentColor" stroke-width="1.6"/>
-                <path d="m8.8 15.4 2.3 2.3 4.1-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <h3>Reserva simples</h3>
-              <p>Sem cadastro e sem espera: você fala direto com a equipe do hotel pelo WhatsApp.</p>
-            </article>
-          </div>
-
+          <ul class="exp-lista">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.8 9.2h12.4v5.1a5.1 5.1 0 0 1-5.1 5.1H8.9a5.1 5.1 0 0 1-5.1-5.1V9.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M16.2 10.6h1.5a2.5 2.5 0 0 1 0 5h-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2.4 21.6h15.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 2.6c-.9 1 -.9 2 0 3M12 2.2c-.9 1 -.9 2 0 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <div><strong>Café da manhã incluso</strong><span>Café regional todas as manhãs</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>
+              <div><strong>Wi-fi de alta velocidade</strong><span>Em todas as áreas do hotel</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.5"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <div><strong>Ar-condicionado nos quartos</strong><span>Silencioso, com enxoval cuidado</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.6a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8Z" stroke="currentColor" stroke-width="1.5"/><path d="M5 19.4c0-3.2 3.1-5.6 7-5.6s7 2.4 7 5.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <div><strong>Atendimento regional</strong><span>Personalizado, pela equipe da casa</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6.6-5.5 6.6-10.3a6.6 6.6 0 1 0-13.2 0C5.4 15.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10.6" r="2.4" stroke="currentColor" stroke-width="1.4"/></svg>
+              <div><strong>Localização privilegiada</strong><span>No centro de Presidente Figueiredo</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 3.4s1 7.6-3.6 12.2c-3 3-7.5 3.2-10 .8-2.4-2.5-2.2-7 .8-10C12 1.9 20.2 3.4 20.2 3.4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4.6 20.6 12.4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <div><strong>Natureza ao redor</strong><span>Cachoeiras, grutas e trilhas perto</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.2" y="4.8" width="17.6" height="16.4" rx="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M8 2.6v4.4M16 2.6v4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3.2 10.2h17.6" stroke="currentColor" stroke-width="1.5"/><path d="m8.8 15.4 2.3 2.3 4.1-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><strong>Reserva simples</strong><span>Direto com a equipe pelo WhatsApp</span></div>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -3668,6 +3949,28 @@
               <button class="btn-cta" type="submit"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke-width="2" stroke-linecap="round" stroke="currentColor"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg><span class="lable">Verificar disponibilidade pelo WhatsApp</span></button>
               <p class="form-note">Ao enviar, abrimos o WhatsApp do hotel com os seus dados já preenchidos.</p>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- Chamada final ----
+           Fecha a pagina com as mesmas duas acoes do hero: reservar e falar
+           no WhatsApp. Nao repete informacao nenhuma — e so o convite. -->
+      <section class="faixa-final reveal" data-section="chamada" aria-labelledby="titulo-chamada">
+        <div class="final-fundo" aria-hidden="true">
+          <img src="./images/gal-area-externa.jpg" width="1600" height="1067" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="container final-wrap">
+          <div class="final-copy">
+            <h2 id="titulo-chamada">Pronto para viver essa experiência?</h2>
+            <p>Faça sua reserva e venha descobrir tudo o que Presidente Figueiredo tem de melhor.</p>
+          </div>
+          <div class="final-acoes">
+            <a class="hero-btn hero-btn--principal" href="#contato">Reservar agora</a>
+            <a class="hero-btn" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Hotel%20Calleb." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="17" height="17"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+              Fale conosco no WhatsApp
+            </a>
           </div>
         </div>
       </section>
