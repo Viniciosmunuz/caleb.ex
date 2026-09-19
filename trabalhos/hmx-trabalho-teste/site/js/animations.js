@@ -162,20 +162,26 @@ if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
    compositor. O JS so decide qual carta e a frente e escreve os transforms. */
 
 /* A tabela do leque. Deslocamento em % da largura da carta, giro em graus.
-   E a mesma para as duas pilhas — se um dia mudar, muda nas duas. */
+   E a mesma para as duas pilhas — se um dia mudar, muda nas duas.
+
+   O giro e zero em todas as posicoes: as cartas de tras ficam retas, so
+   deslocadas, menores e um pouco mais baixas. A profundidade passa a vir da
+   escala e do degrau vertical, nao da inclinacao. A coluna continua aqui,
+   em vez de sumir, porque o resto do codigo le esta tabela — o calculo da
+   abertura do leque, por exemplo, pergunta a ela quanto a carta gira. */
 function configuracaoDaCarta(indice, frente, total) {
   let d = indice - frente;
   if (d > total / 2) d -= total;
   if (d < -total / 2) d += total;
 
   if (d === 0) return { x: 0, y: 0, giro: 0, escala: 1, opacidade: 1, z: 5 };
-  if (d === 1) return { x: 25, y: 1, giro: 10, escala: 0.9, opacidade: 1, z: 4 };
-  if (d === -1) return { x: -25, y: 1, giro: -10, escala: 0.9, opacidade: 1, z: 4 };
-  if (d === 2) return { x: 45, y: 5, giro: 15, escala: 0.8, opacidade: 1, z: 3 };
-  if (d === -2) return { x: -45, y: 5, giro: -15, escala: 0.8, opacidade: 1, z: 3 };
+  if (d === 1) return { x: 25, y: 1, giro: 0, escala: 0.9, opacidade: 1, z: 4 };
+  if (d === -1) return { x: -25, y: 1, giro: 0, escala: 0.9, opacidade: 1, z: 4 };
+  if (d === 2) return { x: 45, y: 5, giro: 0, escala: 0.8, opacidade: 1, z: 3 };
+  if (d === -2) return { x: -45, y: 5, giro: 0, escala: 0.8, opacidade: 1, z: 3 };
 
   const lado = d > 0 ? 1 : -1;
-  return { x: 55 * lado, y: 5, giro: 20 * lado, escala: 0.6, opacidade: 0, z: 2 };
+  return { x: 55 * lado, y: 5, giro: 0, escala: 0.6, opacidade: 0, z: 2 };
 }
 
 /* Meia largura da caixa de uma carta girada, medida em larguras de carta.
@@ -197,12 +203,17 @@ function meiaCaixa(escala, giro) {
    mexe nela e so o celular. */
 function fatorDoLeque(pilha, larguraCarta) {
   if (!larguraCarta) return 1;
+  /* A carta de fora (d = 2) e sempre a mais larga das visiveis. Os numeros
+     dela vem da propria tabela, nao repetidos aqui: quando o giro caiu para
+     zero, a conta se ajustou sozinha e o leque pode abrir mais, porque carta
+     reta ocupa menos largura que carta girada. */
+  const fora = configuracaoDaCarta(2, 0, 5);
   const caixa = pilha.getBoundingClientRect();
   const centro = caixa.left + caixa.width / 2;
   /* borda mais proxima, com 8px de respiro */
   const espaco = Math.min(centro, window.innerWidth - centro) - 8;
-  const folga = espaco / larguraCarta - meiaCaixa(0.8, 15);
-  return Math.max(0.15, Math.min(1, folga / 0.45));
+  const folga = espaco / larguraCarta - meiaCaixa(fora.escala, fora.giro);
+  return Math.max(0.15, Math.min(1, folga / (fora.x / 100)));
 }
 
 function iniciarPilha(pilha) {

@@ -2446,3 +2446,28 @@ Duas mudanças:
 
 O creme das faixas continua com corpo: medida, a razão entre o branco e o creme
 é **1,131**, praticamente a mesma de antes — ainda se vê onde uma seção termina.
+
+### As cartas das duas galerias ficam retas
+
+O giro foi a zero em todas as posições da tabela do leque. As cartas de trás
+continuam atrás, deslocadas, menores e um pouco mais baixas — a profundidade
+passa a vir da **escala e do degrau vertical**, não da inclinação. A animação, o
+arraste, as setas, os pontos e o avanço automático não mudaram em nada.
+
+A coluna `giro` continuou na tabela em vez de sumir, porque o resto do código lê
+essa tabela. E aí estava um acoplamento que valia corrigir: o cálculo da abertura
+do leque repetia os números da carta de fora (`meiaCaixa(0.8, 15)` e `0.45`).
+Agora ele pergunta à própria tabela:
+
+```js
+const fora = configuracaoDaCarta(2, 0, 5);
+... meiaCaixa(fora.escala, fora.giro) ... fora.x / 100
+```
+
+Com isso a conta se ajustou sozinha quando o giro caiu para zero — e **o leque
+pôde abrir mais**, porque carta reta ocupa menos largura que carta girada. Num
+390px a pilha passou a usar de 16 a 374, a coluna inteira.
+
+Verificado: todos os `rotate` renderizados são `0deg`, nas duas galerias, e o
+documento continua sem rolagem horizontal. Seta e arraste testados com evento
+real a 390px — a seta avançou e o arraste levou de 5 para 6.
