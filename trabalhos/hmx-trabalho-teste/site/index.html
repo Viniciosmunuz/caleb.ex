@@ -468,7 +468,7 @@
         will-change: transform;
       }
 
-      /* luz quente entrando pelo alto da esquerda */
+      /* verde claro, de folha nova, entrando pelo alto da esquerda */
       .ambiente-lado--esq {
         /* centro do elemento exatamente no canto da tela: so a parte externa
            e macia do gradiente entra em cena */
@@ -476,26 +476,46 @@
         left: -75vmax;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(198, 176, 126, 0.34) 0%,
-          rgba(205, 189, 152, 0.2) 22%,
-          rgba(212, 202, 180, 0.08) 38%,
+          rgba(122, 152, 118, 0.4) 0%,
+          rgba(150, 174, 140, 0.24) 22%,
+          rgba(178, 196, 168, 0.09) 38%,
           transparent 52%
         );
         transform: translate3d(0, calc(var(--amb, 0) * -60px), 0);
       }
 
-      /* verde amazonico repousando no canto de baixo a direita */
+      /* verde fechado, de mata densa, no canto de baixo a direita */
       .ambiente-lado--dir {
         bottom: -75vmax;
         right: -75vmax;
         background: radial-gradient(
           circle at 50% 50%,
-          rgba(106, 132, 114, 0.36) 0%,
-          rgba(128, 151, 132, 0.21) 22%,
-          rgba(160, 176, 160, 0.08) 38%,
+          rgba(74, 106, 86, 0.44) 0%,
+          rgba(104, 136, 112, 0.26) 22%,
+          rgba(146, 170, 150, 0.09) 38%,
           transparent 52%
         );
         transform: translate3d(0, calc(var(--amb, 0) * 52px), 0);
+      }
+
+      /* ---- A lamina de vidro fosco ----
+         Fica por cima das duas luzes e por baixo de todo o conteudo. E ela
+         que transforma "duas manchas verdes" em "vidro fosco na frente de
+         uma floresta": o verde continua la, mas chega lavado, como se
+         estivesse atras de um vidro jateado.
+
+         Global de proposito. As faixas creme e as azuis pintam por cima dela
+         e a escondem — entao, na pratica, o efeito so aparece justamente nas
+         secoes brancas, que sao as que nao tem faixa propria.
+
+         O 0,74 nao e arbitrario: e o ponto em que o canto mais verde da tela
+         para em #eaeeec, onde o texto secundario (--color-text-soft) ainda da
+         4,6:1. Abaixo disso o verde ganha corpo e esse texto cai do minimo de
+         leitura. */
+      .ambiente-vidro {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.74);
       }
 
       /* O conteudo fica por cima da camada. O cabecalho e os botoes
@@ -513,15 +533,7 @@
         background: rgba(246, 239, 221, 0.9);
       }
 
-      /* Faixa branca, usada nas acomodacoes: e a secao em que as fotos de
-         quarto mandam, e o branco e o fundo que menos tinge uma fotografia.
 
-         Semitransparente pelo mesmo motivo da creme — solido, ela tamparia a
-         camada de ambientacao e abriria um buraco no meio da pagina. A 0.94
-         a cor resultante fica a menos de 1 ponto de RGB do branco puro. */
-      .fundo-branco {
-        background: rgba(255, 255, 255, 0.94);
-      }
 
       /* No celular as luzes recuam mais: a tela e estreita e o texto ocupa
          quase toda a largura. */
@@ -3284,6 +3296,7 @@
     <div class="ambiente" id="ambiente" aria-hidden="true">
       <div class="ambiente-lado ambiente-lado--esq"></div>
       <div class="ambiente-lado ambiente-lado--dir"></div>
+      <div class="ambiente-vidro"></div>
     </div>
     <header class="site-header">
       <div class="container nav-row">
@@ -3425,7 +3438,7 @@
         </div>
       </section>
 
-      <section id="quartos" data-section="quartos" class="section-pad reveal fundo-branco">
+      <section id="quartos" data-section="quartos" class="section-pad reveal">
         <div class="container quartos-wrap">
           <div class="quartos-copy">
             <div class="eyebrow">Acomodações</div>

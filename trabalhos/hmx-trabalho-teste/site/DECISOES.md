@@ -2472,3 +2472,33 @@ pôde abrir mais**, porque carta reta ocupa menos largura que carta girada. Num
 Verificado: todos os `rotate` renderizados são `0deg`, nas duas galerias, e o
 documento continua sem rolagem horizontal. Seta e arraste testados com evento
 real a 390px — a seta avançou e o arraste levou de 5 para 6.
+
+### Vidro fosco na frente de uma floresta
+
+As partes brancas deixaram de ser branco chapado. Agora são uma lâmina de vidro
+jateado com verde atrás.
+
+A receita tem três camadas, de baixo para cima:
+
+1. **A floresta.** As duas luzes do fundo, que eram uma quente e uma verde,
+   viraram duas verdes: folha nova entrando pelo alto à esquerda, mata fechada
+   repousando no canto de baixo à direita.
+2. **A lâmina.** Uma camada fixa de branco a 0,74 por cima das luzes e por baixo
+   de todo o conteúdo. É ela que lava o verde e o transforma em "algo atrás do
+   vidro" em vez de "duas manchas verdes".
+3. **O grão**, que já existia: a textura de papel a 5,5% sobre a página inteira.
+   É o que tira o aspecto de tela chapada e dá o jateado.
+
+**Global de propósito, mas só aparece no branco.** As faixas creme (0,9) e as
+azuis pintam por cima da lâmina e a escondem — então, na prática, o efeito surge
+justamente nas seções que não têm faixa própria, que são as brancas. Era o que
+foi pedido, sem precisar marcar seção por seção.
+
+As acomodações perderam a faixa branca de 0,94 que tinham: com ela, a seção
+tapava a lâmina e ficava a única ilha de branco puro no meio do efeito.
+
+**O 0,74 não é arbitrário.** É o ponto em que o canto mais verde da tela para em
+`#eaeeec`, e ali o texto secundário (`--color-text-soft`) ainda dá **4,66:1** —
+acima do mínimo de 4,5. O texto normal dá 9,44:1. Abaixo de 0,74 o verde ganha
+corpo e o texto secundário cai do mínimo de leitura: se um dia a ideia for
+"mais verde", o primeiro passo é escurecer esse token, não baixar a lâmina.
