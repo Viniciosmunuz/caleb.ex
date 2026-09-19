@@ -44,6 +44,18 @@
         font-display: swap;
       }
 
+      /* ---- Caveat ----
+         So para a frase de vitrine da faixa de depoimentos. Uma unica frase
+         na pagina inteira a usa; o navegador so baixa os 75 KB quando chega
+         nela, porque nada acima aciona a familia. */
+      @font-face {
+        font-family: "Caveat";
+        src: url("./fontes/caveat.woff2") format("woff2");
+        font-weight: 400 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
 
       :root {
         /* Quanto a barra de reserva sobe sobre a foto do hero. O hero ganha
@@ -116,6 +128,7 @@
            para o texto nao saltar enquanto a fonte carrega. */
         --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        --font-manuscrita: "Caveat", "Segoe Script", cursive;
         --radius: 9999px;
         --space-4: 4px;
         --space-8: 8px;
@@ -1672,103 +1685,269 @@
       /* ---- Cartões de acomodação ----
          O preço sai do corpo e vai para cima da foto: é a informação que a
          pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
-      /* ---- Avaliacoes ----
-         Um painel branco sobre o verde, com a nota grande a esquerda e a
-         fonte ao lado. A seta diagonal e a convencao de "abre fora do site":
-         o cartao inteiro e um link para o Booking. */
-      .avaliacoes-bloco {
-        margin-top: 22px;
+      /* ---- Depoimentos ----
+         Faixa do azul da marca com a foto da cachoeira entrando pela direita,
+         como no modelo. A foto nao e cortada por um retangulo: uma mascara
+         horizontal a dissolve no azul, senao a emenda viraria uma linha reta
+         no meio da faixa. */
+      .faixa-depoimentos {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: 64px 0;
+        background: linear-gradient(100deg, var(--color-dark) 0%, #013a72 52%, #0b5288 100%);
+        color: #ffffff;
       }
 
-      .nota-cartao {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        max-width: 520px;
-        padding: 20px 22px;
-        background: var(--color-card);
-        border: 1px solid var(--color-border);
-        border-radius: var(--r-lg);
-        box-shadow: var(--sh-md);
-        transition: border-color 0.16s ease-out, box-shadow 0.16s ease-out;
+      .dep-foto {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 46%;
       }
 
-      .nota-cartao:hover,
-      .nota-cartao:focus-visible {
-        border-color: var(--color-primary);
-        box-shadow: var(--sh-lg);
+      .dep-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* dissolve para a esquerda: a foto some dentro do azul */
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.45) 26%, #000 62%);
+        mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.45) 26%, #000 62%);
       }
 
-      .nota-valor {
-        flex-shrink: 0;
-        display: inline-flex;
-        align-items: baseline;
-        gap: 2px;
-        font-size: 2.3rem;
-        font-weight: 600;
-        line-height: 1;
-        letter-spacing: -0.03em;
-        color: var(--color-heading);
-        font-feature-settings: "tnum";
+      /* Veu azul por cima da foto, para a frase manuscrita nao cair sobre a
+         agua clara da cachoeira.
+
+         Comeca transparente na esquerda de proposito: o veu cobre so a caixa
+         da foto, entao um valor cheio na borda esquerda desenhava um degrau
+         vertical no meio da faixa — a emenda que a mascara da imagem
+         justamente evita. */
+      .dep-foto::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0, 35, 72, 0) 0%, rgba(0, 35, 72, 0.5) 30%, rgba(0, 35, 72, 0.62) 60%, rgba(0, 35, 72, 0.5) 100%);
       }
 
-      .nota-valor small {
-        font-size: 0.95rem;
+      /* A frase de vitrine, na manuscrita. Decorativa: nao afirma nada que
+         precise de fonte, e o unico lugar do site onde a Caveat aparece. */
+      .dep-frase {
+        position: absolute;
+        left: 8%;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%) rotate(-4deg);
+        margin: 0;
+        font-family: var(--font-manuscrita);
+        font-size: clamp(1.5rem, 1rem + 1.6vw, 2.5rem);
         font-weight: 500;
-        color: var(--color-text-soft);
+        line-height: 1.3;
+        color: #ffffff;
+        /* a sombra e o que garante a leitura no pior ponto da foto, onde a
+           agua e quase branca */
+        text-shadow: 0 2px 14px rgba(0, 20, 43, 0.85), 0 1px 3px rgba(0, 20, 43, 0.6);
+        text-align: center;
+        pointer-events: none;
       }
 
-      .nota-corpo {
+      .dep-wrap {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        align-items: flex-start;
+        gap: 18px;
+        max-width: min(var(--container), calc(100% - 32px));
+      }
+
+      .dep-copy h2 {
+        color: #ffffff;
+        margin-bottom: 6px;
+      }
+
+      .dep-copy p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .faixa-depoimentos .eyebrow {
+        color: var(--color-brand-orange);
+      }
+
+      /* ---- O cartao e as setas ----
+         As setas ficam fora do cartao, uma de cada lado, como no modelo:
+         traco simples sobre o azul, sem disco. */
+      .dep-carrossel {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        max-width: 620px;
+      }
+
+      /* base 0, nao auto: com auto o item reivindica a largura do proprio
+         conteudo, e o conteudo aqui sao quatro slides lado a lado. O trilho
+         inteiro virava a largura pedida, nao cabia na linha ao lado das setas
+         e cada um quebrava para uma linha propria. */
+      .dep-palco {
+        flex: 1 1 0;
         min-width: 0;
       }
 
-      .nota-corpo strong {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--color-heading);
+      .dep-janela {
+        background: transparent;
+        box-shadow: none;
+        border-radius: var(--r-lg);
       }
 
-      .nota-fonte {
-        font-size: 0.85rem;
-        color: var(--color-text-soft);
+      .dep-slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 22px 24px;
+        background: var(--color-card);
+        border-radius: var(--r-lg);
+        box-shadow: var(--sh-lg);
       }
 
-      .nota-seta {
-        flex-shrink: 0;
-        width: 18px;
-        height: 18px;
-        margin-left: auto;
-        color: var(--color-text-soft);
-        transition: transform 0.18s ease-out;
+      .dep-estrelas {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 12px;
       }
 
-      .nota-cartao:hover .nota-seta {
-        transform: translate(2px, -2px);
+      .dep-estrelas svg {
+        width: 17px;
+        height: 17px;
+        fill: var(--color-brand-orange);
       }
 
-      .nota-extra {
+      .dep-slide blockquote {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: var(--color-text);
+      }
+
+      .dep-slide figcaption {
         margin-top: 14px;
-        font-size: 0.88rem;
+        font-size: 0.8rem;
         color: var(--color-text-soft);
       }
 
-      .nota-extra a {
-        color: var(--color-primary);
+      .dep-seta {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.82);
+        cursor: pointer;
+        transition: color 0.16s ease-out, background-color 0.16s ease-out;
+      }
+
+      .dep-seta:hover,
+      .dep-seta:focus-visible {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .dep-seta:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 2px;
+      }
+
+      .dep-seta svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* quebra para a linha de baixo em vez de virar mais um item ao lado
+         das setas — sem isto os pontos ficam a direita do cartao */
+      .dep-pontos {
+        flex: 1 0 100%;
+        margin-top: 2px;
+      }
+
+      .dep-pontos .carrossel-ponto {
+        background-color: rgba(255, 255, 255, 0.34);
+      }
+
+      .dep-fonte {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.8);
         text-decoration: underline;
         text-underline-offset: 3px;
+        transition: color 0.16s ease-out;
+      }
+
+      .dep-fonte:hover,
+      .dep-fonte:focus-visible {
+        color: #ffffff;
+      }
+
+      .dep-fonte svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      /* Abaixo de 900px a foto nao cabe ao lado do cartao sem espremer os
+         dois: ela passa a cobrir a faixa inteira, por tras, e a frase sai —
+         sobre o cartao ela viraria ruido. */
+      @media (max-width: 900px) {
+        .faixa-depoimentos {
+          padding: 52px 0;
+        }
+
+        .dep-foto {
+          width: 100%;
+        }
+
+        .dep-foto img {
+          -webkit-mask-image: none;
+          mask-image: none;
+          opacity: 0.5;
+        }
+
+        .dep-foto::after {
+          background: linear-gradient(120deg, rgba(0, 35, 72, 0.92) 0%, rgba(0, 35, 72, 0.86) 100%);
+        }
+
+        .dep-frase {
+          display: none;
+        }
       }
 
       @media (max-width: 560px) {
-        .nota-cartao {
-          gap: 14px;
-          padding: 16px 18px;
+        .dep-carrossel {
+          gap: 4px;
         }
 
-        .nota-valor {
-          font-size: 1.9rem;
+        .dep-seta {
+          width: 38px;
+          height: 38px;
+        }
+
+        .dep-seta svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        .dep-slide {
+          padding: 18px 18px;
+        }
+
+        .dep-slide blockquote {
+          font-size: 0.9rem;
         }
       }
 
@@ -3990,42 +4169,104 @@
         </div>
       </section>
 
-      <!-- ---- Avaliacoes ----
-           So numero publico, com a fonte ao lado e o link para conferir.
+      <!-- ---- Depoimentos ----
+           As quatro avaliacoes sao reais, lidas na pagina do Booking em
+           19/09/2026, todas com nota 10. O texto esta como o hospede
+           escreveu, sem correcao: "concerteza" e "nos conformes" sao dele, e
+           consertar a grafia de alguem e ainda assinar com o nome dele seria
+           por palavra na boca de outro.
 
-           Nenhum texto de hospede foi copiado para ca de proposito: as
-           resenhas do Booking e do Google pertencem a quem as escreveu e as
-           plataformas onde estao, e republicar aqui — num site que o dono do
-           hotel ainda nem viu — seria passar um problema para ele. Os links
-           levam a quem tem o direito de mostrar.
+           Primeiro nome e mes, que e o que o proprio Booking mostra em
+           publico — nao mais do que isso. O link leva as 144 avaliacoes na
+           fonte, para quem quiser conferir. -->
+      <section id="avaliacoes" data-section="avaliacoes" class="faixa-depoimentos reveal">
+        <div class="dep-foto" aria-hidden="true">
+          <img src="./images/cachoeira-iracema-900.jpg" width="900" height="675" alt="" loading="lazy" decoding="async" />
+          <p class="dep-frase">Viva o melhor<br />de Presidente Figueiredo</p>
+        </div>
 
-           A nota e a contagem foram lidas na propria pagina do Booking em
-           19/09/2026. Quando o dono assumir o site, isto vira um campo que
-           ele atualiza, nao um numero chumbado. -->
-      <section id="avaliacoes" data-section="avaliacoes" class="section-pad reveal">
-        <div class="container">
-          <div class="head-block">
-            <div class="eyebrow">Avaliações</div>
-            <h2>O que dizem os hóspedes</h2>
-            <p>Nota pública dos hóspedes, conferida na fonte. Clique para ler as avaliações onde elas foram escritas.</p>
+        <div class="container dep-wrap">
+          <div class="dep-copy">
+            <div class="eyebrow">Depoimentos</div>
+            <h2>O que nossos hóspedes dizem</h2>
+            <p>Avaliações publicadas no Booking por quem se hospedou.</p>
           </div>
 
-          <div class="avaliacoes-bloco">
-            <a class="nota-cartao" href="https://www.booking.com/hotel/br/h-calleb-presidente-figueiredo.pt-br.html" target="_blank" rel="noopener noreferrer">
-              <span class="nota-valor">8,5<small>/10</small></span>
-              <span class="nota-corpo">
-                <strong>Muito bom</strong>
-                <span class="nota-fonte">144 avaliações no Booking.com</span>
-              </span>
-              <svg class="nota-seta" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+          <div class="dep-carrossel" data-carrossel role="group"
+               aria-roledescription="carrossel"
+               aria-label="Depoimentos de hóspedes — arraste para o lado ou use as setas">
+            <button class="dep-seta dep-seta--esq" type="button" data-carrossel-seta="anterior" aria-label="Depoimento anterior">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
 
-            <p class="nota-extra">
-              O hotel também é avaliado no
-              <a href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu" target="_blank" rel="noopener noreferrer">Google Maps</a>
-              e no <a href="https://www.tripadvisor.com/Hotel_Review-g1759410-d32877328-Reviews-Hotel_Calleb-Presidente_Figueiredo_Amazon_River_State_of_Amazonas.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a>.
-            </p>
+            <div class="carrossel-palco dep-palco">
+              <div class="carrossel-janela dep-janela">
+                <div class="carrossel-trilho" data-carrossel-trilho>
+
+                  <figure class="dep-slide" data-carrossel-slide data-nome="Adriany">
+                    <div class="dep-estrelas" role="img" aria-label="Nota 10 de 10">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                    </div>
+                    <blockquote>“Equipe maravilhosa, super aconchegante, tudo funcionou nós conformes e superou nossa expectativa. Parabéns!”</blockquote>
+                    <figcaption>Adriany · Booking · agosto de 2026</figcaption>
+                  </figure>
+
+                  <figure class="dep-slide" data-carrossel-slide data-nome="Adennisi">
+                    <div class="dep-estrelas" role="img" aria-label="Nota 10 de 10">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                    </div>
+                    <blockquote>“Funcionários educados e atenciosos, além do ambiente ser organizado e limpinho. No hotel funciona uma choperia e sushi. Muito bom por sinal!”</blockquote>
+                    <figcaption>Adennisi · Booking · agosto de 2026</figcaption>
+                  </figure>
+
+                  <figure class="dep-slide" data-carrossel-slide data-nome="Maxneia">
+                    <div class="dep-estrelas" role="img" aria-label="Nota 10 de 10">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                    </div>
+                    <blockquote>“Hotel maravilhoso, funcionários atenciosos, tudo perfeito, concerteza irei voltar.”</blockquote>
+                    <figcaption>Maxneia · Booking · julho de 2026</figcaption>
+                  </figure>
+
+                  <figure class="dep-slide" data-carrossel-slide data-nome="Maira">
+                    <div class="dep-estrelas" role="img" aria-label="Nota 10 de 10">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.3 2.6 5.5 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.6l5.9-.8L12 3.3Z"/></svg>
+                    </div>
+                    <blockquote>“Localização, atendimento, bar com sushi a noite no hotel!”</blockquote>
+                    <figcaption>Maira · Booking · setembro de 2026</figcaption>
+                  </figure>
+
+                </div>
+              </div>
+            </div>
+
+            <button class="dep-seta dep-seta--dir" type="button" data-carrossel-seta="proximo" aria-label="Próximo depoimento">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+
+            <div class="carrossel-pontos dep-pontos" data-carrossel-pontos role="tablist" aria-label="Escolher o depoimento"></div>
+            <p class="visualmente-oculto" data-carrossel-anuncio aria-live="polite"></p>
           </div>
+
+          <a class="dep-fonte" href="https://www.booking.com/hotel/br/h-calleb-presidente-figueiredo.pt-br.html" target="_blank" rel="noopener noreferrer">
+            Ver as 144 avaliações no Booking
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </section>
 

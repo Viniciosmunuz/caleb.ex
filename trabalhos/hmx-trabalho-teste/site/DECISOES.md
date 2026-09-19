@@ -2618,3 +2618,44 @@ sobre a página e viraram a mesma cor do fundo, separados só pela borda.
 Criado `--color-card: #ffffff` para superfície de painel. "Fundo da página" e
 "fundo de cartão" eram a mesma coisa enquanto a página era branca; deixaram de
 ser quando ela virou verde, e agora são dois tokens.
+
+### Depoimentos refeitos no formato do modelo
+
+A versão anterior (um cartão com a nota 8,5 e links para três plataformas) foi
+substituída pelo layout pedido: faixa com degradê azul da marca, foto de
+cachoeira entrando pela direita, frase manuscrita e um carrossel de depoimentos.
+A linha "também é avaliado no Google Maps e Tripadvisor" saiu.
+
+**As quatro avaliações são reais.** Lidas na página do Booking em 19/09/2026,
+todas com nota 10: Adriany (agosto), Adennisi (agosto), Maxneia (julho) e Maira
+(setembro). Primeiro nome e mês, que é o que o próprio Booking mostra em público
+— nada além disso. O link leva às 144 avaliações na fonte.
+
+**O texto está como o hóspede escreveu**, sem correção. "Concerteza" e "nós
+conformes" são deles. Consertar a grafia de alguém e ainda assinar com o nome
+dele seria pôr palavra na boca de outro — e o que dá credibilidade a um
+depoimento é justamente ele não parecer escrito pela agência.
+
+**Nada foi inventado.** A frase do modelo ("A experiência foi incrível! O
+atendimento é excelente...") era texto de preenchimento do próprio mockup, não
+uma avaliação. Usá-la seria fabricar prova social para um hotel de verdade.
+
+#### Detalhes técnicos que valem registro
+
+**A Caveat entrou só para a frase de vitrine.** 75 KB, subset latin, e uma única
+frase da página inteira a usa — nada acima dela aciona a família, então o
+navegador só busca o arquivo ao chegar ali.
+
+**A emenda da foto.** A máscara dissolve a imagem no azul, mas o véu de contraste
+cobria só a caixa da foto: um valor cheio na borda esquerda desenhava um degrau
+vertical no meio da faixa. Corrigido começando o véu transparente.
+
+**`flex: 1 1 0`, não `auto`, no palco do carrossel.** Com `auto` o item reivindica
+a largura do próprio conteúdo — e o conteúdo são quatro slides lado a lado. O
+trilho inteiro virava a largura pedida, não cabia ao lado das setas, e cada um
+quebrava para uma linha própria.
+
+**Verificação:** seta e arraste testados com evento real — a seta levou de 2 para
+3 e o arraste de 3 para 4, com o trilho em -300%. Abaixo de 900px a foto passa a
+cobrir a faixa inteira por trás e a frase manuscrita sai: sobre o cartão ela
+viraria ruído.
