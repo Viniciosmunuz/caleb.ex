@@ -2312,3 +2312,21 @@ preço e reserva entraram na própria foto, cada quarto passou a ter o seu botã
 o da seção virava um quinto botão apontando para outro lugar, ao lado de quatro
 que reservam o quarto certo. A regra `.btn-linha` saiu junto, já que era a única
 que a usava.
+
+### A chamada final muda de lugar e perde o botão do WhatsApp
+
+Saiu do fim da página e foi para **logo depois do mapa, antes do formulário**.
+Ali ela vira a ponte entre "onde fica" e "reserve": a pessoa acabou de ver a
+localização e cai direto no convite, com o formulário logo abaixo. No fim da
+página ela ficava depois da faixa de números, já perto do rodapé, onde o convite
+chega tarde.
+
+Ordem final: hero, reserva, essência, quartos, experiência, destino, galeria,
+localização, **chamada**, contato, números, rodapé.
+
+**O botão do WhatsApp saiu** a pedido. Não se perde caminho nenhum: o WhatsApp
+continua no hero, no botão flutuante que acompanha a rolagem, no botão de cada
+quarto e no próprio envio do formulário. Com um botão só, o laranja fica sem
+concorrência e a faixa tem uma ação óbvia.
+
+No celular o botão ocupa a linha inteira (16 a 374 num 390), com 42px de altura.
