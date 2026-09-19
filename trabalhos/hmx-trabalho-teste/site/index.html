@@ -2579,6 +2579,13 @@
          degrade do azul da marca — para as duas pecas escuras da pagina
          serem do mesmo material, e nao dois escuros parecidos.
 
+         O veu daqui e mais fechado que o da faixa (0,96 contra 0,88) porque
+         la a foto ja entra com opacidade 0,28 no proprio img, e aqui ela e
+         imagem de fundo, que nao aceita opacidade separada. Com 0,88 a foto
+         aparecia tres vezes mais e o cartao ficava lavado; a 0,96 a
+         contribuicao dela cai para perto de 4%, que e a da faixa. Mesmo
+         azul, mesma foto quase imperceptivel atras.
+
          Largura menor que a original: sem o botao sobrou so a logo e uma
          frase, entao a caixa aperta em vez de guardar vazio. */
       .location-card {
@@ -2590,7 +2597,7 @@
         padding: 24px;
         background-color: var(--color-dark);
         background-image:
-          linear-gradient(90deg, rgba(0, 20, 43, 0.92) 0%, rgba(0, 20, 43, 0.84) 100%),
+          linear-gradient(90deg, rgba(0, 20, 43, 0.97) 0%, rgba(0, 20, 43, 0.94) 100%),
           url("./images/gal-area-externa.jpg");
         background-size: cover;
         background-position: center;

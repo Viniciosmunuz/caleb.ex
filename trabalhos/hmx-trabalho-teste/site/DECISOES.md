@@ -2369,7 +2369,13 @@ Mesma posição de antes, sobre a borda esquerda do mapa. O que mudou:
 link continua no rodapé, e o próprio mapa incorporado é clicável.
 
 **O fundo é o mesmo da faixa "Pronto para viver essa experiência"** — a mesma
-foto e o mesmo degradê do azul da marca, não um escuro parecido. As duas peças
+foto e o mesmo degradê do azul da marca, não um escuro parecido.
+
+O véu daqui é mais fechado que o da faixa (0,96 contra 0,88) por um motivo
+técnico: lá a foto entra com `opacity: 0.28` no próprio `img`, e aqui ela é
+imagem de fundo, que não aceita opacidade separada. Com 0,88 a foto aparecia
+três vezes mais e o cartão ficava lavado. A 0,96 a contribuição dela cai para
+perto de 4%, que é a da faixa: mesmo azul, mesma foto quase imperceptível. As duas peças
 escuras da página passam a ser do mesmo material. Sobre um mapa colorido o cartão
 claro era só mais uma superfície clara; escuro, ele manda na composição. O texto
 ficou branco a 0,9, que dá 13:1 sobre o véu.
