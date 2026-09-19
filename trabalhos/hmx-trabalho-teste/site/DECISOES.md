@@ -2402,3 +2402,15 @@ largura, zero rolagem horizontal. O mapa continua emoldurado, com as margens.
 Vale abaixo de 768px, que é o mesmo corte em que o cartão deixa de flutuar: onde
 ele empilha, empilha inteiro. No desktop nada muda — conferido que continua
 flutuando em 340×202, com os 110px de folga para os créditos do Google.
+
+### "A nossa essência" desce para depois da Experiência
+
+Nova ordem: hero, reserva, quartos, experiência, **essência**, destino, galeria,
+localização, chamada, contato, números, rodapé.
+
+O ritmo de fundos continua alternando, que é o que evita duas faixas iguais
+coladas: quartos (creme) → experiência (escura) → essência (fundo base) →
+destino (creme) → galeria (base) → localização (creme).
+
+O link "Sobre" da navegação continua funcionando — o `id` foi junto com a seção.
+Conferido que nenhum link interno do menu aponta para âncora inexistente.
