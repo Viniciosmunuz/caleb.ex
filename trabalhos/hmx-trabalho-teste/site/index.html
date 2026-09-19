@@ -2792,8 +2792,12 @@
         margin-top: 18px;
       }
 
+      /* ---- Rodape ----
+         Faixa fina: aqui nao ha nada para ler com calma, so o nome, o lugar
+         e os atalhos. O botao de reservar saiu — era o quinto "Reservar
+         agora" da pagina, e o ultimo lugar onde alguem procuraria um. */
       .site-footer {
-        padding: 44px 0 0;
+        padding: 26px 0 0;
         background: var(--color-dark);
         border-top: none;
         color: rgba(255, 255, 255, 0.7);
@@ -2811,26 +2815,26 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: 18px 36px;
-        padding-bottom: 30px;
+        gap: 10px 30px;
+        padding-bottom: 16px;
       }
 
       .footer-marca {
         display: flex;
         flex-direction: column;
-        gap: 7px;
+        gap: 3px;
       }
 
       .footer-marca h3 {
         color: var(--color-amber);
-        font-size: 1.25rem;
+        font-size: 1.02rem;
       }
 
       .footer-local {
         display: inline-flex;
         align-items: center;
-        gap: 7px;
-        font-size: 0.82rem;
+        gap: 6px;
+        font-size: 0.76rem;
         color: rgba(255, 255, 255, 0.62);
         transition: color 0.16s ease-out;
       }
@@ -2842,8 +2846,8 @@
       .footer-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 22px;
-        font-size: 0.9rem;
+        gap: 6px 20px;
+        font-size: 0.82rem;
       }
 
       .footer-links a,
@@ -2860,33 +2864,14 @@
         color: var(--color-amber);
       }
 
-      .footer-cta {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        padding: 11px 22px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: #ffffff;
-        font-size: 0.88rem;
-        font-weight: 500;
-        white-space: nowrap;
-        transition: background-color 0.16s ease-out;
-      }
-
-      .footer-cta:hover,
-      .footer-cta:focus-visible {
-        background-color: rgba(255, 255, 255, 0.12);
-      }
-
       .footer-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        padding: 24px 0;
+        padding: 13px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.85rem;
+        font-size: 0.76rem;
         color: rgba(255, 255, 255, 0.55);
       }
 
@@ -2929,8 +2914,10 @@
 
       /* o botao e fixo: sem esta folga ele fica por cima do ultimo conteudo
          da pagina quando a pessoa chega ao fim */
+      /* o respiro de baixo nao e estetico: e o que impede o botao flutuante
+         do WhatsApp de cobrir a linha do copyright */
       .site-footer {
-        padding-bottom: 76px;
+        padding-bottom: 56px;
       }
 
       @media (max-width: 560px) {
@@ -4102,7 +4089,6 @@
           <a href="#localizacao">Localização</a>
         </nav>
 
-        <a class="footer-cta" href="#contato">Reservar Agora</a>
       </div>
 
       <div class="container footer-row">

@@ -2502,3 +2502,30 @@ tapava a lâmina e ficava a única ilha de branco puro no meio do efeito.
 acima do mínimo de 4,5. O texto normal dá 9,44:1. Abaixo de 0,74 o verde ganha
 corpo e o texto secundário cai do mínimo de leitura: se um dia a ideia for
 "mais verde", o primeiro passo é escurecer esse token, não baixar a lâmina.
+
+### Rodapé enxuto
+
+A faixa azul afinou e o botão saiu.
+
+| | antes | agora |
+|---|---|---|
+| respiro de cima | 44px | **26px** |
+| respiro de baixo | 76px | **56px** |
+| nome do hotel | 1,25rem | **1,02rem** |
+| endereço | 0,82rem | **0,76rem** |
+| links | 0,9rem | **0,82rem** |
+| linha do copyright | 24px de respiro, 0,85rem | **13px, 0,76rem** |
+
+A faixa inteira fechou em **185px** no desktop e 243px no celular, onde ela
+empilha. Os seis links continuam todos lá.
+
+**O botão "Reservar Agora" do rodapé saiu.** Era o quinto "Reservar agora" da
+página — hero, barra de reserva, cada quarto, chamada final — e o rodapé é o
+último lugar onde alguém procuraria um.
+
+O respiro de baixo, mesmo reduzido, não é estético: é o que impede o botão
+flutuante do WhatsApp de cobrir a linha do copyright. Verificado por colisão de
+retângulos em 1280 e 390: o botão não encosta no copyright nem em nenhum link.
+
+Contraste conferido nos tamanhos novos: links a **6,3:1** e copyright a
+**5,3:1** sobre o azul.
