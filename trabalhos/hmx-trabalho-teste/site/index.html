@@ -2573,30 +2573,29 @@
         display: block;
       }
 
-      /* O cartao usa o mesmo material das faixas escuras: a foto da mata
-         atras e o azul da marca por cima. Sobre um mapa colorido ele para
-         de ser mais uma superficie clara e passa a ser a peca que manda.
+      /* Formato de painel, como a barra de reserva do topo: cantos
+         arredondados nos quatro lados e sombra. O fundo e exatamente o da
+         faixa "Pronto para viver essa experiencia" — mesma foto, mesmo
+         degrade do azul da marca — para as duas pecas escuras da pagina
+         serem do mesmo material, e nao dois escuros parecidos.
 
-         Encolheu junto com o conteudo: sem o botao sobrou so a logo e uma
-         frase, entao a caixa aperta em vez de guardar vazio.
-
-         O canto: quadrado em tres pontas e arredondado so na de cima a
-         direita. E o unico canto que aponta para dentro do mapa. */
+         Largura menor que a original: sem o botao sobrou so a logo e uma
+         frase, entao a caixa aperta em vez de guardar vazio. */
       .location-card {
         position: absolute;
         top: 50%;
         left: 26px;
         transform: translateY(-50%);
         width: min(340px, 38%);
-        padding: 24px 24px 26px;
+        padding: 24px;
         background-color: var(--color-dark);
         background-image:
-          linear-gradient(150deg, rgba(0, 20, 43, 0.9) 0%, rgba(0, 20, 43, 0.82) 50%, rgba(0, 35, 72, 0.9) 100%),
-          url("./images/destino-cachoeira.jpg");
+          linear-gradient(90deg, rgba(0, 20, 43, 0.92) 0%, rgba(0, 20, 43, 0.84) 100%),
+          url("./images/gal-area-externa.jpg");
         background-size: cover;
         background-position: center;
         border: none;
-        border-radius: 0 var(--r-lg) 0 0;
+        border-radius: var(--r-md);
         color: #ffffff;
         box-shadow: var(--sh-lg);
       }
@@ -2613,7 +2612,7 @@
         height: auto;
       }
 
-      /* 0,9 de branco sobre o veu da foto da 13:1 */
+      /* branco a 0,9 sobre o veu: 13:1, a mesma razao do texto da faixa */
       .location-card p {
         color: rgba(255, 255, 255, 0.9);
         font-size: 0.92rem;
