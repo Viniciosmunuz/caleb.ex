@@ -2387,3 +2387,18 @@ lados, no mesmo raio de 12px, e sombra.
 caiu de `min(390px, 42%)` para `min(340px, 38%)` e a caixa fechou em 340×202 em
 vez de guardar vazio. Continua sem cobrir os créditos do Google — sobram 110px
 abaixo dela.
+
+**No celular o cartão vai de ponta a ponta.** Flutuando sobre o mapa ele é um
+painel; empilhado numa tela estreita, com 16px sobrando de cada lado, virava um
+retângulo escuro solto no meio do creme. De ponta a ponta ele lê como faixa — a
+mesma linguagem da "Pronto para viver essa experiência" logo abaixo — e as duas
+peças escuras da página passam a se comportar igual.
+
+Os `-16px` de margem são exatamente o respiro lateral do container
+(`width: 100% - 32px`), então a caixa chega à borda da tela sem passar dela:
+medido a 390px, o cartão ocupa de 0 a 390 e o documento continua com 390 de
+largura, zero rolagem horizontal. O mapa continua emoldurado, com as margens.
+
+Vale abaixo de 768px, que é o mesmo corte em que o cartão deixa de flutuar: onde
+ele empilha, empilha inteiro. No desktop nada muda — conferido que continua
+flutuando em 340×202, com os 110px de folga para os créditos do Google.

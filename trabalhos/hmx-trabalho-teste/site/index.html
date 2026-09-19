@@ -2636,11 +2636,24 @@
           min-height: 300px;
         }
 
+        /* ---- No celular o cartao vai de ponta a ponta ----
+           Flutuando sobre o mapa ele e um painel; empilhado numa tela
+           estreita, com 16px sobrando de cada lado, vira um retangulo escuro
+           solto no meio do creme. De ponta a ponta ele le como faixa, que e
+           a mesma linguagem da "Pronto para viver essa experiencia" logo
+           abaixo — e as duas pecas escuras da pagina passam a se comportar
+           igual.
+
+           Os -16px sao exatamente o respiro lateral do container
+           (width: 100% - 32px), entao a caixa chega a borda da tela sem
+           passar dela: conferido que o documento nao ganha rolagem
+           horizontal. */
         .location-card {
           position: static;
           transform: none;
           width: auto;
-          margin-top: 16px;
+          margin: 16px -16px 0;
+          border-radius: 0;
         }
       }
 
