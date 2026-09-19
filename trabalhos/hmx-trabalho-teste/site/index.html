@@ -2573,18 +2573,31 @@
         display: block;
       }
 
+      /* O cartao usa o mesmo material das faixas escuras: a foto da mata
+         atras e o azul da marca por cima. Sobre um mapa colorido ele para
+         de ser mais uma superficie clara e passa a ser a peca que manda.
+
+         Encolheu junto com o conteudo: sem o botao sobrou so a logo e uma
+         frase, entao a caixa aperta em vez de guardar vazio.
+
+         O canto: quadrado em tres pontas e arredondado so na de cima a
+         direita. E o unico canto que aponta para dentro do mapa. */
       .location-card {
         position: absolute;
         top: 50%;
         left: 26px;
         transform: translateY(-50%);
-        width: min(390px, 42%);
-        padding: 26px;
-        background: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: var(--r-lg);
-        /* a sombra e o que separa o cartao do mapa; sem ela o branco do
-           cartao encosta no branco das ruas e a borda some */
+        width: min(340px, 38%);
+        padding: 24px 24px 26px;
+        background-color: var(--color-dark);
+        background-image:
+          linear-gradient(150deg, rgba(0, 20, 43, 0.9) 0%, rgba(0, 20, 43, 0.82) 50%, rgba(0, 35, 72, 0.9) 100%),
+          url("./images/destino-cachoeira.jpg");
+        background-size: cover;
+        background-position: center;
+        border: none;
+        border-radius: 0 var(--r-lg) 0 0;
+        color: #ffffff;
         box-shadow: var(--sh-lg);
       }
 
@@ -2596,13 +2609,15 @@
 
       .location-card h3 img {
         display: block;
-        width: 138px;
+        width: 126px;
         height: auto;
       }
 
+      /* 0,9 de branco sobre o veu da foto da 13:1 */
       .location-card p {
-        color: var(--color-text);
-        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.92rem;
+        margin-bottom: 0;
       }
 
       /* Abaixo de 768px nao ha largura para o cartao flutuar sem tapar o
@@ -3802,7 +3817,6 @@
                      sizes="138px" width="440" height="241" alt="Hotel Calleb" loading="lazy" decoding="async" />
               </h3>
               <p>Localizado no centro de Presidente Figueiredo, com fácil acesso às principais trilhas, cachoeiras e atrações da região.</p>
-              <a class="btn-cta" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
             </div>
           </div>
         </div>

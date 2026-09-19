@@ -2360,3 +2360,23 @@ mas ali o problema não era o texto e sim a foto: 4:3 numa coluna de 358px dá s
 269px de altura. Passando a foto para quadrada no celular ela vai a 358px e a
 mesma etiqueta cai para **44%**. O corte é nas laterais, que é onde a foto de um
 quarto tem menos informação.
+
+### O cartão do mapa vira peça escura
+
+Mesma posição de antes, sobre a borda esquerda do mapa. O que mudou:
+
+**O botão "Abrir no Google Maps" saiu.** O caminho para o Maps não se perde: o
+link continua no rodapé, e o próprio mapa incorporado é clicável.
+
+**O fundo virou o mesmo material das faixas escuras** — a foto da mata atrás e o
+azul da marca por cima. Sobre um mapa colorido o cartão claro era só mais uma
+superfície clara; escuro, ele manda na composição. O texto ficou branco a 0,9,
+que dá 13:1 sobre o véu.
+
+**Encolheu junto com o conteúdo.** Sem o botão sobrou logo e uma frase: a largura
+caiu de `min(390px, 42%)` para `min(340px, 38%)` e a caixa fechou em 340×204 em
+vez de guardar vazio. Continua sem cobrir os créditos do Google — sobram 109px
+abaixo dela.
+
+**O canto:** quadrado em três pontas, arredondado só na de cima à direita — a
+única que aponta para dentro do mapa.
