@@ -64,6 +64,12 @@
            do vidro por cima. Quem separa uma secao da outra passaram a ser as
            faixas escuras e os cartoes brancos que flutuam sobre o verde. */
         --color-bg: #eaf0ea;
+        /* Superficie de painel: o que flutua sobre o verde. Precisa de token
+           proprio desde que a pagina virou verde — antes "fundo da pagina" e
+           "fundo de cartao" eram a mesma coisa, e ao trocar um o outro foi
+           junto: a barra de reserva e o formulario ficaram da cor do papel e
+           perderam o efeito de painel apoiado. */
+        --color-card: #ffffff;
         /* A faixa que separa uma secao da outra. Era um bege quente; virou
            verde palido quando o fundo da pagina passou a ser vidro sobre
            floresta — o bege puxava para o quente enquanto o resto da pagina
@@ -1215,7 +1221,7 @@
         align-items: center;
         gap: 4px;
         padding: 10px;
-        background: var(--color-bg);
+        background: var(--color-card);
         border: 1px solid var(--color-border);
         border-radius: var(--r-md);
         box-shadow: var(--sh-lg);
@@ -1666,6 +1672,106 @@
       /* ---- Cartões de acomodação ----
          O preço sai do corpo e vai para cima da foto: é a informação que a
          pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
+      /* ---- Avaliacoes ----
+         Um painel branco sobre o verde, com a nota grande a esquerda e a
+         fonte ao lado. A seta diagonal e a convencao de "abre fora do site":
+         o cartao inteiro e um link para o Booking. */
+      .avaliacoes-bloco {
+        margin-top: 22px;
+      }
+
+      .nota-cartao {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 520px;
+        padding: 20px 22px;
+        background: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--r-lg);
+        box-shadow: var(--sh-md);
+        transition: border-color 0.16s ease-out, box-shadow 0.16s ease-out;
+      }
+
+      .nota-cartao:hover,
+      .nota-cartao:focus-visible {
+        border-color: var(--color-primary);
+        box-shadow: var(--sh-lg);
+      }
+
+      .nota-valor {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 2px;
+        font-size: 2.3rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--color-heading);
+        font-feature-settings: "tnum";
+      }
+
+      .nota-valor small {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--color-text-soft);
+      }
+
+      .nota-corpo {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .nota-corpo strong {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-heading);
+      }
+
+      .nota-fonte {
+        font-size: 0.85rem;
+        color: var(--color-text-soft);
+      }
+
+      .nota-seta {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        margin-left: auto;
+        color: var(--color-text-soft);
+        transition: transform 0.18s ease-out;
+      }
+
+      .nota-cartao:hover .nota-seta {
+        transform: translate(2px, -2px);
+      }
+
+      .nota-extra {
+        margin-top: 14px;
+        font-size: 0.88rem;
+        color: var(--color-text-soft);
+      }
+
+      .nota-extra a {
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 560px) {
+        .nota-cartao {
+          gap: 14px;
+          padding: 16px 18px;
+        }
+
+        .nota-valor {
+          font-size: 1.9rem;
+        }
+      }
+
       /* ---- Chamada final ----
          Mesma receita da faixa de experiencia: foto de textura, veu do azul
          da marca e o conteudo por cima. Mais baixa, porque aqui so ha um
@@ -2297,8 +2403,8 @@
           height: 42px;
           margin-top: 0;
           /* fora da foto o vidro nao tem o que desfocar: vira disco solido
-             com um filete, que sobre o creme da mais contraste */
-          background: var(--color-bg);
+             com um filete, que sobre o verde da mais contraste */
+          background: var(--color-card);
           border: 1px solid var(--color-border);
           -webkit-backdrop-filter: none;
           backdrop-filter: none;
@@ -2741,7 +2847,7 @@
       }
 
       .booking-form {
-        background: var(--color-bg);
+        background: var(--color-card);
         border: 1px solid var(--color-border);
         border-radius: var(--r-lg);
         padding: 28px;
@@ -2778,7 +2884,7 @@
         border: 1px solid var(--color-border);
         border-radius: var(--r-sm);
         padding: 10px 14px;
-        background: var(--color-bg);
+        background: var(--color-card);
         color: var(--color-text);
       }
 
@@ -3880,6 +3986,45 @@
               </h3>
               <p>Localizado no centro de Presidente Figueiredo, com fácil acesso às principais trilhas, cachoeiras e atrações da região.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- Avaliacoes ----
+           So numero publico, com a fonte ao lado e o link para conferir.
+
+           Nenhum texto de hospede foi copiado para ca de proposito: as
+           resenhas do Booking e do Google pertencem a quem as escreveu e as
+           plataformas onde estao, e republicar aqui — num site que o dono do
+           hotel ainda nem viu — seria passar um problema para ele. Os links
+           levam a quem tem o direito de mostrar.
+
+           A nota e a contagem foram lidas na propria pagina do Booking em
+           19/09/2026. Quando o dono assumir o site, isto vira um campo que
+           ele atualiza, nao um numero chumbado. -->
+      <section id="avaliacoes" data-section="avaliacoes" class="section-pad reveal">
+        <div class="container">
+          <div class="head-block">
+            <div class="eyebrow">Avaliações</div>
+            <h2>O que dizem os hóspedes</h2>
+            <p>Nota pública dos hóspedes, conferida na fonte. Clique para ler as avaliações onde elas foram escritas.</p>
+          </div>
+
+          <div class="avaliacoes-bloco">
+            <a class="nota-cartao" href="https://www.booking.com/hotel/br/h-calleb-presidente-figueiredo.pt-br.html" target="_blank" rel="noopener noreferrer">
+              <span class="nota-valor">8,5<small>/10</small></span>
+              <span class="nota-corpo">
+                <strong>Muito bom</strong>
+                <span class="nota-fonte">144 avaliações no Booking.com</span>
+              </span>
+              <svg class="nota-seta" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <p class="nota-extra">
+              O hotel também é avaliado no
+              <a href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu" target="_blank" rel="noopener noreferrer">Google Maps</a>
+              e no <a href="https://www.tripadvisor.com/Hotel_Review-g1759410-d32877328-Reviews-Hotel_Calleb-Presidente_Figueiredo_Amazon_River_State_of_Amazonas.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a>.
+            </p>
           </div>
         </div>
       </section>

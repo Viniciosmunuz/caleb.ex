@@ -2576,3 +2576,45 @@ e marcavam onde uma terminava. Agora quem separa são as faixas escuras
 barra de reserva, o formulário, as fotos dos quartos. Na prática a página ganhou
 unidade e perdeu ritmo; se o ritmo fizer falta, o caminho é devolver uma faixa
 um pouco mais fechada a duas ou três seções, não voltar ao branco.
+
+### Avaliações: a nota entra, o texto dos hóspedes não
+
+Seção nova, abaixo do mapa. Traz a **nota pública do Booking — 8,5 "Muito bom",
+144 avaliações** — lida na própria página do Booking em 19/09/2026, com o cartão
+inteiro linkando para lá, mais links para Google Maps e Tripadvisor.
+
+**Nenhum texto de hóspede foi copiado, e isso é deliberado.** As resenhas
+pertencem a quem as escreveu e às plataformas onde estão; os termos do Booking e
+do Google não permitem republicá-las. E este site é uma proposta para um dono que
+ainda não viu nada — entregar a ele uma página com resenhas copiadas seria
+entregar um problema junto. Os links levam a quem tem o direito de mostrar.
+
+Também não entrou `aggregateRating` no JSON-LD: marcar nota de si mesmo sem as
+avaliações na própria página é violação da política de dados estruturados do
+Google, e o projeto já tinha evitado isso antes.
+
+O que consegui verificar e o que não: **Booking respondeu** (8,5 / 144).
+**Tripadvisor devolveu 403** e **o Google pediu CAPTCHA** — que eu não resolvo.
+Então só a nota do Booking está no ar como número; as outras duas fontes entram
+como link, sem número que eu não pude conferir.
+
+### Conflito que isso expôs: o 4.9/5 do hero
+
+O hero afirma **4.9/5**. A única fonte que consegui conferir diz **8,5/10**, que
+é 4,25/5. Os dois números agora convivem na mesma página, a poucos rolares de
+distância, e o visitante que clicar no Booking vê a diferença.
+
+Este número já estava na lista de pendências desde o começo, sem origem conhecida.
+Agora há evidência de que está errado. Não mexi nele por conta própria — é texto
+de vitrine do cliente —, mas a recomendação é trocar pelo 8,5 do Booking, que é
+conferível, ou remover.
+
+### Efeito colateral corrigido: os painéis tinham ficado verdes
+
+Quando `--color-bg` virou verde, a barra de reserva, o formulário e os campos
+foram junto — eles usavam o mesmo token. Perderam o efeito de painel apoiado
+sobre a página e viraram a mesma cor do fundo, separados só pela borda.
+
+Criado `--color-card: #ffffff` para superfície de painel. "Fundo da página" e
+"fundo de cartão" eram a mesma coisa enquanto a página era branca; deixaram de
+ser quando ela virou verde, e agora são dois tokens.
