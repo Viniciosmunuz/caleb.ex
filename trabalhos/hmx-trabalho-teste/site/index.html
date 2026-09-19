@@ -65,7 +65,15 @@
            continua com corpo, entao ainda se ve onde uma secao termina:
            medida, a razao entre o branco e o creme e de 1,131. */
         --color-bg: #ffffff;
-        --color-surface: #f6efdd;
+        /* A faixa que separa uma secao da outra. Era um bege quente; virou
+           verde palido quando o fundo da pagina passou a ser vidro sobre
+           floresta — o bege puxava para o quente enquanto o resto da pagina
+           puxava para o verde, e os dois brigavam.
+
+           Medido sobre o fundo: texto secundario a 5,98:1, titulo a 8,56:1,
+           e a faixa continua se distinguindo do branco por 1,16 — a mesma
+           separacao que o bege dava (1,17). */
+        --color-surface: #eaf0ea;
         --color-text: #2b3d55;
         /* Tom solido para rotulos e legendas — nunca com opacidade, que
            muda de contraste conforme o fundo atras.
@@ -534,11 +542,11 @@
         z-index: 1;
       }
 
-      /* As faixas creme deixam de ser opacas para a ambientacao aparecer
-         atraves delas. A 0.9 sobre o fundo claro a cor resultante fica a
-         menos de 2 pontos de RGB da anterior — o contraste nao muda. */
-      .fundo-creme {
-        background: rgba(246, 239, 221, 0.9);
+      /* A faixa nao e opaca: a 0,9 o vidro do fundo ainda atravessa, entao
+         ela acompanha de leve a variacao de verde da pagina em vez de ser um
+         retangulo chapado. */
+      .fundo-faixa {
+        background: rgba(234, 240, 234, 0.9);
       }
 
 
@@ -3642,7 +3650,7 @@
         </div>
       </section>
 
-      <section id="destino" data-section="destino" class="section-pad reveal fundo-creme">
+      <section id="destino" data-section="destino" class="section-pad reveal fundo-faixa">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Explore o Destino</div>
@@ -3849,7 +3857,7 @@
         </div>
       </section>
 
-      <section id="localizacao" data-section="localizacao" class="section-pad reveal fundo-creme">
+      <section id="localizacao" data-section="localizacao" class="section-pad reveal fundo-faixa">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Localização</div>

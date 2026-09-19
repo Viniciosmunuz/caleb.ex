@@ -2529,3 +2529,22 @@ retângulos em 1280 e 390: o botão não encosta no copyright nem em nenhum link
 
 Contraste conferido nos tamanhos novos: links a **6,3:1** e copyright a
 **5,3:1** sobre o azul.
+
+### O bege vira verde pálido
+
+`--color-surface` saiu de `#f6efdd` para `#eaf0ea`. O bege era quente e o fundo
+da página tinha acabado de virar vidro sobre floresta — um puxava para o quente
+enquanto o outro puxava para o verde, e os dois brigavam. Agora a faixa lê como
+"um vidro um pouco mais fechado", não como outro material.
+
+Medido sobre o fundo: texto secundário **5,98:1**, título **8,56:1**, eyebrow
+laranja **4,68:1**. E a faixa continua se distinguindo do branco por **1,16** —
+praticamente a mesma separação que o bege dava (1,17), então o ritmo de seções
+não perdeu definição.
+
+A classe foi renomeada de `.fundo-creme` para `.fundo-faixa`. Um nome que diz a
+cor envelhece mal: bastou uma troca para "creme" virar mentira. `faixa` diz o
+papel, não a tinta, e sobrevive à próxima troca.
+
+Além das duas seções (Destino e Localização), o token também pinta os campos da
+barra de reserva no celular — mudaram junto, de propósito.
