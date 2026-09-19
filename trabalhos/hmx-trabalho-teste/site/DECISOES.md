@@ -2298,3 +2298,17 @@ Medido a 390px: foto termina em 402, setas em [414, 456], linha dos pontos em
 a 375px: seta levou de 2 para 3, e o arraste no meio da foto — o gesto que antes
 falhava — levou de 3 para 4. No desktop as setas continuam centradas na foto,
 conferido.
+
+### Números no fim, e um botão a menos nos quartos
+
+**A faixa de números foi para o fim**, logo depois do formulário. Ficava abaixo
+do hero, antes de a pessoa saber qualquer coisa sobre o hotel — quatro números
+soltos como primeira informação da página. No fim ela fecha a visita. A ordem
+agora é: hero, reserva, essência, quartos, experiência, destino, galeria,
+localização, contato, números, chamada final, rodapé.
+
+**O botão "Reservar agora" da coluna de texto dos quartos saiu.** Depois que
+preço e reserva entraram na própria foto, cada quarto passou a ter o seu botão:
+o da seção virava um quinto botão apontando para outro lugar, ao lado de quatro
+que reservam o quarto certo. A regra `.btn-linha` saiu junto, já que era a única
+que a usava.
