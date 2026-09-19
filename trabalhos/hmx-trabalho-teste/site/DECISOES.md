@@ -1933,3 +1933,51 @@ flutuante passa por cima de tudo, inclusive do rodapé azul escuro. Só com o
 degradê, o fundo atrás mandaria na cor final e o ícone ficaria ilegível metade
 do tempo. Conferido: o `backdrop-filter` do botão e o da barra são a mesma
 string.
+
+---
+
+## Tipografia: Inter em tudo
+
+Georgia saiu; Inter entrou, em títulos e corpo.
+
+### Hospedada aqui, não no Google Fonts
+
+Dois arquivos variáveis, **100 KB no total**, servidos pelo próprio site. É uma
+requisição a menos para domínio de terceiros e não depende de serviço externo no
+ar.
+
+Só o subset **latin**: conferi caractere por caractere que nada na página cai
+fora de `U+0000-00FF` e `U+2000-206F` — o `latin-ext` (mais 177 KB) seria peso
+morto. O itálico só é buscado se algum texto em itálico renderizar, e o único é
+o *portão de entrada* do título da seção "essência".
+
+Variável: um arquivo cobre de 400 a 700, em vez de um arquivo por peso.
+
+### Os pesos mudaram junto
+
+Georgia **não tem 700 de verdade** — o navegador engrossava o 400 artificialmente,
+e era por isso que os títulos deste site estavam todos em peso 400. Inter tem a
+escala inteira, então os títulos voltaram a ter peso:
+
+| | Georgia | Inter |
+|---|---|---|
+| h1 | 400 · -0,04em | **600** · -0,032em |
+| h2 | 400 · -0,02em | **600** · -0,024em |
+| h3/h4 | 700 do navegador | **600** |
+| Nomes de quarto, atração, benefício | 400 | **600** |
+
+O tracking do h1 afrouxou de -0,04 para -0,032: Inter já fecha menos que Georgia
+em corpo grande, e -0,04 apertava as junções.
+
+### O que se ganha e o que se perde
+
+Ganha uniformidade e legibilidade em tela — Inter foi desenhada para isso.
+**Perde o contraste serifa/sem-serifa** que fazia os títulos lerem como hotel e
+não como painel de software. Se em algum momento parecer genérico demais, o
+caminho é devolver a serifa só aos títulos: é uma linha, o `--font-heading`.
+
+### Verificação
+
+1440, 1100 e 375: zero rolagem horizontal, zero falha de contraste, zero texto
+cortado — a troca de fonte muda a largura do texto, então isso precisava ser
+conferido de novo. Itálico confirmado como fonte real, não oblíquo sintetizado.

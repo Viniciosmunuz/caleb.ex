@@ -19,6 +19,31 @@
     <link rel="icon" type="image/png" sizes="512x512" href="./images/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon-180.png" />
     <style>
+      /* ---- Inter ----
+         Hospedada no proprio site, nao pelo Google Fonts: e uma requisicao a
+         menos para dominio de terceiros e nao depende de servico externo no ar.
+         Sao os dois arquivos variaveis do subset latin — conferido que nenhum
+         caractere da pagina cai fora dele, entao latin-ext (mais 177 KB) seria
+         peso morto.
+
+         Variavel: um arquivo cobre de 400 a 700, sem baixar um peso por vez.
+         O italico so e buscado se algum texto em italico renderizar. */
+      @font-face {
+        font-family: "Inter";
+        src: url("./fontes/inter.woff2") format("woff2");
+        font-weight: 400 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("./fontes/inter-italico.woff2") format("woff2");
+        font-weight: 400 700;
+        font-style: italic;
+        font-display: swap;
+      }
+
       :root {
         /* Paleta da marca — medida do logo e confirmada em referencia/receita-visual.json */
         --color-brand-blue: #0047b3;
@@ -53,8 +78,10 @@
         --color-whatsapp: #25d366;
         --color-whatsapp-hover: #1da851;
 
-        --font-heading: Georgia, "Times New Roman", Times, serif;
-        --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        /* Uma familia so para tudo. A pilha de reserva e a mesma nas duas,
+           para o texto nao saltar enquanto a fonte carrega. */
+        --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         --radius: 9999px;
         --space-4: 4px;
         --space-8: 8px;
@@ -226,7 +253,7 @@
       .pilha-legenda h3 {
         color: #ffffff;
         font-size: 1.35rem;
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: -0.01em;
         line-height: 1.15;
       }
@@ -542,19 +569,24 @@
         margin: 0;
         color: var(--color-heading);
         font-family: var(--font-heading);
+        /* o 700 padrao do navegador fica pesado na Inter; 600 e o peso de titulo */
+        font-weight: 600;
         line-height: 1.1;
+        letter-spacing: -0.015em;
       }
 
       h1 {
         font-size: clamp(2.2rem, 4.2vw, 4.5rem);
-        letter-spacing: -0.04em;
-        font-weight: 400;
+        /* Inter fecha menos que Georgia em corpo grande: -0.04em apertava
+           demais as junções */
+        letter-spacing: -0.032em;
+        font-weight: 600;
       }
 
       h2 {
         font-size: clamp(1.75rem, 2.5vw, 2.75rem);
-        letter-spacing: -0.02em;
-        font-weight: 400;
+        letter-spacing: -0.024em;
+        font-weight: 600;
       }
 
       p {
@@ -1168,7 +1200,7 @@
 
       .beneficio h3 {
         font-size: 1.3rem;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 1.2;
         letter-spacing: -0.01em;
       }
@@ -1248,7 +1280,7 @@
       .about-selo strong {
         font-family: var(--font-heading);
         font-size: 1.5rem;
-        font-weight: 400;
+        font-weight: 600;
       }
 
       .about-selo span {
@@ -1373,7 +1405,7 @@
 
       .card-body h3 {
         font-size: 1.75rem;
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: -0.01em;
         color: var(--color-heading);
       }
@@ -1397,7 +1429,7 @@
       .room-preco strong {
         font-family: var(--font-heading);
         font-size: 1.7rem;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 1;
       }
 
@@ -1548,7 +1580,7 @@
       .atracao-legenda h3 {
         color: #ffffff;
         font-size: clamp(1.4rem, 2.4vw, 2rem);
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: -0.01em;
         line-height: 1.15;
       }
