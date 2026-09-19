@@ -1981,3 +1981,158 @@ caminho é devolver a serifa só aos títulos: é uma linha, o `--font-heading`.
 1440, 1100 e 375: zero rolagem horizontal, zero falha de contraste, zero texto
 cortado — a troca de fonte muda a largura do texto, então isso precisava ser
 conferido de novo. Itálico confirmado como fonte real, não oblíquo sintetizado.
+
+---
+
+## Pilha no celular, título do hero, mapa em destaque e barra mais fina
+
+### O problema da pilha: as cartas de trás saíam da tela
+
+Medido num iPhone de 390px, antes da mudança:
+
+| carta | borda direita | tela |
+|---|---|---|
+| frente | 328px | 390px |
+| vizinha (d=1) | **411px** | 390px |
+| de fora (d=2) | **459px** | 390px |
+
+A carta de fora sobrava **69px** de cada lado. O `overflow-x: clip` da seção
+cortava o excedente, então não havia rolagem horizontal — mas a foto aparecia
+partida na borda. Era isso que se via no celular.
+
+A carta da frente também estava grande: 400px de altura numa tela de 844px é
+quase metade da tela só para uma foto.
+
+### A conta que resolve, em vez de um número por breakpoint
+
+Duas mudanças, e a segunda é a que importa.
+
+**A carta acompanha a tela.** `--carta-altura: clamp(280px, 8rem + 48vw, 400px)`
+no lugar dos 400px fixos. Num 390 dá 315px (um quinto menor), num 320 desce até
+o piso de 280px, e de ~515px para cima a conta já devolve os 400px de antes —
+**tablet e desktop não mudam nada**.
+
+**O leque abre só o que cabe.** A geometria do baralho está em percentuais da
+largura da carta (25% para a vizinha, 45% para a de fora), e a carta de fora é
+sempre a mais larga das visíveis porque gira 15°. A meia largura da caixa que
+envolve uma carta girada é
+
+```
+(escala × (cos t + 1,5 × sen t)) ÷ 2
+```
+
+— o 1,5 é a altura em larguras de carta, já que a carta é 2×3. Para a carta de
+fora isso dá 0,5416 largura de carta. Somando o deslocamento, a borda fica a
+`(0,45 × fator + 0,5416)` larguras do centro. Igualando ao espaço disponível até
+a borda da tela (menos 8px de respiro) sai o fator, com teto em 1.
+
+Resultado medido depois:
+
+| tela | carta | fator | o leque ocupa | sobra |
+|---|---|---|---|---|
+| 320 | 282×188 | 0,60 | 8 – 312 | 8px |
+| 375 | 308×205 | 0,61 | 8 – 367 | 8px |
+| 390 | 315×210 | 0,63 | 8 – 382 | 8px |
+| 430 | 334×223 | 0,83 | 9 – 421 | 9px |
+| 768 | 480×320 | **1** | 59 – 694 | inalterado |
+| 1440 | 580×387 | **1** | 329 – 1096 | inalterado |
+
+No desktop os transforms saem literalmente `25%` e `45%`, como antes: conferi no
+DOM. Só o celular mexe.
+
+Por que um fator calculado e não um valor por media query: a largura da carta já
+varia com a tela, então qualquer número fixo erraria em metade dos aparelhos. A
+conta acerta em 320, em 430 e em qualquer dobrável que apareça depois. É
+recalculada no `resize` — testei redimensionando sem recarregar.
+
+Só o **deslocamento** entra no fator. Giro e escala ficam de pé: encolher os três
+juntos achataria o baralho num monte de cartas empilhadas.
+
+### O título do hero
+
+Três coisas erradas, todas herança da Georgia.
+
+**O tracking.** Estava em -0,032em. A Inter publica a curva de tracking dela, e
+em corpo de título (32–72px) ela pede **-0,022em**, praticamente constante. O
+-0,032em vinha da Georgia, que precisa de bem mais aperto em corpo grande — na
+Inter colava as letras. Corrigido para o valor da própria fundição.
+
+**O tamanho no celular.** `clamp(2.2rem, 4.2vw, 4.5rem)` travava em 35,2px em
+qualquer tela abaixo de 838px. Num 390 isso dava **quatro linhas curtas**. A
+curva nova, `clamp(2rem, 1.34rem + 2.71vw, 4.5rem)`, passa pelos mesmos 60,4px a
+1440 e pelo mesmo teto de 72px — só o pé desceu, para 32px.
+
+**A quebra.** `text-wrap: balance` no h1 do hero. O navegador reparte as palavras
+entre as linhas em vez de encher cada uma até o limite.
+
+| tela | antes | depois |
+|---|---|---|
+| 390 | 4 linhas, 35,2px | 3 linhas, 32px |
+| 430 | 4 linhas | **2 linhas**, 33,1px |
+| 1440 | 2 linhas (682/718) | 2 linhas (697/718) |
+
+Onde não houver suporte a `balance`, a quebra volta a ser a comum — nada quebra.
+
+A três linhas o rasgo continua desigual (158 / 249 / 335 num 375) e o "no" fica
+pendurado no fim da segunda. Não dá para melhorar sem descer para 28px: a palavra
+"Hospitalidade" sozinha ocupa 210px e não se divide. Preferi o título maior.
+
+### Localização: o mapa vira a seção
+
+Era grid de duas colunas — texto em `1fr`, mapa em `1.1fr`, o mapa com 320px de
+altura ocupando pouco mais da metade da largura. Agora o mapa ocupa a **largura
+inteira** (1280×422 no desktop) e o texto virou um cartão apoiado sobre ele, no
+canto esquerdo, com sombra. No lugar do nome escrito entra a **logo**.
+
+O `<h3>` continua ali, com a logo dentro: o sumário da página não perde um nível
+e o nome do hotel continua a ser lido, pelo `alt` da imagem.
+
+O cartão fica centrado na vertical e **não desce até o pé do mapa**. Isso não é
+estética: a assinatura do Google e os créditos de dados ficam colados no rodapé
+do iframe, e o uso do mapa incorporado exige que continuem à vista. Sobra medida:
+
+| tela | cartão | sobra abaixo |
+|---|---|---|
+| 1440 | 390×284 | 69px |
+| 1024 | 390×284 | 69px |
+| 820 | 325×310 | 56px |
+| 769 | 303×310 | 56px |
+
+Abaixo de 768px o cartão desce para baixo do mapa, inteiro, com 16px de respiro
+— **sem sobrepor nem um pouco**, pelo mesmo motivo: numa tela de 390px qualquer
+sobreposição cobriria os créditos, que ficam justamente no canto de baixo.
+
+### A assinatura da marca saiu do contato
+
+O bloco com a logo ao pé da coluna de texto do formulário foi removido a pedido:
+HTML, CSS e a faixa `"direto"` do grid. A área nomeada tinha de sair junto — uma
+faixa sem elemento continuaria no `grid-template-areas`.
+
+### Barra mais fina no celular
+
+Só abaixo de 450px. No desktop continua igual.
+
+| | antes | depois |
+|---|---|---|
+| barra sobre o hero | 72px | **64px** |
+| pílula de vidro (rolada) | 66px | **56px** |
+| logo | 44px | **38px** |
+
+Os três descem juntos: baixar só a barra encostaria a logo nas bordas. O alvo de
+toque do menu continua com **44×44px** — conferido no DOM. Quem encolheu foi o
+respiro em volta, não o botão.
+
+### Verificação
+
+320, 360, 375, 390, 430, 560, 768, 769, 820, 1024, 1280 e 1440: zero rolagem
+horizontal em todas.
+
+As setas das galerias testadas com clique real (não `element.click()`, que já
+escondeu esse defeito uma vez): direita levou de 5 para 6, esquerda de 6 para 5,
+num 390.
+
+### Aberto para o cliente
+
+O título da seção diz "**Estaremos** no coração de Presidente Figueiredo" —
+futuro, para um hotel que já está funcionando. Provavelmente é "Estamos". Não
+mudei porque é texto de vitrine, não erro de código; fica para o dono decidir.

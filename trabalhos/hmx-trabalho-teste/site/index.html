@@ -385,7 +385,12 @@
 
       @media (max-width: 560px) {
         .pilha {
-          --carta-altura: 400px;
+          /* A carta passa a acompanhar a tela em vez de ficar em 400px fixos.
+             Num celular de 390px ela fica em 315px — cerca de um quinto menor
+             — e num 320px encolhe ate o piso de 280px. De 515px para cima a
+             conta ja devolve os 400px de antes, entao tablet e desktop nao
+             mudam. */
+          --carta-altura: clamp(280px, 8rem + 48vw, 400px);
         }
 
         .pilha-legenda {
@@ -576,10 +581,15 @@
       }
 
       h1 {
-        font-size: clamp(2.2rem, 4.2vw, 4.5rem);
-        /* Inter fecha menos que Georgia em corpo grande: -0.04em apertava
-           demais as junções */
-        letter-spacing: -0.032em;
+        /* A curva passa pelos mesmos 60px a 1440 e pelo mesmo teto de 72px
+           de antes; o que mudou foi o pe. Num celular de 390px o titulo
+           travava em 35px e quebrava em quatro linhas curtas — a 32px cabe
+           em tres, e a partir de ~425px volta a duas. */
+        font-size: clamp(2rem, 1.34rem + 2.71vw, 4.5rem);
+        /* O tracking de titulo da Inter e -0.022em (a curva e publicada pela
+           propria fundicao). O -0.032em era heranca da Georgia, que pede bem
+           mais aperto em corpo grande, e na Inter colava as letras. */
+        letter-spacing: -0.022em;
         font-weight: 600;
       }
 
@@ -874,7 +884,7 @@
         border-radius: 999px;
         /* Vidro quase invisivel: quem faz o efeito e o desfoque, nao a tinta.
            So da para deixar a pelicula tao fina porque o texto muda de cor
-           conforme o que esta atras (ver .esta-no-hero abaixo) â com uma cor
+           conforme o que esta atras (ver .esta-no-hero abaixo) — com uma cor
            fixa, ou a barra fica opaca ou o menu some. */
         /* Degrade de cima para baixo, puxando de leve para o azul da marca.
            O azul entra so na base, onde nao encosta no texto — e o que da a
@@ -1055,6 +1065,11 @@
       .hero-content h1 {
         color: #ffffff;
         margin-bottom: 20px;
+        /* O navegador reparte as palavras entre as linhas em vez de encher
+           cada uma ate o limite e jogar o resto para baixo. E o que tira o
+           degrau da ultima linha. Onde nao houver suporte, a quebra volta a
+           ser a comum — nada quebra. */
+        text-wrap: balance;
       }
 
       .hero-content p {
@@ -1676,34 +1691,22 @@
 
 
 
+      /* ---- Localizacao ----
+         O mapa deixa de ser meia coluna e passa a ser o corpo da secao: ocupa
+         a largura inteira e o texto vira um cartao apoiado sobre ele, no canto
+         esquerdo. No lugar do nome escrito entra a propria logo.
+
+         O cartao fica centrado na vertical e nao desce ate o pe do mapa: a
+         assinatura do Google e os creditos de dados ficam no rodape do
+         iframe, e o uso do mapa incorporado exige que continuem a vista. */
       .location-box {
-        display: grid;
-        grid-template-columns: 1fr 1.1fr;
-        gap: 32px;
-        align-items: center;
+        position: relative;
         margin-top: 24px;
-      }
-
-      .location-card {
-        background: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: var(--r-lg);
-        padding: 24px;
-      }
-
-      .location-card h3 {
-        font-size: 1.45rem;
-        margin-bottom: 12px;
-      }
-
-      .location-card p {
-        color: var(--color-text);
-        margin-bottom: 18px;
       }
 
       .location-map {
         width: 100%;
-        min-height: 320px;
+        min-height: 420px;
         border: 1px solid var(--color-border);
         border-radius: var(--r-lg);
         overflow: hidden;
@@ -1713,9 +1716,59 @@
       .location-map iframe {
         width: 100%;
         height: 100%;
-        min-height: 320px;
+        min-height: 420px;
         border: 0;
         display: block;
+      }
+
+      .location-card {
+        position: absolute;
+        top: 50%;
+        left: 26px;
+        transform: translateY(-50%);
+        width: min(390px, 42%);
+        padding: 26px;
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--r-lg);
+        /* a sombra e o que separa o cartao do mapa; sem ela o branco do
+           cartao encosta no branco das ruas e a borda some */
+        box-shadow: var(--sh-lg);
+      }
+
+      /* O titulo do cartao e a logo. O h3 continua no sumario da pagina e o
+         nome do hotel continua a ser lido — pelo alt da imagem. */
+      .location-card h3 {
+        margin-bottom: 14px;
+      }
+
+      .location-card h3 img {
+        display: block;
+        width: 138px;
+        height: auto;
+      }
+
+      .location-card p {
+        color: var(--color-text);
+        margin-bottom: 20px;
+      }
+
+      /* Abaixo de 768px nao ha largura para o cartao flutuar sem tapar o
+         mapa: ele desce para baixo, inteiro. Nao sobrepoe nem um pouco de
+         proposito — os creditos do Google ficam colados no rodape do mapa e
+         qualquer sobreposicao os cobriria. */
+      @media (max-width: 768px) {
+        .location-map,
+        .location-map iframe {
+          min-height: 300px;
+        }
+
+        .location-card {
+          position: static;
+          transform: none;
+          width: auto;
+          margin-top: 16px;
+        }
       }
 
       /* Areas nomeadas em vez de ordem do HTML: no desktop o formulario
@@ -1725,9 +1778,7 @@
       .contact-wrap {
         display: grid;
         grid-template-columns: 1.05fr 0.95fr;
-        grid-template-areas:
-          "detalhes formulario"
-          "direto formulario";
+        grid-template-areas: "detalhes formulario";
         column-gap: 64px;
         row-gap: 0;
         align-items: center;
@@ -1735,10 +1786,6 @@
 
       .contact-details {
         grid-area: detalhes;
-      }
-
-      .contact-marca {
-        grid-area: direto;
       }
 
       .booking-form {
@@ -1970,25 +2017,7 @@
         50% { transform: translateY(5px); }
       }
 
-      /* ---- Contato direto (cartões) ---- */
-      /* ---- Assinatura da marca ----
-         Fecha a coluna de texto sem disputar com o formulario ao lado: a logo
-         em tamanho pequeno, esmaecida, sobre um filete. Nao e botao nem
-         cartao — e so a assinatura no pe da secao. */
-      .contact-marca {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-top: 34px;
-        padding-top: 26px;
-        border-top: 1px solid var(--color-border);
-      }
 
-      .contact-marca img {
-        width: 150px;
-        height: auto;
-      }
 
 
 
@@ -2199,10 +2228,6 @@
 
 
 
-        .location-box {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
         .beneficios {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 22px 18px;
@@ -2229,8 +2254,23 @@
 
 
 
+        /* ---- Barra mais fina no celular ----
+           No desktop a barra tem espaco para respirar; num celular a mesma
+           altura come um oitavo da tela antes de o conteudo comecar. Os tres
+           valores descem juntos — a barra, a pilula de vidro e a logo — senao
+           a logo encosta nas bordas. O alvo de toque do menu continua com
+           44px: quem encolheu foi o respiro em volta, nao o botao. */
         .nav-row {
-          min-height: 72px;
+          min-height: 64px;
+        }
+
+        .is-scrolled .nav-row {
+          min-height: 56px;
+          padding: 0 10px 0 18px;
+        }
+
+        .brand img {
+          height: 38px;
         }
 
         .header-cta {
@@ -2263,10 +2303,6 @@
 
 
 
-        .location-box {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
         .beneficios {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -2295,21 +2331,14 @@
       }
 
       /* ---- Contato em uma coluna ----
-         Ordem no celular: texto, formulario, WhatsApp. Redeclarar as areas
-         e obrigatorio — so trocar as colunas para 1fr deixaria as areas
-         pedindo duas, e o navegador inventaria uma coluna implicita. */
+         Redeclarar a area e obrigatorio — so trocar as colunas para 1fr
+         deixaria a area pedindo duas, e o navegador inventaria uma coluna
+         implicita. */
       @media (max-width: 768px) {
         .contact-wrap {
           grid-template-columns: minmax(0, 1fr);
-          grid-template-areas:
-            "detalhes"
-            "formulario"
-            "direto";
+          grid-template-areas: "detalhes" "formulario";
           row-gap: 28px;
-        }
-
-        .contact-marca {
-          margin-top: 0;
         }
       }
 
@@ -3005,12 +3034,6 @@
           </div>
 
           <div class="location-box">
-            <div class="location-card">
-              <h3>Hotel Calleb</h3>
-              <p>Localizado no centro de Presidente Figueiredo, com fácil acesso às principais trilhas, cachoeiras e atrações da região.</p>
-              <a class="btn-cta" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
-            </div>
-
             <div class="location-map">
               <iframe
                 title="Mapa do Hotel Calleb em Presidente Figueiredo"
@@ -3018,6 +3041,15 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps?q=-2.0516612,-60.0245065&z=15&output=embed">
               </iframe>
+            </div>
+
+            <div class="location-card">
+              <h3>
+                <img src="./images/logo-440.png" srcset="./images/logo-440.png 440w, ./images/logo-880.png 880w"
+                     sizes="138px" width="440" height="241" alt="Hotel Calleb" loading="lazy" decoding="async" />
+              </h3>
+              <p>Localizado no centro de Presidente Figueiredo, com fácil acesso às principais trilhas, cachoeiras e atrações da região.</p>
+              <a class="btn-cta" href="https://www.google.com/maps/place/Hotel+em+Presidente+Figueiredo+-+Hotel+Calleb/@-2.0516558,-60.0270814,17z/data=!4m9!3m8!1s0x927205d398a5f0f1:0x58da6da6689c300e!5m2!4m1!1i2!8m2!3d-2.0516612!4d-60.0245065!16s%2Fg%2F11ltx0jhvr?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
             </div>
           </div>
         </div>
@@ -3037,11 +3069,6 @@
             </div>
 
           </div>
-
-            <div class="contact-marca">
-              <img src="./images/logo-440.png" srcset="./images/logo-440.png 440w, ./images/logo-880.png 880w"
-                   sizes="130px" width="440" height="241" alt="Hotel Calleb" loading="lazy" decoding="async" />
-            </div>
 
           <div class="booking-form" aria-label="Formulário de reserva">
             <h3>Reserva Inteligente</h3>

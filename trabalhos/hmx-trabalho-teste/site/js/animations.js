@@ -178,6 +178,33 @@ function configuracaoDaCarta(indice, frente, total) {
   return { x: 55 * lado, y: 5, giro: 20 * lado, escala: 0.6, opacidade: 0, z: 2 };
 }
 
+/* Meia largura da caixa de uma carta girada, medida em larguras de carta.
+   A carta e 2x3, entao a altura e 1.5 vez a largura; girar por t graus faz a
+   caixa que a envolve crescer para (cos t + 1.5 sen t), ja com a escala. */
+function meiaCaixa(escala, giro) {
+  const t = (giro * Math.PI) / 180;
+  return (escala * (Math.cos(t) + 1.5 * Math.sin(t))) / 2;
+}
+
+/* Quanto o leque pode abrir sem passar da tela.
+   A carta de fora (d = 2 para qualquer lado) e sempre a mais larga das
+   visiveis: fica a 45% da largura de carta do centro, mais a propria meia
+   caixa girada. Se isso cai fora da tela, este fator encolhe so o
+   deslocamento — giro e escala ficam de pe, senao o baralho perde a forma.
+
+   O teto e 1: onde ja cabe, o leque e exatamente o desenhado. No desktop e
+   no tablet a conta da folga de sobra, entao devolve 1 e nada muda; quem
+   mexe nela e so o celular. */
+function fatorDoLeque(pilha, larguraCarta) {
+  if (!larguraCarta) return 1;
+  const caixa = pilha.getBoundingClientRect();
+  const centro = caixa.left + caixa.width / 2;
+  /* borda mais proxima, com 8px de respiro */
+  const espaco = Math.min(centro, window.innerWidth - centro) - 8;
+  const folga = espaco / larguraCarta - meiaCaixa(0.8, 15);
+  return Math.max(0.15, Math.min(1, folga / 0.45));
+}
+
 function iniciarPilha(pilha) {
   const itens = Array.from(pilha.querySelectorAll("[data-pilha-item]"));
   const total = itens.length;
@@ -188,12 +215,25 @@ function iniciarPilha(pilha) {
   const anuncio = pilha.parentElement.querySelector("[data-pilha-anuncio]");
   let frente = 0;
 
+  /* O leque e medido na montagem e a cada mudanca de tamanho da janela: a
+     largura da carta vem do CSS (no celular ela acompanha a tela), entao
+     mudou a tela, muda a conta. */
+  let leque = 1;
+  const medirLeque = () => {
+    const novo = fatorDoLeque(pilha, itens[0].offsetWidth);
+    if (Math.abs(novo - leque) < 0.005) return false;
+    leque = novo;
+    return true;
+  };
+
   /* ---- desenho ---- */
   const desenhar = (arrasto = 0) => {
     itens.forEach((item, i) => {
       const c = configuracaoDaCarta(i, frente, total);
+      /* so o deslocamento entra no fator; giro e escala vem da tabela */
+      const x = c.x * leque;
       item.style.transform =
-        `translate(calc(${c.x}% + ${arrasto}px), ${c.y}%) rotate(${c.giro}deg) scale(${c.escala})`;
+        `translate(calc(${x}% + ${arrasto}px), ${c.y}%) rotate(${c.giro}deg) scale(${c.escala})`;
       item.style.opacity = String(c.opacidade);
       item.style.zIndex = String(c.z);
       item.dataset.pilhaEstado = i === frente ? "frente" : "lado";
@@ -354,6 +394,11 @@ function iniciarPilha(pilha) {
   });
   prefersReducedMotion.addEventListener("change", retomar);
 
+  window.addEventListener("resize", () => {
+    if (medirLeque()) desenhar();
+  }, { passive: true });
+
+  medirLeque();
   desenhar();
   retomar();
 }
