@@ -2430,3 +2430,19 @@ o que vem logo acima, a diferença é de cerca de 1,02 de razão — ou seja, a 
 de cima da seção quase não se vê. Quem delimita a seção é a faixa escura da
 Experiência, logo abaixo. Se em algum momento parecer que a seção "não começa",
 o caminho é essa borda de cima, não o branco.
+
+### O papel da página passa a ser branco
+
+Sobrava uma faixa bege de 30px entre a barra de reserva e as acomodações. Não era
+a seção: era o **fundo da página** aparecendo entre duas superfícies brancas. O
+`--color-bg` era `#fffdf7`, um branco quente, que lado a lado com branco de
+verdade lê como bege.
+
+Duas mudanças:
+
+- `--color-bg` passou a ser `#ffffff`.
+- A barra de reserva perdeu o `margin-bottom: 14px`. A seção de baixo já tem o
+  respiro dela, e aqueles 14px só serviam para deixar passar o fundo.
+
+O creme das faixas continua com corpo: medida, a razão entre o branco e o creme
+é **1,131**, praticamente a mesma de antes — ainda se vê onde uma seção termina.

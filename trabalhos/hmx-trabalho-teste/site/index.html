@@ -59,11 +59,12 @@
         --color-brand-blue-deep: #002894;
         --color-brand-orange: #f97300;
 
-        /* Fundo: branco puro e creme quase branco davam duas faixas que
-           mal se distinguiam (razao 1,04) — a pagina parecia uma folha so.
-           O claro ganhou calor e o creme ganhou corpo: a diferenca entre as
-           faixas foi de 1,04 para 1,13, e agora se ve onde uma secao termina. */
-        --color-bg: #fffdf7;
+        /* Fundo: o papel da pagina e branco. Era #fffdf7, um branco quente,
+           que entre duas secoes brancas aparecia como uma faixa bege — foi
+           isso que se viu embaixo da barra de reserva. O creme das faixas
+           continua com corpo, entao ainda se ve onde uma secao termina:
+           medida, a razao entre o branco e o creme e de 1,131. */
+        --color-bg: #ffffff;
         --color-surface: #f6efdd;
         --color-text: #2b3d55;
         /* tom solido para rotulos e legendas. Antes eram cores com opacidade,
@@ -1176,7 +1177,10 @@
         position: relative;
         z-index: 2;
         margin-top: calc(var(--barra-sobre) * -1);
-        margin-bottom: 14px;
+        /* sem respiro proprio: a secao de baixo ja tem o dela, e os 14px que
+           havia aqui deixavam passar uma fatia do fundo da pagina entre duas
+           superficies brancas */
+        margin-bottom: 0;
       }
 
       .reserva-barra {
