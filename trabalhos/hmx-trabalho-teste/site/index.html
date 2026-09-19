@@ -512,6 +512,16 @@
         background: rgba(246, 239, 221, 0.9);
       }
 
+      /* Faixa branca, usada nas acomodacoes: e a secao em que as fotos de
+         quarto mandam, e o branco e o fundo que menos tinge uma fotografia.
+
+         Semitransparente pelo mesmo motivo da creme — solido, ela tamparia a
+         camada de ambientacao e abriria um buraco no meio da pagina. A 0.94
+         a cor resultante fica a menos de 1 ponto de RGB do branco puro. */
+      .fundo-branco {
+        background: rgba(255, 255, 255, 0.94);
+      }
+
       /* No celular as luzes recuam mais: a tela e estreita e o texto ocupa
          quase toda a largura. */
       @media (max-width: 979px) {
@@ -3417,7 +3427,7 @@
         </div>
       </section>
 
-      <section id="quartos" data-section="quartos" class="section-pad reveal fundo-creme">
+      <section id="quartos" data-section="quartos" class="section-pad reveal fundo-branco">
         <div class="container quartos-wrap">
           <div class="quartos-copy">
             <div class="eyebrow">Acomodações</div>

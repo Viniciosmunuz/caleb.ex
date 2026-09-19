@@ -2415,3 +2415,18 @@ Ordem final da página: hero, reserva, quartos, experiência, essência, destino
 **chamada**, galeria, localização, contato, números, rodapé. O ritmo de fundos
 segue alternando: destino (creme) → chamada (escura) → galeria (base) →
 localização (creme).
+
+### Acomodações em fundo branco
+
+A seção saiu da faixa creme e ganhou fundo branco: é a seção em que as fotos de
+quarto mandam, e branco é o fundo que menos tinge uma fotografia.
+
+Branco **semitransparente** (0,94), pelo mesmo motivo que a faixa creme é 0,9:
+sólido, ele taparia a camada de ambientação e abriria um buraco no meio da
+página. A 0,94 a cor resultante fica a menos de 1 ponto de RGB do branco puro.
+
+Uma consequência de ser branco: contra o fundo base da página (`#fffdf7`), que é
+o que vem logo acima, a diferença é de cerca de 1,02 de razão — ou seja, a borda
+de cima da seção quase não se vê. Quem delimita a seção é a faixa escura da
+Experiência, logo abaixo. Se em algum momento parecer que a seção "não começa",
+o caminho é essa borda de cima, não o branco.
