@@ -1939,7 +1939,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 72px 26px 22px;
+        padding: 52px 22px 18px;
         color: #ffffff;
         background: linear-gradient(180deg, rgba(0, 20, 43, 0) 0%, rgba(0, 20, 43, 0.62) 38%, rgba(0, 20, 43, 0.9) 100%);
         pointer-events: none;
@@ -1951,8 +1951,8 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        margin-top: 16px;
-        padding-top: 14px;
+        margin-top: 12px;
+        padding-top: 11px;
         border-top: 1px solid rgba(255, 255, 255, 0.28);
       }
 
@@ -2000,31 +2000,54 @@
 
       .quarto-etiqueta h3 {
         color: #ffffff;
-        font-size: 1.4rem;
-        margin-bottom: 8px;
+        font-size: 1.15rem;
+        margin-bottom: 6px;
       }
 
+      /* A informacao encolheu para sobrar mais foto: o nome caiu de 1,4 para
+         1,15rem e os dados de 0,84 para 0,75rem. O preco nao mudou — e o que
+         a pessoa procura, e continua sendo o maior texto da etiqueta. */
       .quarto-specs {
         display: flex;
         flex-wrap: wrap;
-        gap: 18px;
+        align-items: center;
+        gap: 12px;
         margin: 0;
         padding: 0;
         list-style: none;
-        font-size: 0.84rem;
+        font-size: 0.75rem;
         color: rgba(255, 255, 255, 0.92);
       }
 
       .quarto-specs li {
         display: inline-flex;
         align-items: center;
-        gap: 7px;
+        gap: 6px;
       }
 
       .quarto-specs svg {
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
         flex-shrink: 0;
+      }
+
+      /* ---- O que vem em todos os quartos ----
+         Era uma frase solta embaixo da secao. Virou icone dentro do cartao:
+         cafe, televisao, wi-fi e ar-condicionado, sem legenda, porque a
+         legenda repetia em todos os quatro quartos e roubava foto.
+
+         Sem texto visivel, mas nao sem nome: cada um leva o rotulo em texto
+         oculto, que e o que o leitor de tela anuncia, e um title, que e a
+         dica ao passar o mouse. Icone mudo nao serve para ninguem. */
+      .so-icone {
+        opacity: 0.85;
+      }
+
+      /* filete separando os dados do quarto do que vem em todos eles */
+      .quarto-specs li:not(.so-icone) + .so-icone {
+        margin-left: 2px;
+        padding-left: 14px;
+        border-left: 1px solid rgba(255, 255, 255, 0.32);
       }
 
       /* Setas com o mesmo vidro da barra de navegacao e das galerias: um
@@ -2171,15 +2194,6 @@
         font-size: 0.82rem;
       }
 
-      .quartos-nota {
-        grid-column: 1 / -1;
-        margin: 6px 0 0;
-        padding-top: 18px;
-        border-top: 1px solid var(--color-border);
-        font-size: 0.85rem;
-        color: var(--color-text-soft);
-      }
-
       @media (max-width: 979px) {
         .quartos-wrap {
           grid-template-columns: minmax(0, 1fr);
@@ -2192,17 +2206,30 @@
       }
 
       @media (max-width: 640px) {
+        /* Num celular a foto 4:3 fica com 269px de altura e a etiqueta,
+           mesmo enxuta, tomava 58% dela. Passando para quadrada a foto vai a
+           358px e a mesma etiqueta cai para 44%: sobra bem mais quarto para
+           ver. O corte e nas laterais, que e onde a foto de quarto tem menos
+           informacao. */
+        .quarto-slide img {
+          aspect-ratio: 1 / 1;
+        }
+
         .quarto-etiqueta {
-          padding: 44px 18px 16px;
+          padding: 34px 16px 14px;
         }
 
         .quarto-etiqueta h3 {
-          font-size: 1.2rem;
+          font-size: 1.05rem;
         }
 
         .quarto-specs {
-          gap: 14px;
-          font-size: 0.78rem;
+          gap: 10px;
+          font-size: 0.72rem;
+        }
+
+        .quarto-specs li:not(.so-icone) + .so-icone {
+          padding-left: 10px;
         }
 
         /* ---- As setas saem de cima da foto ----
@@ -3429,7 +3456,10 @@
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>4 pessoas</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                      <li class="so-icone" title="Café da manhã"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Café da manhã</span></li>
+                      <li class="so-icone" title="Televisão"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visualmente-oculto">Televisão</span></li>
+                      <li class="so-icone" title="Wi-fi"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span class="visualmente-oculto">Wi-fi</span></li>
+                      <li class="so-icone" title="Ar-condicionado"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Ar-condicionado</span></li>
                     </ul>
                     <div class="quarto-acao">
                       <span class="quarto-preco"><strong>R$ 390</strong> /noite</span>
@@ -3445,7 +3475,10 @@
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 pessoas</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                      <li class="so-icone" title="Café da manhã"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Café da manhã</span></li>
+                      <li class="so-icone" title="Televisão"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visualmente-oculto">Televisão</span></li>
+                      <li class="so-icone" title="Wi-fi"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span class="visualmente-oculto">Wi-fi</span></li>
+                      <li class="so-icone" title="Ar-condicionado"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Ar-condicionado</span></li>
                     </ul>
                     <div class="quarto-acao">
                       <span class="quarto-preco"><strong>R$ 320</strong> /noite</span>
@@ -3461,7 +3494,10 @@
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>2 pessoas</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                      <li class="so-icone" title="Café da manhã"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Café da manhã</span></li>
+                      <li class="so-icone" title="Televisão"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visualmente-oculto">Televisão</span></li>
+                      <li class="so-icone" title="Wi-fi"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span class="visualmente-oculto">Wi-fi</span></li>
+                      <li class="so-icone" title="Ar-condicionado"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Ar-condicionado</span></li>
                     </ul>
                     <div class="quarto-acao">
                       <span class="quarto-preco"><strong>R$ 280</strong> /noite</span>
@@ -3477,7 +3513,10 @@
                     <ul class="quarto-specs">
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1 pessoa</li>
                       <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                      <li class="so-icone" title="Café da manhã"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Café da manhã</span></li>
+                      <li class="so-icone" title="Televisão"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visualmente-oculto">Televisão</span></li>
+                      <li class="so-icone" title="Wi-fi"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span class="visualmente-oculto">Wi-fi</span></li>
+                      <li class="so-icone" title="Ar-condicionado"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="visualmente-oculto">Ar-condicionado</span></li>
                     </ul>
                     <div class="quarto-acao">
                       <span class="quarto-preco"><strong>R$ 220</strong> /noite</span>
@@ -3501,7 +3540,6 @@
             <p class="visualmente-oculto" data-carrossel-anuncio aria-live="polite"></p>
           </div>
 
-          <p class="quartos-nota">Todos os quartos incluem café da manhã, televisão, wi-fi e ar-condicionado.</p>
         </div>
       </section>
 

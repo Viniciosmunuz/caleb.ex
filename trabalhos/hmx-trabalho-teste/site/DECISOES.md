@@ -2330,3 +2330,33 @@ quarto e no próprio envio do formulário. Com um botão só, o laranja fica sem
 concorrência e a faixa tem uma ação óbvia.
 
 No celular o botão ocupa a linha inteira (16 a 374 num 390), com 42px de altura.
+
+### O que vem em todos os quartos virou ícone dentro da foto
+
+A frase "Todos os quartos incluem café da manhã, televisão, wi-fi e
+ar-condicionado" e o filete que ela desenhava saíram. As quatro comodidades
+entraram no cartão de cada quarto **como ícone, sem legenda** — a legenda seria
+a mesma nos quatro e comia foto.
+
+Sem texto visível, mas **não sem nome**: cada ícone leva o rótulo em texto oculto,
+que é o que o leitor de tela anuncia, e um `title` para a dica no mouse. Ícone
+mudo não serve para ninguém. Um filete separa o que é daquele quarto (pessoas,
+m²) do que vem em todos.
+
+### A informação encolheu, o preço não
+
+| | antes | agora |
+|---|---|---|
+| nome do quarto | 1,4rem | **1,15rem** |
+| dados | 0,84rem | **0,75rem** |
+| respiro de cima da etiqueta | 72px | **52px** |
+| **preço** | 1,5rem | **1,5rem** |
+
+O preço ficou onde estava de propósito: é o que a pessoa procura, e continua
+sendo o maior texto da etiqueta.
+
+No desktop a etiqueta passou a ocupar **34%** da foto. No celular ainda dava 58%,
+mas ali o problema não era o texto e sim a foto: 4:3 numa coluna de 358px dá só
+269px de altura. Passando a foto para quadrada no celular ela vai a 358px e a
+mesma etiqueta cai para **44%**. O corte é nas laterais, que é onde a foto de um
+quarto tem menos informação.
