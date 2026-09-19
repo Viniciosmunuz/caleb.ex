@@ -2266,3 +2266,35 @@ Além do que já estava em aberto: os números da faixa de estatísticas
 (**2.500+ hóspedes**, **15+ cachoeiras**, **10+ anos**) não têm origem
 conhecida — vieram do template original. São exatamente o tipo de número que o
 briefing manda não inventar. Valem uma conferência com o dono antes da proposta.
+
+### As setas dos quartos saem de cima da foto no celular
+
+Relato: "no mobile as setas estão atrapalando na hora de escolher um modelo de
+quarto". Duas coisas aconteciam ao mesmo tempo, e a segunda é a pior.
+
+**Tapavam o quarto.** No desktop a foto tem 706px e dois discos nas laterais não
+incomodam. Num celular ela tem 358px: os mesmos dois discos comiam 24% da largura,
+bem em cima da cama.
+
+**Comiam o começo do arraste.** O handler ignora o gesto que nasce sobre uma seta
+(senão arrastar a partir dela brigaria com o clique). Só que num celular o dedo
+parte justamente do meio da tela — exatamente onde elas estavam. O deslize
+simplesmente não pegava em boa parte das tentativas.
+
+Agora descem para a linha dos pontos, uma em cada ponta: `[←]  • • • •  [→]`.
+A foto inteira volta a ser arrastável e os botões continuam lá, um pouco maiores
+(42px). Fora da foto o vidro não tem o que desfocar, então viram disco sólido com
+filete — mais contraste sobre o creme.
+
+**Isso exigiu separar palco de janela.** A janela corta os slides que aguardam a
+vez (`overflow: hidden`), e por isso as setas, sendo filhas dela, não tinham como
+descer para fora da foto — ficavam presas no recorte. A primeira tentativa falhou
+exatamente por isso: `bottom: 0` resolvia contra a janela, não contra a vitrine.
+Agora `.carrossel-palco` envolve a janela, não corta nada, e é contra ele que as
+setas se posicionam.
+
+Medido a 390px: foto termina em 402, setas em [414, 456], linha dos pontos em
+[414, 456] — encaixe exato, nada sobre a foto. Testado com toque e arraste reais
+a 375px: seta levou de 2 para 3, e o arraste no meio da foto — o gesto que antes
+falhava — levou de 3 para 4. No desktop as setas continuam centradas na foto,
+conferido.

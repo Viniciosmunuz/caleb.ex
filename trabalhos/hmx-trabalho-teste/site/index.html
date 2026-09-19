@@ -1900,7 +1900,17 @@
 
       /* ---- Carrossel de foto unica ---- */
       .quartos-vitrine {
+        position: relative;
         min-width: 0;
+      }
+
+      /* Palco e janela sao dois elementos de proposito. A janela corta os
+         slides que aguardam a vez (overflow: hidden); o palco nao corta nada
+         e e contra ele que as setas se posicionam. Sem essa separacao as
+         setas ficariam presas dentro do recorte e nao teriam como descer
+         para fora da foto no celular. */
+      .carrossel-palco {
+        position: relative;
       }
 
       .carrossel-janela {
@@ -2215,10 +2225,6 @@
       }
 
       @media (max-width: 640px) {
-        .quartos-tabela {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
         .quarto-etiqueta {
           padding: 44px 18px 16px;
         }
@@ -2232,14 +2238,46 @@
           font-size: 0.78rem;
         }
 
-        .carrossel-seta {
-          width: 40px;
-          height: 40px;
-          margin-top: -20px;
+        /* ---- As setas saem de cima da foto ----
+           No desktop elas ficam nas laterais da imagem e sobra foto de
+           sobra. Num celular a foto tem uns 358px: dois discos no meio dela
+           tapavam o quarto e, pior, comiam o comeco do arraste — o dedo
+           costuma partir justamente do meio da tela, que era onde elas
+           estavam, e o gesto nao pegava.
+
+           Descem para a linha dos pontos, uma em cada ponta: a foto inteira
+           volta a ser arrastavel e os dois botoes continuam la, maiores. */
+        .carrossel-pontos {
+          position: relative;
+          height: 42px;
+          align-items: center;
+          margin-top: 12px;
         }
 
-        .carrossel-seta--esq { left: 10px; }
-        .carrossel-seta--dir { right: 10px; }
+        .carrossel-seta {
+          top: auto;
+          /* 12px de respiro + 42px da linha dos pontos: a seta encaixa
+             exatamente na altura dela */
+          bottom: -54px;
+          width: 42px;
+          height: 42px;
+          margin-top: 0;
+          /* fora da foto o vidro nao tem o que desfocar: vira disco solido
+             com um filete, que sobre o creme da mais contraste */
+          background: var(--color-bg);
+          border: 1px solid var(--color-border);
+          -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+          box-shadow: var(--sh-sm);
+        }
+
+        .carrossel-seta:hover,
+        .carrossel-seta:focus-visible {
+          background-color: var(--color-surface);
+        }
+
+        .carrossel-seta--esq { left: 0; }
+        .carrossel-seta--dir { right: 0; }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -3538,8 +3576,9 @@
           <div class="quartos-vitrine" data-carrossel role="group"
                aria-roledescription="carrossel"
                aria-label="Quartos do Hotel Calleb — arraste para o lado ou use as setas">
-            <div class="carrossel-janela">
-              <div class="carrossel-trilho" data-carrossel-trilho>
+            <div class="carrossel-palco">
+              <div class="carrossel-janela">
+                <div class="carrossel-trilho" data-carrossel-trilho>
 
                 <article class="quarto-slide" data-carrossel-slide data-nome="Padrão">
                   <img src="./images/quarto-familia.jpg" width="1200" height="900" alt="Quarto padrão com cama de casal e beliche" loading="lazy" decoding="async" />
@@ -3605,6 +3644,7 @@
                   </div>
                 </article>
 
+                </div>
               </div>
 
               <button class="carrossel-seta carrossel-seta--esq" type="button" data-carrossel-seta="anterior" aria-label="Quarto anterior">
