@@ -2548,3 +2548,31 @@ papel, não a tinta, e sobrevive à próxima troca.
 
 Além das duas seções (Destino e Localização), o token também pinta os campos da
 barra de reserva no celular — mudaram junto, de propósito.
+
+### A página inteira no verde pálido
+
+Não há mais "seção clara" e "seção de faixa": é um tom só, do topo ao rodapé.
+
+- `--color-bg` passou de `#ffffff` para `#eaf0ea`.
+- A lâmina de vidro deixou de ser branca e passou a ter a cor do papel
+  (`rgba(234,240,234,0.62)`): ela clareia as luzes até o verde da página em vez
+  de puxar tudo para o branco.
+- As classes de faixa saíram de Destino e Localização, junto com a regra — a
+  página já é aquele tom, pintá-lo de novo por cima era redundante.
+
+**O laranja dos rótulos teve de escurecer junto.** No canto mais verde da tela o
+`#b34700` caía para **3,67:1**, abaixo do mínimo. Trocado por `#9a3d00`, que dá
+**4,59:1** lá e 6,90:1 sobre o tom base. Esse é o segundo token que o verde
+obrigou a escurecer — o primeiro foi o texto secundário.
+
+Medido no canto mais verde (`#cad6cd`): texto secundário **4,68:1**, texto normal
+**7,35:1**, título **6,70:1**, rótulo laranja **4,59:1**. Todos acima de 4,5, mas
+o secundário e o rótulo com pouca folga. **Fica o registro: a lâmina não pode
+descer de 0,62 sem escurecer esses dois tokens antes.**
+
+**O que se perdeu:** a alternância entre seções. Antes creme e claro se revezavam
+e marcavam onde uma terminava. Agora quem separa são as faixas escuras
+(Experiência e chamada final) e os cartões brancos que flutuam sobre o verde — a
+barra de reserva, o formulário, as fotos dos quartos. Na prática a página ganhou
+unidade e perdeu ritmo; se o ritmo fizer falta, o caminho é devolver uma faixa
+um pouco mais fechada a duas ou três seções, não voltar ao branco.

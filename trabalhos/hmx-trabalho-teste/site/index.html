@@ -59,12 +59,11 @@
         --color-brand-blue-deep: #002894;
         --color-brand-orange: #f97300;
 
-        /* Fundo: o papel da pagina e branco. Era #fffdf7, um branco quente,
-           que entre duas secoes brancas aparecia como uma faixa bege — foi
-           isso que se viu embaixo da barra de reserva. O creme das faixas
-           continua com corpo, entao ainda se ve onde uma secao termina:
-           medida, a razao entre o branco e o creme e de 1,131. */
-        --color-bg: #ffffff;
+        /* Fundo: a pagina inteira e o verde palido. Nao ha mais secao clara
+           e secao de faixa — e um tom so, do topo ao rodape, com a variacao
+           do vidro por cima. Quem separa uma secao da outra passaram a ser as
+           faixas escuras e os cartoes brancos que flutuam sobre o verde. */
+        --color-bg: #eaf0ea;
         /* A faixa que separa uma secao da outra. Era um bege quente; virou
            verde palido quando o fundo da pagina passou a ser vidro sobre
            floresta — o bege puxava para o quente enquanto o resto da pagina
@@ -95,8 +94,11 @@
         --color-cta: #c25400;
         --color-cta-hover: #9c4300;
         --color-cta-ink: #ffffff;
-        /* laranja escurecido para texto pequeno sobre fundo claro (contraste AA) */
-        --color-orange-ink: #b34700;
+        /* Laranja escurecido para texto pequeno sobre fundo claro. Escureceu
+           de #b34700 quando a pagina virou verde: sobre o canto mais verde o
+           tom antigo caia para 3,67:1, abaixo do minimo. Este da 4,59:1 la e
+           6,90:1 sobre branco. */
+        --color-orange-ink: #9a3d00;
         --color-icon-bg: #ffe8d1;
         --color-dark: #002348;
         --color-whatsapp: #25d366;
@@ -522,16 +524,19 @@
          e a escondem — entao, na pratica, o efeito so aparece justamente nas
          secoes brancas, que sao as que nao tem faixa propria.
 
-         O 0,58 sai da conta de contraste, nao do olho. Com ele o canto mais
-         verde da tela para em #d8deda, e ali o texto secundario da 5,19:1 —
-         acima do minimo de 4,5. So foi possivel descer da lamina anterior
-         (0,74) porque o --color-text-soft escureceu junto; com o tom antigo,
-         este mesmo 0,58 derrubaria esse texto para 4,0:1. Os dois andam
-         juntos: mexer num sem o outro quebra a leitura. */
+         A lamina tem a cor do papel, nao branco: ela clareia as luzes ate o
+         verde palido da pagina, em vez de puxar tudo para o branco. E o que
+         mantem a pagina num tom so e ainda assim com variacao.
+
+         O 0,62 sai da conta de contraste, nao do olho. Com ele o canto mais
+         verde da tela para em #cad5cd, e ali o texto secundario da 4,68:1 —
+         acima do minimo de 4,5, com pouca folga. Baixar mais derruba a
+         leitura; se um dia a ideia for mais verde ainda, o caminho e
+         escurecer os tokens de texto primeiro, nunca a lamina sozinha. */
       .ambiente-vidro {
         position: absolute;
         inset: 0;
-        background: rgba(255, 255, 255, 0.58);
+        background: rgba(234, 240, 234, 0.62);
       }
 
       /* O conteudo fica por cima da camada. O cabecalho e os botoes
@@ -540,13 +545,6 @@
       body > .site-footer {
         position: relative;
         z-index: 1;
-      }
-
-      /* A faixa nao e opaca: a 0,9 o vidro do fundo ainda atravessa, entao
-         ela acompanha de leve a variacao de verde da pagina em vez de ser um
-         retangulo chapado. */
-      .fundo-faixa {
-        background: rgba(234, 240, 234, 0.9);
       }
 
 
@@ -3650,7 +3648,7 @@
         </div>
       </section>
 
-      <section id="destino" data-section="destino" class="section-pad reveal fundo-faixa">
+      <section id="destino" data-section="destino" class="section-pad reveal">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Explore o Destino</div>
@@ -3857,7 +3855,7 @@
         </div>
       </section>
 
-      <section id="localizacao" data-section="localizacao" class="section-pad reveal fundo-faixa">
+      <section id="localizacao" data-section="localizacao" class="section-pad reveal">
         <div class="container">
           <div class="head-block">
             <div class="eyebrow">Localização</div>
