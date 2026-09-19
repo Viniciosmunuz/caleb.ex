@@ -44,6 +44,7 @@
         font-display: swap;
       }
 
+
       :root {
         /* Paleta da marca — medida do logo e confirmada em referencia/receita-visual.json */
         --color-brand-blue: #0047b3;
@@ -71,6 +72,7 @@
         --color-amber: var(--color-brand-orange);
         --color-cta: #c25400;
         --color-cta-hover: #9c4300;
+        --color-cta-ink: #ffffff;
         /* laranja escurecido para texto pequeno sobre fundo claro (contraste AA) */
         --color-orange-ink: #b34700;
         --color-icon-bg: #ffe8d1;
@@ -78,6 +80,8 @@
         --color-whatsapp: #25d366;
         --color-whatsapp-hover: #1da851;
 
+        /* Uma familia so para tudo. A pilha de reserva e a mesma nas duas,
+           para o texto nao saltar enquanto a fonte carrega. */
         /* Uma familia so para tudo. A pilha de reserva e a mesma nas duas,
            para o texto nao saltar enquanto a fonte carrega. */
         --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -584,11 +588,10 @@
         /* A curva passa pelos mesmos 60px a 1440 e pelo mesmo teto de 72px
            de antes; o que mudou foi o pe. Num celular de 390px o titulo
            travava em 35px e quebrava em quatro linhas curtas — a 32px cabe
-           em tres, e a partir de ~425px volta a duas. */
+           em tres, e a partir de 425px volta a duas. */
         font-size: clamp(2rem, 1.34rem + 2.71vw, 4.5rem);
-        /* O tracking de titulo da Inter e -0.022em (a curva e publicada pela
-           propria fundicao). O -0.032em era heranca da Georgia, que pede bem
-           mais aperto em corpo grande, e na Inter colava as letras. */
+        /* O tracking de titulo da Inter e -0.022em, a curva publicada pela
+           propria fundicao. */
         letter-spacing: -0.022em;
         font-weight: 600;
       }
@@ -694,7 +697,7 @@
 
       .btn-cta {
         background: var(--color-cta);
-        color: #ffffff;
+        color: var(--color-cta-ink);
       }
 
       .btn-cta:hover,
@@ -1101,6 +1104,176 @@
         font-weight: 600;
       }
 
+      /* ---- Botao principal do hero ----
+         Os dois botoes do hero tem o mesmo tamanho e o mesmo raio; o que
+         muda e o peso. O primeiro e laranja solido, o segundo continua com
+         o vidro da barra. Assim ha uma acao obvia e uma alternativa, em vez
+         de dois botoes disputando. */
+      .hero-btn--principal {
+        background: var(--color-cta);
+        border-color: transparent;
+        color: #ffffff;
+        font-weight: 600;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+
+      .hero-btn--principal:hover,
+      .hero-btn--principal:focus-visible {
+        background: var(--color-cta-hover);
+      }
+
+      .hero-btn svg {
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
+      /* ---- Barra de reserva ----
+         Fica na emenda: o topo dela encosta exatamente na borda de baixo da
+         foto e o corpo avanca sobre a secao seguinte. Nao sobe nem um pixel
+         sobre a imagem — o hero tem 100svh, entao ao abrir o site a primeira
+         tela e so a fotografia, sem a ponta do cartao aparecendo embaixo. A
+         barra so entra em cena quando a pessoa rola.
+
+         z-index proprio porque o hero tem uma camada de sombreamento por
+         cima da foto; sem ele a barra passaria por baixo dela. */
+      .reserva-rapida {
+        position: relative;
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: -38px;
+      }
+
+      .reserva-barra {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+        align-items: center;
+        gap: 4px;
+        padding: 10px;
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--r-md);
+        box-shadow: var(--sh-lg);
+      }
+
+      .rr-campo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        padding: 8px 14px;
+        border-radius: var(--r-sm);
+      }
+
+      /* filete entre os campos, no lugar de quatro caixas desenhadas: menos
+         tracos na tela e a barra continua lendo como uma peca so */
+      .rr-campo + .rr-campo {
+        box-shadow: inset 1px 0 0 var(--color-border);
+      }
+
+      .rr-campo > svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: var(--color-cta);
+      }
+
+      .rr-corpo {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        gap: 1px;
+      }
+
+      .rr-campo label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--color-heading);
+        line-height: 1.2;
+      }
+
+      /* O campo nao tem moldura propria: quem desenha a caixa e a barra. */
+      .rr-campo input,
+      .rr-campo select {
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: var(--color-text-soft);
+        font-size: 0.86rem;
+        line-height: 1.35;
+        cursor: pointer;
+      }
+
+      .rr-campo input:focus-visible,
+      .rr-campo select:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 4px;
+        border-radius: 3px;
+      }
+
+      /* O botao da barra e azul, nao laranja: o laranja ja esta no hero logo
+         acima, e dois laranjas colados tiram o destaque um do outro. */
+      .rr-enviar {
+        background: var(--color-dark);
+        color: #ffffff;
+        padding: 14px 26px;
+        border-radius: var(--r-sm);
+        white-space: nowrap;
+        cursor: pointer;
+        border: none;
+      }
+
+      .rr-enviar:hover,
+      .rr-enviar:focus-visible {
+        background: var(--color-primary);
+      }
+
+      .rr-enviar svg {
+        transition: transform 0.18s ease-out;
+      }
+
+      .rr-enviar:hover svg {
+        transform: translateX(3px);
+      }
+
+      /* Tablet: a barra vira duas linhas de dois campos e o botao ocupa a
+         largura toda. Nao encolhe os campos ate virarem ilegiveis. */
+      @media (max-width: 979px) {
+        .reserva-barra {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 2px;
+        }
+
+        .rr-campo + .rr-campo {
+          box-shadow: none;
+        }
+
+        .rr-campo {
+          background: var(--color-surface);
+        }
+
+        .rr-enviar {
+          grid-column: 1 / -1;
+          width: 100%;
+          margin-top: 6px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        /* no celular a barra empilha, entao ela e alta: avanca menos sobre a
+           secao de baixo para o primeiro numero nao encostar nela */
+        .reserva-rapida {
+          margin-bottom: -22px;
+        }
+
+        .reserva-barra {
+          grid-template-columns: minmax(0, 1fr);
+          padding: 8px;
+        }
+      }
+
       section {
         position: relative;
       }
@@ -1428,6 +1601,348 @@
       /* ---- Cartões de acomodação ----
          O preço sai do corpo e vai para cima da foto: é a informação que a
          pessoa procura primeiro, e ali ela aparece antes de qualquer leitura. */
+      /* ---- Vitrine dos quartos ----
+         Saiu a grade de quatro cartoes pequenos e entrou o formato do
+         modelo: coluna de texto a esquerda, uma foto grande a direita.
+         A foto passa de quarto em quarto; a lista logo abaixo repete os
+         quatro por extenso, com preco e link de reserva, para que nenhuma
+         informacao dependa de passar o carrossel. */
+      .quartos-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        column-gap: 56px;
+        row-gap: 40px;
+        align-items: center;
+      }
+
+      .quartos-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .quartos-copy p {
+        color: var(--color-text-soft);
+        max-width: 42ch;
+      }
+
+      /* Botao de contorno: papel secundario ao lado da foto, sem disputar
+         com o laranja solido do hero e do formulario. */
+      .btn-linha {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        margin-top: 6px;
+        padding: 11px 22px;
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        color: var(--color-heading);
+        font-size: 0.9rem;
+        font-weight: 500;
+        background: var(--color-bg);
+        transition: border-color 0.16s ease-out, background-color 0.16s ease-out;
+      }
+
+      .btn-linha:hover,
+      .btn-linha:focus-visible {
+        border-color: var(--color-primary);
+        background: var(--color-surface);
+      }
+
+      .btn-linha svg {
+        transition: transform 0.18s ease-out;
+      }
+
+      .btn-linha:hover svg {
+        transform: translateX(3px);
+      }
+
+      /* ---- Carrossel de foto unica ---- */
+      .quartos-vitrine {
+        min-width: 0;
+      }
+
+      .carrossel-janela {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--r-lg);
+        background: var(--color-dark);
+        box-shadow: var(--sh-lg);
+        touch-action: pan-y;
+      }
+
+      .carrossel-trilho {
+        display: flex;
+        will-change: transform;
+        transition: transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* enquanto o dedo esta na tela o trilho acompanha sem atraso */
+      .carrossel-janela.arrastando .carrossel-trilho,
+      .quartos-vitrine.arrastando .carrossel-trilho {
+        transition: none;
+      }
+
+      .quarto-slide {
+        position: relative;
+        flex: 0 0 100%;
+        min-width: 0;
+        margin: 0;
+      }
+
+      .quarto-slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        -webkit-user-drag: none;
+        user-select: none;
+      }
+
+      /* A etiqueta fica sobre a foto, como no modelo. O degrade abaixo dela
+         e o que garante a leitura: sobre uma foto clara o texto branco
+         sozinho nao se sustenta. */
+      .quarto-etiqueta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 56px 26px 22px;
+        color: #ffffff;
+        background: linear-gradient(180deg, rgba(0, 20, 43, 0), rgba(0, 20, 43, 0.82));
+        pointer-events: none;
+      }
+
+      .quarto-etiqueta h3 {
+        color: #ffffff;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .quarto-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.84rem;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .quarto-specs li {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .quarto-specs svg {
+        width: 17px;
+        height: 17px;
+        flex-shrink: 0;
+      }
+
+      /* Setas com o mesmo vidro da barra de navegacao e das galerias: um
+         material so no site inteiro. */
+      .carrossel-seta {
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin-top: -22px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--vidro);
+        -webkit-backdrop-filter: var(--vidro-desfoque);
+        backdrop-filter: var(--vidro-desfoque);
+        box-shadow: var(--vidro-sombra);
+        color: var(--color-dark);
+        cursor: pointer;
+        transition: background-color 0.18s ease-out;
+      }
+
+      .carrossel-seta:hover,
+      .carrossel-seta:focus-visible {
+        background-color: rgba(255, 255, 255, 0.72);
+      }
+
+      .carrossel-seta:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
+      }
+
+      .carrossel-seta svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .carrossel-seta--esq { left: 16px; }
+      .carrossel-seta--dir { right: 16px; }
+
+      .carrossel-pontos {
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+        margin-top: 18px;
+      }
+
+      .carrossel-ponto {
+        box-sizing: content-box;
+        width: 8px;
+        height: 8px;
+        padding: 8px 6px;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--color-border);
+        background-clip: content-box;
+        cursor: pointer;
+        transition: background-color 0.16s ease-out, width 0.24s ease-out;
+      }
+
+      /* mesma marcacao das galerias: o icone da marca no lugar do ponto */
+      .carrossel-ponto[aria-selected="true"] {
+        width: 16px;
+        height: 16px;
+        padding: 4px 8px;
+        background-color: transparent;
+        background-image: url("./images/favicon-180.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 0;
+      }
+
+      .carrossel-ponto:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
+
+      /* ---- Os quatro quartos por extenso ----
+         Linhas, nao cartoes: quatro caixas com sombra ao lado de uma foto
+         grande virariam ruido. O filete separa e basta. */
+      .quartos-tabela {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 56px;
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .quartos-tabela li {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 22px 0;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .qt-nome {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .qt-nome strong {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--color-heading);
+      }
+
+      .qt-nome span {
+        font-size: 0.82rem;
+        color: var(--color-text-soft);
+      }
+
+      .quartos-tabela p {
+        font-size: 0.9rem;
+        color: var(--color-text-soft);
+      }
+
+      .qt-fim {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 2px;
+      }
+
+      /* o preco saiu de cima da foto e virou texto na linha do quarto */
+      .quartos-tabela .room-preco {
+        position: static;
+        padding: 0;
+        background: none;
+        color: var(--color-heading);
+        text-shadow: none;
+        font-size: 0.82rem;
+      }
+
+      .quartos-nota {
+        grid-column: 1 / -1;
+        margin: 6px 0 0;
+        padding-top: 18px;
+        border-top: 1px solid var(--color-border);
+        font-size: 0.85rem;
+        color: var(--color-text-soft);
+      }
+
+      @media (max-width: 979px) {
+        .quartos-wrap {
+          grid-template-columns: minmax(0, 1fr);
+          row-gap: 30px;
+        }
+
+        .quartos-tabela {
+          column-gap: 32px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .quartos-tabela {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .quarto-etiqueta {
+          padding: 44px 18px 16px;
+        }
+
+        .quarto-etiqueta h3 {
+          font-size: 1.2rem;
+        }
+
+        .quarto-specs {
+          gap: 14px;
+          font-size: 0.78rem;
+        }
+
+        .carrossel-seta {
+          width: 40px;
+          height: 40px;
+          margin-top: -20px;
+        }
+
+        .carrossel-seta--esq { left: 10px; }
+        .carrossel-seta--dir { right: 10px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .carrossel-trilho {
+          transition: none;
+        }
+      }
+
       .room-preco {
         position: absolute;
         left: 18px;
@@ -1986,36 +2501,6 @@
         color: var(--color-brand-orange);
       }
 
-      /* ---- Indicador de rolagem do hero ---- */
-      .scroll-cue {
-        position: absolute;
-        left: 50%;
-        bottom: 34px;
-        transform: translateX(-50%);
-        z-index: 2;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 0.72rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: color 0.16s ease-out;
-      }
-
-      .scroll-cue:hover {
-        color: #ffffff;
-      }
-
-      .scroll-cue svg {
-        animation: scroll-cue-bob 2s ease-in-out infinite;
-      }
-
-      @keyframes scroll-cue-bob {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(5px); }
-      }
 
 
 
@@ -2487,7 +2972,11 @@
               e localização privilegiada no centro da cidade.
             </p>
             <div class="hero-actions">
-              <a class="hero-btn" href="#contato">Reservar Agora</a>
+              <a class="hero-btn hero-btn--principal" href="#contato">Reservar agora</a>
+              <a class="hero-btn" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Hotel%20Calleb." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="17" height="17"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+                Fale conosco no WhatsApp
+              </a>
             </div>
             <div class="hero-meta">
               <span>4.9/5</span>
@@ -2495,10 +2984,66 @@
             </div>
           </div>
         </div>
-        <a class="scroll-cue" href="#sobre" aria-label="Rolar para o conteúdo">
-          <span>Explore</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      </section>
+
+      <!-- ---- Barra de reserva ----
+           Apoiada na borda de baixo do hero, como no modelo. Nao e um segundo
+           sistema de reserva: os quatro campos sao os mesmos do formulario da
+           secao Contato e o botao leva para la ja preenchido. Um caminho so,
+           o do WhatsApp, que e o que o hotel usa. -->
+      <section class="reserva-rapida" data-section="reserva" aria-labelledby="titulo-reserva-rapida">
+        <div class="container">
+          <h2 id="titulo-reserva-rapida" class="visualmente-oculto">Consultar disponibilidade</h2>
+          <form class="reserva-barra" id="formReservaRapida">
+            <div class="rr-campo">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2.2" stroke="currentColor" stroke-width="1.5"/><path d="M8 3.5v4M16 3.5v4M3.5 10.5h17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span class="rr-corpo">
+                <label for="rr-checkin">Check-in</label>
+                <input id="rr-checkin" name="checkin" type="date" />
+              </span>
+            </div>
+
+            <div class="rr-campo">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2.2" stroke="currentColor" stroke-width="1.5"/><path d="M8 3.5v4M16 3.5v4M3.5 10.5h17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m9.8 15.4 1.8 1.8 3.2-3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="rr-corpo">
+                <label for="rr-checkout">Check-out</label>
+                <input id="rr-checkout" name="checkout" type="date" />
+              </span>
+            </div>
+
+            <div class="rr-campo">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.5"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span class="rr-corpo">
+                <label for="rr-hospedes">Hóspedes</label>
+                <select id="rr-hospedes" name="hospedes">
+                  <option>2 hóspedes</option>
+                  <option>3 hóspedes</option>
+                  <option>4 hóspedes</option>
+                  <option>5 hóspedes</option>
+                </select>
+              </span>
+            </div>
+
+            <div class="rr-campo">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 18v-7.5A1.5 1.5 0 0 1 4.5 9h15a1.5 1.5 0 0 1 1.5 1.5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 15h18M6 9V6.6A1.6 1.6 0 0 1 7.6 5h8.8A1.6 1.6 0 0 1 18 6.6V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4.5 18v1.6M19.5 18v1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span class="rr-corpo">
+                <label for="rr-quarto">Quarto</label>
+                <select id="rr-quarto" name="quarto">
+                  <option>Todos os quartos</option>
+                  <option>Padrão</option>
+                  <option>Quarto triplo</option>
+                  <option>Casal</option>
+                  <option>Solteiro</option>
+                </select>
+              </span>
+            </div>
+
+            <button class="btn-cta rr-enviar" type="submit">
+              Reservar agora
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" width="16" height="16"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
       </section>
 
       <section class="stats reveal" data-section="estatisticas">
@@ -2674,114 +3219,121 @@
       </section>
 
       <section id="quartos" data-section="quartos" class="section-pad reveal fundo-creme">
-        <div class="container">
-          <div class="head-block">
+        <div class="container quartos-wrap">
+          <div class="quartos-copy">
             <div class="eyebrow">Acomodações</div>
-            <h2>Descanse em suítes projetadas para seu relaxamento.</h2>
+            <h2>Conforto e descanso em cada detalhe.</h2>
             <p>Todos os nossos quartos contam com ar-condicionado silencioso, enxoval premium e café da manhã incluso.</p>
+            <a class="btn-linha" href="#contato">
+              Reservar agora
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" width="16" height="16"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
 
-          <div class="card-grid quatro">
-            <article class="room-card">
-              <div class="card-image">
-                <img src="./images/quarto-familia.jpg" width="1200" height="900" alt="Quarto padrão com cama de casal e beliche" loading="lazy" decoding="async" />
+          <div class="quartos-vitrine" data-carrossel role="group"
+               aria-roledescription="carrossel"
+               aria-label="Quartos do Hotel Calleb — arraste para o lado ou use as setas">
+            <div class="carrossel-janela">
+              <div class="carrossel-trilho" data-carrossel-trilho>
+
+                <article class="quarto-slide" data-carrossel-slide data-nome="Padrão">
+                  <img src="./images/quarto-familia.jpg" width="1200" height="900" alt="Quarto padrão com cama de casal e beliche" loading="lazy" decoding="async" />
+                  <div class="quarto-etiqueta">
+                    <h3>Padrão</h3>
+                    <ul class="quarto-specs">
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>4 pessoas</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="quarto-slide" data-carrossel-slide data-nome="Quarto triplo">
+                  <img src="./images/quarto-triplo.jpg" width="1200" height="900" alt="Quarto triplo com camas de solteiro e beliche" loading="lazy" decoding="async" />
+                  <div class="quarto-etiqueta">
+                    <h3>Quarto triplo</h3>
+                    <ul class="quarto-specs">
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 pessoas</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="quarto-slide" data-carrossel-slide data-nome="Casal">
+                  <img src="./images/quarto-casal.jpg" width="1200" height="900" alt="Quarto de casal com cama box e escrivaninha" loading="lazy" decoding="async" />
+                  <div class="quarto-etiqueta">
+                    <h3>Casal</h3>
+                    <ul class="quarto-specs">
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>2 pessoas</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="quarto-slide" data-carrossel-slide data-nome="Solteiro">
+                  <img src="./images/quarto-solteiro.jpg" width="960" height="720" alt="Quarto individual com cama de solteiro e frigobar" loading="lazy" decoding="async" />
+                  <div class="quarto-etiqueta">
+                    <h3>Solteiro</h3>
+                    <ul class="quarto-specs">
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1 pessoa</li>
+                      <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Ar-condicionado</li>
+                    </ul>
+                  </div>
+                </article>
+
+              </div>
+
+              <button class="carrossel-seta carrossel-seta--esq" type="button" data-carrossel-seta="anterior" aria-label="Quarto anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="carrossel-seta carrossel-seta--dir" type="button" data-carrossel-seta="proximo" aria-label="Próximo quarto">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="carrossel-pontos" data-carrossel-pontos role="tablist" aria-label="Escolher o quarto"></div>
+            <p class="visualmente-oculto" data-carrossel-anuncio aria-live="polite"></p>
+          </div>
+
+          <!-- Os quatro quartos continuam listados por extenso, com preco,
+               descricao e o link de reserva de cada um. A vitrine acima mostra
+               a foto grande; esta lista garante que nenhuma informacao dependa
+               de a pessoa passar o carrossel ate o fim. -->
+          <ul class="quartos-tabela">
+            <li>
+              <div class="qt-nome"><strong>Padrão</strong><span>Até 4 pessoas · 35 m²</span></div>
+              <p>Quarto com capacidade para até 4 pessoas, com café da manhã.</p>
+              <div class="qt-fim">
                 <span class="room-preco"><strong>R$ 390</strong> /noite</span>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
-              <div class="card-body">
-                <h3>Padrão</h3>
-                <ul class="room-specs">
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>4 pessoas</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
-                </ul>
-                <p>Quarto com capacidade para até 4 pessoas, com café da manhã.</p>
-                <div class="room-rodape">
-                  <ul class="room-amenidades">
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
-                  </ul>
-                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Padr%C3%A3o%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="room-card">
-              <div class="card-image">
-                <img src="./images/quarto-triplo.jpg" width="1200" height="900" alt="Quarto triplo com camas de solteiro e beliche" loading="lazy" decoding="async" />
+            </li>
+            <li>
+              <div class="qt-nome"><strong>Quarto triplo</strong><span>Até 3 pessoas · 35 m²</span></div>
+              <p>Quarto com capacidade para até 3 pessoas, com café da manhã.</p>
+              <div class="qt-fim">
                 <span class="room-preco"><strong>R$ 320</strong> /noite</span>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
-              <div class="card-body">
-                <h3>Quarto triplo</h3>
-                <ul class="room-specs">
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>3 pessoas</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
-                </ul>
-                <p>Quarto com capacidade para até 3 pessoas, com café da manhã.</p>
-                <div class="room-rodape">
-                  <ul class="room-amenidades">
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
-                  </ul>
-                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Quarto%20triplo%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="room-card">
-              <div class="card-image">
-                <img src="./images/quarto-casal.jpg" width="1200" height="900" alt="Quarto de casal com cama box e escrivaninha" loading="lazy" decoding="async" />
+            </li>
+            <li>
+              <div class="qt-nome"><strong>Casal</strong><span>Até 2 pessoas · 35 m²</span></div>
+              <p>Quarto com capacidade para até duas pessoas, com café da manhã.</p>
+              <div class="qt-fim">
                 <span class="room-preco"><strong>R$ 280</strong> /noite</span>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
-              <div class="card-body">
-                <h3>Casal</h3>
-                <ul class="room-specs">
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>2 pessoas</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
-                </ul>
-                <p>Quarto com capacidade para até duas pessoas, com café da manhã.</p>
-                <div class="room-rodape">
-                  <ul class="room-amenidades">
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
-                  </ul>
-                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20de%20Casal%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="room-card">
-              <div class="card-image">
-                <img src="./images/quarto-solteiro.jpg" width="960" height="720" alt="Quarto individual com cama de solteiro e frigobar" loading="lazy" decoding="async" />
+            </li>
+            <li>
+              <div class="qt-nome"><strong>Solteiro</strong><span>1 hóspede · 35 m²</span></div>
+              <p>Quarto individual para apenas um hóspede, com café da manhã.</p>
+              <div class="qt-fim">
                 <span class="room-preco"><strong>R$ 220</strong> /noite</span>
+                <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
               </div>
-              <div class="card-body">
-                <h3>Solteiro</h3>
-                <ul class="room-specs">
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 11.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2c0-3.1 3-5.4 6.8-5.4s6.8 2.3 6.8 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>1 pessoa</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35 m²</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg>Wi-fi</li>
-                </ul>
-                <p>Quarto individual para apenas um hóspede, com café da manhã.</p>
-                <div class="room-rodape">
-                  <ul class="room-amenidades">
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h12v5.5A4.5 4.5 0 0 1 11.5 18h-3A4.5 4.5 0 0 1 4 13.5V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 9.4h1.8a2.3 2.3 0 0 1 0 4.6H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.5 3.2v2M11 3.2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 21h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Café da manhã</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.8" y="7" width="18.4" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 3.6 3.5 3.4 3.5-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Televisão</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.4 9.2a13 13 0 0 1 17.2 0M6.4 12.6a8.6 8.6 0 0 1 11.2 0M9.4 16a4.2 4.2 0 0 1 5.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.1" fill="currentColor"/></svg><span>Wi-fi</span></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="7.4" rx="1.8" stroke="currentColor" stroke-width="1.6"/><path d="M6 17.2h3M15 17.2h3M6 10.1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ar-condicionado</span></li>
-                  </ul>
-                  <a class="room-cta" href="https://wa.me/559285372368?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20quarto%20Solteiro%20no%20Hotel%20Calleb." target="_blank" rel="noopener">Reservar agora</a>
-                </div>
-              </div>
-            </article>
-          </div>
+            </li>
+          </ul>
+
+          <p class="quartos-nota">Todos os quartos incluem café da manhã, televisão, wi-fi e ar-condicionado.</p>
         </div>
       </section>
 

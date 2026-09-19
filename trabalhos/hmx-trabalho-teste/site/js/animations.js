@@ -405,6 +405,160 @@ function iniciarPilha(pilha) {
 
 document.querySelectorAll("[data-pilha]").forEach(iniciarPilha);
 
+/* ---------- Carrossel de foto unica ----------
+   Usado na vitrine dos quartos. Nao substitui a pilha de cartas das duas
+   galerias — aquelas continuam como estao. Aqui a foto e uma so, plana, com
+   a informacao do quarto por cima: e o formato do modelo e evita tres
+   baralhos iguais na mesma pagina.
+
+   Mesmo vocabulario da pilha, de proposito: arrastar para o lado, setas,
+   pontos, setas do teclado. O que anima e transform, resolvido pelo
+   compositor. Sem biblioteca. */
+function iniciarCarrossel(carrossel) {
+  const trilho = carrossel.querySelector('[data-carrossel-trilho]');
+  const slides = Array.from(carrossel.querySelectorAll('[data-carrossel-slide]'));
+  const total = slides.length;
+  if (!trilho || total < 2) return;
+
+  const pontos = carrossel.querySelector('[data-carrossel-pontos]');
+  const anuncio = carrossel.querySelector('[data-carrossel-anuncio]');
+  let atual = 0;
+
+  const desenhar = (arrasto = 0) => {
+    trilho.style.transform = `translate3d(calc(${atual * -100}% + ${arrasto}px), 0, 0)`;
+    slides.forEach((slide, i) => {
+      const fora = i !== atual;
+      slide.setAttribute('aria-hidden', fora ? 'true' : 'false');
+      /* slide fora de vista sai da tabulacao, senao o foco viaja para um
+         cartao invisivel e a pagina "pula" sozinha */
+      slide.querySelectorAll('a, button').forEach((f) => { f.tabIndex = fora ? -1 : 0; });
+    });
+    if (pontos) {
+      Array.from(pontos.children).forEach((p, i) =>
+        p.setAttribute('aria-selected', String(i === atual)));
+    }
+    if (anuncio) {
+      anuncio.textContent = `${atual + 1} de ${total}: ${slides[atual].dataset.nome || ''}`;
+    }
+  };
+
+  const irPara = (i) => {
+    atual = ((i % total) + total) % total;
+    desenhar();
+  };
+
+  /* ---- arraste ---- */
+  let arrastando = false;
+  let inicioX = 0;
+  let deslocado = 0;
+  let idPonteiro = null;
+  const limite = () => Math.max(40, carrossel.getBoundingClientRect().width * 0.12);
+
+  carrossel.addEventListener('pointerdown', (e) => {
+    if (e.button !== undefined && e.button !== 0) return;
+    if (e.target.closest('[data-carrossel-seta], [data-carrossel-pontos], a')) return;
+    arrastando = true;
+    inicioX = e.clientX;
+    deslocado = 0;
+    idPonteiro = e.pointerId;
+  });
+
+  carrossel.addEventListener('pointermove', (e) => {
+    if (!arrastando) return;
+    deslocado = e.clientX - inicioX;
+    /* so captura depois de 6px: abaixo disso ainda pode ser um toque, e
+       capturar cedo faz o clique chegar no elemento errado */
+    if (!carrossel.classList.contains('arrastando')) {
+      if (Math.abs(deslocado) < 6) return;
+      carrossel.classList.add('arrastando');
+      try { carrossel.setPointerCapture(idPonteiro); } catch (erro) { idPonteiro = null; }
+    }
+    desenhar(deslocado * 0.55);
+  });
+
+  const soltar = () => {
+    if (!arrastando) return;
+    arrastando = false;
+    carrossel.classList.remove('arrastando');
+    if (idPonteiro !== null && carrossel.hasPointerCapture(idPonteiro)) {
+      carrossel.releasePointerCapture(idPonteiro);
+    }
+    idPonteiro = null;
+    if (Math.abs(deslocado) > limite()) {
+      irPara(atual + (deslocado < 0 ? 1 : -1));
+    } else {
+      desenhar();
+    }
+    deslocado = 0;
+  };
+
+  carrossel.addEventListener('pointerup', soltar);
+  carrossel.addEventListener('pointercancel', soltar);
+
+  carrossel.querySelectorAll('[data-carrossel-seta]').forEach((seta) => {
+    seta.addEventListener('click', () => {
+      irPara(atual + (seta.dataset.carrosselSeta === 'proximo' ? 1 : -1));
+    });
+  });
+
+  carrossel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); irPara(atual + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); irPara(atual - 1); }
+  });
+
+  if (pontos) {
+    slides.forEach((slide, i) => {
+      const b = document.createElement('button');
+      b.className = 'carrossel-ponto';
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-label', `${slide.dataset.nome || 'Item'} (${i + 1} de ${total})`);
+      b.addEventListener('click', () => irPara(i));
+      pontos.appendChild(b);
+    });
+  }
+
+  desenhar();
+}
+
+document.querySelectorAll('[data-carrossel]').forEach(iniciarCarrossel);
+
+/* ---------- Barra de reserva do topo ----------
+   Nao envia nada por conta propria: copia os quatro campos para o formulario
+   da secao Contato e leva a pessoa para la, com o cursor no primeiro campo
+   que falta preencher. Um caminho de reserva so — o do WhatsApp — em vez de
+   dois que poderiam divergir. */
+const formRapido = document.querySelector('#formReservaRapida');
+const formCompleto = document.querySelector('#formReserva');
+
+if (formRapido && formCompleto) {
+  formRapido.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+
+    ['checkin', 'checkout', 'hospedes', 'quarto'].forEach((campo) => {
+      const origem = formRapido.elements[campo];
+      const destino = formCompleto.elements[campo];
+      if (!origem || !destino || !origem.value) return;
+      /* "Todos os quartos" e o estado neutro da barra: nao existe no
+         formulario completo, entao nao viaja. */
+      if (campo === 'quarto' && origem.value === 'Todos os quartos') return;
+      destino.value = origem.value;
+    });
+
+    const alvo = document.querySelector('#contato');
+    if (alvo) alvo.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
+
+    /* o foco vai para o primeiro campo ainda vazio, que e o que a pessoa
+       precisa completar para a reserva sair */
+    const nome = formCompleto.elements['nome'];
+    if (nome) {
+      window.setTimeout(() => {
+        nome.focus({ preventScroll: true });
+      }, prefersReducedMotion.matches ? 0 : 520);
+    }
+  });
+}
+
 /* ---------- Formulário de reserva: abre o WhatsApp do hotel ---------- */
 const WHATSAPP_NUMERO = '559285372368';
 const formReserva = document.querySelector('#formReserva');
