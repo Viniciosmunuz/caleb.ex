@@ -2767,3 +2767,54 @@ O alvo dos ícones caiu para 32×32, ainda acima dos 24×24 mínimos do WCAG 2.2
 Num 375px os seis atalhos continuam em duas linhas — os rótulos somam 330px de
 texto para 343px de largura útil, então nem com gap zero caberiam numa só.
 Nenhum link saiu.
+
+## Nomes dos quartos — 20/09/2026
+
+A pedido, dois dos quatro tipos mudaram de nome:
+
+| Antes | Agora | Preço (inalterado) |
+|---|---|---|
+| Padrão | **Quarto Standard** | R$ 390 · 4 pessoas |
+| Quarto triplo | **Triple Room** | R$ 320 · 3 pessoas |
+| Casal | Casal | R$ 280 · 2 pessoas |
+| Solteiro | Solteiro | R$ 220 · 1 pessoa |
+
+Preços, capacidades, área e comodidades não foram tocados — foram conferidos
+contra um print do site atual do hotel e já batiam item por item.
+
+### Onde o nome aparece
+
+Trocar só o `<h3>` quebraria coisa. São **12 lugares**, em cinco papéis
+diferentes:
+
+1. `<h3>` do cartão — o que se lê.
+2. `data-nome` do slide — é o que o carrossel anuncia no `aria-live` para quem
+   usa leitor de tela.
+3. `alt` da foto.
+4. Texto do link de WhatsApp (`wa.me/...?text=`), que é a mensagem que chega
+   para o hotel.
+5. `<option>` dos **dois** menus de "Tipo de quarto": o da barra de reserva
+   rápida e o do formulário.
+
+Os dois menus têm que bater palavra por palavra: a barra copia o valor
+escolhido para o formulário, e um nome diferente de um lado não acharia a
+opção correspondente do outro. Verificado depois da troca — as duas listas
+saem idênticas.
+
+### "Standard", não "Standart"
+
+O pedido veio escrito "standart". Pus **Standard**, com d: é a grafia correta
+da palavra, e um erro de ortografia no nome de uma categoria de quarto é
+justamente o tipo de coisa que pesa contra numa apresentação para o dono. Se o
+material dele usar "Standart", é uma linha para voltar.
+
+### O que ficou estranho e é do pedido
+
+"Triple Room" em inglês ao lado de "Casal" e "Solteiro" em português. Foi o
+nome pedido e está aplicado como veio. Se um dia todos forem para o inglês
+(Standard / Triple / Double / Single) ou todos para o português, fica coerente
+— hoje não está.
+
+Medido: "Quarto Standard" é o nome mais longo agora (15 caracteres contra os
+13 de "Quarto triplo") e continua numa linha só dentro da etiqueta da foto,
+num 375px. Sem vazamento.
