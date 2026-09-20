@@ -255,7 +255,11 @@
         border-radius: var(--r-lg);
         overflow: hidden;
         background: var(--color-dark);
-        box-shadow: 0 18px 46px rgba(0, 20, 43, 0.18);
+        /* o fio branco por dentro recorta a foto do fundo claro da pagina;
+           sem ele a borda da carta some no verde */
+        box-shadow: 0 10px 26px rgba(0, 20, 43, 0.14),
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        transition: box-shadow 0.32s ease-out;
         cursor: grab;
         -webkit-user-select: none;
         user-select: none;
@@ -290,9 +294,13 @@
         right: 0;
         bottom: 0;
         z-index: 2;
-        padding: 22px 22px 20px;
+        padding: 68px 22px 20px;
         color: #ffffff;
-        background: linear-gradient(180deg, rgba(0, 20, 43, 0), rgba(0, 20, 43, 0.86));
+        background: linear-gradient(180deg,
+                    rgba(0, 20, 43, 0) 0%,
+                    rgba(0, 20, 43, 0.08) 30%,
+                    rgba(0, 20, 43, 0.46) 62%,
+                    rgba(0, 20, 43, 0.88) 100%);
         border-radius: 0 0 var(--r-lg) var(--r-lg);
         pointer-events: none;
       }
@@ -303,11 +311,17 @@
         font-weight: 600;
         letter-spacing: -0.01em;
         line-height: 1.15;
+        /* a agua da cachoeira e quase branca: sem esta sombra o nome perde
+           o contorno justamente na parte clara da foto */
+        text-shadow: 0 1px 12px rgba(0, 20, 43, 0.55);
       }
 
       .pilha-legenda .atracao-local {
         margin-top: 7px;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.01em;
+        color: rgba(255, 255, 255, 0.86);
+        text-shadow: 0 1px 10px rgba(0, 20, 43, 0.5);
       }
 
       /* fora da carta da frente a legenda some, para o leque nao virar texto */
@@ -319,6 +333,17 @@
       .pilha-item[data-pilha-estado="frente"] .pilha-legenda {
         opacity: 1;
         transition: opacity 0.45s ease-out 0.12s;
+      }
+
+      .pilha-item[data-pilha-estado="frente"] .pilha-carta {
+        box-shadow: 0 28px 60px -14px rgba(0, 20, 43, 0.42),
+                    0 8px 20px rgba(0, 20, 43, 0.12),
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+      }
+
+      .pilha-item[data-pilha-estado="lado"] .pilha-carta {
+        box-shadow: 0 12px 28px rgba(0, 20, 43, 0.16),
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
       }
 
 
@@ -339,18 +364,37 @@
         padding: 0;
         border: none;
         border-radius: 50%;
-        background: var(--vidro);
+        background: rgba(255, 255, 255, 0.94);
         -webkit-backdrop-filter: var(--vidro-desfoque);
         backdrop-filter: var(--vidro-desfoque);
-        box-shadow: var(--vidro-sombra);
+        box-shadow: 0 6px 18px rgba(0, 20, 43, 0.18),
+                    0 1px 3px rgba(0, 20, 43, 0.12);
         color: var(--color-dark);
         cursor: pointer;
-        transition: background-color 0.18s ease-out;
+        transition: background-color 0.18s ease-out,
+                    box-shadow 0.18s ease-out,
+                    transform 0.18s ease-out;
       }
 
       .pilha-seta:hover,
       .pilha-seta:focus-visible {
-        background-color: rgba(255, 255, 255, 0.72);
+        background-color: #ffffff;
+        box-shadow: 0 10px 24px rgba(0, 20, 43, 0.22),
+                    0 2px 5px rgba(0, 20, 43, 0.14);
+        transform: scale(1.07);
+      }
+
+      .pilha-seta:active {
+        transform: scale(0.97);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pilha-seta,
+        .pilha-seta:hover,
+        .pilha-seta:focus-visible,
+        .pilha-seta:active {
+          transform: none;
+        }
       }
 
       .pilha-seta:focus-visible {
@@ -3167,13 +3211,36 @@
            flutuante do WhatsApp, e ali o icone das redes ficava por baixo
            dele num celular. */
         justify-content: flex-start;
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 4px 12px;
         /* era 13px: os alvos das redes tem 36px de altura e ja dao corpo a
            faixa. Mantido o respiro, a linha passaria de 44px para 62px. */
         padding: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 0.72rem;
         color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ---- Credito das fotos ----
+         Duas das quatro fotos das cachoeiras sao CC BY-SA 3.0, e a licenca
+         exige o nome de quem fotografou. Saiu de baixo da galeria, a pedido,
+         e veio para ca: cumpre a licenca sem interromper a leitura. */
+      .footer-creditos {
+        max-width: 62ch;
+        margin: 0;
+        font-size: 0.68rem;
+        line-height: 1.45;
+      }
+
+      .footer-creditos a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .footer-creditos a:hover,
+      .footer-creditos a:focus-visible {
+        color: var(--color-amber);
       }
 
       /* ---- Redes no rodape ----
@@ -4006,10 +4073,10 @@
                         data-descricao="Cenário cinematográfico com grutas e paredões de arenito impressionantes.">
                   <button class="pilha-carta" type="button" data-pilha-carta aria-label="Ver Cachoeira da Iracema">
                     <img
-                      src="./images/cachoeira-iracema-900.jpg"
-                      srcset="./images/cachoeira-iracema-480.jpg 480w, ./images/cachoeira-iracema-900.jpg 900w"
+                      src="./images/destino-iracema-800.jpg"
+                      srcset="./images/destino-iracema-480.jpg 480w, ./images/destino-iracema-800.jpg 800w"
                       sizes="(max-width: 560px) 62vw, 390px"
-                      width="900" height="675"
+                      width="800" height="1200"
                       alt="Queda larga da Cachoeira da Iracema sobre os paredões de arenito, vista do leito do rio"
                       decoding="async"
                     />
@@ -4028,10 +4095,10 @@
                         data-descricao="Quedas que atravessam furos na rocha e caem num poço em meia-lua.">
                   <button class="pilha-carta" type="button" data-pilha-carta aria-label="Ver Cachoeira da Pedra Furada">
                     <img
-                      src="./images/cachoeira-pedra-furada-900.jpg"
-                      srcset="./images/cachoeira-pedra-furada-480.jpg 480w, ./images/cachoeira-pedra-furada-900.jpg 900w"
+                      src="./images/destino-pedra-furada-800.jpg"
+                      srcset="./images/destino-pedra-furada-480.jpg 480w, ./images/destino-pedra-furada-800.jpg 800w"
                       sizes="(max-width: 560px) 62vw, 390px"
-                      width="900" height="675"
+                      width="800" height="1200"
                       alt="Duas quedas da Cachoeira da Pedra Furada descendo o paredão de arenito até o poço"
                       loading="lazy" decoding="async"
                     />
@@ -4050,10 +4117,10 @@
                         data-descricao="Corredeiras do igarapé das Lajes, com as águas escuras típicas da região.">
                   <button class="pilha-carta" type="button" data-pilha-carta aria-label="Ver Cachoeira das Lajes">
                     <img
-                      src="./images/cachoeira-lajes-900.jpg"
-                      srcset="./images/cachoeira-lajes-480.jpg 480w, ./images/cachoeira-lajes-900.jpg 900w"
+                      src="./images/destino-lajes-800.jpg"
+                      srcset="./images/destino-lajes-480.jpg 480w, ./images/destino-lajes-800.jpg 800w"
                       sizes="(max-width: 560px) 62vw, 390px"
-                      width="900" height="675"
+                      width="800" height="1200"
                       alt="Corredeiras da Cachoeira das Lajes sobre a laje de pedra, com a mata nas duas margens"
                       loading="lazy" decoding="async"
                     />
@@ -4072,10 +4139,10 @@
                         data-descricao="Trilha guiada por cavernas milenares envoltas pela densa selva amazônica.">
                   <button class="pilha-carta" type="button" data-pilha-carta aria-label="Ver Caverna Refúgio do Maroaga">
                     <img
-                      src="./images/caverna-maroaga-900.jpg"
-                      srcset="./images/caverna-maroaga-480.jpg 480w, ./images/caverna-maroaga-900.jpg 900w"
+                      src="./images/destino-maroaga-800.jpg"
+                      srcset="./images/destino-maroaga-480.jpg 480w, ./images/destino-maroaga-800.jpg 800w"
                       sizes="(max-width: 560px) 62vw, 390px"
-                      width="900" height="675"
+                      width="800" height="1200"
                       alt="Vista de dentro da Caverna do Maroaga, com a floresta e a queda d'água emoldurada pela boca da gruta"
                       loading="lazy" decoding="async"
                     />
@@ -4099,17 +4166,9 @@
 
             <div class="pilha-pontos" data-pilha-pontos role="tablist" aria-label="Escolher a atração em destaque"></div>
 
-            <p class="atracao-desc" data-pilha-descricao>Cenário cinematográfico com grutas e paredões de arenito impressionantes.</p>
             <p class="visualmente-oculto" data-pilha-anuncio aria-live="polite"></p>
           </div>
 
-
-          <p class="cachoeiras-credito">
-            Fotos: Cachoeira da Iracema e Cachoeira das Lajes por MTur Destinos (domínio público);
-            Cachoeira da Pedra Furada por Luciano cta e Caverna do Maroaga por Fabricio Ferreira Silva
-            (<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt_BR" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>),
-            via Wikimedia Commons.
-          </p>
 
         </div>
       </section>
@@ -4146,39 +4205,93 @@
                aria-label="Fotos do Hotel Calleb — arraste para o lado ou clique numa carta">
             <div class="pilha-medida" aria-hidden="true"></div>
             <div class="pilha-lista">
-              <div class="pilha-item" data-pilha-item data-nome="Area externa">
+              <div class="pilha-item" data-pilha-item data-nome="Área externa">
                 <button class="pilha-carta" type="button" data-pilha-carta>
-                  <img src="./images/gal-area-externa.jpg" width="900" height="1200" alt="Área externa do hotel com mesas e hóspedes reunidos" decoding="async" />
+                  <img src="./images/gal-area-externa-800.jpg"
+                       srcset="./images/gal-area-externa-480.jpg 480w, ./images/gal-area-externa-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Área externa do hotel com mesas e hóspedes reunidos" decoding="async" />
                 </button>
               </div>
 
-              <div class="pilha-item" data-pilha-item data-nome="Cafe da manha">
+              <div class="pilha-item" data-pilha-item data-nome="Bar">
                 <button class="pilha-carta" type="button" data-pilha-carta>
-                  <img src="./images/gal-cafe-buffet.jpg" width="900" height="1200" alt="Buffet do café da manhã servido no salão" loading="lazy" decoding="async" />
+                  <img src="./images/gal-bar-800.jpg"
+                       srcset="./images/gal-bar-480.jpg 480w, ./images/gal-bar-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Balcão do bar com luminárias pendentes e mesas de madeira" loading="lazy" decoding="async" />
+                </button>
+              </div>
+
+              <div class="pilha-item" data-pilha-item data-nome="Café da manhã">
+                <button class="pilha-carta" type="button" data-pilha-carta>
+                  <img src="./images/gal-cafe-buffet-800.jpg"
+                       srcset="./images/gal-cafe-buffet-480.jpg 480w, ./images/gal-cafe-buffet-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Buffet do café da manhã servido no salão" loading="lazy" decoding="async" />
                 </button>
               </div>
 
               <div class="pilha-item" data-pilha-item data-nome="Quarto de casal">
                 <button class="pilha-carta" type="button" data-pilha-carta>
-                  <img src="./images/gal-quarto-casal.jpg" width="900" height="1200" alt="Quarto de casal com cama box e armário" loading="lazy" decoding="async" />
+                  <img src="./images/gal-quarto-casal-800.jpg"
+                       srcset="./images/gal-quarto-casal-480.jpg 480w, ./images/gal-quarto-casal-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Quarto de casal com cama box e armário" loading="lazy" decoding="async" />
                 </button>
               </div>
 
-              <div class="pilha-item" data-pilha-item data-nome="Mesa do cafe">
+              <div class="pilha-item" data-pilha-item data-nome="Salao">
                 <button class="pilha-carta" type="button" data-pilha-carta>
-                  <img src="./images/gal-cafe-mesa.jpg" width="900" height="1200" alt="Café da manhã servido na mesa, com tapioca e café" loading="lazy" decoding="async" />
+                  <img src="./images/gal-restaurante-720.jpg"
+                       srcset="./images/gal-restaurante-480.jpg 480w, ./images/gal-restaurante-720.jpg 720w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="720" height="1080" alt="Salão de refeições com mesas de madeira e luminárias pendentes" loading="lazy" decoding="async" />
                 </button>
               </div>
 
-              <div class="pilha-item" data-pilha-item data-nome="Quarto familia">
+              <div class="pilha-item" data-pilha-item data-nome="Mesa do café">
                 <button class="pilha-carta" type="button" data-pilha-carta>
-                  <img src="./images/gal-quarto-familia.jpg" width="900" height="1200" alt="Quarto família com cama de casal e beliche" loading="lazy" decoding="async" />
+                  <img src="./images/gal-cafe-mesa-800.jpg"
+                       srcset="./images/gal-cafe-mesa-480.jpg 480w, ./images/gal-cafe-mesa-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Café da manhã servido na mesa, com tapioca e café" loading="lazy" decoding="async" />
+                </button>
+              </div>
+
+              <div class="pilha-item" data-pilha-item data-nome="Quarto família">
+                <button class="pilha-carta" type="button" data-pilha-carta>
+                  <img src="./images/gal-quarto-familia-800.jpg"
+                       srcset="./images/gal-quarto-familia-480.jpg 480w, ./images/gal-quarto-familia-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Quarto família com cama de casal e beliche" loading="lazy" decoding="async" />
+                </button>
+              </div>
+
+              <div class="pilha-item" data-pilha-item data-nome="Area interna">
+                <button class="pilha-carta" type="button" data-pilha-carta>
+                  <img src="./images/gal-recepcao-720.jpg"
+                       srcset="./images/gal-recepcao-480.jpg 480w, ./images/gal-recepcao-720.jpg 720w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="720" height="1080" alt="Área interna com sofá, quadros e luminárias pendentes" loading="lazy" decoding="async" />
                 </button>
               </div>
 
               <div class="pilha-item" data-pilha-item data-nome="Detalhe do quarto">
                 <button class="pilha-carta" type="button" data-pilha-carta>
-                  <img src="./images/gal-quarto-detalhe.jpg" width="900" height="1200" alt="Detalhe do quarto com armário, frigobar e ar-condicionado" loading="lazy" decoding="async" />
+                  <img src="./images/gal-quarto-detalhe-800.jpg"
+                       srcset="./images/gal-quarto-detalhe-480.jpg 480w, ./images/gal-quarto-detalhe-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Detalhe do quarto com armário, frigobar e ar-condicionado" loading="lazy" decoding="async" />
+                </button>
+              </div>
+
+              <div class="pilha-item" data-pilha-item data-nome="Quarto com ar-condicionado">
+                <button class="pilha-carta" type="button" data-pilha-carta>
+                  <img src="./images/gal-quarto-ar-800.jpg"
+                       srcset="./images/gal-quarto-ar-480.jpg 480w, ./images/gal-quarto-ar-800.jpg 800w"
+                       sizes="(max-width: 560px) 62vw, 390px"
+                       width="800" height="1200" alt="Quarto com cama, televisão, frigobar e ar-condicionado" loading="lazy" decoding="async" />
                 </button>
               </div>
               </div>
@@ -4236,7 +4349,10 @@
            fonte, para quem quiser conferir. -->
       <section id="avaliacoes" data-section="avaliacoes" class="faixa-depoimentos reveal">
         <div class="dep-foto" aria-hidden="true">
-          <img src="./images/cachoeira-iracema-900.jpg" width="900" height="675" alt="" loading="lazy" decoding="async" />
+          <img src="./images/dep-iracema-1600.jpg"
+               srcset="./images/dep-iracema-900.jpg 900w, ./images/dep-iracema-1600.jpg 1600w"
+               sizes="(max-width: 900px) 100vw, 46vw"
+               width="1600" height="1067" alt="" loading="lazy" decoding="async" />
           <p class="dep-frase">Viva o melhor<br />de Presidente Figueiredo</p>
         </div>
 
@@ -4552,6 +4668,13 @@
              dele. Chutar o endereco mandaria o hospede para o perfil de
              outra pessoa. Quando o dono passar o link, basta tirar os dois
              marcadores de comentario e por a URL no href. -->
+        <p class="footer-creditos">
+          Fotos das cachoeiras: MTur Destinos (domínio público); Pedra Furada por Luciano cta e
+          Caverna do Maroaga por Fabricio Ferreira Silva
+          (<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt_BR" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>),
+          via Wikimedia Commons.
+        </p>
+
         <div class="footer-redes">
           <a href="https://www.instagram.com/hotelcalleb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Hotel Calleb (abre em nova aba)">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">

@@ -2874,3 +2874,131 @@ menos.
 
 Conferido depois: a expressão "Natureza ao redor" não aparece mais em lugar
 nenhum da página.
+
+## As duas galerias — 20/09/2026
+
+Quatro pedidos numa mensagem: acabamento na galeria das cachoeiras, mais fotos
+do hotel, melhor qualidade nas duas e remoção do texto por baixo das
+cachoeiras. A estrutura do carrossel não foi tocada em nenhum momento — o JS
+da pilha está igual, byte por byte.
+
+### O defeito que estava por trás do "melhore a qualidade"
+
+O cartão tem **2:3 em pé** (medido: 387×580 no desktop, 205×308 no celular).
+As fotos eram **4:3 deitadas**. O `object-fit: cover` então jogava fora 45% da
+largura e ampliava o resto.
+
+Com o arquivo de 480px, num celular retina, a conta era:
+
+| | valor |
+|---|---|
+| Cartão | 205×308 CSS |
+| Precisa (DPR 2) | 410×616 px |
+| Arquivo servido | 480×360 |
+| Fator depois do recorte | **1,71× de ampliação** |
+
+Ou seja: o navegador achava que tinha pixel de sobra — o descritor dizia
+`480w` e a fatia pedia 464 — mas depois do recorte em pé sobrava metade. Daí a
+foto borrada.
+
+**A correção é o formato, não o tamanho.** As fotos agora são 2:3 em pé, do
+mesmo formato do cartão. Aí o `480w` passa a ser verdade, e o navegador acerta
+a escolha sozinho.
+
+### Fotos das cachoeiras, refeitas dos originais
+
+As antigas eram recortes de 900px. Fui atrás dos arquivos de origem no
+Wikimedia Commons e confirmei cada um comparando lado a lado com o recorte que
+estava no ar:
+
+| Atração | Arquivo no Commons | Original | Licença |
+|---|---|---|---|
+| Iracema | MarioOliveira Cachoeira de Iracema … (41107155682) | 4370×2598 | domínio público |
+| Pedra Furada | Cachoeira Cascata da Pedra Furada, Presidente Figueiredo, AM | 3264×2448 | CC BY-SA 3.0 |
+| Lajes | MarioOliveira Cachoeira das Lajes … (41150664021) | 3696×2448 | domínio público |
+| Maroaga | Caverna Maroaga | 4320×3240 | CC BY-SA 3.0 |
+
+São **as mesmas fotos** que já estavam — não troquei imagem nenhuma, só
+voltei à fonte. Saíram em `destino-*-480.jpg` (480×720) e `destino-*-800.jpg`
+(800×1200), progressivas, sem metadado, q86.
+
+O fundo dos depoimentos também subiu: era a mesma foto de 900px espalhada por
+46% de uma tela larga. Virou `dep-iracema-1600.jpg`.
+
+### O crédito das fotos não podia sumir
+
+O pedido foi remover o bloco de texto por baixo da galeria. A descrição da
+cachoeira saiu. **O crédito não pode simplesmente sumir:** duas das quatro
+fotos são CC BY-SA 3.0, e a licença exige o nome de quem fotografou. Apagar o
+crédito é usar a foto de forma irregular — e num site que vai ser entregue ao
+dono do hotel, o problema passaria a ser dele.
+
+Então o crédito **mudou de lugar**: saiu de baixo da galeria e foi para o
+rodapé, em letra de nota de rodapé (0,68rem). Contraste medido: branco a 0,55
+sobre o `#002348` dá **5,60:1**, acima dos 4,5:1 — é aviso de licença, tem que
+dar para ler.
+
+A galeria ficou limpa, como pedido, e a licença continua cumprida.
+
+### Quatro fotos novas do hotel
+
+De seis para dez. As novas saíram do acervo em alta (`fotos-reais/hd/`), todas
+fotos reais do hotel, nenhuma de banco de imagem:
+
+| Carta | Origem | O que mostra |
+|---|---|---|
+| Bar | `home-02` (1200×1600) | balcão com luminárias pendentes e mesas de madeira |
+| Salão | `home-05` (810×1080) | salão de refeições |
+| Área interna | `home-13` (810×1080) | sofá, quadros, luminárias |
+| Quarto com ar-condicionado | `home-08` (960×1280) | cama, televisão, frigobar e ar |
+
+As seis antigas foram refeitas a partir dos mesmos originais em HD — confirmei
+par a par, montando as atuais ao lado das candidatas, que nenhuma foto trocou.
+
+`home-05` e `home-13` são de 810×1080: o recorte 2:3 máximo delas é 720×1080,
+então o descritor grande dessas duas é `720w`, não `800w`. Descritor tem que
+ser verdade — foi exatamente a mentira do `480w` que borrava as cachoeiras.
+
+### Peso
+
+| | Antes | Agora |
+|---|---|---|
+| Celular, duas galerias | ~1.080 KB em 10 fotos | **990 KB em 14 fotos** |
+| Desktop retina | servia os mesmos arquivos pequenos, ampliados | 2.302 KB, nítidos |
+
+Ou seja: no celular o site ficou **mais leve** com quatro fotos a mais, porque
+antes ele baixava o arquivo de 900×1200 inteiro para um cartão de 205px — não
+havia `srcset` na galeria do hotel.
+
+Treze arquivos órfãos foram apagados (1,5 MB).
+
+### O acabamento, só CSS
+
+Nada de estrutura, nada de JS:
+
+- **Profundidade.** Todas as cartas tinham a mesma sombra, e o leque ficava
+  chapado. A da frente ganhou `0 28px 60px -14px` a 42%; as de trás caíram
+  para `0 12px 28px` a 16%. Transição de 0,32s para acompanhar o giro.
+- **Fio branco por dentro** (`inset 0 0 0 1px rgba(255,255,255,.1)`): sem ele
+  a borda da carta sumia no verde-claro da página.
+- **A legenda.** O degrade era uma rampa reta de transparente a 86% e
+  desenhava uma linha visível no meio da foto. Agora são quatro paradas, e o
+  respiro de cima passou de 22px para 68px para a rampa ter onde dissolver.
+- **Sombra no texto da legenda.** A água da cachoeira é quase branca; sem o
+  `text-shadow` o nome perdia o contorno justamente na parte clara.
+- **As setas.** Usavam o vidro translúcido da navbar e ficavam apagadas sobre
+  o verde com foto atrás. Agora são branco 0,94 com sombra própria, crescem 7%
+  no hover e afundam 3% no clique. **O token `--vidro` não foi tocado: a
+  navbar continua exatamente igual.** O movimento respeita
+  `prefers-reduced-motion`.
+
+### Verificação
+
+- 28 imagens na página, **nenhuma quebrada**.
+- Setas testadas com clique real: nas cachoeiras, Iracema → Pedra Furada; na
+  galeria, Área externa → Bar. Dez cartas na pilha do hotel.
+- Sem rolagem horizontal; legenda dentro da carta; seta não cobre a carta da
+  frente.
+- Os nomes que o leitor de tela anuncia ganharam acento — eram "Cafe da
+  manha", "Area externa", "Quarto familia", "Mesa do cafe". Sem acento a
+  síntese de voz lê errado.
