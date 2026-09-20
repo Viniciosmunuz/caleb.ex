@@ -2847,3 +2847,30 @@ dois menus, e batem.
 O menu começa em 2, e existe um quarto **Solteiro**, de 1 pessoa. Quem quiser
 reservá-lo é obrigado a declarar 2 hóspedes. Não mexi porque o pedido foi
 sobre o teto, não sobre o piso — mas é o mesmo desencontro, do outro lado.
+
+## "Natureza ao redor" sai da faixa de experiência — 20/09/2026
+
+A pedido, o item **"Natureza ao redor — cachoeiras, grutas e trilhas perto"**
+foi removido da lista da seção "Sua experiência". A faixa passou de sete para
+seis itens:
+
+1. Café da manhã incluso
+2. Wi-fi de alta velocidade
+3. Ar-condicionado nos quartos
+4. Atendimento regional
+5. Localização privilegiada
+6. Reserva simples
+
+**Nenhuma informação se perdeu do site.** A seção "destino", logo abaixo desta,
+é inteira sobre a natureza ao redor, e com muito mais detalhe: nomeia a
+Cachoeira da Iracema, a Pedra Furada, as Lajes e a Caverna Refúgio do Maroaga,
+com foto de cada uma. O item da faixa era o resumo; o desenvolvimento continua
+onde sempre esteve.
+
+**De quebra, a grade melhorou.** A lista é de duas colunas: com sete itens, um
+ficava sozinho na última linha. Com seis, fecham três linhas certas. Num
+celular a lista já era de uma coluna, então lá a mudança é só uma linha a
+menos.
+
+Conferido depois: a expressão "Natureza ao redor" não aparece mais em lugar
+nenhum da página.
