@@ -3105,3 +3105,58 @@ Dois cuidados que o carrossel exigia:
 
 **A estrutura do carrossel não foi tocada** — nem a tabela do leque, nem o
 arraste, nem as setas.
+
+## Três pendências fechadas — 20/09/2026
+
+### "1 hóspede" entrou
+
+Os dois menus começavam em 2, e existe quarto **Solteiro**, de uma pessoa.
+Quem quisesse reservá-lo era obrigado a declarar dois hóspedes. Agora vai de
+1 a 4 — 4 é a capacidade do maior quarto, o Standard.
+
+Singular no rótulo: "1 hóspede", não "1 hóspedes".
+
+As duas listas continuam idênticas, que é o que a barra de reserva exige para
+copiar o valor para o formulário. Testado: escolhido "1 hóspede" na barra,
+chegou "1 hóspede" no formulário.
+
+### A barra do topo também dava zoom no iPhone
+
+Mesmo defeito do formulário, que eu tinha registrado como pendência: os campos
+usavam 0,86rem (13,8px), e **abaixo de 16px o Safari do iPhone amplia a página
+ao focar o campo**. Agora são 16px cravados.
+
+O rótulo acima continua em 0,8rem: rótulo não recebe foco, então não provoca
+zoom.
+
+### O efeito colateral: "Todos os quartos" não cabia mais
+
+Subir a fonte custa largura. Medido, com a seta nativa do `select`:
+
+| | Precisa | Coluna tem (990px) | Coluna tem (1280px) |
+|---|---|---|---|
+| "Todos os quartos" | 150px | 123px | 152px |
+
+Ou seja: cortava em praticamente todo notebook, e num 1280 passava por 2px —
+qualquer diferença de renderização de fonte cortaria também.
+
+Mexer na grade da barra para dar mais espaço a essa coluna tiraria espaço das
+datas, que já estavam justas. **O rótulo acima da caixa já diz "Quarto"**,
+então o estado neutro virou só **"Todos"**: 60px em vez de 150, e a barra
+inteira passou a sobrar espaço em todas as larguras.
+
+O texto também mudou no JS, que trata esse valor como "nenhum quarto
+escolhido" e não o copia para o formulário. Testado: com "Todos" na barra, o
+campo do formulário continuou com o que já estava.
+
+Medido depois, num 990 (a largura mais apertada das quatro colunas): todos os
+quatro campos com mais espaço do que precisam.
+
+### Facebook removido
+
+O bloco comentado saiu do HTML. Não existe página do hotel — procurei em
+busca, no perfil do Instagram e no próprio `facebook.com/hotelcalleb`, que
+responde "conteúdo não disponível". Guardar o bloco só deixava lixo no
+arquivo; se um dia ele criar a página, são quatro linhas.
+
+O rodapé fica com um ícone só, o do Instagram.

@@ -559,9 +559,9 @@ if (formRapido && formCompleto) {
       const origem = formRapido.elements[campo];
       const destino = formCompleto.elements[campo];
       if (!origem || !destino || !origem.value) return;
-      /* "Todos os quartos" e o estado neutro da barra: nao existe no
-         formulario completo, entao nao viaja. */
-      if (campo === 'quarto' && origem.value === 'Todos os quartos') return;
+      /* "Todos" e o estado neutro da barra: nao existe no formulario
+         completo, entao nao viaja. */
+      if (campo === 'quarto' && origem.value === 'Todos') return;
       destino.value = origem.value;
     });
 
