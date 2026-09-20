@@ -2726,3 +2726,44 @@ são o alvo do ícone.
 
 Nenhum texto saiu: os seis atalhos, o nome, a cidade e o copyright continuam
 todos lá.
+
+### Segunda afinada — 20/09/2026
+
+A pedido, mais uma volta, com a fonte dos atalhos menor:
+
+| | 1ª afinada | Agora |
+|---|---|---|
+| `.site-footer` respiro de cima | 16px | 12px |
+| `.footer-grid` gap / respiro de baixo | 6px 26px / 9px | 4px 22px / 6px |
+| `.footer-marca h3` | 0,94rem | 0,86rem (13,8px) |
+| `.footer-local` | 0,74rem | 0,70rem (11,2px) |
+| `.footer-links` gap / tamanho | 3px 17px / 0,78rem | 2px 15px / 0,72rem (11,5px) |
+| `.footer-row` respiro / tamanho | 2px / 0,76rem | 0 / 0,72rem |
+| alvo das redes | 36×36 | 32×32 |
+
+Altura medida:
+
+| | Antes | 1ª afinada | Agora |
+|---|---|---|---|
+| Rodapé num 1280 | — | 158px | **141px** |
+| Rodapé num 375 | — | 207px | **184px** |
+| Bloco dos atalhos (375) | — | 94px | **83px** |
+| Linha do copyright | 44px | 41px | **33px** |
+
+Dos 141px do desktop, **56 são a folga do botão flutuante do WhatsApp** — o
+rodapé com conteúdo tem 85px.
+
+**Onde eu paro.** 0,72rem são 11,5px, e é o piso que aceito com esta cor. O
+branco a 0,62 sobre o `#002348` dá 6,76:1, bem acima dos 4,5:1 exigidos, e é
+esse contraste que segura a leitura num corpo tão pequeno. Para encolher mais,
+a cor teria que clarear junto — caso contrário a conta some e o texto vira
+enfeite.
+
+O laranja da marca no nome do hotel foi conferido antes de encolher:
+`#f97300` sobre `#002348` dá **5,61:1**.
+
+O alvo dos ícones caiu para 32×32, ainda acima dos 24×24 mínimos do WCAG 2.2.
+
+Num 375px os seis atalhos continuam em duas linhas — os rótulos somam 330px de
+texto para 343px de largura útil, então nem com gap zero caberiam numa só.
+Nenhum link saiu.

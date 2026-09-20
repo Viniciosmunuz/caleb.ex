@@ -3088,7 +3088,7 @@
          e os atalhos. O botao de reservar saiu — era o quinto "Reservar
          agora" da pagina, e o ultimo lugar onde alguem procuraria um. */
       .site-footer {
-        padding: 16px 0 0;
+        padding: 12px 0 0;
         background: var(--color-dark);
         border-top: none;
         color: rgba(255, 255, 255, 0.7);
@@ -3106,8 +3106,8 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: 6px 26px;
-        padding-bottom: 9px;
+        gap: 4px 22px;
+        padding-bottom: 6px;
       }
 
       .footer-marca {
@@ -3118,14 +3118,16 @@
 
       .footer-marca h3 {
         color: var(--color-amber);
-        font-size: 0.94rem;
+        /* laranja da marca sobre o azul do rodape: 5,61:1, acima dos 4,5:1
+           exigidos. Da para encolher sem perder a leitura. */
+        font-size: 0.86rem;
       }
 
       .footer-local {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        font-size: 0.74rem;
+        gap: 5px;
+        font-size: 0.7rem;
         color: rgba(255, 255, 255, 0.62);
         transition: color 0.16s ease-out;
       }
@@ -3134,11 +3136,14 @@
         flex-shrink: 0;
       }
 
+      /* 0,72rem sao 11,5px — o piso que eu aceito aqui. O branco a 0,62
+         sobre o azul da 6,76:1, bem acima dos 4,5:1, e e isso que segura a
+         leitura nesse tamanho; encolher mais so com a cor mais clara. */
       .footer-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 3px 17px;
-        font-size: 0.78rem;
+        gap: 2px 15px;
+        font-size: 0.72rem;
       }
 
       .footer-links a,
@@ -3165,9 +3170,9 @@
         gap: 12px;
         /* era 13px: os alvos das redes tem 36px de altura e ja dao corpo a
            faixa. Mantido o respiro, a linha passaria de 44px para 62px. */
-        padding: 2px 0;
+        padding: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.76rem;
+        font-size: 0.72rem;
         color: rgba(255, 255, 255, 0.55);
       }
 
@@ -3191,8 +3196,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         color: rgba(255, 255, 255, 0.62);
         transition: color 0.16s ease-out, background-color 0.16s ease-out;
@@ -3210,8 +3215,8 @@
       }
 
       .footer-redes svg {
-        width: 18px;
-        height: 18px;
+        width: 17px;
+        height: 17px;
         flex-shrink: 0;
       }
 
