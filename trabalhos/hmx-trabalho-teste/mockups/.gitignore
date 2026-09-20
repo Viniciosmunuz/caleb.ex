@@ -1,0 +1,4 @@
+# as capturas em PNG e as telas soltas sao regeneraveis e pesam 48 MB.
+# No repositorio ficam so os JPEG dos mockups montados.
+*.png
+telas/

@@ -3160,3 +3160,57 @@ responde "conteúdo não disponível". Guardar o bloco só deixava lixo no
 arquivo; se um dia ele criar a página, são quatro linhas.
 
 O rodapé fica com um ícone só, o do Instagram.
+
+## Mockups para apresentação — 20/09/2026
+
+Cinco imagens em `trabalhos/hmx-trabalho-teste/mockups/`, montadas de capturas
+reais do site que está no ar — nada desenhado à mão:
+
+| Arquivo | O que é |
+|---|---|
+| `3-capa` | os dois aparelhos juntos no azul da marca, com o nome e o endereço |
+| `1-desktop` | janela de navegador com a home |
+| `2-celular` | aparelho com a home no celular |
+| `4-telas-desktop` | quatro seções: acomodações, destino, galeria e reserva |
+| `5-telas-celular` | cinco telas de celular lado a lado |
+
+### Como as capturas foram feitas
+
+Chrome em modo headless, contra uma cópia descartável do site servida em
+`localhost`. A cópia levava um `mock.css` que **não existe no site**, só para
+a foto sair parada:
+
+- `scroll-behavior: auto` e `.reveal { opacity: 1 }` — a animação de entrada
+  deixava metade da página invisível na captura.
+- `.hero { min-height: 860px }` — a captura é feita numa janela de 9.200px de
+  altura, para tudo caber de uma vez e as seções animadas entrarem em tela.
+  Sem isso o hero, que é `100svh`, viraria uma torre de 9.200px.
+- Posição fixa para cada coluna do painel de números.
+
+### Três armadilhas que custaram tempo
+
+**1. O painel de números.** Zerar `animation-duration` travava as quatro
+colunas na primeira carta e as quatro apareciam com "2.500+". O painel é um
+rolo de 12s com atraso escalonado (-0s, -3s, -6s, -9s), então ao vivo cada
+coluna mostra uma carta diferente. A correção foi pôr cada coluna à mão na
+posição que o atraso dela manda. `animation-play-state: paused` também não
+servia: congelava outras coisas em opacidade zero.
+
+**2. O Chrome tem largura mínima de janela.** Pedir `--window-size=390` não dá
+uma janela de 390: a página é desenhada mais larga e a foto sai cortada pela
+direita — o título aparecia como "Conforto e Hospitalidad". As capturas de
+celular foram feitas a **500px**, que passa do mínimo e continua abaixo do
+corte de 560px, ou seja, ainda é o layout de celular.
+
+**3. Escala 2 numa janela altíssima não pinta.** 1440×9200 a 2× são 53
+megapixels e o Chrome devolve a maior parte em branco. O desktop foi capturado
+a 1×; o celular, mais estreito, coube a 2×.
+
+### O que ficou de fora
+
+O mapa da seção Localização não entra nas capturas: o iframe do Google não
+carrega a tempo em headless e vira uma caixa cinza. Por isso não há mockup
+dessa seção.
+
+No repositório ficam só os JPEG (entre 240 KB e 650 KB). Os PNG e as telas
+soltas somam 48 MB, são regeneráveis, e estão no `.gitignore`.
