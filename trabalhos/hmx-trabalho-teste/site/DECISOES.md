@@ -3002,3 +3002,106 @@ Nada de estrutura, nada de JS:
 - Os nomes que o leitor de tela anuncia ganharam acento — eram "Cafe da
   manha", "Area externa", "Quarto familia", "Mesa do cafe". Sem acento a
   síntese de voz lê errado.
+
+## Formulário, botões de reserva e mapa das cachoeiras — 20/09/2026
+
+### O campo que vazava no celular — eram dois problemas, não um
+
+Relato: "no meu celular os dois primeiros campos ficam pra fora do
+formulário; aqui no emulador não fica". Emulador não reproduzir é a pista: o
+que muda entre o Chrome do computador e o Safari do iPhone é justamente o
+controle de data.
+
+**Causa 1 — `min-width: auto`.** Item de grid não encolhe abaixo da largura
+mínima do próprio conteúdo. O `<input type="date">` do iOS tem largura
+intrínseca própria, maior que a coluna, e empurrava a borda do cartão para
+fora. O Chrome encolhe o dele, por isso aqui nunca apareceu.
+
+Correção: `min-width: 0` no `.field` e `min-width: 0; max-width: 100%` nos
+campos, mais `-webkit-appearance: none` nos `input[type="date"]` — que
+devolve a caixa ao CSS sem tirar o seletor de data.
+
+**Causa 2 — a fonte de 13px.** Os campos não tinham `font-family`/`font-size`,
+então usavam a fonte padrão do navegador para formulário, que tem ~13px.
+**Abaixo de 16px o Safari do iPhone dá zoom na página ao focar o campo** — e a
+página ampliada é a outra metade do "fica pra fora": não é o campo que sai do
+cartão, é o cartão que não cabe mais na tela.
+
+Correção: `font-family: inherit; font-size: 1rem` (16px exatos).
+
+Medido depois, num 375: os sete campos com 285px, nenhum ultrapassando a borda
+do cartão, todos a 16px. Num 1280: 241px os de meia linha, 497px os inteiros,
+sem rolagem horizontal.
+
+**Nada do formulário mudou:** mesmos sete campos, mesma ordem, mesmos nomes,
+mesmo envio.
+
+**Fica um aviso.** A barra de reserva rápida do topo usa fonte de 0,86rem
+(13,8px) nos campos dela. Pelo mesmo motivo, o iPhone vai dar um zoom leve ao
+tocar ali. Não mexi porque subir para 16px muda o desenho da barra inteira,
+que é apertada de propósito — mas está aqui registrado.
+
+### O cartão, refinado
+
+- Sombra em duas camadas (`0 1px 2px` rasa + `0 18px 44px -12px` funda). Uma
+  sombra só faz o cartão flutuar sem apoio.
+- Campos com fundo `#f6f8fa` em vez de branco sobre branco: a caixa passa a ter
+  forma antes de a pessoa tocar nela.
+- Texto de exemplo em `#647386`, que dá **4,55:1** sobre esse fundo — legível,
+  e ainda assim mais leve que o que a pessoa digita.
+- Foco com anel (`box-shadow 0 0 0 3px`) em vez de contorno que pula o layout;
+  quem navega por Tab continua recebendo o contorno grosso do sistema, via
+  `:focus-visible`.
+- **Hover deixou de ser laranja.** Era `--color-muted`, que é o laranja da
+  marca: passar o dedo acendia o campo de laranja e disputava com o botão, que
+  é a única coisa laranja do cartão. Agora é o mesmo azul da borda, mais firme.
+
+### Todo "Reservar agora" leva ao check-in
+
+São oito na página: navbar, menu do celular, hero, faixa final e os quatro dos
+cartões de quarto.
+
+| | Antes | Agora |
+|---|---|---|
+| Os quatro gerais | topo da seção Contato | topo do cartão, cursor no check-in |
+| Os quatro dos quartos | direto para o WhatsApp | cartão, com o tipo de quarto já escolhido |
+
+Os dos quartos não perdem informação: o formulário termina no WhatsApp de
+qualquer jeito, e agora chega lá com nome, datas e contato juntos, não só o
+nome do quarto. **Se o cliente preferir o atalho antigo, é uma linha por
+cartão para voltar.**
+
+O `href="#contato"` continua no HTML de propósito: sem JS, ou antes dele
+carregar, o link ainda leva à seção. O JS só afina a chegada.
+
+### A rolagem parava antes do alvo
+
+Primeira versão chegava a **275px do topo em vez de 92**. A rolagem suave mira
+um ponto calculado no instante em que começa; se algo carrega no caminho —
+imagem preguiçosa, seção que só anima ao entrar na tela — a página cresce por
+cima do alvo e a viagem termina antes da conta.
+
+Agora, depois da rolagem, o código confere onde parou e emenda o que faltou,
+até três vezes, e só então põe o foco. Medido depois: **92px**, dos botões do
+hero, da navbar e dos quartos.
+
+### Nome da cachoeira abre o mapa
+
+Os quatro nomes viraram link para o Google Maps, com uma setinha de "abre
+fora" ao lado.
+
+**O endereço vai como busca, não como coordenada.** Eu não tenho a latitude de
+nenhuma das quatro e não vou inventar uma: o link manda nome + cidade + estado
+para a busca do Maps, que é exatamente o que o site já afirma sobre cada uma.
+
+Dois cuidados que o carrossel exigia:
+
+1. A legenda inteira tem `pointer-events: none` para não roubar o arraste da
+   pilha. Só o link volta a aceitar toque — e **só o da carta da frente**: as
+   de trás estão com `opacity: 0`, que continua recebendo toque, e sem isso
+   daria para abrir o mapa de uma cachoeira que nem está à mostra.
+2. Arraste que termine em cima do nome não abre aba nenhuma. Mesma regra que a
+   carta já usava. Testado com arraste real: nenhum clique chegou ao link.
+
+**A estrutura do carrossel não foi tocada** — nem a tabela do leque, nem o
+arraste, nem as setas.

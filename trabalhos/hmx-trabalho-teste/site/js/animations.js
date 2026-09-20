@@ -358,6 +358,15 @@ function iniciarPilha(pilha) {
     });
   });
 
+  /* O nome da atracao e um link para o mapa. Mesma regra da carta: se o
+     dedo andou, o gesto foi arraste e o mapa nao abre — senao qualquer
+     arraste que terminasse em cima do nome abriria uma aba nova. */
+  pilha.querySelectorAll(".pilha-legenda a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (ultimoGesto > 6) { ultimoGesto = 0; e.preventDefault(); }
+    });
+  });
+
   /* ---- setas ---- */
   const seta = (sel, passo) => {
     const b = pilha.querySelector(sel);
@@ -569,6 +578,70 @@ if (formRapido && formCompleto) {
     }
   });
 }
+
+/* ---------- "Reservar agora": todos levam ao mesmo lugar ----------
+   Sao oito na pagina: o da navbar, o do menu do celular, o do hero, o da
+   faixa final e os quatro dos cartoes de quarto. Antes os quatro dos quartos
+   iam direto para o WhatsApp e os outros paravam no topo da secao Contato,
+   que num desktop deixa o cartao do formulario no meio da tela.
+
+   Agora todos chegam no topo do cartao, com o cursor no check-in: o primeiro
+   campo que a pessoa tem para preencher. Os dos quartos ainda dizem qual
+   quarto — o tipo ja vem escolhido no formulario.
+
+   O href continua "#contato" de proposito: sem JS, ou antes dele carregar, o
+   link ainda leva a secao. O JS so afina a chegada. */
+const irParaReserva = (quarto) => {
+  const cartao = document.querySelector('.booking-form');
+  if (!cartao) return;
+
+  if (quarto) {
+    const campo = document.querySelector('#quarto');
+    /* so escolhe se a opcao existir mesmo: nome de quarto trocado no HTML
+       nao pode deixar o campo com valor invisivel */
+    if (campo && Array.from(campo.options).some((o) => o.value === quarto)) {
+      campo.value = quarto;
+    }
+  }
+
+  const suave = !prefersReducedMotion.matches;
+  const alvoTopo = parseFloat(getComputedStyle(cartao).scrollMarginTop) || 0;
+  const rolar = () =>
+    cartao.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'start' });
+
+  rolar();
+
+  /* ---- por que conferir onde paramos ----
+     A rolagem suave mira um ponto calculado no instante em que comeca. Se
+     algo carregar no caminho — imagem preguicosa, secao que so anima ao
+     entrar na tela — a pagina cresce por cima do alvo e a viagem termina
+     antes da conta. Medido: o cartao parava a 275px do topo em vez de 92.
+     Entao conferimos e emendamos o que faltou, ate tres vezes. */
+  let tentativas = 3;
+  const conferir = () => {
+    const desvio = cartao.getBoundingClientRect().top - alvoTopo;
+    if (Math.abs(desvio) > 8 && tentativas > 0) {
+      tentativas -= 1;
+      rolar();
+      window.setTimeout(conferir, suave ? 420 : 0);
+      return;
+    }
+
+    /* o foco so no fim: focar antes da o scroll do navegador por cima do
+       nosso, e a pagina chega tremida */
+    const checkin = document.querySelector('#checkin');
+    if (checkin) checkin.focus({ preventScroll: true });
+  };
+
+  window.setTimeout(conferir, suave ? 520 : 0);
+};
+
+document.querySelectorAll('[data-ir-reserva]').forEach((botao) => {
+  botao.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    irParaReserva(botao.dataset.quarto);
+  });
+});
 
 /* ---------- Formulário de reserva: abre o WhatsApp do hotel ---------- */
 const WHATSAPP_NUMERO = '559285372368';
