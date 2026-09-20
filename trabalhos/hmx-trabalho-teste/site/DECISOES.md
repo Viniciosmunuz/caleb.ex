@@ -2818,3 +2818,32 @@ nome pedido e está aplicado como veio. Se um dia todos forem para o inglês
 Medido: "Quarto Standard" é o nome mais longo agora (15 caracteres contra os
 13 de "Quarto triplo") e continua numa linha só dentro da etiqueta da foto,
 num 375px. Sem vazamento.
+
+### Ajuste do mesmo dia: teto de hóspedes e o nome sem "Quarto"
+
+**Hóspedes agora param em 4**, nos dois menus. Antes iam até 5, e o maior
+quarto — o Standard — é de 4 pessoas. O menu prometia uma hospedagem que
+nenhuma categoria do site entrega.
+
+**"Quarto Standard" virou "Standard"**, a pedido, onde o nome é lido como
+nome: o `<h3>`, o `data-nome` do carrossel e os dois `<option>`.
+
+No `alt` da foto e na mensagem de WhatsApp o "quarto" ficou, **minúsculo**:
+ali ele não é parte do nome da categoria, é o substantivo comum, e é assim
+que os outros três já estavam escritos — "quarto de Casal", "quarto
+Solteiro". A mensagem que chega no WhatsApp do hotel lê "Gostaria de reservar
+o quarto Standard no Hotel Calleb", que é como alguém falaria.
+
+De quebra, tirei uma vírgula solta que eu mesmo tinha deixado no `alt` do
+Triple Room.
+
+**Verificação:** a barra de reserva rápida foi testada depois da troca —
+escolhido "3 hóspedes" e "Triple Room" nela, os dois valores chegaram ao
+formulário e o foco caiu no campo de nome. Os nomes precisam bater entre os
+dois menus, e batem.
+
+### Ainda em aberto: falta "1 hóspede"
+
+O menu começa em 2, e existe um quarto **Solteiro**, de 1 pessoa. Quem quiser
+reservá-lo é obrigado a declarar 2 hóspedes. Não mexi porque o pedido foi
+sobre o teto, não sobre o piso — mas é o mesmo desencontro, do outro lado.
