@@ -3088,7 +3088,7 @@
          e os atalhos. O botao de reservar saiu — era o quinto "Reservar
          agora" da pagina, e o ultimo lugar onde alguem procuraria um. */
       .site-footer {
-        padding: 26px 0 0;
+        padding: 16px 0 0;
         background: var(--color-dark);
         border-top: none;
         color: rgba(255, 255, 255, 0.7);
@@ -3106,26 +3106,26 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: 10px 30px;
-        padding-bottom: 16px;
+        gap: 6px 26px;
+        padding-bottom: 9px;
       }
 
       .footer-marca {
         display: flex;
         flex-direction: column;
-        gap: 3px;
+        gap: 1px;
       }
 
       .footer-marca h3 {
         color: var(--color-amber);
-        font-size: 1.02rem;
+        font-size: 0.94rem;
       }
 
       .footer-local {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        font-size: 0.76rem;
+        font-size: 0.74rem;
         color: rgba(255, 255, 255, 0.62);
         transition: color 0.16s ease-out;
       }
@@ -3137,8 +3137,8 @@
       .footer-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px 20px;
-        font-size: 0.82rem;
+        gap: 3px 17px;
+        font-size: 0.78rem;
       }
 
       .footer-links a,
@@ -3158,12 +3158,61 @@
       .footer-row {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 13px 0;
+        /* a esquerda, nao nas duas pontas: no canto direito mora o botao
+           flutuante do WhatsApp, e ali o icone das redes ficava por baixo
+           dele num celular. */
+        justify-content: flex-start;
+        gap: 12px;
+        /* era 13px: os alvos das redes tem 36px de altura e ja dao corpo a
+           faixa. Mantido o respiro, a linha passaria de 44px para 62px. */
+        padding: 2px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 0.76rem;
         color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ---- Redes no rodape ----
+         So o simbolo, sem rotulo: o desenho ja diz o nome da rede, e o texto
+         ao lado dobraria a altura da faixa.
+
+         O alvo tem 36px ainda que o desenho tenha 18 — os 24px minimos de
+         area de toque sao do WCAG 2.2, e dois icones colados num celular sao
+         justamente o caso em que isso erra.
+
+         Branco a 0,62 sobre o #002348 da 6,8:1; o minimo para simbolo e
+         3:1. */
+      .footer-redes {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .footer-redes a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.16s ease-out, background-color 0.16s ease-out;
+      }
+
+      .footer-redes a:hover,
+      .footer-redes a:focus-visible {
+        color: var(--color-amber);
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-redes a:focus-visible {
+        outline: 2px solid var(--color-amber);
+        outline-offset: 2px;
+      }
+
+      .footer-redes svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
       }
 
       /* ---- Eyebrow: laranja escurecido sobre fundo claro (contraste AA) ---- */
@@ -4485,6 +4534,37 @@
 
       <div class="container footer-row">
         <p>Hotel Calleb © 2026</p>
+
+        <!-- ---- Redes ----
+             O Instagram e o unico perfil que deu para conferir: @hotelcalleb,
+             aberto em 20/09/2026. E ele quem manda gente para o site atual do
+             hotel — o endereco que o pacote guardou vem com
+             utm_source=ig&utm_medium=social&link_in_bio.
+
+             O Facebook esta escrito e comentado, nao ligado. Nao achei pagina
+             do hotel em busca nenhuma, e facebook.com/hotelcalleb responde
+             "Este conteudo nao esta disponivel" — ou seja, esse nome nao e
+             dele. Chutar o endereco mandaria o hospede para o perfil de
+             outra pessoa. Quando o dono passar o link, basta tirar os dois
+             marcadores de comentario e por a URL no href. -->
+        <div class="footer-redes">
+          <a href="https://www.instagram.com/hotelcalleb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Hotel Calleb (abre em nova aba)">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3.1" y="3.1" width="17.8" height="17.8" rx="5.2" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="17.1" cy="6.9" r="1.15" fill="currentColor"/>
+            </svg>
+          </a>
+          <!--
+          <a href="COLOQUE_AQUI_A_PAGINA_DO_FACEBOOK" target="_blank" rel="noopener noreferrer" aria-label="Facebook do Hotel Calleb (abre em nova aba)">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M14.9 7.6h-1.4a2.2 2.2 0 0 0-2.2 2.2V21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.9 12.7h5.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </a>
+          -->
+        </div>
       </div>
     </footer>
 

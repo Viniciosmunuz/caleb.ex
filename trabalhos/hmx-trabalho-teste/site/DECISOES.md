@@ -2659,3 +2659,70 @@ quebrava para uma linha própria.
 3 e o arraste de 3 para 4, com o trilho em -300%. Abaixo de 900px a foto passa a
 cobrir a faixa inteira por trás e a frase manuscrita sai: sobre o cartão ela
 viraria ruído.
+
+## Redes sociais no rodapé — 20/09/2026
+
+### Instagram entrou, Facebook ficou escrito e desligado
+
+Pedido: os ícones do Instagram e do Facebook no fim do site.
+
+**Instagram:** `https://www.instagram.com/hotelcalleb/` — perfil "Hotel
+Presidente Figueiredo // Pousada Calleb", 4.548 seguidores, aberto em
+20/09/2026. É a conta de onde vem o tráfego do site atual do hotel: o endereço
+que o pacote guardou em `estilos/.../analysis.json` chega com
+`utm_source=ig&utm_medium=social&utm_content=link_in_bio`.
+
+**Facebook: não entrou ligado.** Procurei de quatro maneiras:
+
+| Tentativa | Resultado |
+|---|---|
+| Busca "Hotel Calleb Presidente Figueiredo Facebook" | só Instagram, Booking, Tripadvisor |
+| Busca restrita ao domínio `facebook.com` | outros hotéis da cidade, nenhum Calleb |
+| `facebook.com/hotelcalleb` aberto no navegador | "Este conteúdo não está disponível no momento" |
+| Link de Facebook no perfil do Instagram | nenhum |
+
+O site original do hotel também não traz link de rede nenhuma — conferido em
+`copies/hmx-copy-hotelcalleb.com.br/`.
+
+Chutar o endereço mandaria o hóspede para o perfil de outra pessoa, então o
+bloco do Facebook está **escrito e comentado** dentro do `.footer-redes`, com o
+`href` marcado `COLOQUE_AQUI_A_PAGINA_DO_FACEBOOK`. Quando o dono passar o
+link, são dois marcadores de comentário a tirar.
+
+### O canto direito já tinha dono
+
+Primeira montagem pôs os ícones na ponta direita da linha do copyright. Num
+375×812 o Instagram terminava em `y=750` e o botão flutuante do WhatsApp
+começava em `y=744`: seis pixels por baixo dele.
+
+Aumentar `padding-bottom` do rodapé para 76px resolvia, mas engordava a faixa
+— o contrário do que foi pedido. Os ícones foram para a **esquerda**, colados
+no copyright (`justify-content: flex-start`), e o respiro voltou aos 56px.
+Medido depois: ícone em `x=146`, botão em `x=307`.
+
+### Números
+
+- Alvo de toque 36×36 para um desenho de 18px. O mínimo do WCAG 2.2 é 24×24, e
+  dois ícones colados num celular é justamente o caso em que isso erra.
+- Branco a 0,62 sobre o `#002348` do rodapé: **6,76:1**. O mínimo para símbolo
+  é 3:1.
+
+### Faixa mais fina
+
+A pedido, o bloco dos atalhos encolheu:
+
+| | Antes | Depois |
+|---|---|---|
+| `.site-footer` respiro de cima | 26px | 16px |
+| `.footer-grid` gap / respiro de baixo | 10px 30px / 16px | 6px 26px / 9px |
+| `.footer-marca h3` | 1,02rem | 0,94rem |
+| `.footer-local` | 0,76rem | 0,74rem |
+| `.footer-links` gap / tamanho | 6px 20px / 0,82rem | 3px 17px / 0,78rem |
+| `.footer-row` respiro | 13px | 2px |
+
+Altura medida do rodapé inteiro: **158px** num 1280 e **207px** num 375 (no
+celular os atalhos ocupam duas linhas). A linha de baixo tem 41px, dos quais 36
+são o alvo do ícone.
+
+Nenhum texto saiu: os seis atalhos, o nome, a cidade e o copyright continuam
+todos lá.
